@@ -24,6 +24,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 MIN_TRADES = 20  # порог содержательности — ПРЕДВАРИТЕЛЬНЫЙ, подлежит пересмотру
 ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
+ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -77,6 +78,11 @@ def add_indicators(df):
     df["adx14"], df["atr14"] = adx(df, 14)
     df["cci14"] = cci(df, 14)
     df["macd"] = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
+    # Bollinger Bands(20, 2sigma) — конвенция, не параметр для перебора
+    df["bb_mid"] = close.rolling(20).mean()
+    bb_std = close.rolling(20).std()
+    df["bb_upper"] = df["bb_mid"] + 2 * bb_std
+    df["bb_lower"] = df["bb_mid"] - 2 * bb_std
     return df
 
 
@@ -139,6 +145,81 @@ def backtest_system_b(data, rsi_threshold, cci_threshold=-100):
                 exit_price, reason = rowj.close, "rsi_exit"
             elif rowj.close >= rowj.ema20:
                 exit_price, reason = rowj.close, "ema20_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_b_atr_stop(data, atr_mult, rsi_threshold=30, cci_threshold=-100):
+    """Вариант B: тот же вход/выход по RSI/CCI, что и оригинал, но стоп на
+    entry - atr_mult*ATR14 вместо фиксированных 0.3% от минимума дня —
+    проверка гипотезы, что именно узкий стоп (не индикатор входа) топит B."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.adx14 < 20) and (row.rsi14 <= rsi_threshold or row.cci14 <= cci_threshold) and (row.close < row.ema20)
+        cond_prev = (prev.close > prev.ema200) and (prev.adx14 < 20) and (prev.rsi14 <= rsi_threshold or prev.cci14 <= cci_threshold) and (prev.close < prev.ema20)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.rsi14 >= 55:
+                exit_price, reason = rowj.close, "rsi_exit"
+            elif rowj.close >= rowj.ema20:
+                exit_price, reason = rowj.close, "ema20_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_b_bollinger(data, atr_mult):
+    """Вариант B: вход на закрытии ниже нижней полосы Боллинджера (в
+    восходящем тренде, вне сильного тренда), выход на возврате к средней
+    полосе, стоп на ATR. Черновик, согласованный в диалоге как замена
+    RSI/CCI-версии — сравнивается напрямую с ней и с оригиналом B."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.adx14 < 20) and (row.close < row.bb_lower)
+        cond_prev = (prev.close > prev.ema200) and (prev.adx14 < 20) and (prev.close < prev.bb_lower)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close >= rowj.bb_mid:
+                exit_price, reason = rowj.close, "bb_mid_touch"
             elif position["bars"] >= 10:
                 exit_price, reason = rowj.close, "time_stop"
             if reason:
@@ -213,6 +294,20 @@ def main():
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "B",
                                  "param": f"RSI<={rsi_th}", "window": window_name,
+                                 "period": period_name, **stats})
+            for atr_mult in ATR_STOP_GRID:
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_b_atr_stop(data, atr_mult)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "B_atr_stop",
+                                 "param": f"ATRx{atr_mult}", "window": window_name,
+                                 "period": period_name, **stats})
+            for atr_mult in ATR_STOP_GRID:
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_b_bollinger(data, atr_mult)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "B_bollinger",
+                                 "param": f"ATRx{atr_mult}", "window": window_name,
                                  "period": period_name, **stats})
 
     report = pd.DataFrame(rows)
