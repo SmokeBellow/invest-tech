@@ -43,13 +43,16 @@ os.makedirs(OUT_DIR, exist_ok=True)
 
 
 def fetch_chunk(symbol: str, from_date: str, to_date: str) -> list[dict]:
-    """Один запрос к FMP, не более 5 лет диапазона (ограничение free/stable плана)."""
+    """Один запрос к FMP, не более 5 лет диапазона (ограничение free/stable плана).
+    Поднимает FetchError с текстом ответа FMP при HTTP-ошибке (напр. 402) —
+    вызывающий код решает, останавливаться на этом тикере или нет."""
     resp = requests.get(
         BASE_URL,
         params={"symbol": symbol, "from": from_date, "to": to_date, "apikey": API_KEY},
         timeout=30,
     )
-    resp.raise_for_status()
+    if not resp.ok:
+        raise FetchError(f"HTTP {resp.status_code} for {symbol}: {resp.text}")
     data = resp.json()
     if not isinstance(data, list):
         print(f"  WARNING: unexpected response for {symbol} {from_date}..{to_date}: {data}")
@@ -57,8 +60,14 @@ def fetch_chunk(symbol: str, from_date: str, to_date: str) -> list[dict]:
     return data
 
 
+class FetchError(Exception):
+    pass
+
+
 def fetch_full_history(symbol: str, years: int) -> pd.DataFrame:
-    """Собирает всю историю кусками по <=5 лет (лимит FMP на один запрос)."""
+    """Собирает всю историю кусками по <=5 лет (лимит FMP на один запрос).
+    Если тикер недоступен (напр. 402 Payment Required), пробрасывает FetchError —
+    ошибка одного тикера не должна портить данные, уже собранные для него частично."""
     end = date.today()
     start = end - timedelta(days=years * 366)
     all_rows: list[dict] = []
@@ -84,20 +93,32 @@ def main():
     summary = []
     for symbol, kind, years in INSTRUMENTS:
         print(f"Fetching {symbol} ({kind}, {years}y)...")
-        df = fetch_full_history(symbol, years)
+        try:
+            df = fetch_full_history(symbol, years)
+        except FetchError as e:
+            print(f"  FAILED: {e}")
+            summary.append((symbol, kind, 0, None, None, str(e)))
+            continue
+        except requests.RequestException as e:
+            print(f"  FAILED: network error for {symbol}: {e}")
+            summary.append((symbol, kind, 0, None, None, str(e)))
+            continue
         if df.empty:
             print(f"  FAILED: no data for {symbol}")
-            summary.append((symbol, kind, 0, None, None))
+            summary.append((symbol, kind, 0, None, None, "empty response"))
             continue
         out_path = os.path.join(OUT_DIR, f"{symbol}.csv")
         df.to_csv(out_path, index=False)
-        summary.append((symbol, kind, len(df), df.date.min(), df.date.max()))
+        summary.append((symbol, kind, len(df), df.date.min(), df.date.max(), None))
         print(f"  saved {len(df)} rows -> {out_path}")
 
     print("\n=== SUMMARY ===")
-    for symbol, kind, n, dmin, dmax in summary:
+    for symbol, kind, n, dmin, dmax, error in summary:
         status = "OK" if n > 0 else "FAILED"
-        print(f"{symbol:10s} {kind:8s} {n:5d} rows  {dmin} .. {dmax}  [{status}]")
+        line = f"{symbol:10s} {kind:8s} {n:5d} rows  {dmin} .. {dmax}  [{status}]"
+        if error:
+            line += f"  -- {error}"
+        print(line)
 
 
 if __name__ == "__main__":
