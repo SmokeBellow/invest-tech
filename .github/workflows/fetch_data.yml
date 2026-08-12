@@ -1,0 +1,30 @@
+name: Fetch backtest data
+
+on:
+  workflow_dispatch:  # только вручную, не по расписанию — это подготовка данных, не ежедневный процесс
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests pandas
+
+      - name: Fetch data from FMP
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python scripts/fetch_data.py
+
+      - name: Commit data files
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --staged --quiet || git commit -m "Update backtest data ($(date +%Y-%m-%d))"
+          git push
