@@ -231,6 +231,80 @@ def backtest_system_b_bollinger(data, atr_mult):
     return pd.DataFrame(trades)
 
 
+def backtest_system_a_relaxed(data, adx_threshold=25):
+    """Диагностика: система A БЕЗ условия MACD>0 — проверка гипотезы, что
+    конъюнкция из трёх условий (EMA-стек + ADX + MACD) сама по себе душит
+    частоту сигналов, и MACD>0 в основном избыточен, раз EMA-стек уже
+    подразумевает восходящий тренд. Фиксированный ADX=25 (боевой порог),
+    не пересобирается заново — меняется только само условие входа, одна
+    переменная за раз."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.ema20 > row.ema50 > row.ema200) and (row.adx14 >= adx_threshold)
+        cond_prev = (prev.ema20 > prev.ema50 > prev.ema200) and (prev.adx14 >= adx_threshold)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close < rowj.ema50:
+                exit_price, reason = rowj.close, "ema50_close_below"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_b_bollinger_relaxed(data, atr_mult=2.0):
+    """Диагностика: Bollinger-версия B БЕЗ условия ADX<20 — проверка, не
+    режет ли фильтр "нет сильного тренда" слишком много валидных откатов
+    внутри тренда. Фиксированный ATR-множитель 2.0 (боевой), меняется
+    только само условие входа."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.close < row.bb_lower)
+        cond_prev = (prev.close > prev.ema200) and (prev.close < prev.bb_lower)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close >= rowj.bb_mid:
+                exit_price, reason = rowj.close, "bb_mid_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
 def summarize(trades):
     n = len(trades)
     if n == 0:
@@ -339,6 +413,22 @@ def main():
                                  "param": param, "window": window_name,
                                  "period": period_name, **stats})
                     add_to_pool(("B_bollinger", param, period_name), symbol, trades)
+            param = "no_macd_filter"
+            for period_name, data in [("train", train), ("test", test)]:
+                trades = backtest_system_a_relaxed(data)
+                stats = summarize(trades)
+                rows.append({"symbol": symbol, "live_list": is_live, "system": "A_relaxed",
+                             "param": param, "window": window_name,
+                             "period": period_name, **stats})
+                add_to_pool(("A_relaxed", param, period_name), symbol, trades)
+            param = "no_adx_filter"
+            for period_name, data in [("train", train), ("test", test)]:
+                trades = backtest_system_b_bollinger_relaxed(data)
+                stats = summarize(trades)
+                rows.append({"symbol": symbol, "live_list": is_live, "system": "B_bollinger_relaxed",
+                             "param": param, "window": window_name,
+                             "period": period_name, **stats})
+                add_to_pool(("B_bollinger_relaxed", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
