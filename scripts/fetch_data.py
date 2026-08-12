@@ -16,7 +16,7 @@ import pandas as pd
 from datetime import date, timedelta
 
 API_KEY = os.environ["FMP_API_KEY"]
-BASE_URL = "https://financialmodelingprep.com/stable/historical-price-eod-full"
+BASE_URL = "https://financialmodelingprep.com/stable/historical-price-eod/full"
 
 # (symbol, тип, лет истории)
 # тип: "equity" | "forex" | "crypto" — влияет только на глубину истории здесь,
