@@ -25,6 +25,7 @@ MIN_TRADES = 20  # порог содержательности — ПРЕДВА�
 ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
 ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
+KC_MULT_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для ширины канала Кельтнера — squeeze-система
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -115,6 +116,55 @@ def backtest_system_a(data, adx_threshold):
                 # что определила размер позиции), а не текущего трейлинг-стопа —
                 # иначе выход по трейлинг-стопу всегда даёт ровно -1.00R, даже если
                 # стоп успел подтянуться далеко в плюс.
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_squeeze(data, kc_mult):
+    """Bollinger/Keltner "squeeze" breakout — испытательная система, добавлена
+    12.08.2026 по запросу пользователя: гипотеза, что более частый триггер
+    входа (сжатие волатильности + пробой) увеличит число сделок относительно
+    систем A/B, где вход требует одновременного совпадения нескольких строгих
+    условий (конъюнкция).
+
+    Канал Кельтнера: EMA20 ± kc_mult×ATR14 (kc_mult — единственное измерение
+    сетки, период/центр канала не перебираются, как и везде в проекте).
+    Squeeze = ширина полос Боллинджера (20,2σ) МЕНЬШЕ ширины канала Кельтнера
+    — волатильность сжата. Вход — сессия ВЫСВОБОЖДЕНИЯ (вчера squeeze был
+    истинен, сегодня ложен) при цене выше EMA20 (моментум вверх). Стоп/выход
+    — та же логика EMA50-трейлинга, что и в системе A (см. 3.1 CLAUDE.md),
+    чтобы не удваивать методологические решения без необходимости."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        bb_width_now = row.bb_upper - row.bb_lower
+        kc_width_now = 2 * kc_mult * row.atr14
+        bb_width_prev = prev.bb_upper - prev.bb_lower
+        kc_width_prev = 2 * kc_mult * prev.atr14
+        squeeze_now = bb_width_now < kc_width_now
+        squeeze_prev = bb_width_prev < kc_width_prev
+        released_up = squeeze_prev and not squeeze_now and row.close > row.ema20
+        if position is None and released_up:
+            if i + 1 < len(d):
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close < rowj.ema50:
+                exit_price, reason = rowj.close, "ema50_close_below"
+            if reason:
                 ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
                 risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
@@ -339,6 +389,15 @@ def main():
                                  "param": param, "window": window_name,
                                  "period": period_name, **stats})
                     add_to_pool(("B_bollinger", param, period_name), symbol, trades)
+            for kc_mult in KC_MULT_GRID:
+                param = f"KCx{kc_mult}"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_squeeze(data, kc_mult)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "A_squeeze",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("A_squeeze", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
