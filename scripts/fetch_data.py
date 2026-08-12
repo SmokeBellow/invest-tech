@@ -31,31 +31,37 @@ TIINGO_BASE_URL = "https://api.tiingo.com/tiingo/daily"
 # (symbol, тип, лет истории)
 # тип: "equity" | "forex" | "crypto" — влияет только на глубину истории здесь,
 # сам REST-запрос одинаковый для всех классов (просто другой формат symbol)
+#
+# Глубина истории для equity/forex расширена с 7 до 20 лет (12.08.2026) —
+# честный способ увеличить число walk-forward окон и статистическую мощность
+# без размытия торгуемого набора или ослабления входа (см. CLAUDE.md 5.1, 7).
+# Крипта оставлена на 4 годах — старая история (2018-2021) структурно
+# нерепрезентативна для сегодняшнего рынка, решение не пересматривается.
 INSTRUMENTS = [
     # живой список А/B
-    ("SPY", "equity", 7),
-    ("QQQ", "equity", 7),
-    ("EEM", "equity", 7),
-    ("TLT", "equity", 7),
-    ("XLE", "equity", 7),
-    ("EURUSD", "forex", 7),
-    ("USDJPY", "forex", 7),
+    ("SPY", "equity", 20),
+    ("QQQ", "equity", 20),
+    ("EEM", "equity", 20),
+    ("TLT", "equity", 20),
+    ("XLE", "equity", 20),
+    ("EURUSD", "forex", 20),
+    ("USDJPY", "forex", 20),
     ("BTCUSD", "crypto", 4),
     # исследовательский набор (+4, не входит в живую торговлю)
-    ("IWM", "equity", 7),
-    ("GBPUSD", "forex", 7),
+    ("IWM", "equity", 20),
+    ("GBPUSD", "forex", 20),
     ("ETHUSD", "crypto", 4),
-    ("GLD", "equity", 7),
+    ("GLD", "equity", 20),
     # расширение вотч-листа для статистической мощности бэктеста (12.08.2026) —
     # НЕ входит в живую торговлю, только пул сделок в backtest.py. Секторальные
     # ETF и пары для диверсификации набора без изменения самой методологии.
-    ("XLF", "equity", 7),
-    ("XLK", "equity", 7),
-    ("XLV", "equity", 7),
-    ("DIA", "equity", 7),
-    ("VNQ", "equity", 7),
-    ("AUDUSD", "forex", 7),
-    ("USDCHF", "forex", 7),
+    ("XLF", "equity", 20),
+    ("XLK", "equity", 20),
+    ("XLV", "equity", 20),
+    ("DIA", "equity", 20),
+    ("VNQ", "equity", 20),
+    ("AUDUSD", "forex", 20),
+    ("USDCHF", "forex", 20),
 ]
 
 OUT_DIR = "data"
