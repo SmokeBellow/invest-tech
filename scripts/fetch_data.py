@@ -7,6 +7,13 @@ fetch_data.py — собирает исторические дневные OHLCV
 это подготовка данных, а не ежедневный процесс.
 
 Требует переменную окружения FMP_API_KEY (секрет репозитория).
+
+Опционально: TIINGO_API_KEY — фоллбэк для equity/ETF-тикеров, которые FMP
+free-план отдаёт с 402 Payment Required (эмпирически: QQQ, EEM, TLT, XLE,
+IWM, GLD — весь набор кроме SPY). Форекс и крипта на FMP проходят без
+проблем, поэтому фоллбэк применяется только к kind == "equity". Если
+TIINGO_API_KEY не задан, тикеры, недоступные на FMP, просто помечаются
+FAILED, как раньше.
 """
 
 import os
@@ -17,6 +24,9 @@ from datetime import date, timedelta
 
 API_KEY = os.environ["FMP_API_KEY"]
 BASE_URL = "https://financialmodelingprep.com/stable/historical-price-eod/full"
+
+TIINGO_API_KEY = os.environ.get("TIINGO_API_KEY")
+TIINGO_BASE_URL = "https://api.tiingo.com/tiingo/daily"
 
 # (symbol, тип, лет истории)
 # тип: "equity" | "forex" | "crypto" — влияет только на глубину истории здесь,
@@ -89,33 +99,73 @@ def fetch_full_history(symbol: str, years: int) -> pd.DataFrame:
     return df
 
 
+def fetch_tiingo_history(symbol: str, years: int) -> pd.DataFrame:
+    """Фоллбэк через Tiingo для тикеров, недоступных на FMP free-плане.
+    Один запрос покрывает весь диапазон — у Tiingo нет ограничения в 5 лет
+    на запрос, в отличие от FMP."""
+    end = date.today()
+    start = end - timedelta(days=years * 366)
+    resp = requests.get(
+        f"{TIINGO_BASE_URL}/{symbol.lower()}/prices",
+        params={"startDate": start.isoformat(), "endDate": end.isoformat(),
+                "token": TIINGO_API_KEY, "format": "json"},
+        timeout=30,
+    )
+    if not resp.ok:
+        raise FetchError(f"Tiingo HTTP {resp.status_code} for {symbol}: {resp.text}")
+    rows = resp.json()
+    if not isinstance(rows, list) or not rows:
+        return pd.DataFrame()
+
+    df = pd.DataFrame(rows)
+    df["symbol"] = symbol
+    df["date"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
+    keep_cols = [c for c in ["symbol", "date", "open", "high", "low", "close", "volume"] if c in df.columns]
+    df = df[keep_cols].drop_duplicates(subset="date").sort_values("date").reset_index(drop=True)
+    return df
+
+
 def main():
     summary = []
     for symbol, kind, years in INSTRUMENTS:
         print(f"Fetching {symbol} ({kind}, {years}y)...")
+        source, error = "FMP", None
         try:
             df = fetch_full_history(symbol, years)
         except FetchError as e:
-            print(f"  FAILED: {e}")
-            summary.append((symbol, kind, 0, None, None, str(e)))
-            continue
+            print(f"  FMP FAILED: {e}")
+            df, error = pd.DataFrame(), str(e)
         except requests.RequestException as e:
-            print(f"  FAILED: network error for {symbol}: {e}")
-            summary.append((symbol, kind, 0, None, None, str(e)))
-            continue
+            print(f"  FMP FAILED: network error for {symbol}: {e}")
+            df, error = pd.DataFrame(), str(e)
+
+        if df.empty and kind == "equity" and TIINGO_API_KEY:
+            print(f"  Falling back to Tiingo for {symbol}...")
+            try:
+                df = fetch_tiingo_history(symbol, years)
+                if not df.empty:
+                    source, error = "Tiingo", None
+                    print(f"  Tiingo: {len(df)} rows")
+            except FetchError as e:
+                print(f"  Tiingo FAILED: {e}")
+                error = f"FMP: {error} | Tiingo: {e}"
+            except requests.RequestException as e:
+                print(f"  Tiingo FAILED: network error for {symbol}: {e}")
+                error = f"FMP: {error} | Tiingo: network error: {e}"
+
         if df.empty:
-            print(f"  FAILED: no data for {symbol}")
-            summary.append((symbol, kind, 0, None, None, "empty response"))
+            print(f"  FAILED: no data for {symbol} from any source")
+            summary.append((symbol, kind, 0, None, None, "FAILED", error or "empty response"))
             continue
         out_path = os.path.join(OUT_DIR, f"{symbol}.csv")
         df.to_csv(out_path, index=False)
-        summary.append((symbol, kind, len(df), df.date.min(), df.date.max(), None))
-        print(f"  saved {len(df)} rows -> {out_path}")
+        summary.append((symbol, kind, len(df), df.date.min(), df.date.max(), source, None))
+        print(f"  saved {len(df)} rows -> {out_path} (source: {source})")
 
     print("\n=== SUMMARY ===")
-    for symbol, kind, n, dmin, dmax, error in summary:
+    for symbol, kind, n, dmin, dmax, source, error in summary:
         status = "OK" if n > 0 else "FAILED"
-        line = f"{symbol:10s} {kind:8s} {n:5d} rows  {dmin} .. {dmax}  [{status}]"
+        line = f"{symbol:10s} {kind:8s} {n:5d} rows  {dmin} .. {dmax}  [{status}, {source}]"
         if error:
             line += f"  -- {error}"
         print(line)
