@@ -6,7 +6,7 @@ System A: ADX>=25 (documented threshold). System B: Bollinger(20,2sigma) + ATR14
 
 | Portfolio | Final equity | Return | Max drawdown | Trades taken / skipped |
 |---|---|---|---|---|
-| A | $1203.97 | +20.4% | -9.5% ($-118.37) | 89 / 3 |
-| B | $1091.64 | +9.2% | -3.0% ($-31.95) | 65 / 0 |
+| A | $1562.64 | +56.3% | -9.5% ($-153.63) | 204 / 10 |
+| B | $960.48 | -4.0% | -21.6% ($-216.15) | 192 / 0 |
 
 See `equity_curve.html` for the interactive chart and `equity_curve.csv` for raw data.
