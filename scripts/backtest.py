@@ -247,14 +247,23 @@ def summarize(trades):
 # ---------- разбиение на train/test ----------
 
 def make_windows(df, years_available):
-    """Anchored walk-forward для длинной истории (>=6 лет), иначе простой 70/30 split."""
+    """Anchored walk-forward для длинной истории (>=6 лет), иначе простой 70/30 split.
+
+    Раньше брались только последние 3 окна (ближе к концу истории) — первые
+    ~2 года данных вообще никогда не попадали в test. Теперь берём ВСЕ
+    доступные анкорные окна начиная с 1 года train (индикаторы уже посчитаны
+    на непрерывном ряду до нарезки на окна, 60-строчный разгонный период уже
+    отброшен раньше — короткий train не портит их). Это даёт больше
+    независимых out-of-sample проверок и показывает, размазан ли результат
+    по всей истории или сосредоточен в одном-двух окнах (напр. только в
+    самом последнем годе)."""
     df = df.reset_index(drop=True)
     n = len(df)
     windows = []
     if years_available >= 6:
         # anchored: train растёт, test — следующий год
         bars_per_year = n / years_available
-        for k in range(years_available - 4, years_available - 1):  # 3 окна ближе к концу истории
+        for k in range(1, years_available):
             train_end = int(bars_per_year * k)
             test_end = int(bars_per_year * (k + 1))
             if train_end < 60 or test_end > n:
