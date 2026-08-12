@@ -19,6 +19,9 @@ jobs:
       - name: Run backtest
         run: python scripts/backtest.py
 
+      - name: Recompute equity curve
+        run: python scripts/equity_curve.py
+
       - name: Commit results
         run: |
           git config user.name "github-actions"

@@ -24,6 +24,7 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 MIN_TRADES = 20  # порог содержательности — ПРЕДВАРИТЕЛЬНЫЙ, подлежит пересмотру
 ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
+ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -77,6 +78,11 @@ def add_indicators(df):
     df["adx14"], df["atr14"] = adx(df, 14)
     df["cci14"] = cci(df, 14)
     df["macd"] = close.ewm(span=12, adjust=False).mean() - close.ewm(span=26, adjust=False).mean()
+    # Bollinger Bands(20, 2sigma) — конвенция, не параметр для перебора
+    df["bb_mid"] = close.rolling(20).mean()
+    bb_std = close.rolling(20).std()
+    df["bb_upper"] = df["bb_mid"] + 2 * bb_std
+    df["bb_lower"] = df["bb_mid"] - 2 * bb_std
     return df
 
 
@@ -92,7 +98,9 @@ def backtest_system_a(data, adx_threshold):
         cond_prev = (prev.ema20 > prev.ema50 > prev.ema200) and (prev.adx14 >= adx_threshold) and (prev.macd > 0)
         if position is None and cond_now and not cond_prev:
             if i + 1 < len(d):
-                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open, "stop": row.ema50 * 0.99}
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
             position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
@@ -103,8 +111,12 @@ def backtest_system_a(data, adx_threshold):
             elif rowj.close < rowj.ema50:
                 exit_price, reason = rowj.close, "ema50_close_below"
             if reason:
+                # R считается относительно СТОПА НА МОМЕНТ ВХОДА (та же дистанция,
+                # что определила размер позиции), а не текущего трейлинг-стопа —
+                # иначе выход по трейлинг-стопу всегда даёт ровно -1.00R, даже если
+                # стоп успел подтянуться далеко в плюс.
                 ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
-                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
@@ -144,6 +156,81 @@ def backtest_system_b(data, rsi_threshold, cci_threshold=-100):
     return pd.DataFrame(trades)
 
 
+def backtest_system_b_atr_stop(data, atr_mult, rsi_threshold=30, cci_threshold=-100):
+    """Вариант B: тот же вход/выход по RSI/CCI, что и оригинал, но стоп на
+    entry - atr_mult*ATR14 вместо фиксированных 0.3% от минимума дня —
+    проверка гипотезы, что именно узкий стоп (не индикатор входа) топит B."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.adx14 < 20) and (row.rsi14 <= rsi_threshold or row.cci14 <= cci_threshold) and (row.close < row.ema20)
+        cond_prev = (prev.close > prev.ema200) and (prev.adx14 < 20) and (prev.rsi14 <= rsi_threshold or prev.cci14 <= cci_threshold) and (prev.close < prev.ema20)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.rsi14 >= 55:
+                exit_price, reason = rowj.close, "rsi_exit"
+            elif rowj.close >= rowj.ema20:
+                exit_price, reason = rowj.close, "ema20_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_b_bollinger(data, atr_mult):
+    """Вариант B: вход на закрытии ниже нижней полосы Боллинджера (в
+    восходящем тренде, вне сильного тренда), выход на возврате к средней
+    полосе, стоп на ATR. Черновик, согласованный в диалоге как замена
+    RSI/CCI-версии — сравнивается напрямую с ней и с оригиналом B."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.adx14 < 20) and (row.close < row.bb_lower)
+        cond_prev = (prev.close > prev.ema200) and (prev.adx14 < 20) and (prev.close < prev.bb_lower)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close >= rowj.bb_mid:
+                exit_price, reason = rowj.close, "bb_mid_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
 def summarize(trades):
     n = len(trades)
     if n == 0:
@@ -160,14 +247,23 @@ def summarize(trades):
 # ---------- разбиение на train/test ----------
 
 def make_windows(df, years_available):
-    """Anchored walk-forward для длинной истории (>=6 лет), иначе простой 70/30 split."""
+    """Anchored walk-forward для длинной истории (>=6 лет), иначе простой 70/30 split.
+
+    Раньше брались только последние 3 окна (ближе к концу истории) — первые
+    ~2 года данных вообще никогда не попадали в test. Теперь берём ВСЕ
+    доступные анкорные окна начиная с 1 года train (индикаторы уже посчитаны
+    на непрерывном ряду до нарезки на окна, 60-строчный разгонный период уже
+    отброшен раньше — короткий train не портит их). Это даёт больше
+    независимых out-of-sample проверок и показывает, размазан ли результат
+    по всей истории или сосредоточен в одном-двух окнах (напр. только в
+    самом последнем годе)."""
     df = df.reset_index(drop=True)
     n = len(df)
     windows = []
     if years_available >= 6:
         # anchored: train растёт, test — следующий год
         bars_per_year = n / years_available
-        for k in range(years_available - 4, years_available - 1):  # 3 окна ближе к концу истории
+        for k in range(1, years_available):
             train_end = int(bars_per_year * k)
             test_end = int(bars_per_year * (k + 1))
             if train_end < 60 or test_end > n:
@@ -183,6 +279,19 @@ def make_windows(df, years_available):
 
 def main():
     rows = []
+    # пул сделок по всем инструментам сразу (все 12 CSV в data/, не только live) —
+    # per-symbol/per-window срез слишком мелко режет данные (см. обсуждение с
+    # пользователем: даже суммарно по live-инструментам в одном окне почти никогда
+    # не набирается 20 сделок), пул даёт статистике реальную мощность за счёт
+    # сложения истории по всем инструментам и всем test-окнам сразу
+    pooled_trades = {}  # (system, param, period) -> list[DataFrame]
+    pooled_symbols = {}  # (system, param, period) -> set(symbol) с >=1 сделкой
+
+    def add_to_pool(key, symbol, trades):
+        pooled_trades.setdefault(key, []).append(trades)
+        if len(trades) > 0:
+            pooled_symbols.setdefault(key, set()).add(symbol)
+
     csv_files = sorted(glob.glob(os.path.join(DATA_DIR, "*.csv")))
     for path in csv_files:
         symbol = os.path.basename(path).replace(".csv", "")
@@ -195,30 +304,72 @@ def main():
 
         for window_name, train, test in windows:
             for adx_th in ADX_GRID:
+                param = f"ADX>={adx_th}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_a(data, adx_th)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "A",
-                                 "param": f"ADX>={adx_th}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("A", param, period_name), symbol, trades)
             for rsi_th in RSI_GRID:
+                param = f"RSI<={rsi_th}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_b(data, rsi_th)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "B",
-                                 "param": f"RSI<={rsi_th}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("B", param, period_name), symbol, trades)
+            for atr_mult in ATR_STOP_GRID:
+                param = f"ATRx{atr_mult}"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_b_atr_stop(data, atr_mult)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "B_atr_stop",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("B_atr_stop", param, period_name), symbol, trades)
+            for atr_mult in ATR_STOP_GRID:
+                param = f"ATRx{atr_mult}"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_b_bollinger(data, atr_mult)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "B_bollinger",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("B_bollinger", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
+
+    pooled_rows = []
+    for (system, param, period_name), trade_frames in pooled_trades.items():
+        all_trades = pd.concat(trade_frames, ignore_index=True) if trade_frames else pd.DataFrame()
+        stats = summarize(all_trades)
+        stats["n_symbols"] = len(pooled_symbols.get((system, param, period_name), set()))
+        pooled_rows.append({"system": system, "param": param, "period": period_name, **stats})
+    pooled_report = pd.DataFrame(pooled_rows).sort_values(["system", "param", "period"])
+    pooled_report.to_csv(os.path.join(RESULTS_DIR, "backtest_report_pooled.csv"), index=False)
 
     with open(os.path.join(RESULTS_DIR, "backtest_report.md"), "w") as f:
         f.write("# Backtest report (raw results, no auto-selected winner)\n\n")
         f.write(f"MIN_TRADES threshold for insufficient_data flag: {MIN_TRADES} "
                 f"(preliminary, subject to revision)\n\n")
+        f.write("## Per-symbol / per-window grid (diagnostic detail)\n\n")
         f.write(report.to_markdown(index=False))
+        f.write("\n\n## Pooled across all instruments and all test/train windows\n\n")
+        f.write("Trades from every CSV in data/ (live + research instruments) and every "
+                "walk-forward/split window are pooled per (system, param, period) — the "
+                "per-symbol/per-window cells above are individually too thin (max ~7 trades "
+                "on any single test window) to judge MIN_TRADES against; pooling gives the "
+                "statistic real sample size. `n_symbols` is how many instruments actually "
+                "contributed at least one trade.\n\n")
+        f.write(pooled_report.to_markdown(index=False))
 
-    print(f"Wrote {len(report)} rows to results/backtest_report.csv and .md")
+    print(f"Wrote {len(report)} rows to results/backtest_report.csv, "
+          f"{len(pooled_report)} pooled rows to results/backtest_report_pooled.csv, "
+          f"and both to results/backtest_report.md")
 
 
 if __name__ == "__main__":
