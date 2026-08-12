@@ -92,7 +92,9 @@ def backtest_system_a(data, adx_threshold):
         cond_prev = (prev.ema20 > prev.ema50 > prev.ema200) and (prev.adx14 >= adx_threshold) and (prev.macd > 0)
         if position is None and cond_now and not cond_prev:
             if i + 1 < len(d):
-                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open, "stop": row.ema50 * 0.99}
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
             position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
@@ -103,8 +105,12 @@ def backtest_system_a(data, adx_threshold):
             elif rowj.close < rowj.ema50:
                 exit_price, reason = rowj.close, "ema50_close_below"
             if reason:
+                # R считается относительно СТОПА НА МОМЕНТ ВХОДА (та же дистанция,
+                # что определила размер позиции), а не текущего трейлинг-стопа —
+                # иначе выход по трейлинг-стопу всегда даёт ровно -1.00R, даже если
+                # стоп успел подтянуться далеко в плюс.
                 ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
-                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
