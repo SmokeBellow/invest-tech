@@ -270,6 +270,19 @@ def make_windows(df, years_available):
 
 def main():
     rows = []
+    # пул сделок по всем инструментам сразу (все 12 CSV в data/, не только live) —
+    # per-symbol/per-window срез слишком мелко режет данные (см. обсуждение с
+    # пользователем: даже суммарно по live-инструментам в одном окне почти никогда
+    # не набирается 20 сделок), пул даёт статистике реальную мощность за счёт
+    # сложения истории по всем инструментам и всем test-окнам сразу
+    pooled_trades = {}  # (system, param, period) -> list[DataFrame]
+    pooled_symbols = {}  # (system, param, period) -> set(symbol) с >=1 сделкой
+
+    def add_to_pool(key, symbol, trades):
+        pooled_trades.setdefault(key, []).append(trades)
+        if len(trades) > 0:
+            pooled_symbols.setdefault(key, set()).add(symbol)
+
     csv_files = sorted(glob.glob(os.path.join(DATA_DIR, "*.csv")))
     for path in csv_files:
         symbol = os.path.basename(path).replace(".csv", "")
@@ -282,44 +295,72 @@ def main():
 
         for window_name, train, test in windows:
             for adx_th in ADX_GRID:
+                param = f"ADX>={adx_th}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_a(data, adx_th)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "A",
-                                 "param": f"ADX>={adx_th}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("A", param, period_name), symbol, trades)
             for rsi_th in RSI_GRID:
+                param = f"RSI<={rsi_th}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_b(data, rsi_th)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "B",
-                                 "param": f"RSI<={rsi_th}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("B", param, period_name), symbol, trades)
             for atr_mult in ATR_STOP_GRID:
+                param = f"ATRx{atr_mult}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_b_atr_stop(data, atr_mult)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "B_atr_stop",
-                                 "param": f"ATRx{atr_mult}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("B_atr_stop", param, period_name), symbol, trades)
             for atr_mult in ATR_STOP_GRID:
+                param = f"ATRx{atr_mult}"
                 for period_name, data in [("train", train), ("test", test)]:
                     trades = backtest_system_b_bollinger(data, atr_mult)
                     stats = summarize(trades)
                     rows.append({"symbol": symbol, "live_list": is_live, "system": "B_bollinger",
-                                 "param": f"ATRx{atr_mult}", "window": window_name,
+                                 "param": param, "window": window_name,
                                  "period": period_name, **stats})
+                    add_to_pool(("B_bollinger", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
+
+    pooled_rows = []
+    for (system, param, period_name), trade_frames in pooled_trades.items():
+        all_trades = pd.concat(trade_frames, ignore_index=True) if trade_frames else pd.DataFrame()
+        stats = summarize(all_trades)
+        stats["n_symbols"] = len(pooled_symbols.get((system, param, period_name), set()))
+        pooled_rows.append({"system": system, "param": param, "period": period_name, **stats})
+    pooled_report = pd.DataFrame(pooled_rows).sort_values(["system", "param", "period"])
+    pooled_report.to_csv(os.path.join(RESULTS_DIR, "backtest_report_pooled.csv"), index=False)
 
     with open(os.path.join(RESULTS_DIR, "backtest_report.md"), "w") as f:
         f.write("# Backtest report (raw results, no auto-selected winner)\n\n")
         f.write(f"MIN_TRADES threshold for insufficient_data flag: {MIN_TRADES} "
                 f"(preliminary, subject to revision)\n\n")
+        f.write("## Per-symbol / per-window grid (diagnostic detail)\n\n")
         f.write(report.to_markdown(index=False))
+        f.write("\n\n## Pooled across all instruments and all test/train windows\n\n")
+        f.write("Trades from every CSV in data/ (live + research instruments) and every "
+                "walk-forward/split window are pooled per (system, param, period) — the "
+                "per-symbol/per-window cells above are individually too thin (max ~7 trades "
+                "on any single test window) to judge MIN_TRADES against; pooling gives the "
+                "statistic real sample size. `n_symbols` is how many instruments actually "
+                "contributed at least one trade.\n\n")
+        f.write(pooled_report.to_markdown(index=False))
 
-    print(f"Wrote {len(report)} rows to results/backtest_report.csv and .md")
+    print(f"Wrote {len(report)} rows to results/backtest_report.csv, "
+          f"{len(pooled_report)} pooled rows to results/backtest_report_pooled.csv, "
+          f"and both to results/backtest_report.md")
 
 
 if __name__ == "__main__":
