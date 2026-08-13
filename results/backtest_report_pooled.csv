@@ -5,6 +5,10 @@ A,ADX>=25,test,542,32.5,0.02,12.23,-21.67,False,25
 A,ADX>=25,train,6041,37.4,0.11,634.56,-86.54,False,25
 A,ADX>=30,test,344,34.3,0.04,13.92,-23.81,False,25
 A,ADX>=30,train,3933,37.0,0.11,436.84,-130.6,False,25
+A_ensemble,agree>=2/3,test,3386,25.2,-0.01,-35.65,-79.08,False,25
+A_ensemble,agree>=2/3,train,35452,27.9,0.12,3782.34,-438.01,False,25
+A_ensemble,agree>=3/3,test,3680,35.2,0.02,83.81,-49.38,False,25
+A_ensemble,agree>=3/3,train,37329,36.2,0.05,1668.53,-248.92,False,25
 A_relaxed,no_macd_filter,test,641,29.0,0.02,10.17,-19.47,False,25
 A_relaxed,no_macd_filter,train,7239,32.4,0.08,507.3,-63.78,False,25
 B,RSI<=25,test,1604,38.0,-0.03,-43.07,-99.65,False,25
