@@ -14,6 +14,13 @@ IWM, GLD — весь набор кроме SPY). Форекс и крипта �
 проблем, поэтому фоллбэк применяется только к kind == "equity". Если
 TIINGO_API_KEY не задан, тикеры, недоступные на FMP, просто помечаются
 FAILED, как раньше.
+
+Кэширование (13.08.2026): если data/{symbol}.csv уже существует, тикер
+пропускается — данные не перезабираются. Это не расписание "раз в день",
+а способ не тратить квоту FMP/Tiingo и время CI на инструменты, которые уже
+собраны и не изменятся (историческая цена не меняется задним числом).
+Чтобы обновить конкретный тикер (например, добить свежие бары) — удалить
+его data/{symbol}.csv перед запуском, остальные тикеры не тронутся.
 """
 
 import os
@@ -158,6 +165,16 @@ def fetch_tiingo_history(symbol: str, years: int) -> pd.DataFrame:
 def main():
     summary = []
     for symbol, kind, years in INSTRUMENTS:
+        out_path = os.path.join(OUT_DIR, f"{symbol}.csv")
+        if os.path.exists(out_path):
+            existing = pd.read_csv(out_path)
+            print(f"Skipping {symbol}: already have {len(existing)} rows "
+                  f"({existing.date.min()} .. {existing.date.max()}) in {out_path}. "
+                  f"Delete the file to force a re-fetch.")
+            summary.append((symbol, kind, len(existing), existing.date.min(),
+                             existing.date.max(), "cached", None))
+            continue
+
         print(f"Fetching {symbol} ({kind}, {years}y)...")
         source, error = "FMP", None
         try:
