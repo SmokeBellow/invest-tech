@@ -25,6 +25,7 @@ MIN_TRADES = 20  # порог содержательности — ПРЕДВА�
 ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
 ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
+AGREE_GRID = [2, 3]  # A_ensemble: сколько из 3 горизонтов момента должны согласиться (см. ниже)
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -83,6 +84,12 @@ def add_indicators(df):
     bb_std = close.rolling(20).std()
     df["bb_upper"] = df["bb_mid"] + 2 * bb_std
     df["bb_lower"] = df["bb_mid"] - 2 * bb_std
+    # моментум на трёх горизонтах (~1, ~3, ~6 месяцев торговых дней) — конвенция
+    # time-series momentum (Moskowitz/Ooi/Pedersen), периоды не перебираются,
+    # как и периоды EMA/Bollinger. Используется только системой A_ensemble.
+    df["mom21"] = close.pct_change(21)
+    df["mom63"] = close.pct_change(63)
+    df["mom126"] = close.pct_change(126)
     return df
 
 
@@ -305,6 +312,56 @@ def backtest_system_b_bollinger_relaxed(data, atr_mult=2.0):
     return pd.DataFrame(trades)
 
 
+def backtest_system_a_ensemble(data, agree_threshold):
+    """A_ensemble — CTA-практика мульти-горизонтного момента вместо одного
+    ADX-порога (расширенное исследование стратегий, 13.08.2026): согласие
+    нескольких lookback-периодов
+    (1/3/6 месяцев) вместо единственного условия EMA-стек+ADX+MACD. Не
+    модификация системы A, а отдельная диагностическая система — сравнивается
+    с A/A_relaxed, не заменяет их автоматически.
+
+    Вход: не менее agree_threshold из 3 горизонтов момента (mom21/63/126)
+    положительны — сессия перехода состояния (вчера условие было ложно,
+    сегодня истинно), та же логика транзиции, что и везде в проекте.
+    agree_threshold=2 — большинство (мягче, больше сигналов), 3 — единогласие
+    (жёстче). Сетка из двух точек — одно измерение, не переоптимизация.
+
+    Стоп и логика выхода идентичны системе A (EMA50-1%, трейлинг, R считается
+    от стопа на момент входа) — чтобы поменялась именно сигнальная логика
+    входа, а не риск-механика, иначе сравнение с A/A_relaxed теряет смысл."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        agree_now = sum([row.mom21 > 0, row.mom63 > 0, row.mom126 > 0])
+        agree_prev = sum([prev.mom21 > 0, prev.mom63 > 0, prev.mom126 > 0])
+        cond_now = agree_now >= agree_threshold
+        cond_prev = agree_prev >= agree_threshold
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            agree_j = sum([rowj.mom21 > 0, rowj.mom63 > 0, rowj.mom126 > 0])
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif agree_j < agree_threshold:
+                exit_price, reason = rowj.close, "momentum_consensus_broken"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
 def summarize(trades):
     n = len(trades)
     if n == 0:
@@ -429,6 +486,15 @@ def main():
                              "param": param, "window": window_name,
                              "period": period_name, **stats})
                 add_to_pool(("B_bollinger_relaxed", param, period_name), symbol, trades)
+            for agree_th in AGREE_GRID:
+                param = f"agree>={agree_th}/3"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_a_ensemble(data, agree_th)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "A_ensemble",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("A_ensemble", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
