@@ -31,3 +31,7 @@ B_bollinger,ATRx2.0,test,536,54.9,0.04,20.9,-17.92,False,24
 B_bollinger,ATRx2.0,train,5394,52.2,-0.01,-68.9,-273.96,False,25
 B_bollinger_relaxed,no_adx_filter,test,889,55.3,0.07,59.02,-12.83,False,25
 B_bollinger_relaxed,no_adx_filter,train,9113,53.8,0.04,336.12,-176.13,False,25
+C,ema20_touch,test,282,22.7,-0.09,-25.18,-41.46,False,24
+C,ema20_touch,train,3122,22.1,-0.1,-292.03,-441.54,False,25
+C,ema50_touch,test,461,20.4,-0.12,-52.01,-54.58,False,25
+C,ema50_touch,train,4987,21.7,0.07,321.82,-548.17,False,25
