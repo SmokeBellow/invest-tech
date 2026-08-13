@@ -26,6 +26,7 @@ ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
 ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
 AGREE_GRID = [2, 3]  # A_ensemble: сколько из 3 горизонтов момента должны согласиться (см. ниже)
+EMA_TOUCH_GRID = [20, 50]  # C: какая EMA служит линией входа (см. backtest_system_c)
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -69,6 +70,16 @@ def cci(df, period=14):
     return (tp - sma) / (0.015 * mad)
 
 
+def stochastic(df, k_period=14, k_smooth=3, d_period=3):
+    """Полный (slow) стохастик (14,3,3) — конвенция, не параметр для перебора."""
+    low_n = df["low"].rolling(k_period).min()
+    high_n = df["high"].rolling(k_period).max()
+    raw_k = 100 * (df["close"] - low_n) / (high_n - low_n)
+    k = raw_k.rolling(k_smooth).mean()
+    d = k.rolling(d_period).mean()
+    return k, d
+
+
 def add_indicators(df):
     df = df.copy()
     close = df["close"]
@@ -90,6 +101,8 @@ def add_indicators(df):
     df["mom21"] = close.pct_change(21)
     df["mom63"] = close.pct_change(63)
     df["mom126"] = close.pct_change(126)
+    # Стохастик (14,3,3) — используется системой C
+    df["stoch_k"], df["stoch_d"] = stochastic(df)
     return df
 
 
@@ -362,6 +375,76 @@ def backtest_system_a_ensemble(data, agree_threshold):
     return pd.DataFrame(trades)
 
 
+def backtest_system_c(data, ema_period):
+    """Система C — EMA-тренд + касание EMA как S/R + Стохастик, LONG И SHORT
+    (первая двунаправленная система в проекте; A/B — только long). Решения
+    пользователя в диалоге 13.08.2026:
+    - Направление: EMA20 > EMA50 → ищем LONG, EMA20 < EMA50 → ищем SHORT.
+    - Касание (grid EMA_TOUCH_GRID={20,50}, какая EMA — линия входа): в лонге
+      low ≤ EMA ≤ close (цена коснулась/пробила EMA внутри дня, закрылась
+      выше — отскок подтверждён закрытием); в шорте зеркально
+      high ≥ EMA ≥ close.
+    - Подтверждение: Стохастик (14,3,3, конвенция, не перебирается) —
+      пересечение %K/%D в зоне разворота. Лонг: оба были <20 накануне,
+      %K пересекает %D снизу вверх. Шорт: оба были >80 накануне, %K
+      пересекает %D сверху вниз.
+    - Стоп: та же EMA, что дала сигнал, ∓1% буфер, трейлинг только в пользу
+      сделки (как система A). Выход: стоп ИЛИ close ушёл против тренда за
+      EMA. R — от стопа на момент входа (защита от бага 5.7)."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        if position is None:
+            ema_col = f"ema{ema_period}"
+            trend_up = row.ema20 > row.ema50
+            trend_down = row.ema20 < row.ema50
+            touch_long = row.low <= row[ema_col] <= row.close
+            touch_short = row.high >= row[ema_col] >= row.close
+            stoch_cross_up = (prev.stoch_k <= prev.stoch_d and row.stoch_k > row.stoch_d
+                               and prev.stoch_k < 20 and prev.stoch_d < 20)
+            stoch_cross_down = (prev.stoch_k >= prev.stoch_d and row.stoch_k < row.stoch_d
+                                 and prev.stoch_k > 80 and prev.stoch_d > 80)
+            if i + 1 < len(d) and trend_up and touch_long and stoch_cross_up:
+                init_stop = row[ema_col] * 0.99
+                position = {"side": "long", "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop, "ema_col": ema_col}
+            elif i + 1 < len(d) and trend_down and touch_short and stoch_cross_down:
+                init_stop = row[ema_col] * 1.01
+                position = {"side": "short", "entry_price": d.iloc[i + 1].open,
+                             "stop": init_stop, "orig_stop": init_stop, "ema_col": ema_col}
+        else:
+            rowj = d.iloc[i]
+            ema_col = position["ema_col"]
+            exit_price, reason = None, None
+            if position["side"] == "long":
+                position["stop"] = max(position["stop"], rowj[ema_col] * 0.99)
+                if rowj.low <= position["stop"]:
+                    exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                    reason = "stop"
+                elif rowj.close < rowj[ema_col]:
+                    exit_price, reason = rowj.close, "ema_close_below"
+                if reason:
+                    ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                    risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+            else:
+                position["stop"] = min(position["stop"], rowj[ema_col] * 1.01)
+                if rowj.high >= position["stop"]:
+                    exit_price = rowj.open if rowj.open > position["stop"] else position["stop"]
+                    reason = "stop"
+                elif rowj.close > rowj[ema_col]:
+                    exit_price, reason = rowj.close, "ema_close_above"
+                if reason:
+                    ret_pct = (position["entry_price"] - exit_price) / position["entry_price"] * 100
+                    risk_pct = (position["orig_stop"] - position["entry_price"]) / position["entry_price"] * 100
+            if reason:
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason, "side": position["side"]})
+                position = None
+    return pd.DataFrame(trades)
+
+
 def summarize(trades):
     n = len(trades)
     if n == 0:
@@ -495,6 +578,15 @@ def main():
                                  "param": param, "window": window_name,
                                  "period": period_name, **stats})
                     add_to_pool(("A_ensemble", param, period_name), symbol, trades)
+            for ema_period in EMA_TOUCH_GRID:
+                param = f"ema{ema_period}_touch"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_c(data, ema_period)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "C",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("C", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)
