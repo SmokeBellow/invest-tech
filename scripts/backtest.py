@@ -473,28 +473,34 @@ def backtest_system_c_long(data, adx_max=20.0, touch_depth_max=1.0, atr_mult=2.0
     менее чувствительна к однодневному шуму, чем выход по EMA20 в исходной
     версии), ИЛИ тайм-стоп (не менялся у B, здесь применён по аналогии).
 
-    Ослабление входа (13.08.2026, диалог): диагностика показала всего 65-146
-    сделок на весь 25-инструментный пул за 20 лет — ниже ориентира ~170-180,
-    нужного для типичного размера эффекта, даже без ADX/depth-фильтров.
-    Убрано требование ТОЧНОГО пересечения %K/%D в моменте — теперь достаточно,
-    чтобы обе линии были ниже 20 (для лонга) на день сигнала. Транзишн-логика
-    (сессия ПЕРЕХОДА состояния, не персистентно истинное условие) сохранена
-    на всей конъюнкции целиком — та же дисциплина, что и везде в проекте."""
+    Ослабление входа (13.08.2026, диалог) — первая попытка (оба ниже 20 в
+    ДЕНЬ КАСАНИЯ) дала ещё меньше сделок (28), чем исходная версия с точным
+    пересечением (65): день отскока от EMA обычно сам толкает стохастик
+    вверх, так что «оба ещё ниже 20» в момент отскока — редкое совпадение,
+    более жёсткое, чем требование пересечения. Исправлено: перепроданность
+    проверяется на ВЧЕРАШНЕМ дне (до отскока), а не на дне касания —
+    убрано только требование ТОЧНОГО пересечения %K/%D, привязка к
+    "вчера" сохранена как в исходной версии. Транзишн-логика (сессия
+    ПЕРЕХОДА состояния) сохранена на всей конъюнкции целиком — та же
+    дисциплина, что и везде в проекте."""
     trades = []
     position = None
     d = data.reset_index(drop=True)
 
-    def entry_cond(r):
+    def entry_cond(j):
+        if j < 1:
+            return False
+        r, p = d.iloc[j], d.iloc[j - 1]
         trend_up = r.ema20 > r.ema50
         touch_long = r.low <= r.ema20 <= r.close
         touch_depth = (r.ema20 - r.low) / r.close * 100 if touch_long else np.nan
-        oversold = r.stoch_k < 20 and r.stoch_d < 20
-        return trend_up and touch_long and oversold and r.adx14 < adx_max and touch_depth < touch_depth_max
+        oversold_prev = p.stoch_k < 20 and p.stoch_d < 20
+        return trend_up and touch_long and oversold_prev and r.adx14 < adx_max and touch_depth < touch_depth_max
 
-    for i in range(1, len(d)):
-        row, prev = d.iloc[i], d.iloc[i - 1]
+    for i in range(2, len(d)):
+        row = d.iloc[i]
         if position is None:
-            if i + 1 < len(d) and entry_cond(row) and not entry_cond(prev):
+            if i + 1 < len(d) and entry_cond(i) and not entry_cond(i - 1):
                 entry_price = d.iloc[i + 1].open
                 stop = entry_price - atr_mult * row.atr14
                 position = {"entry_price": entry_price, "stop": stop, "bars": 0}
