@@ -445,6 +445,69 @@ def backtest_system_c(data, ema_period):
     return pd.DataFrame(trades)
 
 
+def backtest_system_c_long(data, adx_max=20.0, touch_depth_max=1.0, atr_mult=2.0, time_stop=20):
+    """C_long_v2 — по итогам диагностики системы C (13.08.2026, диалог с
+    пользователем, только LONG-сторона). Диагностика показала: 62% сделок
+    исходной версии закрывались за 1-7 баров с win rate 4-8% (whipsaw от
+    EMA-трейлинга), тогда как сделки, дожившие до 16+ баров, — win rate 89%.
+    Четыре правки по этой диагностике, каждая — явное решение пользователя:
+
+    1. Только EMA20 как линия входа (EMA50 эмпирически хуже: mean R −0.13
+       против +0.16 у EMA20 на исходной версии).
+    2в. ATR-стоп (2.0×ATR14 — тот же множитель, что «боевая» B, не подгонка
+        под эту диагностику) вместо EMA-трейлинга — фиксируется на входе, не
+        подтягивается. Смягчает выход, чтобы позиция не выбивалась
+        однодневным шумом.
+    3в. Фильтр ADX<20 на входе — вопреки интуиции «сильный тренд — хорошо»,
+        диагностика показала обратное (ADX 11-16: win rate 45%; ADX 24-43:
+        win rate 19%) — высокий ADX на откате чаще ловил истощение движения,
+        а не паузу. Порог 20 — существующая конвенция проекта (нижняя
+        граница ADX_GRID), а не подогнанное под квартили значение.
+    4. Фильтр глубины касания <1.0% от цены — глубокий пробой ниже EMA20
+       (Q4 диагностики) был хуже мелкого отскока (Q1). Порог округлён до
+       1.0%, НЕ взят точно по границе квартиля (медиана диагностической
+       выборки была 0.63%) — иначе это переобучение на тех же сделках,
+       на которых сделан вывод, а не независимая проверка.
+
+    Выход: стоп, ИЛИ close < EMA50 (медленная EMA, НЕ та, что дала сигнал —
+    менее чувствительна к однодневному шуму, чем выход по EMA20 в исходной
+    версии), ИЛИ тайм-стоп (не менялся у B, здесь применён по аналогии)."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        if position is None:
+            trend_up = row.ema20 > row.ema50
+            touch_long = row.low <= row.ema20 <= row.close
+            touch_depth = (row.ema20 - row.low) / row.close * 100
+            stoch_cross_up = (prev.stoch_k <= prev.stoch_d and row.stoch_k > row.stoch_d
+                               and prev.stoch_k < 20 and prev.stoch_d < 20)
+            if (i + 1 < len(d) and trend_up and touch_long and stoch_cross_up
+                    and row.adx14 < adx_max and touch_depth < touch_depth_max):
+                entry_price = d.iloc[i + 1].open
+                stop = entry_price - atr_mult * row.atr14
+                position = {"entry_price": entry_price, "stop": stop, "bars": 0}
+        else:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close < rowj.ema50:
+                exit_price, reason = rowj.close, "ema50_close_below"
+            elif position["bars"] >= time_stop:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
 def summarize(trades):
     n = len(trades)
     if n == 0:
