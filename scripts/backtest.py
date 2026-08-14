@@ -471,20 +471,30 @@ def backtest_system_c_long(data, adx_max=20.0, touch_depth_max=1.0, atr_mult=2.0
 
     Выход: стоп, ИЛИ close < EMA50 (медленная EMA, НЕ та, что дала сигнал —
     менее чувствительна к однодневному шуму, чем выход по EMA20 в исходной
-    версии), ИЛИ тайм-стоп (не менялся у B, здесь применён по аналогии)."""
+    версии), ИЛИ тайм-стоп (не менялся у B, здесь применён по аналогии).
+
+    Ослабление входа (13.08.2026, диалог): диагностика показала всего 65-146
+    сделок на весь 25-инструментный пул за 20 лет — ниже ориентира ~170-180,
+    нужного для типичного размера эффекта, даже без ADX/depth-фильтров.
+    Убрано требование ТОЧНОГО пересечения %K/%D в моменте — теперь достаточно,
+    чтобы обе линии были ниже 20 (для лонга) на день сигнала. Транзишн-логика
+    (сессия ПЕРЕХОДА состояния, не персистентно истинное условие) сохранена
+    на всей конъюнкции целиком — та же дисциплина, что и везде в проекте."""
     trades = []
     position = None
     d = data.reset_index(drop=True)
+
+    def entry_cond(r):
+        trend_up = r.ema20 > r.ema50
+        touch_long = r.low <= r.ema20 <= r.close
+        touch_depth = (r.ema20 - r.low) / r.close * 100 if touch_long else np.nan
+        oversold = r.stoch_k < 20 and r.stoch_d < 20
+        return trend_up and touch_long and oversold and r.adx14 < adx_max and touch_depth < touch_depth_max
+
     for i in range(1, len(d)):
         row, prev = d.iloc[i], d.iloc[i - 1]
         if position is None:
-            trend_up = row.ema20 > row.ema50
-            touch_long = row.low <= row.ema20 <= row.close
-            touch_depth = (row.ema20 - row.low) / row.close * 100
-            stoch_cross_up = (prev.stoch_k <= prev.stoch_d and row.stoch_k > row.stoch_d
-                               and prev.stoch_k < 20 and prev.stoch_d < 20)
-            if (i + 1 < len(d) and trend_up and touch_long and stoch_cross_up
-                    and row.adx14 < adx_max and touch_depth < touch_depth_max):
+            if i + 1 < len(d) and entry_cond(row) and not entry_cond(prev):
                 entry_price = d.iloc[i + 1].open
                 stop = entry_price - atr_mult * row.atr14
                 position = {"entry_price": entry_price, "stop": stop, "bars": 0}
