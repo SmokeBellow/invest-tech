@@ -123,7 +123,12 @@ def backtest_system_a(data, adx_threshold):
                             "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
-            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            # Стоп проверяется ПРОТИВ уровня, известного ДО сегодняшней сессии
+            # (EMA50 вчерашнего дня), обновляется сегодняшним EMA50 только если
+            # сегодня не выбило — иначе тот же same-bar lookahead, что нашли в
+            # System F (15.08.2026): стоп, посчитанный ПО сегодняшнему close,
+            # физически не мог существовать до конца сегодняшней сессии, и
+            # проверять против него сегодняшний low — использовать данные наперёд.
             exit_price, reason = None, None
             if rowj.low <= position["stop"]:
                 exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
@@ -140,6 +145,8 @@ def backtest_system_a(data, adx_threshold):
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
     return pd.DataFrame(trades)
 
 
@@ -272,7 +279,7 @@ def backtest_system_a_relaxed(data, adx_threshold=25):
                             "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
-            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026)
             exit_price, reason = None, None
             if rowj.low <= position["stop"]:
                 exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
@@ -285,6 +292,8 @@ def backtest_system_a_relaxed(data, adx_threshold=25):
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
     return pd.DataFrame(trades)
 
 
@@ -358,7 +367,7 @@ def backtest_system_a_ensemble(data, agree_threshold):
                             "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
-            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026)
             agree_j = sum([rowj.mom21 > 0, rowj.mom63 > 0, rowj.mom126 > 0])
             exit_price, reason = None, None
             if rowj.low <= position["stop"]:
@@ -372,6 +381,8 @@ def backtest_system_a_ensemble(data, agree_threshold):
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
     return pd.DataFrame(trades)
 
 
@@ -415,11 +426,13 @@ def backtest_system_c(data, ema_period):
                 position = {"side": "short", "entry_price": d.iloc[i + 1].open,
                              "stop": init_stop, "orig_stop": init_stop, "ema_col": ema_col}
         else:
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026): проверяем
+            # против стопа, известного ДО сегодняшней сессии, обновляем сегодняшним
+            # EMA только если сегодня не выбило.
             rowj = d.iloc[i]
             ema_col = position["ema_col"]
             exit_price, reason = None, None
             if position["side"] == "long":
-                position["stop"] = max(position["stop"], rowj[ema_col] * 0.99)
                 if rowj.low <= position["stop"]:
                     exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
                     reason = "stop"
@@ -428,8 +441,9 @@ def backtest_system_c(data, ema_period):
                 if reason:
                     ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
                     risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                else:
+                    position["stop"] = max(position["stop"], rowj[ema_col] * 0.99)
             else:
-                position["stop"] = min(position["stop"], rowj[ema_col] * 1.01)
                 if rowj.high >= position["stop"]:
                     exit_price = rowj.open if rowj.open > position["stop"] else position["stop"]
                     reason = "stop"
@@ -437,6 +451,9 @@ def backtest_system_c(data, ema_period):
                     exit_price, reason = rowj.close, "ema_close_above"
                 if reason:
                     ret_pct = (position["entry_price"] - exit_price) / position["entry_price"] * 100
+                    risk_pct = (position["orig_stop"] - position["entry_price"]) / position["entry_price"] * 100
+                else:
+                    position["stop"] = min(position["stop"], rowj[ema_col] * 1.01)
                     risk_pct = (position["orig_stop"] - position["entry_price"]) / position["entry_price"] * 100
             if reason:
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan

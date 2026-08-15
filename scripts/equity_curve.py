@@ -73,7 +73,9 @@ def trades_system_a(data, symbol, adx_threshold=SYSTEM_A_ADX_THRESHOLD):
                             "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
-            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            # см. фикс same-bar lookahead в backtest.py::backtest_system_a (15.08.2026):
+            # стоп проверяется против уровня, известного ДО сегодняшней сессии,
+            # обновляется сегодняшним EMA50 только если сегодня не выбило.
             exit_price, reason = None, None
             if rowj.low <= position["stop"]:
                 exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
@@ -85,6 +87,8 @@ def trades_system_a(data, symbol, adx_threshold=SYSTEM_A_ADX_THRESHOLD):
                 trades.append({"symbol": symbol, "entry_date": position["entry_date"],
                                "exit_date": rowj.date, "r_mult": r_mult, "reason": reason})
                 position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
     return trades
 
 
