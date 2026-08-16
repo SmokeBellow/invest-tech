@@ -489,7 +489,7 @@ HTML_TEMPLATE = r"""<!doctype html>
 
 def main():
     dfs = {}
-    for symbol in LIVE_INSTRUMENTS:
+    for symbol in sorted(LIVE_INSTRUMENTS):
         path = os.path.join(DATA_DIR, f"{symbol}.csv")
         if not os.path.exists(path):
             print(f"  WARNING: {path} missing, skipping {symbol} in equity curve")

@@ -141,7 +141,7 @@ def annual_returns(curve, start_capital=START_CAPITAL):
 
 def load_instrument_data(start_date=None):
     dfs = {}
-    for symbol in bt.LIVE_INSTRUMENTS:
+    for symbol in sorted(bt.LIVE_INSTRUMENTS):
         path = os.path.join(DATA_DIR, f"{symbol}.csv")
         raw = pd.read_csv(path, parse_dates=["date"]).sort_values("date")
         d = bt.add_indicators(raw)
