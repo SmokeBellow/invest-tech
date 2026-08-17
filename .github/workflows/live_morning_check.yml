@@ -1,0 +1,35 @@
+name: Live paper-trading morning entry check
+
+on:
+  schedule:
+    # 15:00 UTC — с запасом после открытия NYSE в обоих режимах (13:30 UTC
+    # летом/DST, 14:30 UTC зимой), см. CLAUDE.md раздел 9
+    - cron: "0 15 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  morning-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests pandas numpy
+
+      - name: Detect entry triggers (from last night's closed bars) and fetch today's open
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+        run: python scripts/live_pending_entries.py
+
+      - name: Commit provisional journal entries
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/live/
+          git diff --staged --quiet || git commit -m "Live review: provisional entries at today's open ($(date -u +%Y-%m-%d))"
+          git pull --rebase
+          git push

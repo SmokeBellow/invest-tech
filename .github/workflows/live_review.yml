@@ -45,6 +45,7 @@ jobs:
           git config user.email "actions@github.com"
           git add data/
           git diff --staged --quiet || git commit -m "Live review: update data + paper portfolio state ($(date -u +%Y-%m-%d))"
+          git pull --rebase
           git push
 
       - name: Render equity chart for GitHub Pages
