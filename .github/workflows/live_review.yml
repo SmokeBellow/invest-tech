@@ -5,9 +5,21 @@ on:
     - cron: "0 4 * * *"  # 04:00 UTC = 09:00 Екатеринбург, единое время пересмотра проекта (см. CLAUDE.md)
   workflow_dispatch: {}   # ручной запуск для отладки
 
+permissions:
+  contents: write   # коммит data/ обратно в ветку
+  pages: write       # деплой графика на GitHub Pages
+  id-token: write    # требуется actions/deploy-pages
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   review:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -34,3 +46,20 @@ jobs:
           git add data/
           git diff --staged --quiet || git commit -m "Live review: update data + paper portfolio state ($(date -u +%Y-%m-%d))"
           git push
+
+      - name: Render equity chart for GitHub Pages
+        run: |
+          mkdir -p site
+          python scripts/render_live_chart.py --out site/index.html
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
