@@ -25,6 +25,8 @@ MIN_TRADES = 20  # порог содержательности — ПРЕДВА�
 ADX_GRID = [20, 25, 30]
 RSI_GRID = [25, 30, 35]
 ATR_STOP_GRID = [1.0, 1.5, 2.0]  # множитель ATR14 для стопа — испытательные варианты B
+AGREE_GRID = [2, 3]  # A_ensemble: сколько из 3 горизонтов момента должны согласиться (см. ниже)
+EMA_TOUCH_GRID = [20, 50]  # C: какая EMA служит линией входа (см. backtest_system_c)
 
 LIVE_INSTRUMENTS = {"SPY", "QQQ", "EEM", "TLT", "XLE", "EURUSD", "USDJPY", "BTCUSD"}
 
@@ -68,6 +70,16 @@ def cci(df, period=14):
     return (tp - sma) / (0.015 * mad)
 
 
+def stochastic(df, k_period=14, k_smooth=3, d_period=3):
+    """Полный (slow) стохастик (14,3,3) — конвенция, не параметр для перебора."""
+    low_n = df["low"].rolling(k_period).min()
+    high_n = df["high"].rolling(k_period).max()
+    raw_k = 100 * (df["close"] - low_n) / (high_n - low_n)
+    k = raw_k.rolling(k_smooth).mean()
+    d = k.rolling(d_period).mean()
+    return k, d
+
+
 def add_indicators(df):
     df = df.copy()
     close = df["close"]
@@ -83,6 +95,14 @@ def add_indicators(df):
     bb_std = close.rolling(20).std()
     df["bb_upper"] = df["bb_mid"] + 2 * bb_std
     df["bb_lower"] = df["bb_mid"] - 2 * bb_std
+    # моментум на трёх горизонтах (~1, ~3, ~6 месяцев торговых дней) — конвенция
+    # time-series momentum (Moskowitz/Ooi/Pedersen), периоды не перебираются,
+    # как и периоды EMA/Bollinger. Используется только системой A_ensemble.
+    df["mom21"] = close.pct_change(21)
+    df["mom63"] = close.pct_change(63)
+    df["mom126"] = close.pct_change(126)
+    # Стохастик (14,3,3) — используется системой C
+    df["stoch_k"], df["stoch_d"] = stochastic(df)
     return df
 
 
@@ -103,7 +123,12 @@ def backtest_system_a(data, adx_threshold):
                             "stop": init_stop, "orig_stop": init_stop}
         elif position is not None:
             rowj = d.iloc[i]
-            position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+            # Стоп проверяется ПРОТИВ уровня, известного ДО сегодняшней сессии
+            # (EMA50 вчерашнего дня), обновляется сегодняшним EMA50 только если
+            # сегодня не выбило — иначе тот же same-bar lookahead, что нашли в
+            # System F (15.08.2026): стоп, посчитанный ПО сегодняшнему close,
+            # физически не мог существовать до конца сегодняшней сессии, и
+            # проверять против него сегодняшний low — использовать данные наперёд.
             exit_price, reason = None, None
             if rowj.low <= position["stop"]:
                 exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
@@ -120,6 +145,8 @@ def backtest_system_a(data, adx_threshold):
                 r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
                 trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
                 position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
     return pd.DataFrame(trades)
 
 
@@ -221,6 +248,289 @@ def backtest_system_b_bollinger(data, atr_mult):
             elif rowj.close >= rowj.bb_mid:
                 exit_price, reason = rowj.close, "bb_mid_touch"
             elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_a_relaxed(data, adx_threshold=25):
+    """Диагностика: система A БЕЗ условия MACD>0 — проверка гипотезы, что
+    конъюнкция из трёх условий (EMA-стек + ADX + MACD) сама по себе душит
+    частоту сигналов, и MACD>0 в основном избыточен, раз EMA-стек уже
+    подразумевает восходящий тренд. Фиксированный ADX=25 (боевой порог),
+    не пересобирается заново — меняется только само условие входа, одна
+    переменная за раз."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.ema20 > row.ema50 > row.ema200) and (row.adx14 >= adx_threshold)
+        cond_prev = (prev.ema20 > prev.ema50 > prev.ema200) and (prev.adx14 >= adx_threshold)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
+        elif position is not None:
+            rowj = d.iloc[i]
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026)
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close < rowj.ema50:
+                exit_price, reason = rowj.close, "ema50_close_below"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+    return pd.DataFrame(trades)
+
+
+def backtest_system_b_bollinger_relaxed(data, atr_mult=2.0):
+    """Диагностика: Bollinger-версия B БЕЗ условия ADX<20 — проверка, не
+    режет ли фильтр "нет сильного тренда" слишком много валидных откатов
+    внутри тренда. Фиксированный ATR-множитель 2.0 (боевой), меняется
+    только само условие входа."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        cond_now = (row.close > row.ema200) and (row.close < row.bb_lower)
+        cond_prev = (prev.close > prev.ema200) and (prev.close < prev.bb_lower)
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                position = {"entry_i": i + 1, "entry_price": entry_price,
+                            "stop": entry_price - atr_mult * row.atr14, "bars": 0}
+        elif position is not None:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close >= rowj.bb_mid:
+                exit_price, reason = rowj.close, "bb_mid_touch"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_a_ensemble(data, agree_threshold):
+    """A_ensemble — CTA-практика мульти-горизонтного момента вместо одного
+    ADX-порога (расширенное исследование стратегий, 13.08.2026): согласие
+    нескольких lookback-периодов
+    (1/3/6 месяцев) вместо единственного условия EMA-стек+ADX+MACD. Не
+    модификация системы A, а отдельная диагностическая система — сравнивается
+    с A/A_relaxed, не заменяет их автоматически.
+
+    Вход: не менее agree_threshold из 3 горизонтов момента (mom21/63/126)
+    положительны — сессия перехода состояния (вчера условие было ложно,
+    сегодня истинно), та же логика транзиции, что и везде в проекте.
+    agree_threshold=2 — большинство (мягче, больше сигналов), 3 — единогласие
+    (жёстче). Сетка из двух точек — одно измерение, не переоптимизация.
+
+    Стоп и логика выхода идентичны системе A (EMA50-1%, трейлинг, R считается
+    от стопа на момент входа) — чтобы поменялась именно сигнальная логика
+    входа, а не риск-механика, иначе сравнение с A/A_relaxed теряет смысл."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        agree_now = sum([row.mom21 > 0, row.mom63 > 0, row.mom126 > 0])
+        agree_prev = sum([prev.mom21 > 0, prev.mom63 > 0, prev.mom126 > 0])
+        cond_now = agree_now >= agree_threshold
+        cond_prev = agree_prev >= agree_threshold
+        if position is None and cond_now and not cond_prev:
+            if i + 1 < len(d):
+                init_stop = row.ema50 * 0.99
+                position = {"entry_i": i + 1, "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop}
+        elif position is not None:
+            rowj = d.iloc[i]
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026)
+            agree_j = sum([rowj.mom21 > 0, rowj.mom63 > 0, rowj.mom126 > 0])
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif agree_j < agree_threshold:
+                exit_price, reason = rowj.close, "momentum_consensus_broken"
+            if reason:
+                ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason})
+                position = None
+            else:
+                position["stop"] = max(position["stop"], rowj.ema50 * 0.99)
+    return pd.DataFrame(trades)
+
+
+def backtest_system_c(data, ema_period):
+    """Система C — EMA-тренд + касание EMA как S/R + Стохастик, LONG И SHORT
+    (первая двунаправленная система в проекте; A/B — только long). Решения
+    пользователя в диалоге 13.08.2026:
+    - Направление: EMA20 > EMA50 → ищем LONG, EMA20 < EMA50 → ищем SHORT.
+    - Касание (grid EMA_TOUCH_GRID={20,50}, какая EMA — линия входа): в лонге
+      low ≤ EMA ≤ close (цена коснулась/пробила EMA внутри дня, закрылась
+      выше — отскок подтверждён закрытием); в шорте зеркально
+      high ≥ EMA ≥ close.
+    - Подтверждение: Стохастик (14,3,3, конвенция, не перебирается) —
+      пересечение %K/%D в зоне разворота. Лонг: оба были <20 накануне,
+      %K пересекает %D снизу вверх. Шорт: оба были >80 накануне, %K
+      пересекает %D сверху вниз.
+    - Стоп: та же EMA, что дала сигнал, ∓1% буфер, трейлинг только в пользу
+      сделки (как система A). Выход: стоп ИЛИ close ушёл против тренда за
+      EMA. R — от стопа на момент входа (защита от бага 5.7)."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        if position is None:
+            ema_col = f"ema{ema_period}"
+            trend_up = row.ema20 > row.ema50
+            trend_down = row.ema20 < row.ema50
+            touch_long = row.low <= row[ema_col] <= row.close
+            touch_short = row.high >= row[ema_col] >= row.close
+            stoch_cross_up = (prev.stoch_k <= prev.stoch_d and row.stoch_k > row.stoch_d
+                               and prev.stoch_k < 20 and prev.stoch_d < 20)
+            stoch_cross_down = (prev.stoch_k >= prev.stoch_d and row.stoch_k < row.stoch_d
+                                 and prev.stoch_k > 80 and prev.stoch_d > 80)
+            if i + 1 < len(d) and trend_up and touch_long and stoch_cross_up:
+                init_stop = row[ema_col] * 0.99
+                position = {"side": "long", "entry_price": d.iloc[i + 1].open,
+                            "stop": init_stop, "orig_stop": init_stop, "ema_col": ema_col}
+            elif i + 1 < len(d) and trend_down and touch_short and stoch_cross_down:
+                init_stop = row[ema_col] * 1.01
+                position = {"side": "short", "entry_price": d.iloc[i + 1].open,
+                             "stop": init_stop, "orig_stop": init_stop, "ema_col": ema_col}
+        else:
+            # см. фикс same-bar lookahead в backtest_system_a (15.08.2026): проверяем
+            # против стопа, известного ДО сегодняшней сессии, обновляем сегодняшним
+            # EMA только если сегодня не выбило.
+            rowj = d.iloc[i]
+            ema_col = position["ema_col"]
+            exit_price, reason = None, None
+            if position["side"] == "long":
+                if rowj.low <= position["stop"]:
+                    exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                    reason = "stop"
+                elif rowj.close < rowj[ema_col]:
+                    exit_price, reason = rowj.close, "ema_close_below"
+                if reason:
+                    ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
+                    risk_pct = (position["entry_price"] - position["orig_stop"]) / position["entry_price"] * 100
+                else:
+                    position["stop"] = max(position["stop"], rowj[ema_col] * 0.99)
+            else:
+                if rowj.high >= position["stop"]:
+                    exit_price = rowj.open if rowj.open > position["stop"] else position["stop"]
+                    reason = "stop"
+                elif rowj.close > rowj[ema_col]:
+                    exit_price, reason = rowj.close, "ema_close_above"
+                if reason:
+                    ret_pct = (position["entry_price"] - exit_price) / position["entry_price"] * 100
+                    risk_pct = (position["orig_stop"] - position["entry_price"]) / position["entry_price"] * 100
+                else:
+                    position["stop"] = min(position["stop"], rowj[ema_col] * 1.01)
+                    risk_pct = (position["orig_stop"] - position["entry_price"]) / position["entry_price"] * 100
+            if reason:
+                r_mult = ret_pct / risk_pct if risk_pct > 0 else np.nan
+                trades.append({"ret_pct": ret_pct, "r_mult": r_mult, "reason": reason, "side": position["side"]})
+                position = None
+    return pd.DataFrame(trades)
+
+
+def backtest_system_c_long(data, adx_max=20.0, touch_depth_max=1.0, atr_mult=2.0, time_stop=20):
+    """C_long_v2 — по итогам диагностики системы C (13.08.2026, диалог с
+    пользователем, только LONG-сторона). Диагностика показала: 62% сделок
+    исходной версии закрывались за 1-7 баров с win rate 4-8% (whipsaw от
+    EMA-трейлинга), тогда как сделки, дожившие до 16+ баров, — win rate 89%.
+    Четыре правки по этой диагностике, каждая — явное решение пользователя:
+
+    1. Только EMA20 как линия входа (EMA50 эмпирически хуже: mean R −0.13
+       против +0.16 у EMA20 на исходной версии).
+    2в. ATR-стоп (2.0×ATR14 — тот же множитель, что «боевая» B, не подгонка
+        под эту диагностику) вместо EMA-трейлинга — фиксируется на входе, не
+        подтягивается. Смягчает выход, чтобы позиция не выбивалась
+        однодневным шумом.
+    3в. Фильтр ADX<20 на входе — вопреки интуиции «сильный тренд — хорошо»,
+        диагностика показала обратное (ADX 11-16: win rate 45%; ADX 24-43:
+        win rate 19%) — высокий ADX на откате чаще ловил истощение движения,
+        а не паузу. Порог 20 — существующая конвенция проекта (нижняя
+        граница ADX_GRID), а не подогнанное под квартили значение.
+    4. Фильтр глубины касания <1.0% от цены — глубокий пробой ниже EMA20
+       (Q4 диагностики) был хуже мелкого отскока (Q1). Порог округлён до
+       1.0%, НЕ взят точно по границе квартиля (медиана диагностической
+       выборки была 0.63%) — иначе это переобучение на тех же сделках,
+       на которых сделан вывод, а не независимая проверка.
+
+    Выход: стоп, ИЛИ close < EMA50 (медленная EMA, НЕ та, что дала сигнал —
+    менее чувствительна к однодневному шуму, чем выход по EMA20 в исходной
+    версии), ИЛИ тайм-стоп (не менялся у B, здесь применён по аналогии).
+
+    Ослабление входа (13.08.2026, диалог) — первая попытка (оба ниже 20 в
+    ДЕНЬ КАСАНИЯ) дала ещё меньше сделок (28), чем исходная версия с точным
+    пересечением (65): день отскока от EMA обычно сам толкает стохастик
+    вверх, так что «оба ещё ниже 20» в момент отскока — редкое совпадение,
+    более жёсткое, чем требование пересечения. Исправлено: перепроданность
+    проверяется на ВЧЕРАШНЕМ дне (до отскока), а не на дне касания —
+    убрано только требование ТОЧНОГО пересечения %K/%D, привязка к
+    "вчера" сохранена как в исходной версии. Транзишн-логика (сессия
+    ПЕРЕХОДА состояния) сохранена на всей конъюнкции целиком — та же
+    дисциплина, что и везде в проекте."""
+    trades = []
+    position = None
+    d = data.reset_index(drop=True)
+
+    def entry_cond(j):
+        if j < 1:
+            return False
+        r, p = d.iloc[j], d.iloc[j - 1]
+        trend_up = r.ema20 > r.ema50
+        touch_long = r.low <= r.ema20 <= r.close
+        touch_depth = (r.ema20 - r.low) / r.close * 100 if touch_long else np.nan
+        oversold_prev = p.stoch_k < 20 and p.stoch_d < 20
+        return trend_up and touch_long and oversold_prev and r.adx14 < adx_max and touch_depth < touch_depth_max
+
+    for i in range(2, len(d)):
+        row = d.iloc[i]
+        if position is None:
+            if i + 1 < len(d) and entry_cond(i) and not entry_cond(i - 1):
+                entry_price = d.iloc[i + 1].open
+                stop = entry_price - atr_mult * row.atr14
+                position = {"entry_price": entry_price, "stop": stop, "bars": 0}
+        else:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif rowj.close < rowj.ema50:
+                exit_price, reason = rowj.close, "ema50_close_below"
+            elif position["bars"] >= time_stop:
                 exit_price, reason = rowj.close, "time_stop"
             if reason:
                 ret_pct = (exit_price - position["entry_price"]) / position["entry_price"] * 100
@@ -339,6 +649,40 @@ def main():
                                  "param": param, "window": window_name,
                                  "period": period_name, **stats})
                     add_to_pool(("B_bollinger", param, period_name), symbol, trades)
+            param = "no_macd_filter"
+            for period_name, data in [("train", train), ("test", test)]:
+                trades = backtest_system_a_relaxed(data)
+                stats = summarize(trades)
+                rows.append({"symbol": symbol, "live_list": is_live, "system": "A_relaxed",
+                             "param": param, "window": window_name,
+                             "period": period_name, **stats})
+                add_to_pool(("A_relaxed", param, period_name), symbol, trades)
+            param = "no_adx_filter"
+            for period_name, data in [("train", train), ("test", test)]:
+                trades = backtest_system_b_bollinger_relaxed(data)
+                stats = summarize(trades)
+                rows.append({"symbol": symbol, "live_list": is_live, "system": "B_bollinger_relaxed",
+                             "param": param, "window": window_name,
+                             "period": period_name, **stats})
+                add_to_pool(("B_bollinger_relaxed", param, period_name), symbol, trades)
+            for agree_th in AGREE_GRID:
+                param = f"agree>={agree_th}/3"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_a_ensemble(data, agree_th)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "A_ensemble",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("A_ensemble", param, period_name), symbol, trades)
+            for ema_period in EMA_TOUCH_GRID:
+                param = f"ema{ema_period}_touch"
+                for period_name, data in [("train", train), ("test", test)]:
+                    trades = backtest_system_c(data, ema_period)
+                    stats = summarize(trades)
+                    rows.append({"symbol": symbol, "live_list": is_live, "system": "C",
+                                 "param": param, "window": window_name,
+                                 "period": period_name, **stats})
+                    add_to_pool(("C", param, period_name), symbol, trades)
 
     report = pd.DataFrame(rows)
     report.to_csv(os.path.join(RESULTS_DIR, "backtest_report.csv"), index=False)

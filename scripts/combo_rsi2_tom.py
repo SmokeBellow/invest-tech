@@ -1,0 +1,356 @@
+"""
+Четыре варианта совместной работы System RSI2 (<10) и System TOM (offset=5)
+на live-8, последние ~10 лет (фикс. старт 2016, без переноса капитала с
+более ранних лет):
+
+A) "force_all"     — при каждом новом сигнале TOM ПРИНУДИТЕЛЬНО закрываются
+                      ВСЕ открытые позиции RSI2 (реализуем текущий P&L как
+                      есть, в плюс или в минус), чтобы TOM могла зайти всем
+                      освободившимся капиталом.
+B) "force_profit"  — закрываем открытые позиции RSI2 перед входом TOM,
+                      ТОЛЬКО если они СЕЙЧАС в плюсе (незафиксированный P&L
+                      положителен на день ДО сигнала TOM); убыточные не
+                      трогаем, TOM входит только на то, что реально
+                      освободилось.
+C) "leftover_only" — TOM НЕ форсирует ничего, конкурирует за уже свободный
+                      риск-бюджет наравне с RSI2 (простой общий пул).
+D) "split_50_50"   — раздельные портфели: $500 отдельно System RSI2,
+                      $500 отдельно System TOM, независимо друг от друга,
+                      суммируются в конце. Контрольная группа — показывает,
+                      что объединённый риск-бюджет (A/B/C) даёт больше, чем
+                      простое разделение капитала пополам.
+
+Для варианта B нужен day-by-day mark-to-market открытых позиций RSI2 —
+отдельный, более детальный симулятор, чем в equity_ibs_rsi2.py (там нет
+трекинга незафиксированного P&L).
+
+Риск-механика проекта не меняется: 1% риска на сделку от ТЕКУЩЕГО капитала,
+потолок открытого риска 4%, макс. 5 позиций (на практике 4, см. CLAUDE.md
+про недогруженный бюджет). Приоритет в день конфликта (A/B/C): TOM забирает
+освободившееся место первой (это и есть цель принудительного закрытия),
+затем RSI2 занимает оставшееся.
+
+Запуск: python scripts/combo_rsi2_tom.py [--start-year YYYY]
+Выход: results/combo_rsi2_tom_summary.md, results/combo_{mode}.csv
+"""
+import argparse
+import heapq
+import os
+
+import numpy as np
+import pandas as pd
+
+import backtest as bt
+from system_ibs_rsi2 import add_extra_indicators
+from system_tom import backtest_system_tom  # noqa: F401 (для справки/консистентности)
+
+DATA_DIR = "data"
+RESULTS_DIR = "results"
+
+START_CAPITAL = 1000.0
+RISK_PER_TRADE = 0.01
+MAX_OPEN_RISK = 0.08  # пересмотрено 15.08.2026: сетка 2-20% показала, что 4% сдерживало
+                       # доходность именно в дни кластеризации сигналов TOM (конец месяца),
+                       # 8% — точка, где эффект в основном насыщается (см. CLAUDE.md)
+MAX_POSITIONS = 10    # поднято вместе с MAX_OPEN_RISK, чтобы не стать связывающим раньше него
+RSI2_THRESHOLD = 10
+TOM_OFFSET = 5
+
+
+def gen_rsi2_trades(d, symbol):
+    """Та же логика, что backtest_system_rsi2 (system_ibs_rsi2.py), но с
+    entry_price/stop/датами — нужно для mark-to-market открытых позиций."""
+    trades = []
+    position = None
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        if position is None:
+            cond_now = (row.close > row.ema200) and (row.rsi2 < RSI2_THRESHOLD)
+            cond_prev = (prev.close > prev.ema200) and (prev.rsi2 < RSI2_THRESHOLD)
+            if cond_now and not cond_prev and i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                stop = entry_price - 2.0 * row.atr14
+                if not np.isnan(stop) and stop < entry_price:
+                    position = {"symbol": symbol, "entry_date": d.iloc[i + 1].date,
+                                "entry_price": entry_price, "stop": stop, "bars": 0}
+        else:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif prev.close <= prev.sma5 and rowj.close > rowj.sma5:
+                exit_price, reason = rowj.close, "sma5_cross"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                position["exit_date"] = rowj.date
+                position["exit_price"] = exit_price
+                position["reason"] = reason
+                trades.append(position)
+                position = None
+    return trades
+
+
+def gen_tom_trades(d, symbol):
+    """offset=5 (боевой параметр TOM), с деталями входа/выхода."""
+    d = d.reset_index(drop=True)
+    d["month"] = d["date"].dt.to_period("M")
+    months = d["month"].unique()
+    trades = []
+    for i in range(len(months) - 1):
+        month_rows = d.index[d["month"] == months[i]]
+        if len(month_rows) < TOM_OFFSET:
+            continue
+        last_idx = month_rows[-1]
+        entry_idx = last_idx - (TOM_OFFSET - 1)
+        if entry_idx < 0:
+            continue
+        next_month_rows = d.index[d["month"] == months[i + 1]]
+        if len(next_month_rows) < 3:
+            continue
+        exit_idx = next_month_rows[2]
+        if entry_idx >= len(d) or exit_idx >= len(d) or exit_idx <= entry_idx:
+            continue
+        if entry_idx < 1:
+            continue
+        entry_row = d.iloc[entry_idx]
+        entry_price = entry_row["open"]
+        # ATR с ДНЯ ДО входа, не с самого дня входа — см. system_tom.py,
+        # исправлено 17.08.2026 (та же конвенция, что RSI2/B в этом проекте).
+        atr = d.iloc[entry_idx - 1]["atr14"]
+        if np.isnan(atr) or np.isnan(entry_price):
+            continue
+        stop = entry_price - 2.0 * atr
+        if stop >= entry_price:
+            continue
+        exit_price, reason = None, None
+        for j in range(entry_idx, exit_idx + 1):
+            rowj = d.iloc[j]
+            if rowj["low"] <= stop:
+                exit_price = rowj["open"] if rowj["open"] < stop else stop
+                reason = "stop"
+                break
+        if reason is None:
+            exit_price = d.iloc[exit_idx]["close"]
+            reason = "scheduled_exit"
+        trades.append({"symbol": symbol, "entry_date": entry_row["date"], "entry_price": entry_price,
+                        "stop": stop, "exit_date": d.iloc[exit_idx]["date"], "exit_price": exit_price,
+                        "reason": reason})
+    return trades
+
+
+def r_mult_of(pos, price):
+    return (price - pos["entry_price"]) / (pos["entry_price"] - pos["stop"])
+
+
+def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL):
+    """mode: 'force_all' | 'force_profit' | 'leftover_only' — один общий
+    капитал и риск-бюджет на обе системы."""
+    all_dates = sorted(set(t["entry_date"] for t in rsi2_trades + tom_trades) |
+                        set(t["exit_date"] for t in rsi2_trades + tom_trades))
+    rsi2_by_entry = {}
+    for t in rsi2_trades:
+        rsi2_by_entry.setdefault(t["entry_date"], []).append(t)
+    tom_by_entry = {}
+    for t in tom_trades:
+        tom_by_entry.setdefault(t["entry_date"], []).append(t)
+
+    equity = start_capital
+    open_positions = []
+    curve = []
+    taken = {"rsi2": 0, "tom": 0}
+    skipped = {"rsi2": 0, "tom": 0}
+    forced_closes = 0
+
+    def n_open():
+        return len(open_positions)
+
+    def open_risk():
+        return len(open_positions) * RISK_PER_TRADE
+
+    def can_admit():
+        return open_risk() + RISK_PER_TRADE <= MAX_OPEN_RISK + 1e-9 and n_open() < MAX_POSITIONS
+
+    def close_position(pos, price, date):
+        nonlocal equity
+        r_mult = r_mult_of(pos, price)
+        equity += r_mult * pos["risked_dollars"]
+        curve.append((date, equity))
+
+    for date in all_dates:
+        # 1) натуральные закрытия на сегодня
+        still_open = []
+        for pos in open_positions:
+            if pos["exit_date"] == date:
+                close_position(pos, pos["exit_price"], date)
+            else:
+                still_open.append(pos)
+        open_positions = still_open
+
+        # 2) если сегодня TOM хочет войти — освобождаем капитал по правилу mode
+        todays_tom = tom_by_entry.get(date, [])
+        if todays_tom and mode in ("force_all", "force_profit"):
+            still_open = []
+            for pos in open_positions:
+                if pos["type"] != "rsi2":
+                    still_open.append(pos)
+                    continue
+                mtm_price = close_lookup[pos["symbol"]].asof(date - pd.Timedelta(days=1))
+                if pd.isna(mtm_price):
+                    still_open.append(pos)
+                    continue
+                mtm_r = r_mult_of(pos, mtm_price)
+                should_force = (mode == "force_all") or (mode == "force_profit" and mtm_r > 0)
+                if should_force:
+                    close_position(pos, mtm_price, date)
+                    forced_closes += 1
+                else:
+                    still_open.append(pos)
+            open_positions = still_open
+
+        # 3) впускаем TOM-сделки на сегодня (приоритет — освобождали именно под них)
+        for t in todays_tom:
+            if can_admit():
+                risked = RISK_PER_TRADE * equity
+                open_positions.append({"type": "tom", "symbol": t["symbol"], "entry_price": t["entry_price"],
+                                        "stop": t["stop"], "exit_date": t["exit_date"], "exit_price": t["exit_price"],
+                                        "risked_dollars": risked})
+                taken["tom"] += 1
+            else:
+                skipped["tom"] += 1
+
+        # 4) впускаем RSI2-сделки на сегодня (из оставшегося бюджета)
+        for t in rsi2_by_entry.get(date, []):
+            if can_admit():
+                risked = RISK_PER_TRADE * equity
+                open_positions.append({"type": "rsi2", "symbol": t["symbol"], "entry_price": t["entry_price"],
+                                        "stop": t["stop"], "exit_date": t["exit_date"], "exit_price": t["exit_price"],
+                                        "risked_dollars": risked})
+                taken["rsi2"] += 1
+            else:
+                skipped["rsi2"] += 1
+
+        # 5) редкий случай: сделка открылась и закрылась В ТОТ ЖЕ ДЕНЬ (напр.
+        # SMA5-пересечение уже на дне входа) — шаг 1 её не увидел, т.к. её ещё
+        # не существовало на момент обработки закрытий; закрываем сразу же,
+        # иначе позиция "зависнет" открытой навсегда.
+        still_open = []
+        for pos in open_positions:
+            if pos["exit_date"] == date:
+                close_position(pos, pos["exit_price"], date)
+            else:
+                still_open.append(pos)
+        open_positions = still_open
+
+    return curve, equity, taken, skipped, forced_closes
+
+
+def simulate_independent(trades, start_capital):
+    """Один независимый портфель (для варианта D — раздельные $500/$500)."""
+    trades = sorted(trades, key=lambda t: t["entry_date"])
+    equity = start_capital
+    open_heap = []
+    open_risk = 0.0
+    curve = [(trades[0]["entry_date"] if trades else None, equity)]
+    taken, skipped = 0, 0
+
+    def flush_until(cutoff_date):
+        nonlocal equity, open_risk
+        while open_heap and open_heap[0][0] <= cutoff_date:
+            exit_date, risked, r_mult = heapq.heappop(open_heap)
+            equity += r_mult * risked
+            open_risk -= RISK_PER_TRADE
+            curve.append((exit_date, equity))
+
+    for t in trades:
+        flush_until(t["entry_date"])
+        if open_risk + RISK_PER_TRADE > MAX_OPEN_RISK + 1e-9 or len(open_heap) >= MAX_POSITIONS:
+            skipped += 1
+            continue
+        r_mult = r_mult_of(t, t["exit_price"])
+        risked = RISK_PER_TRADE * equity
+        heapq.heappush(open_heap, (t["exit_date"], risked, r_mult))
+        open_risk += RISK_PER_TRADE
+        taken += 1
+    while open_heap:
+        exit_date, risked, r_mult = heapq.heappop(open_heap)
+        equity += r_mult * risked
+        curve.append((exit_date, equity))
+    return curve, equity, taken, skipped
+
+
+def annual_returns(curve, start_capital=START_CAPITAL):
+    if not curve:
+        return pd.DataFrame()
+    df = pd.DataFrame([c for c in curve if c[0] is not None], columns=["date", "equity"])
+    if df.empty:
+        return pd.DataFrame()
+    df["year"] = df.date.apply(lambda d: d.year)
+    yearly = df.groupby("year")["equity"].last().reset_index()
+    yearly["equity_prev"] = yearly["equity"].shift(1).fillna(start_capital)
+    yearly["return_pct"] = (yearly["equity"] / yearly["equity_prev"] - 1) * 100
+    return yearly
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--start-year", type=int, default=2016)
+    args = parser.parse_args()
+    os.makedirs(RESULTS_DIR, exist_ok=True)
+    start_date = pd.Timestamp(f"{args.start_year}-01-01")
+
+    dfs, close_lookup = {}, {}
+    for symbol in sorted(bt.LIVE_INSTRUMENTS):
+        raw = pd.read_csv(os.path.join(DATA_DIR, f"{symbol}.csv"), parse_dates=["date"]).sort_values("date")
+        d = bt.add_indicators(raw)
+        d = add_extra_indicators(d)
+        d = d.iloc[60:].reset_index(drop=True)
+        dfs[symbol] = d
+        close_lookup[symbol] = raw.set_index("date")["close"].sort_index()
+
+    all_rsi2, all_tom = [], []
+    for symbol, d in dfs.items():
+        all_rsi2.extend([t for t in gen_rsi2_trades(d, symbol) if t["entry_date"] >= start_date])
+        all_tom.extend([t for t in gen_tom_trades(d, symbol) if t["entry_date"] >= start_date])
+
+    summary = [f"# RSI2 + TOM combined portfolio variants ({args.start_year}-2026, live-8, $1000 старт)\n"]
+    for mode, label in [("force_all", "A: TOM закрывает ВСЕ открытые RSI2"),
+                         ("force_profit", "B: TOM закрывает RSI2 только В ПЛЮСЕ"),
+                         ("leftover_only", "C: TOM входит только на остаток бюджета")]:
+        curve, final_equity, taken, skipped, forced = simulate_shared(all_rsi2, all_tom, close_lookup, mode)
+        yearly = annual_returns(curve)
+        yearly.to_csv(os.path.join(RESULTS_DIR, f"combo_{mode}.csv"), index=False)
+        summary.append(f"## {label}\n\nИтог: ${final_equity:.2f} ({(final_equity/START_CAPITAL-1)*100:+.1f}%), "
+                        f"взято RSI2/TOM={taken['rsi2']}/{taken['tom']}, "
+                        f"пропущено RSI2/TOM={skipped['rsi2']}/{skipped['tom']}, "
+                        f"принудительных закрытий={forced}\n")
+        summary.append(yearly.to_markdown(index=False) + "\n")
+
+    # D: раздельные портфели $500/$500
+    half = START_CAPITAL / 2
+    curve_rsi2, eq_rsi2, taken_rsi2, skipped_rsi2 = simulate_independent(all_rsi2, half)
+    curve_tom, eq_tom, taken_tom, skipped_tom = simulate_independent(all_tom, half)
+    yearly_rsi2 = annual_returns(curve_rsi2, half)
+    yearly_tom = annual_returns(curve_tom, half)
+    combined = yearly_rsi2.set_index("year")["equity"].add(yearly_tom.set_index("year")["equity"], fill_value=None)
+    combined_df = combined.reset_index()
+    combined_df.columns = ["year", "equity"]
+    combined_df["equity_prev"] = combined_df["equity"].shift(1).fillna(START_CAPITAL)
+    combined_df["return_pct"] = (combined_df["equity"] / combined_df["equity_prev"] - 1) * 100
+    combined_df.to_csv(os.path.join(RESULTS_DIR, "combo_split_50_50.csv"), index=False)
+    final_d = eq_rsi2 + eq_tom
+    summary.append(f"## D: раздельные портфели 50/50 (RSI2 ${half:.0f} + TOM ${half:.0f}, независимо)\n\n"
+                    f"Итог: ${final_d:.2f} ({(final_d/START_CAPITAL-1)*100:+.1f}%), "
+                    f"RSI2 взято/пропущено={taken_rsi2}/{skipped_rsi2}, "
+                    f"TOM взято/пропущено={taken_tom}/{skipped_tom}\n")
+    summary.append(combined_df.to_markdown(index=False) + "\n")
+
+    with open(os.path.join(RESULTS_DIR, "combo_rsi2_tom_summary.md"), "w") as f:
+        f.write("\n".join(summary))
+    print(f"Wrote results/combo_rsi2_tom_summary.md and results/combo_{{mode}}.csv")
+
+
+if __name__ == "__main__":
+    main()

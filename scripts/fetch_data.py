@@ -14,6 +14,13 @@ IWM, GLD — весь набор кроме SPY). Форекс и крипта �
 проблем, поэтому фоллбэк применяется только к kind == "equity". Если
 TIINGO_API_KEY не задан, тикеры, недоступные на FMP, просто помечаются
 FAILED, как раньше.
+
+Кэширование (13.08.2026): если data/{symbol}.csv уже существует, тикер
+пропускается — данные не перезабираются. Это не расписание "раз в день",
+а способ не тратить квоту FMP/Tiingo и время CI на инструменты, которые уже
+собраны и не изменятся (историческая цена не меняется задним числом).
+Чтобы обновить конкретный тикер (например, добить свежие бары) — удалить
+его data/{symbol}.csv перед запуском, остальные тикеры не тронутся.
 """
 
 import os
@@ -31,21 +38,51 @@ TIINGO_BASE_URL = "https://api.tiingo.com/tiingo/daily"
 # (symbol, тип, лет истории)
 # тип: "equity" | "forex" | "crypto" — влияет только на глубину истории здесь,
 # сам REST-запрос одинаковый для всех классов (просто другой формат symbol)
+#
+# Глубина истории для equity/forex расширена с 7 до 20 лет (12.08.2026) —
+# честный способ увеличить число walk-forward окон и статистическую мощность
+# без размытия торгуемого набора или ослабления входа (см. CLAUDE.md 5.1, 7).
+# Крипта оставлена на 4 годах — старая история (2018-2021) структурно
+# нерепрезентативна для сегодняшнего рынка, решение не пересматривается.
 INSTRUMENTS = [
     # живой список А/B
-    ("SPY", "equity", 7),
-    ("QQQ", "equity", 7),
-    ("EEM", "equity", 7),
-    ("TLT", "equity", 7),
-    ("XLE", "equity", 7),
-    ("EURUSD", "forex", 7),
-    ("USDJPY", "forex", 7),
+    ("SPY", "equity", 20),
+    ("QQQ", "equity", 20),
+    ("EEM", "equity", 20),
+    ("TLT", "equity", 20),
+    ("XLE", "equity", 20),
+    ("EURUSD", "forex", 20),
+    ("USDJPY", "forex", 20),
     ("BTCUSD", "crypto", 4),
     # исследовательский набор (+4, не входит в живую торговлю)
-    ("IWM", "equity", 7),
-    ("GBPUSD", "forex", 7),
+    ("IWM", "equity", 20),
+    ("GBPUSD", "forex", 20),
     ("ETHUSD", "crypto", 4),
-    ("GLD", "equity", 7),
+    ("GLD", "equity", 20),
+    # расширение вотч-листа для статистической мощности бэктеста (12.08.2026) —
+    # НЕ входит в живую торговлю, только пул сделок в backtest.py. Секторальные
+    # ETF и пары для диверсификации набора без изменения самой методологии.
+    ("XLF", "equity", 20),
+    ("XLK", "equity", 20),
+    ("XLV", "equity", 20),
+    ("DIA", "equity", 20),
+    ("VNQ", "equity", 20),
+    ("AUDUSD", "forex", 20),
+    ("USDCHF", "forex", 20),
+    # кросс-классовое расширение (13.08.2026) — предыдущее расширение (XLF..USDCHF)
+    # добавляло в основном ещё секторов акций и валютных пар, т.е. диверсификацию
+    # ВНУТРИ уже представленных классов (акции, FX). Академические работы по
+    # time-series momentum (Moskowitz/Ooi/Pedersen) тестируют край на портфеле из
+    # НЕСКОЛЬКИХ классов активов одновременно (акции, бонды, сырьё, валюты) — этого
+    # у нас не хватало. Добавлены бонды другой дюрации и сырьевые ETF, которых
+    # раньше не было вовсе (TLT — единственный бонд, GLD — единственное сырьё).
+    # НЕ входит в живую торговлю, только пул сделок в backtest.py.
+    ("IEF", "equity", 20),   # казначейские облигации США 7-10 лет
+    ("SHY", "equity", 20),   # казначейские облигации США 1-3 года
+    ("DBC", "equity", 20),   # широкий сырьевой индекс (не только золото)
+    ("USO", "equity", 20),   # нефть
+    ("EFA", "equity", 20),   # развитые рынки вне США
+    ("VGK", "equity", 20),   # Европа
 ]
 
 OUT_DIR = "data"
@@ -128,6 +165,16 @@ def fetch_tiingo_history(symbol: str, years: int) -> pd.DataFrame:
 def main():
     summary = []
     for symbol, kind, years in INSTRUMENTS:
+        out_path = os.path.join(OUT_DIR, f"{symbol}.csv")
+        if os.path.exists(out_path):
+            existing = pd.read_csv(out_path)
+            print(f"Skipping {symbol}: already have {len(existing)} rows "
+                  f"({existing.date.min()} .. {existing.date.max()}) in {out_path}. "
+                  f"Delete the file to force a re-fetch.")
+            summary.append((symbol, kind, len(existing), existing.date.min(),
+                             existing.date.max(), "cached", None))
+            continue
+
         print(f"Fetching {symbol} ({kind}, {years}y)...")
         source, error = "FMP", None
         try:
