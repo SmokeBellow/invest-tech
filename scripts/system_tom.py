@@ -68,9 +68,16 @@ def backtest_system_tom(data, offset_before):
         if entry_idx >= len(d) or exit_idx >= len(d) or exit_idx <= entry_idx:
             continue
 
+        if entry_idx < 1:
+            continue
         entry_row = d.iloc[entry_idx]
         entry_price = entry_row["open"]
-        atr = entry_row["atr14"]
+        # ATR берём с ДНЯ ДО входа (известен до открытия дня входа), не с
+        # самого дня входа — иначе стоп сайзится по TR дня, который на
+        # момент открытия ещё не завершился (same-bar паттерн, см. 5.9),
+        # та же конвенция, что и у RSI2/B (сигнальный день, не день входа).
+        # Исправлено 17.08.2026.
+        atr = d.iloc[entry_idx - 1]["atr14"]
         if np.isnan(atr) or np.isnan(entry_price):
             continue
         stop = entry_price - ATR_MULT * atr

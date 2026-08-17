@@ -25,7 +25,15 @@ START_CAPITAL = 1000.0
 PERMANENT_ASSETS = ["SPY", "TLT", "SHY", "GLD"]
 
 
-def permanent_portfolio(start_date):
+def permanent_portfolio_daily(start_date):
+    """Дневная кривая вечного портфеля с ФАКТИЧЕСКИМ ежегодным ребалансом.
+
+    Баг, исправленный 17.08.2026: раньше вся кривая строилась ОДНИМ проходом
+    по стартовым долям, а цикл ребаланса запускался ПОСЛЕ и пересчитывал
+    shares в пустоту — ни на что уже не влияя. Портфель фактически был
+    buy&hold от первой даты, несмотря на то что везде документирован как
+    "ребаланс раз в год". Правильно: пересчитывать доли ВНУТРИ прохода по
+    датам, сразу после последнего дня каждого года."""
     prices = {}
     for a in PERMANENT_ASSETS:
         df = pd.read_csv(os.path.join(DATA_DIR, f"{a}.csv"), parse_dates=["date"]).sort_values("date")
@@ -34,22 +42,26 @@ def permanent_portfolio(start_date):
 
     common_dates = pd.DatetimeIndex(sorted(set.intersection(*[set(p.index) for p in prices.values()])))
     first_date = common_dates[0]
-
     shares = {a: (START_CAPITAL / len(PERMANENT_ASSETS)) / prices[a].loc[first_date] for a in PERMANENT_ASSETS}
+    years = pd.Series(common_dates).dt.year
+    n = len(common_dates)
+
     curve = []
-    for d in common_dates:
+    for i, d in enumerate(common_dates):
         value = sum(shares[a] * prices[a].loc[d] for a in PERMANENT_ASSETS)
         curve.append((d, value))
+        is_last_of_year = (i == n - 1) or (years.iloc[i + 1] != years.iloc[i])
+        if is_last_of_year and i != n - 1:  # не ребалансируем на самом последнем дне истории
+            shares = {a: (value / len(PERMANENT_ASSETS)) / prices[a].loc[d] for a in PERMANENT_ASSETS}
 
-    by_year = pd.Series(common_dates).groupby(pd.Series(common_dates).dt.year)
-    for year, dates_in_year in by_year:
-        last_date = dates_in_year.iloc[-1]
-        if last_date == common_dates[-1]:
-            continue  # не ребалансируем на самом последнем дне истории
-        value = sum(shares[a] * prices[a].loc[last_date] for a in PERMANENT_ASSETS)
-        shares = {a: (value / len(PERMANENT_ASSETS)) / prices[a].loc[last_date] for a in PERMANENT_ASSETS}
+    curve_df = pd.DataFrame(curve, columns=["date", "equity"]).set_index("date")
+    return curve_df["equity"]
 
-    curve_df = pd.DataFrame(curve, columns=["date", "equity"])
+
+def permanent_portfolio(start_date):
+    daily = permanent_portfolio_daily(start_date)
+    curve_df = daily.reset_index()
+    curve_df.columns = ["date", "equity"]
     curve_df["year"] = curve_df.date.dt.year
     yearly = curve_df.groupby("year")["equity"].last().reset_index()
     yearly["equity_prev"] = yearly["equity"].shift(1).fillna(START_CAPITAL)

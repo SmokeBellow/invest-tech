@@ -11,6 +11,14 @@ SPY/TLT/SHY/GLD), ежегодный ребаланс между двумя до
 40% — на шаге 30%→40% курс обмена (доп. доходность за 1 доп.% просадки)
 всё ещё один из лучших (7.13), дальше он монотонно ухудшается.
 
+ИСПРАВЛЕНО 17.08.2026: (1) ежегодный ребаланс вечного портфеля был мёртвым
+кодом (кривая строилась ДО пересчёта долей) — теперь переиспользует
+исправленную `permanent_portfolio_daily` из benchmark_permanent_ofz.py;
+(2) System TOM сайзила стоп по ATR ДНЯ ВХОДА (same-bar), а не дня ДО входа —
+исправлено в combo_rsi2_tom.py; (3) точка отсчёта нормировки Комбо C больше
+не берётся bfill'ом из первой сделки. Все числа ниже и решение 40% требуют
+пересчёта — см. CLAUDE.md.
+
 Запуск: python scripts/blend_combo_permanent.py [--weight 0.4]
 Выход: results/blend_combo_permanent.csv (дневная кривая), печатает сводку.
 """
@@ -23,7 +31,7 @@ import pandas as pd
 import backtest as bt
 from system_ibs_rsi2 import add_extra_indicators
 from combo_rsi2_tom import gen_rsi2_trades, gen_tom_trades, simulate_shared
-from benchmark_permanent_ofz import PERMANENT_ASSETS
+from benchmark_permanent_ofz import permanent_portfolio_daily
 
 DATA_DIR = "data"
 RESULTS_DIR = "results"
@@ -48,35 +56,17 @@ def combo_c_curve(start_date, end_date):
     curve, _, _, _, _ = simulate_shared(all_rsi2, all_tom, close_lookup, "leftover_only")
     df = pd.DataFrame([c for c in curve if c[0] is not None], columns=["date", "equity"])
     df = df.drop_duplicates("date", keep="last").set_index("date").sort_index()
-    return df["equity"]
-
-
-def permanent_daily_curve(start_date):
-    prices = {}
-    for a in PERMANENT_ASSETS:
-        df = pd.read_csv(os.path.join(DATA_DIR, f"{a}.csv"), parse_dates=["date"]).sort_values("date")
-        df = df[df.date >= start_date].reset_index(drop=True)
-        prices[a] = df.set_index("date")["close"]
-    common_dates = pd.DatetimeIndex(sorted(set.intersection(*[set(p.index) for p in prices.values()])))
-    shares = {a: (START_CAPITAL / len(PERMANENT_ASSETS)) / prices[a].loc[common_dates[0]] for a in PERMANENT_ASSETS}
-    curve = []
-    for d in common_dates:
-        val = sum(shares[a] * prices[a].loc[d] for a in PERMANENT_ASSETS)
-        curve.append((d, val))
-    by_year = pd.Series(common_dates).groupby(pd.Series(common_dates).dt.year)
-    for year, dates_in_year in by_year:
-        last_date = dates_in_year.iloc[-1]
-        if last_date == common_dates[-1]:
-            continue
-        val = sum(shares[a] * prices[a].loc[last_date] for a in PERMANENT_ASSETS)
-        shares = {a: (val / len(PERMANENT_ASSETS)) / prices[a].loc[last_date] for a in PERMANENT_ASSETS}
-    df = pd.DataFrame(curve, columns=["date", "equity"]).set_index("date").sort_index()
+    # Явная точка (start_date, START_CAPITAL) ДО первой сделки — без неё
+    # reindex+bfill в blend() заполнял дни до первой сделки результатом ПОСЛЕ
+    # неё, искажая точку отсчёта нормировки (исправлено 17.08.2026).
+    if df.empty or df.index[0] > start_date:
+        df = pd.concat([pd.DataFrame({"equity": [START_CAPITAL]}, index=[start_date]), df])
     return df["equity"]
 
 
 def blend(weight, start_date, end_date):
     combo_s = combo_c_curve(start_date, end_date)
-    perm_s = permanent_daily_curve(start_date)
+    perm_s = permanent_portfolio_daily(start_date)
 
     all_days = pd.DatetimeIndex(sorted(set(combo_s.index) | set(perm_s.index)))
     combo_mult = combo_s.reindex(all_days).ffill().bfill()

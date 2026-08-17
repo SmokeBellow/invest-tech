@@ -113,9 +113,13 @@ def gen_tom_trades(d, symbol):
         exit_idx = next_month_rows[2]
         if entry_idx >= len(d) or exit_idx >= len(d) or exit_idx <= entry_idx:
             continue
+        if entry_idx < 1:
+            continue
         entry_row = d.iloc[entry_idx]
         entry_price = entry_row["open"]
-        atr = entry_row["atr14"]
+        # ATR с ДНЯ ДО входа, не с самого дня входа — см. system_tom.py,
+        # исправлено 17.08.2026 (та же конвенция, что RSI2/B в этом проекте).
+        atr = d.iloc[entry_idx - 1]["atr14"]
         if np.isnan(atr) or np.isnan(entry_price):
             continue
         stop = entry_price - 2.0 * atr
