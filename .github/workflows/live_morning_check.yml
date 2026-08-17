@@ -18,7 +18,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests pandas numpy
+        run: pip install requests pandas numpy scipy
 
       - name: Detect entry triggers (from last night's closed bars) and fetch today's open
         env:
