@@ -20,17 +20,6 @@ jobs:
       - name: Install dependencies
         run: pip install requests pandas numpy scipy
 
-      - name: DEBUG - one-off /quote reachability smoke test (remove after verifying)
-        env:
-          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
-        run: |
-          python -c "
-          import os, requests
-          r = requests.get('https://financialmodelingprep.com/stable/quote', params={'symbol': 'SPY', 'apikey': os.environ['FMP_API_KEY']}, timeout=30)
-          print('status:', r.status_code)
-          print('body:', r.text[:500])
-          "
-
       - name: Detect entry triggers (from last night's closed bars) and fetch today's open
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
