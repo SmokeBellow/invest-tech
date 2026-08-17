@@ -49,8 +49,10 @@ RESULTS_DIR = "results"
 
 START_CAPITAL = 1000.0
 RISK_PER_TRADE = 0.01
-MAX_OPEN_RISK = 0.04
-MAX_POSITIONS = 5
+MAX_OPEN_RISK = 0.08  # пересмотрено 15.08.2026: сетка 2-20% показала, что 4% сдерживало
+                       # доходность именно в дни кластеризации сигналов TOM (конец месяца),
+                       # 8% — точка, где эффект в основном насыщается (см. CLAUDE.md)
+MAX_POSITIONS = 10    # поднято вместе с MAX_OPEN_RISK, чтобы не стать связывающим раньше него
 RSI2_THRESHOLD = 10
 TOM_OFFSET = 5
 
