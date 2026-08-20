@@ -83,6 +83,11 @@ INSTRUMENTS = [
     ("USO", "equity", 20),   # нефть
     ("EFA", "equity", 20),   # развитые рынки вне США
     ("VGK", "equity", 20),   # Европа
+    # SGOV — долларовый аналог TMON для парковки свободного кэша (19.08.2026,
+    # см. CLAUDE.md §9): iShares 0-3 Month Treasury Bond ETF. Заявлено 20 лет
+    # истории, как у остальных equity, но фонд запущен только в мае 2020 —
+    # fetch_full_history просто вернёт то, что реально есть.
+    ("SGOV", "equity", 20),
 ]
 
 OUT_DIR = "data"

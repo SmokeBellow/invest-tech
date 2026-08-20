@@ -33,10 +33,11 @@ TIINGO_BASE_URL = "https://api.tiingo.com/tiingo/daily"
 OUT_DIR = "data"
 
 # (symbol, kind) — живые А/B инструменты + GLD/SHY для вечного портфеля внутри блендинга
+# + SGOV (19.08.2026) — парковка свободного кэша Комбо C, см. CLAUDE.md §9
 LIVE_FETCH_LIST = [
     ("SPY", "equity"), ("QQQ", "equity"), ("EEM", "equity"), ("TLT", "equity"), ("XLE", "equity"),
     ("EURUSD", "forex"), ("USDJPY", "forex"), ("BTCUSD", "crypto"),
-    ("GLD", "equity"), ("SHY", "equity"),
+    ("GLD", "equity"), ("SHY", "equity"), ("SGOV", "equity"),
 ]
 
 
