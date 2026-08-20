@@ -57,6 +57,15 @@ RSI2_THRESHOLD = 10
 TOM_OFFSET = 5
 
 
+def load_sgov_returns():
+    """Дневная доходность SGOV (парковка свободного кэша, см. §9 CLAUDE.md).
+    История с 28.05.2020 — до этой даты фонда не существовало, дни без
+    покрытия просто не приносят доходности (см. simulate_shared)."""
+    path = os.path.join(DATA_DIR, "SGOV.csv")
+    raw = pd.read_csv(path, parse_dates=["date"]).sort_values("date")
+    return raw.set_index("date")["close"].pct_change()
+
+
 def gen_rsi2_trades(d, symbol):
     """Та же логика, что backtest_system_rsi2 (system_ibs_rsi2.py), но с
     entry_price/stop/датами — нужно для mark-to-market открытых позиций."""
@@ -145,9 +154,23 @@ def r_mult_of(pos, price):
     return (price - pos["entry_price"]) / (pos["entry_price"] - pos["stop"])
 
 
-def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL):
+def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL,
+                     sgov_returns=None):
     """mode: 'force_all' | 'force_profit' | 'leftover_only' — один общий
-    капитал и риск-бюджет на обе системы."""
+    капитал и риск-бюджет на обе системы.
+
+    sgov_returns (добавлено 20.08.2026, см. CLAUDE.md §9): дневная доходность
+    SGOV (close.pct_change()), индексированная по дате. Если задана — капитал,
+    НЕ занятый под открытые позиции ("свободный кэш"), каждый день зарабатывает
+    эту доходность (аналог парковки в TMON для рублёвого портфеля). Занятый
+    капитал = сумма $-номинала открытых позиций, где номинал считается из уже
+    существующей формулы риск-сайзинга проекта (3.4 CLAUDE.md): номинал =
+    risked_dollars / дистанция_до_стопа_в_% — т.е. позиция с более тесным
+    стопом обходится дороже в $, с более широким — дешевле, ровно как и должно
+    быть при risk-based sizing. Кэш floor'ится на 0 (маржа/шорт не моделируются,
+    тот же известный пробел, что и остальные $-упрощения проекта, см. 3.4).
+    Если sgov_returns=None — поведение не меняется (для обратной совместимости
+    со старыми вызовами/результатами без парковки кэша)."""
     all_dates = sorted(set(t["entry_date"] for t in rsi2_trades + tom_trades) |
                         set(t["exit_date"] for t in rsi2_trades + tom_trades))
     rsi2_by_entry = {}
@@ -173,13 +196,43 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
     def can_admit():
         return open_risk() + RISK_PER_TRADE <= MAX_OPEN_RISK + 1e-9 and n_open() < MAX_POSITIONS
 
+    def position_notional(entry_price, stop, risked_dollars):
+        stop_dist_frac = (entry_price - stop) / entry_price
+        return risked_dollars / stop_dist_frac if stop_dist_frac > 1e-9 else risked_dollars
+
     def close_position(pos, price, date):
         nonlocal equity
         r_mult = r_mult_of(pos, price)
         equity += r_mult * pos["risked_dollars"]
         curve.append((date, equity))
 
-    for date in all_dates:
+    if sgov_returns is not None and all_dates:
+        # Календарь торговых дней — объединение дат ВСЕХ инструментов
+        # (close_lookup), не только sgov_returns.index: история SGOV
+        # начинается только с 28.05.2020, а торговля живёт с более раннего
+        # start_date (по умолчанию 2016) — если бы календарь брался из
+        # sgov_returns, дни/сделки ДО запуска SGOV тихо выпали бы из цикла.
+        # До 2020 кэш просто не зарабатывает ничего (sgov_returns.get даёт 0
+        # для отсутствующих дат) — это и есть корректное поведение, фонда
+        # тогда не существовало.
+        full_calendar = set()
+        for series in close_lookup.values():
+            full_calendar.update(series.index)
+        loop_dates = sorted(d for d in full_calendar if all_dates[0] <= d <= all_dates[-1])
+    else:
+        loop_dates = all_dates
+
+    for date in loop_dates:
+        # 0) доходность SGOV на кэш, НЕ занятый под открытые с вчера позиции
+        # (номинал считается по цене/стопу на момент входа — не переоценивается
+        # день в день, тот же принцип, что и risked_dollars в остальном движке)
+        if sgov_returns is not None:
+            invested_notional = sum(pos["notional"] for pos in open_positions)
+            cash = max(0.0, equity - invested_notional)
+            day_ret = sgov_returns.get(date, 0.0)
+            if cash > 0 and not pd.isna(day_ret):
+                equity += cash * day_ret
+
         # 1) натуральные закрытия на сегодня
         still_open = []
         for pos in open_positions:
@@ -216,7 +269,8 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
                 risked = RISK_PER_TRADE * equity
                 open_positions.append({"type": "tom", "symbol": t["symbol"], "entry_price": t["entry_price"],
                                         "stop": t["stop"], "exit_date": t["exit_date"], "exit_price": t["exit_price"],
-                                        "risked_dollars": risked})
+                                        "risked_dollars": risked,
+                                        "notional": position_notional(t["entry_price"], t["stop"], risked)})
                 taken["tom"] += 1
             else:
                 skipped["tom"] += 1
@@ -227,7 +281,8 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
                 risked = RISK_PER_TRADE * equity
                 open_positions.append({"type": "rsi2", "symbol": t["symbol"], "entry_price": t["entry_price"],
                                         "stop": t["stop"], "exit_date": t["exit_date"], "exit_price": t["exit_price"],
-                                        "risked_dollars": risked})
+                                        "risked_dollars": risked,
+                                        "notional": position_notional(t["entry_price"], t["stop"], risked)})
                 taken["rsi2"] += 1
             else:
                 skipped["rsi2"] += 1
@@ -315,11 +370,16 @@ def main():
         all_rsi2.extend([t for t in gen_rsi2_trades(d, symbol) if t["entry_date"] >= start_date])
         all_tom.extend([t for t in gen_tom_trades(d, symbol) if t["entry_date"] >= start_date])
 
-    summary = [f"# RSI2 + TOM combined portfolio variants ({args.start_year}-2026, live-8, $1000 старт)\n"]
+    sgov_returns = load_sgov_returns()
+
+    summary = [f"# RSI2 + TOM combined portfolio variants ({args.start_year}-2026, live-8, $1000 старт)\n",
+               "Свободный кэш (не занятый под открытые позиции) парковка в SGOV, "
+               "см. CLAUDE.md §9 (добавлено 20.08.2026).\n"]
     for mode, label in [("force_all", "A: TOM закрывает ВСЕ открытые RSI2"),
                          ("force_profit", "B: TOM закрывает RSI2 только В ПЛЮСЕ"),
                          ("leftover_only", "C: TOM входит только на остаток бюджета")]:
-        curve, final_equity, taken, skipped, forced = simulate_shared(all_rsi2, all_tom, close_lookup, mode)
+        curve, final_equity, taken, skipped, forced = simulate_shared(all_rsi2, all_tom, close_lookup, mode,
+                                                                        sgov_returns=sgov_returns)
         yearly = annual_returns(curve)
         yearly.to_csv(os.path.join(RESULTS_DIR, f"combo_{mode}.csv"), index=False)
         summary.append(f"## {label}\n\nИтог: ${final_equity:.2f} ({(final_equity/START_CAPITAL-1)*100:+.1f}%), "
