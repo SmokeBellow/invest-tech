@@ -155,7 +155,7 @@ def r_mult_of(pos, price):
 
 
 def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL,
-                     sgov_returns=None):
+                     sgov_returns=None, calendar_start=None, calendar_end=None):
     """mode: 'force_all' | 'force_profit' | 'leftover_only' — один общий
     капитал и риск-бюджет на обе системы.
 
@@ -170,7 +170,15 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
     быть при risk-based sizing. Кэш floor'ится на 0 (маржа/шорт не моделируются,
     тот же известный пробел, что и остальные $-упрощения проекта, см. 3.4).
     Если sgov_returns=None — поведение не меняется (для обратной совместимости
-    со старыми вызовами/результатами без парковки кэша)."""
+    со старыми вызовами/результатами без парковки кэша).
+
+    calendar_start/calendar_end (добавлено 21.08.2026 — фикс бага): границы
+    календаря дневного accrual'а кэша. По умолчанию (None) выводятся из дат
+    сделок (как раньше) — этого достаточно для многолетнего бэктеста, где
+    сделок всегда много. НО на live-счёте в первые недели (когда сделок ещё
+    НИ ОДНОЙ) даты сделок пусты, и без явных границ цикл вообще не запускался
+    бы — кэш не копил бы доходность SGOV, а кривая эквити молчала бы до первой
+    сделки. combo_c_curve() передаёт сюда live_start_date/as_of_date явно."""
     all_dates = sorted(set(t["entry_date"] for t in rsi2_trades + tom_trades) |
                         set(t["exit_date"] for t in rsi2_trades + tom_trades))
     rsi2_by_entry = {}
@@ -206,7 +214,10 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
         equity += r_mult * pos["risked_dollars"]
         curve.append((date, equity))
 
-    if sgov_returns is not None and all_dates:
+    range_start = calendar_start if calendar_start is not None else (all_dates[0] if all_dates else None)
+    range_end = calendar_end if calendar_end is not None else (all_dates[-1] if all_dates else None)
+
+    if sgov_returns is not None and range_start is not None:
         # Календарь торговых дней — объединение дат ВСЕХ инструментов
         # (close_lookup), не только sgov_returns.index: история SGOV
         # начинается только с 28.05.2020, а торговля живёт с более раннего
@@ -214,11 +225,13 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
         # sgov_returns, дни/сделки ДО запуска SGOV тихо выпали бы из цикла.
         # До 2020 кэш просто не зарабатывает ничего (sgov_returns.get даёт 0
         # для отсутствующих дат) — это и есть корректное поведение, фонда
-        # тогда не существовало.
+        # тогда не существовало. Границы диапазона — из calendar_start/end,
+        # если заданы явно (нужно для live-счёта без единой сделки в окне,
+        # см. докстринг), иначе — из дат сделок, как раньше.
         full_calendar = set()
         for series in close_lookup.values():
             full_calendar.update(series.index)
-        loop_dates = sorted(d for d in full_calendar if all_dates[0] <= d <= all_dates[-1])
+        loop_dates = sorted(d for d in full_calendar if range_start <= d <= range_end)
     else:
         loop_dates = all_dates
 
@@ -298,6 +311,17 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
             else:
                 still_open.append(pos)
         open_positions = still_open
+
+        # 6) с SGOV-доходностью на кэш эквити меняется КАЖДЫЙ день, не только
+        # в дни закрытия сделок (те попадают в curve через close_position) —
+        # без этой строки кривая "застревала" на последней сделке, и дни без
+        # сделок (в т.ч. весь период, пока сделок ещё не было ни одной — как
+        # на live-счёте в первые недели) не отражали накопленную доходность
+        # кэша вообще. drop_duplicates(keep="last") у потребителей curve
+        # (напр. combo_c_curve) корректно оставит именно это, "закрывающее
+        # день" значение, даже если сегодня был ещё и close_position().
+        if sgov_returns is not None:
+            curve.append((date, equity))
 
     return curve, equity, taken, skipped, forced_closes
 
