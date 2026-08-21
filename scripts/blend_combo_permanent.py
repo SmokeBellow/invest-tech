@@ -54,7 +54,8 @@ def combo_c_curve(start_date, end_date):
         all_tom.extend([t for t in gen_tom_trades(d, symbol) if start_date <= t["entry_date"] <= end_date])
 
     curve, _, _, _, _ = simulate_shared(all_rsi2, all_tom, close_lookup, "leftover_only",
-                                         sgov_returns=load_sgov_returns())
+                                         sgov_returns=load_sgov_returns(),
+                                         calendar_start=start_date, calendar_end=end_date)
     df = pd.DataFrame([c for c in curve if c[0] is not None], columns=["date", "equity"])
     df = df.drop_duplicates("date", keep="last").set_index("date").sort_index()
     # Явная точка (start_date, START_CAPITAL) ДО первой сделки — без неё
