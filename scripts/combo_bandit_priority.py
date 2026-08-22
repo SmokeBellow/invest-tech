@@ -31,6 +31,14 @@ baseline (простой порядок допуска без приоритиз
 c выбран НЕ по результату (сетка {0.5, 1.0, 2.0} показана целиком). Прежде
 чем считать находку боевой, нужна честная out-of-sample проверка.
 
+Добавлено 22.08.2026 (по запросу пользователя): второй вариант,
+`simulate_bandit_sizing` — бандит определяет не порядок допуска при
+конфликте, а СРАЗУ доступный объём риска под инструмент (softmax по
+исторической эдж-оценке mean r_mult, множитель клипается на
+[1/3, 3]× базового 1%, см. докстринг функции) — действует ВСЕГДА, не
+только когда бюджета не хватает на всех. Тестируется той же сеткой
+подхода (eta = {4, 8, 16}, узкая, не по результату).
+
 Запуск: python scripts/combo_bandit_priority.py
 Выход: results/combo_bandit_priority.csv, печатает сводку.
 """
@@ -153,6 +161,111 @@ def simulate_bandit_priority(rsi2_trades, tom_trades, close_lookup, sgov_returns
     return curve, equity, taken, skipped
 
 
+SIZING_CAP_MULT = 3.0  # потолок множителя размера позиции — без него softmax
+                        # мог бы отдать почти весь бюджет одному "везучему"
+                        # инструменту в один момент; аналог духа правила
+                        # "макс. 25% на одну позицию" (3.4 CLAUDE.md), для
+                        # риск-фракции, а не $-номинала (там не трекается)
+
+
+def simulate_bandit_sizing(rsi2_trades, tom_trades, close_lookup, sgov_returns, calendar_start,
+                            calendar_end, eta=8.0, start_capital=START_CAPITAL):
+    """Бандит определяет не ПОРЯДОК допуска при конфликте (как
+    simulate_bandit_priority), а СРАЗУ РАЗМЕР позиции под инструмент —
+    доступный объём риска масштабируется его исторической эдж-оценкой
+    (mean r_mult закрытых сделок), не только тай-брейк при нехватке бюджета.
+
+    Множитель = softmax(eta * mean_r_i) * N_seen, где N_seen — число
+    инструментов, у которых уже есть хотя бы одна закрытая сделка (только
+    среди них перераспределяем — иначе на старте, когда у всех mean_r=0,
+    любой N исказил бы масштаб). Для инструментов без истории (n=0) —
+    множитель 1.0 (нейтральный старт, без искусственного bootstrapping).
+    Клип на [1/SIZING_CAP_MULT, SIZING_CAP_MULT] — без него один инструмент
+    с "счастливой" короткой историей мог бы забрать почти весь риск-бюджет
+    в одну сделку."""
+    all_dates = sorted(set(t["entry_date"] for t in rsi2_trades + tom_trades) |
+                        set(t["exit_date"] for t in rsi2_trades + tom_trades))
+    candidates_by_entry = {}
+    for t in rsi2_trades:
+        candidates_by_entry.setdefault(t["entry_date"], []).append(("rsi2", t))
+    for t in tom_trades:
+        candidates_by_entry.setdefault(t["entry_date"], []).append(("tom", t))
+
+    full_calendar = set()
+    for series in close_lookup.values():
+        full_calendar.update(series.index)
+    range_start = calendar_start if calendar_start is not None else all_dates[0]
+    range_end = calendar_end if calendar_end is not None else all_dates[-1]
+    loop_dates = sorted(d for d in full_calendar if range_start <= d <= range_end)
+
+    equity = start_capital
+    open_positions = []
+    curve = []
+    taken = {"rsi2": 0, "tom": 0}
+    skipped = {"rsi2": 0, "tom": 0}
+    n_trades, sum_r = {}, {}
+
+    def open_risk_frac():
+        return sum(p["risk_frac"] for p in open_positions)
+
+    def can_admit(risk_frac):
+        return open_risk_frac() + risk_frac <= MAX_OPEN_RISK + 1e-9 and len(open_positions) < MAX_POSITIONS
+
+    def size_multiplier(symbol):
+        seen = {s: sum_r[s] / n_trades[s] for s in n_trades if n_trades[s] > 0}
+        if symbol not in seen:
+            return 1.0
+        symbols, means = list(seen.keys()), np.array(list(seen.values()))
+        w = np.exp(eta * (means - means.max()))  # -max для численной стабильности
+        w = w / w.sum() * len(symbols)
+        mult = w[symbols.index(symbol)]
+        return float(np.clip(mult, 1.0 / SIZING_CAP_MULT, SIZING_CAP_MULT))
+
+    def close_position(pos, price, date):
+        nonlocal equity
+        r_mult = r_mult_of(pos, price)
+        equity += r_mult * pos["risked_dollars"]
+        n_trades[pos["symbol"]] = n_trades.get(pos["symbol"], 0) + 1
+        sum_r[pos["symbol"]] = sum_r.get(pos["symbol"], 0.0) + r_mult
+        curve.append((date, equity))
+
+    for date in loop_dates:
+        if sgov_returns is not None:
+            invested = sum(p["notional"] for p in open_positions)
+            cash = max(0.0, equity - invested)
+            day_ret = sgov_returns.get(date, 0.0)
+            if cash > 0 and not pd.isna(day_ret):
+                equity += cash * day_ret
+
+        still = []
+        for pos in open_positions:
+            (close_position(pos, pos["exit_price"], date) if pos["exit_date"] == date else still.append(pos))
+        open_positions = still
+
+        for kind, t in candidates_by_entry.get(date, []):
+            mult = size_multiplier(t["symbol"])
+            risk_frac = RISK_PER_TRADE * mult
+            if can_admit(risk_frac):
+                risked = risk_frac * equity
+                open_positions.append({"type": kind, "symbol": t["symbol"], "entry_price": t["entry_price"],
+                                        "stop": t["stop"], "exit_date": t["exit_date"], "exit_price": t["exit_price"],
+                                        "risked_dollars": risked, "risk_frac": risk_frac,
+                                        "notional": position_notional(t["entry_price"], t["stop"], risked)})
+                taken[kind] += 1
+            else:
+                skipped[kind] += 1
+
+        still = []
+        for pos in open_positions:
+            (close_position(pos, pos["exit_price"], date) if pos["exit_date"] == date else still.append(pos))
+        open_positions = still
+
+        if sgov_returns is not None:
+            curve.append((date, equity))
+
+    return curve, equity, taken, skipped
+
+
 def max_dd(curve):
     peak = START_CAPITAL
     dd = 0.0
@@ -183,6 +296,14 @@ def run_universe(label, symbols, rows):
         curve, eq, taken, skipped = simulate_bandit_priority(all_rsi2, all_tom, close_lookup, sgov,
                                                                START_DATE, END_DATE, ucb_c=c)
         rows.append({"universe": label, "strategy": f"ucb1_bandit_c{c}", "final_equity": round(eq, 2),
+                     "total_return_pct": round((eq / START_CAPITAL - 1) * 100, 1), "max_drawdown_pct": round(max_dd(curve), 1),
+                     "taken_rsi2": taken["rsi2"], "taken_tom": taken["tom"],
+                     "skipped_rsi2": skipped["rsi2"], "skipped_tom": skipped["tom"]})
+
+    for eta in [4, 8, 16]:
+        curve, eq, taken, skipped = simulate_bandit_sizing(all_rsi2, all_tom, close_lookup, sgov,
+                                                             START_DATE, END_DATE, eta=eta)
+        rows.append({"universe": label, "strategy": f"bandit_sizing_eta{eta}", "final_equity": round(eq, 2),
                      "total_return_pct": round((eq / START_CAPITAL - 1) * 100, 1), "max_drawdown_pct": round(max_dd(curve), 1),
                      "taken_rsi2": taken["rsi2"], "taken_tom": taken["tom"],
                      "skipped_rsi2": skipped["rsi2"], "skipped_tom": skipped["tom"]})
