@@ -81,7 +81,7 @@ def position_notional(entry_price, stop, risked_dollars):
 
 
 def simulate_bandit_priority(rsi2_trades, tom_trades, close_lookup, sgov_returns, calendar_start,
-                              calendar_end, ucb_c=1.0, start_capital=START_CAPITAL):
+                              calendar_end, ucb_c=1.0, start_capital=START_CAPITAL, trade_log=None):
     all_dates = sorted(set(t["entry_date"] for t in rsi2_trades + tom_trades) |
                         set(t["exit_date"] for t in rsi2_trades + tom_trades))
     candidates_by_entry = {}
@@ -124,6 +124,8 @@ def simulate_bandit_priority(rsi2_trades, tom_trades, close_lookup, sgov_returns
         sum_r[pos["symbol"]] = sum_r.get(pos["symbol"], 0.0) + r_mult
         total_closed += 1
         curve.append((date, equity))
+        if trade_log is not None:
+            trade_log.append({"date": date, "symbol": pos["symbol"], "type": pos["type"], "r_mult": r_mult})
 
     for date in loop_dates:
         if sgov_returns is not None:

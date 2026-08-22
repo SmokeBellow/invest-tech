@@ -1,0 +1,4 @@
+test,n_a,n_b,mean_a,mean_b,t_stat,p_value
+baseline vs 0 (ttest_1samp),3620,,0.0552,,4.232,2.3786448248429344e-05
+bandit vs 0 (ttest_1samp),3654,,0.0616,,4.808,1.5853512876944509e-06
+"bandit vs baseline (ttest_ind, Welch)",3654,3620.0,0.0616,0.0552,0.352,0.7249672514913054

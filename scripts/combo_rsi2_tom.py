@@ -155,7 +155,7 @@ def r_mult_of(pos, price):
 
 
 def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL,
-                     sgov_returns=None, calendar_start=None, calendar_end=None):
+                     sgov_returns=None, calendar_start=None, calendar_end=None, trade_log=None):
     """mode: 'force_all' | 'force_profit' | 'leftover_only' — один общий
     капитал и риск-бюджет на обе системы.
 
@@ -213,6 +213,8 @@ def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=S
         r_mult = r_mult_of(pos, price)
         equity += r_mult * pos["risked_dollars"]
         curve.append((date, equity))
+        if trade_log is not None:
+            trade_log.append({"date": date, "symbol": pos["symbol"], "type": pos["type"], "r_mult": r_mult})
 
     range_start = calendar_start if calendar_start is not None else (all_dates[0] if all_dates else None)
     range_end = calendar_end if calendar_end is not None else (all_dates[-1] if all_dates else None)
