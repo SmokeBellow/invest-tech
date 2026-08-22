@@ -1,0 +1,5 @@
+strategy,rebalance_days,final_equity,total_return_pct,max_drawdown_pct
+baseline,,5794.1,479.4,-48.7
+quota_30d,30.0,3070.81,207.1,-43.9
+quota_90d,90.0,3074.54,207.5,-39.2
+quota_180d,180.0,3996.8,299.7,-45.2
