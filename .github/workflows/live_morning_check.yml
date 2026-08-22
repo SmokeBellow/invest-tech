@@ -20,16 +20,26 @@ jobs:
       - name: Install dependencies
         run: pip install requests pandas numpy scipy
 
-      - name: Detect entry triggers (from last night's closed bars) and fetch today's open
+      # Догоняем данные, если ночной прогон (06:00 EKT) был слишком рано для
+      # какого-то бара у FMP/Tiingo — см. CLAUDE.md §9.3. Тянет ТОЛЬКО уже
+      # ЗАКРЫТЫЕ дни (сегодняшняя сессия к 15:00 UTC ещё не закрылась), так
+      # что риска протащить сегодняшние данные в триггер нет.
+      - name: Re-fetch daily bars (catch up on delayed data)
+        env:
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          TIINGO_API_KEY: ${{ secrets.TIINGO_API_KEY }}
+        run: python scripts/live_fetch_incremental.py
+
+      - name: Detect entry triggers (from last closed bars) and fetch today's open
         env:
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: python scripts/live_pending_entries.py
 
-      - name: Commit provisional journal entries
+      - name: Commit provisional journal entries and any re-fetched bars
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add data/live/
+          git add data/
           git diff --staged --quiet || git commit -m "Live review: provisional entries at today's open ($(date -u +%Y-%m-%d))"
           git pull --rebase
           git push
