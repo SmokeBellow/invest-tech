@@ -1,0 +1,10 @@
+strategy,final_equity,total_return_pct,cagr_pct,max_drawdown_pct,calmar
+fixed_25_25_25_25_annual,2859.19,185.9,5.5,-19.1,0.29
+fixed_25_25_25_25_monthly,2741.96,174.2,5.27,-19.6,0.27
+buy_hold_SPY,5394.36,439.4,8.97,-56.5,0.16
+buy_hold_TLT,924.44,-7.6,-0.4,-52.6,-0.01
+buy_hold_SHY,1024.74,2.5,0.12,-7.2,0.02
+buy_hold_GLD,6667.63,566.8,10.15,-45.6,0.22
+bandit_hedge_eta4,3916.84,291.7,7.2,-38.3,0.19
+bandit_hedge_eta8,3753.96,275.4,6.97,-44.6,0.16
+bandit_hedge_eta16,3669.76,267.0,6.85,-45.7,0.15
