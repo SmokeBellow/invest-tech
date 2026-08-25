@@ -134,10 +134,30 @@ def tom_pending_entry(d, symbol):
 
 
 def fetch_open_price(symbol):
+    """Возвращает None (никогда не бросает исключение) при любой проблеме с
+    запросом — HTTP-ошибка здесь НЕ должна ронять весь скрипт: другие
+    инструменты в этом же прогоне (и state.json/morning_check_date) должны
+    сохраниться независимо от того, что один конкретный тикер недоступен.
+    Обнаружено 25.08.2026 (см. CLAUDE.md раздел 11): `/quote`-эндпоинт FMP на
+    free-плане возвращает 402 Payment Required для тех же equity-тикеров,
+    что и EOD-эндпоинт (QQQ/EEM/TLT/XLE — весь живой список кроме SPY, см.
+    CLAUDE.md §4) — раньше это приводило к необработанному краху всего
+    прогона (`raise_for_status()`), из-за чего 19.08.2026 была пропущена
+    provisional-запись по реальному входу QQQ (сделка позже корректно
+    восстановилась постфактум через ночной прогон, но без реальной
+    утренней котировки). Для этих тикеров провижнл-механизм системно не
+    работает — Tiingo free-план не даёт intraday (см. CLAUDE.md 5.6), чистой
+    альтернативы нет; такие сделки просто ловятся штатным ночным прогоном,
+    как и было задокументировано как "известное упрощение v1" в
+    live_review.py."""
     fmp_symbol = FMP_SYMBOL.get(symbol, symbol)
-    resp = requests.get(QUOTE_URL, params={"symbol": fmp_symbol, "apikey": API_KEY}, timeout=30)
-    resp.raise_for_status()
-    data = resp.json()
+    try:
+        resp = requests.get(QUOTE_URL, params={"symbol": fmp_symbol, "apikey": API_KEY}, timeout=30)
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.RequestException as e:
+        print(f"    ошибка запроса котировки для {symbol}: {e}")
+        return None
     if not isinstance(data, list) or not data or "open" not in data[0] or data[0]["open"] is None:
         return None
     return float(data[0]["open"])
