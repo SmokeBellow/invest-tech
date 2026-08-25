@@ -61,7 +61,7 @@ import pandas as pd
 sys.path.insert(0, os.path.dirname(__file__))
 import backtest as bt
 from system_ibs_rsi2 import add_extra_indicators
-from combo_rsi2_tom import gen_rsi2_trades, gen_tom_trades
+from combo_rsi2_tom import gen_rsi2_trades, gen_tom_trades, rsi2_open_position, tom_open_position, r_mult_of
 from blend_combo_permanent import combo_c_curve, blend, START_CAPITAL
 from benchmark_permanent_ofz import permanent_portfolio_daily
 
@@ -99,6 +99,34 @@ def append_journal(rows):
     df = pd.DataFrame(rows)
     header = not os.path.exists(path)
     df.to_csv(path, mode="a", header=header, index=False)
+
+
+def write_open_positions(dfs, close_lookup, combo_capital_now, as_of_date):
+    """Добавлено 25.08.2026 (см. CLAUDE.md §11, по запросу пользователя):
+    открытые (ещё не закрытые) позиции RSI2/TOM нигде раньше не были видны —
+    gen_rsi2_trades/gen_tom_trades возвращают только ЗАВЕРШЁННЫЕ сделки,
+    поэтому реально открытая позиция (напр. QQQ RSI2 с 19.08.2026) была
+    невидима до своего закрытия. Здесь — переоценка по рынку (mark-to-
+    market) на текущий момент, отдельным файлом, не смешивается с journal.csv
+    (тот остаётся строго "закрытые события", как и раньше)."""
+    rows = []
+    for symbol, d in dfs.items():
+        for pos in (rsi2_open_position(d, symbol), tom_open_position(d, symbol)):
+            if pos is None:
+                continue
+            current_price = close_lookup[symbol].asof(as_of_date)
+            r_mult_now = r_mult_of(pos, current_price)
+            risk_usd = RISK_PER_TRADE * combo_capital_now
+            rows.append({"system": pos["system"], "symbol": pos["symbol"],
+                         "entry_date": pos["entry_date"].strftime("%Y-%m-%d"),
+                         "entry_price": round(pos["entry_price"], 4), "stop": round(pos["stop"], 4),
+                         "current_price": round(float(current_price), 4), "bars_held": pos["bars"],
+                         "unrealized_r_mult": round(r_mult_now, 3),
+                         "unrealized_usd": round(r_mult_now * risk_usd, 2)})
+    path = os.path.join(LIVE_DIR, "open_positions.csv")
+    pd.DataFrame(rows, columns=["system", "symbol", "entry_date", "entry_price", "stop", "current_price",
+                                 "bars_held", "unrealized_r_mult", "unrealized_usd"]).to_csv(path, index=False)
+    return rows
 
 
 def append_equity(date_str, equity, combo_value, permanent_value):
@@ -177,6 +205,8 @@ def main():
     append_journal(new_rows)
     state["logged_events"] = sorted(logged)
 
+    open_rows = write_open_positions(dfs, close_lookup, combo_capital_now, as_of_date)
+
     # --- сегодняшняя стоимость счёта (та же функция, что и весь бэктест) ---
     blended = blend(WEIGHT, live_start_date, as_of_date)
     equity_now = blended.iloc[-1]
@@ -224,6 +254,15 @@ def main():
             print(f"  {r['date']} {r['system']} {r['symbol']} {r['action']} @ {r['price']} ({r['reason']})")
     else:
         print("\nНовых сделок сегодня нет.")
+
+    if open_rows:
+        print(f"\nОткрытые позиции ({len(open_rows)}):")
+        for r in open_rows:
+            print(f"  {r['system']} {r['symbol']}: вход {r['entry_date']} @ {r['entry_price']}, "
+                  f"стоп {r['stop']}, сейчас {r['current_price']} ({r['bars_held']} дн.), "
+                  f"unrealized {r['unrealized_r_mult']:+.2f}R (${r['unrealized_usd']:+.2f})")
+    else:
+        print("\nОткрытых позиций нет.")
 
 
 if __name__ == "__main__":

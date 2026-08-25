@@ -154,6 +154,103 @@ def r_mult_of(pos, price):
     return (price - pos["entry_price"]) / (pos["entry_price"] - pos["stop"])
 
 
+def rsi2_open_position(d, symbol):
+    """Добавлено 25.08.2026 (см. CLAUDE.md §11 — по запросу пользователя
+    показывать открытые позиции). Реплика позиционного стейт-машина
+    gen_rsi2_trades, но вместо накопления только ЗАКРЫТЫХ сделок возвращает
+    ОТКРЫТУЮ позицию на конец доступных данных (или None, если её нет)."""
+    position = None
+    for i in range(1, len(d)):
+        row, prev = d.iloc[i], d.iloc[i - 1]
+        if position is None:
+            cond_now = (row.close > row.ema200) and (row.rsi2 < RSI2_THRESHOLD)
+            cond_prev = (prev.close > prev.ema200) and (prev.rsi2 < RSI2_THRESHOLD)
+            if cond_now and not cond_prev and i + 1 < len(d):
+                entry_price = d.iloc[i + 1].open
+                stop = entry_price - 2.0 * row.atr14
+                if not np.isnan(stop) and stop < entry_price:
+                    position = {"system": "RSI2", "symbol": symbol, "entry_date": d.iloc[i + 1].date,
+                                "entry_price": entry_price, "stop": stop, "bars": 0}
+        else:
+            rowj = d.iloc[i]
+            position["bars"] += 1
+            exit_price, reason = None, None
+            if rowj.low <= position["stop"]:
+                exit_price = rowj.open if rowj.open < position["stop"] else position["stop"]
+                reason = "stop"
+            elif prev.close <= prev.sma5 and rowj.close > rowj.sma5:
+                exit_price, reason = rowj.close, "sma5_cross"
+            elif position["bars"] >= 10:
+                exit_price, reason = rowj.close, "time_stop"
+            if reason:
+                position = None
+    return position
+
+
+def tom_entry_calendar_day(date):
+    """ИСПРАВЛЕНО 25.08.2026 (нашёл баг при реализации rsi2_open_position/
+    tom_open_position, см. CLAUDE.md §11): предыдущая попытка определить
+    "5-й с конца торговый день месяца" ДО того, как месяц закончился,
+    сравнивала month_rows[-1] (последний ДОСТУПНЫЙ день, т.е. просто
+    "вчера") САМ С СОБОЙ минус 4 — это НИКОГДА не выполняется (разница
+    всегда ровно TOM_OFFSET-1, не 0), поэтому вход по TOM в реальном
+    времени НЕ детектировался никогда, ни разу с момента создания
+    live_pending_entries.py (only обнаруживался постфактум, когда
+    начинался следующий месяц и gen_tom_trades мог штатно посчитать
+    exit_idx). Правильный способ — считать от КОНЦА КАЛЕНДАРНОГО месяца
+    (известен заранее, не зависит от будущих цен), в рабочих днях
+    (pandas bdate_range — недельные выходные учтены, биржевые праздники
+    НЕТ, поэтому возможен редкий сдвиг на 1 день в месяцы с праздником в
+    последнюю неделю — тот же класс приближения, что и everywhere в
+    live-скриптах, где точная сверка всё равно происходит через
+    gen_tom_trades постфактум).
+    Возвращает True, если `date` — ожидаемый (по календарю) день входа TOM
+    в своём месяце."""
+    month_end = date + pd.offsets.MonthEnd(0)
+    if date > month_end:
+        return False
+    remaining_bdays = len(pd.bdate_range(date + pd.Timedelta(days=1), month_end))
+    return remaining_bdays == TOM_OFFSET - 1
+
+
+def tom_open_position(d, symbol):
+    """Добавлено 25.08.2026, см. rsi2_open_position выше — TOM-аналог.
+    gen_tom_trades сознательно пропускает ТЕКУЩИЙ (ещё не завершённый)
+    месяц целиком (не знает, где будет exit_idx, пока не появятся первые 3
+    дня следующего месяца) — здесь явно проверяем именно этот случай, но
+    используя календарный день входа (tom_entry_calendar_day), а НЕ
+    "последний доступный день минус 4" (см. исправленный баг в докстринге
+    tom_entry_calendar_day). Если стоп уже задет внутри данных, но
+    exit_idx ещё не вычислим (мало данных следующего месяца) — возвращает
+    None: такая сделка технически уже закрыта, но безопаснее подождать,
+    пока gen_tom_trades сможет обработать её штатно."""
+    d = d.reset_index(drop=True)
+    n = len(d)
+    last_date = d.iloc[-1]["date"]
+    month_mask = d["date"].dt.to_period("M") == last_date.to_period("M")
+    month_idx = d.index[month_mask]
+    entry_idx = None
+    for i in month_idx:
+        if tom_entry_calendar_day(d.iloc[i]["date"]):
+            entry_idx = i
+            break
+    if entry_idx is None or entry_idx < 1 or entry_idx >= n:
+        return None
+    entry_row = d.iloc[entry_idx]
+    entry_price = entry_row["open"]
+    atr = d.iloc[entry_idx - 1]["atr14"]
+    if np.isnan(atr) or np.isnan(entry_price):
+        return None
+    stop = entry_price - 2.0 * atr
+    if stop >= entry_price:
+        return None
+    for j in range(entry_idx, n):
+        if d.iloc[j]["low"] <= stop:
+            return None  # уже задет стоп, но exit_idx ещё не определить штатно — подождём gen_tom_trades
+    return {"system": "TOM", "symbol": symbol, "entry_date": entry_row["date"],
+            "entry_price": entry_price, "stop": stop, "bars": n - 1 - entry_idx}
+
+
 def simulate_shared(rsi2_trades, tom_trades, close_lookup, mode, start_capital=START_CAPITAL,
                      sgov_returns=None, calendar_start=None, calendar_end=None, trade_log=None):
     """mode: 'force_all' | 'force_profit' | 'leftover_only' — один общий
