@@ -1,0 +1,28 @@
+{
+  "_comment": "Виртуальный товарный портфель (новостной/фундаментальный). Перенесён из чата Claude.ai 25.08.2026. Источник истории — экспорт проекта на эту дату. Обновляется ТОЛЬКО агентной сессией (CCR Routine), не GitHub Actions.",
+  "currency": "USD",
+  "start_capital_rub": 100000,
+  "start_capital_usd": 1204.85,
+  "conversion_date": "2026-08-13",
+  "conversion_rate_rub_per_usd": 82.9977,
+  "conversion_source": "ЦБ РФ на 13.08.2026",
+  "cash_park_instrument": "SGOV",
+  "realized_pnl_usd": -29.80,
+  "peak_equity_usd": 1240.80,
+  "last_review_date": "2026-08-25",
+  "last_review_equity_usd": 1240.80,
+  "last_review_drawdown_pct": 0.0,
+  "risk": {
+    "risk_per_trade_pct": 1.2,
+    "max_open_risk_pct": 5.0,
+    "max_driver_risk_pct": 2.5,
+    "max_driver_gap_exposure_pct": 30.0,
+    "max_position_pct": 25.0,
+    "max_positions": 5,
+    "drawdown_trigger_pct": 7.0,
+    "reduced_risk_per_trade_pct": 0.8,
+    "stop_atr_mult": 2.0,
+    "stop_atr_period": 14,
+    "_note": "Риск-конструкция выведена Monte-Carlo симуляцией 60000 траекторий от барьера просадки 20%. См. news_portfolio/README.md §5."
+  }
+}

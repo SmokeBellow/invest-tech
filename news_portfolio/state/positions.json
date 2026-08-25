@@ -1,0 +1,73 @@
+{
+  "_comment": "Открытые позиции на 25.08.2026 (последний пересмотр в чате Claude.ai, перед переносом в Claude Code). Обновляется агентной сессией при каждом ежедневном пересмотре. stop двигается ТОЛЬКО в сторону ужесточения (правило Б).",
+  "as_of": "2026-08-25",
+  "positions": [
+    {
+      "symbol": "GOLD",
+      "direction": "long",
+      "allocation_usd": 240.97,
+      "entry_price": 4040,
+      "entry_date": "2026-07-03",
+      "last_price": 4640.75,
+      "last_price_date": "2026-08-25",
+      "unrealized_pnl_pct": 14.9,
+      "unrealized_pnl_usd": 35.91,
+      "stop": 4280,
+      "trailing_1r_level": 4357,
+      "trailing_active": false,
+      "trailing_note": "не активен — фиксированный/структурный стоп сейчас жёстче трейлингового уровня",
+      "risk_usd": 2.89,
+      "risk_pct": 0.23,
+      "driver": "ставки/ФРС",
+      "thesis": "держится с 03.07, тезис не пересматривался с последнего review"
+    },
+    {
+      "symbol": "COPPER",
+      "direction": "long",
+      "allocation_usd": 90.36,
+      "entry_price": 6.45,
+      "entry_price_unit": "USD/фунт",
+      "entry_date": "2026-07-23",
+      "last_price": 6.46,
+      "last_price_date": "2026-08-25",
+      "unrealized_pnl_pct": 2.5,
+      "unrealized_pnl_usd": 2.26,
+      "stop": 6.15,
+      "trailing_1r_level": null,
+      "trailing_active": false,
+      "trailing_note": "не достиг +1R",
+      "risk_usd": 4.22,
+      "risk_pct": 0.34,
+      "driver": "война/перекрытие поставок",
+      "thesis": "физический дефицит — правило А: закрывать ТОЛЬКО на подтверждённом возврате предложения, не на заголовках"
+    },
+    {
+      "symbol": "WHEAT",
+      "direction": "long",
+      "allocation_usd": 90.36,
+      "entry_price": 655,
+      "entry_price_unit": "центы/бушель, Chicago SRW",
+      "entry_date": "2026-08-10",
+      "last_price": 681.75,
+      "last_price_date": "2026-08-25",
+      "unrealized_pnl_pct": 4.7,
+      "unrealized_pnl_usd": 4.25,
+      "stop": 603,
+      "trailing_1r_level": null,
+      "trailing_active": false,
+      "trailing_note": "не достиг +1R",
+      "risk_usd": 6.94,
+      "risk_pct": 0.56,
+      "driver": "война/перекрытие поставок",
+      "thesis": "вход на растущем тезисе, цена не растянута"
+    }
+  ],
+  "open_risk_usd": 14.05,
+  "open_risk_pct": 1.13,
+  "driver_risk": {
+    "война/перекрытие поставок (COPPER+WHEAT)": {"risk_usd": 10.19, "risk_pct": 0.82}
+  },
+  "free_slots": 1,
+  "cash_usd": 5.57,
+  "sgov_usd": 650.08
+}
