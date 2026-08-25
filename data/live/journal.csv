@@ -1,0 +1,5 @@
+date,system,symbol,action,price,size_usd,stop,risk_usd,risk_pct,reason
+2026-08-25,TOM,BTCUSD,entry,78982.266,,,,,"turn_of_month_offset5 (provisional, подтвердит ночной прогон)"
+2026-08-25,TOM,EURUSD,entry,1.1667,,,,,"turn_of_month_offset5 (provisional, подтвердит ночной прогон)"
+2026-08-25,TOM,SPY,entry,766.16,,,,,"turn_of_month_offset5 (provisional, подтвердит ночной прогон)"
+2026-08-25,TOM,USDJPY,entry,159.077,,,,,"turn_of_month_offset5 (provisional, подтвердит ночной прогон)"
