@@ -55,7 +55,7 @@ import requests
 sys.path.insert(0, os.path.dirname(__file__))
 import backtest as bt
 from system_ibs_rsi2 import add_extra_indicators
-from combo_rsi2_tom import TOM_OFFSET
+from combo_rsi2_tom import tom_entry_calendar_day
 
 DATA_DIR = "data"
 LIVE_DIR = "data/live"
@@ -112,24 +112,27 @@ def rsi2_open_position_and_pending(d, symbol):
     return None, None
 
 
-def tom_pending_entry(d, symbol):
+def tom_pending_entry(d, symbol, today):
     """Вход TOM — чисто календарный (не индикаторный), известен заранее:
-    entry_idx = 5-й с конца торговый день месяца. Проверяем, не является
-    ли ПОСЛЕДНИЙ доступный день (вчерашний закрытый бар) ровно этим днём —
-    если да, вход на открытии СЕГОДНЯШНЕЙ (следующей) сессии ожидается."""
-    d = d.reset_index(drop=True)
-    d["month"] = d["date"].dt.to_period("M")
-    last_idx = len(d) - 1
-    month_rows = d.index[d["month"] == d["month"].iloc[-1]]
-    if len(month_rows) < TOM_OFFSET:
+    entry_idx = 5-й с конца торговый день месяца.
+
+    ИСПРАВЛЕНО 25.08.2026 (см. CLAUDE.md §11 и докстринг
+    tom_entry_calendar_day в combo_rsi2_tom.py): старая версия сравнивала
+    "последний доступный день" (т.е. вчера) с самим собой минус 4 —
+    математически никогда не совпадало (разница всегда ровно TOM_OFFSET-1,
+    не 0), поэтому эта функция НИКОГДА не детектировала вход в реальном
+    времени, ни разу с момента создания скрипта (17.08.2026) — TOM-сделки
+    ловились только постфактум через ночной пересчёт `gen_tom_trades`.
+    Правильная проверка — является ли СЕГОДНЯШНИЙ (ещё не закрытый)
+    календарный день ожидаемым днём входа, через tom_entry_calendar_day
+    (считает от конца календарного месяца, известного заранее, а не от
+    последнего ДОСТУПНОГО дня данных)."""
+    if not tom_entry_calendar_day(today):
         return None
-    entry_idx_of_month = month_rows[-1] - (TOM_OFFSET - 1)
-    if entry_idx_of_month != last_idx:
-        return None  # вчерашний день — не тот самый день входа TOM
-    row = d.iloc[last_idx]
-    if np.isnan(row["atr14"]):
+    last_row = d.iloc[-1]
+    if np.isnan(last_row["atr14"]):
         return None
-    stop_hint = row["close"] - 2.0 * row["atr14"]
+    stop_hint = last_row["close"] - 2.0 * last_row["atr14"]
     return {"symbol": symbol, "system": "TOM", "reason": "turn_of_month_offset5", "stop_hint": stop_hint}
 
 
@@ -207,7 +210,7 @@ def main():
         if rsi2_pending:
             pending.append(rsi2_pending)
 
-        tom_pending = tom_pending_entry(d, symbol)
+        tom_pending = tom_pending_entry(d, symbol, today)
         if tom_pending:
             pending.append(tom_pending)
 
