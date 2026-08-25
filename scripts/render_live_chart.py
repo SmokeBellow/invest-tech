@@ -25,14 +25,17 @@ def load_data():
     journal_path = os.path.join(LIVE_DIR, "journal.csv")
     journal = pd.read_csv(journal_path, parse_dates=["date"]) if os.path.exists(journal_path) else pd.DataFrame()
 
+    open_positions_path = os.path.join(LIVE_DIR, "open_positions.csv")
+    open_positions = pd.read_csv(open_positions_path) if os.path.exists(open_positions_path) else pd.DataFrame()
+
     state_path = os.path.join(LIVE_DIR, "state.json")
     with open(state_path) as f:
         state = json.load(f)
 
-    return equity, journal, state
+    return equity, journal, open_positions, state
 
 
-def build_html(equity, journal, state):
+def build_html(equity, journal, open_positions, state):
     start_capital = 1000.0
     final = equity.iloc[-1]["equity"]
     start_date = pd.Timestamp(state["live_start_date"])
@@ -55,12 +58,23 @@ def build_html(equity, journal, state):
                 "action": r["action"], "price": r["price"], "reason": r["reason"],
             })
 
+    open_pos_list = []
+    if not open_positions.empty:
+        for _, r in open_positions.iterrows():
+            open_pos_list.append({
+                "system": r["system"], "symbol": r["symbol"], "entry_date": r["entry_date"],
+                "entry_price": r["entry_price"], "stop": r["stop"], "current_price": r["current_price"],
+                "bars_held": int(r["bars_held"]), "unrealized_r_mult": round(r["unrealized_r_mult"], 3),
+                "unrealized_usd": round(r["unrealized_usd"], 2),
+            })
+
     data_json = json.dumps({
         "curve": curve, "final": round(final, 2), "total_ret": round(total_ret, 2),
         "max_dd": round(max_dd, 2), "days_live": days_live, "start_date": start_date.strftime("%Y-%m-%d"),
         "combo_now": round(equity.iloc[-1]["combo_c_value"], 2),
         "perm_now": round(equity.iloc[-1]["permanent_value"], 2),
-        "events": recent_events,
+        "events": recent_events, "open_positions": open_pos_list,
+        "as_of_date": equity.iloc[-1]["date"].strftime("%Y-%m-%d"),
     }, ensure_ascii=False)
 
     return HTML_TEMPLATE.replace("__DATA__", data_json)
@@ -178,6 +192,12 @@ HTML_TEMPLATE = r"""<!doctype html>
   </div>
 
   <div class="panel">
+    <h2>Открытые позиции</h2>
+    <p class="sub" id="openPosSubline" style="margin-bottom:.8rem;"></p>
+    <div id="openPosHolder"></div>
+  </div>
+
+  <div class="panel">
     <h2>Последние события журнала</h2>
     <div id="eventsHolder"></div>
   </div>
@@ -212,6 +232,27 @@ HTML_TEMPLATE = r"""<!doctype html>
   document.getElementById("stats").innerHTML = stats.map(s =>
     `<div class="stat"><div class="label">${s.label}</div><div class="val ${s.bad ? 'bad' : ''}">${s.val}</div></div>`
   ).join("");
+
+  document.getElementById("openPosSubline").textContent =
+    `Переоценка по рынку на последнее доступное закрытие (${DATA.as_of_date})`;
+  const openPosHolder = document.getElementById("openPosHolder");
+  if (!DATA.open_positions.length) {
+    openPosHolder.innerHTML = '<div class="empty">Открытых позиций нет.</div>';
+  } else {
+    openPosHolder.innerHTML = `<table class="events"><thead><tr>
+        <th>Система</th><th>Инструмент</th><th>Вход</th><th>Стоп</th><th>Сейчас</th>
+        <th>Дней</th><th>Unrealized R</th><th>Unrealized $</th>
+      </tr></thead><tbody>${DATA.open_positions.map(p => {
+        const cls = p.unrealized_usd >= 0 ? "pos" : "neg";
+        return `<tr>
+        <td>${p.system}</td><td>${p.symbol}</td>
+        <td>${p.entry_date} @ ${p.entry_price}</td><td>${p.stop}</td><td>${p.current_price}</td>
+        <td>${p.bars_held}</td>
+        <td class="delta ${cls}" style="font-size:.82rem;">${p.unrealized_r_mult >= 0 ? "+" : ""}${p.unrealized_r_mult.toFixed(2)}R</td>
+        <td class="delta ${cls}" style="font-size:.82rem;">${p.unrealized_usd >= 0 ? "+" : ""}${fmtUSD(p.unrealized_usd)}</td>
+      </tr>`;
+      }).join("")}</tbody></table>`;
+  }
 
   const eventsHolder = document.getElementById("eventsHolder");
   if (!DATA.events.length) {
@@ -286,8 +327,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="results/live_equity_chart.html")
     args = parser.parse_args()
-    equity, journal, state = load_data()
-    html = build_html(equity, journal, state)
+    equity, journal, open_positions, state = load_data()
+    html = build_html(equity, journal, open_positions, state)
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w") as f:
         f.write(html)
