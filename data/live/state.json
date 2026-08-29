@@ -1,6 +1,7 @@
 {
   "live_start_date": "2026-08-14",
   "logged_events": [
+    "RSI2|EURUSD|2026-08-29|entry",
     "RSI2|QQQ|2026-08-19|entry",
     "RSI2|QQQ|2026-08-19|exit",
     "TOM|BTCUSD|2026-08-25|entry",
@@ -10,5 +11,5 @@
   ],
   "capital": 1007.6358620853399,
   "peak_equity": 1010.7675194795681,
-  "morning_check_date": "2026-08-28"
+  "morning_check_date": "2026-08-29"
 }
