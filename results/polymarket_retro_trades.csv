@@ -1,0 +1,250 @@
+category,question,cheap_side,threshold,loser_entry_price,loser_won,loser_r_mult,favorite_entry_price,favorite_won,favorite_r_mult,volume
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.05,0.046,0,-1.0,0.954,1,0.0482,99988.142804
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+geopolitics,Will the US strike Colombia next?,Yes,0.05,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,Will the US strike Colombia next?,Yes,0.08,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,Will the US strike Colombia next?,Yes,0.1,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.05,0.023,0,-1.0,0.977,1,0.0235,999034.199606
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,999034.199606
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,999034.199606
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.05,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.08,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.1,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99845.469528
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99845.469528
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,99845.469528
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.05,0.0005,0,-1.0,0.9995,1,0.0005,9981.983807999997
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.08,0.0005,0,-1.0,0.9995,1,0.0005,9981.983807999997
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,9981.983807999997
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.05,0.0495,0,-1.0,0.9505,1,0.0521,99794.132151
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.08,0.055,0,-1.0,0.945,1,0.0582,99794.132151
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,99794.132151
+geopolitics,Another US military action against Iran by June 30?,Yes,0.05,0.0225,0,-1.0,0.9775,1,0.023,997664.015782
+geopolitics,Another US military action against Iran by June 30?,Yes,0.08,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+geopolitics,Another US military action against Iran by June 30?,Yes,0.1,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+geopolitics,Trump x Modi talk by September 5?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,9964.806986
+geopolitics,Trump x Modi talk by September 5?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+geopolitics,Trump x Modi talk by September 5?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.05,0.046,0,-1.0,0.954,1,0.0482,99988.142804
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.05,0.0315,0,-1.0,0.9685,1,0.0325,999766.320086001
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.08,0.0315,0,-1.0,0.9685,1,0.0325,999766.320086001
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,999766.320086001
+world,Will the US strike Colombia next?,Yes,0.05,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,Will the US strike Colombia next?,Yes,0.08,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,Will the US strike Colombia next?,Yes,0.1,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.05,0.023,0,-1.0,0.977,1,0.0235,999034.199606
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,999034.199606
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,999034.199606
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.05,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.08,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.1,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,Israel strike on Yemen by December 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99845.469528
+world,Israel strike on Yemen by December 31?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99845.469528
+world,Israel strike on Yemen by December 31?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,99845.469528
+world,Another US military action against Iran by June 30?,Yes,0.05,0.0225,0,-1.0,0.9775,1,0.023,997664.015782
+world,Another US military action against Iran by June 30?,Yes,0.08,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+world,Another US military action against Iran by June 30?,Yes,0.1,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+world,Morocco snap election called by December 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,9972.452924
+world,Morocco snap election called by December 31?,Yes,0.08,0.045,0,-1.0,0.955,1,0.0471,9972.452924
+world,Morocco snap election called by December 31?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,9972.452924
+world,Trump x Modi talk by September 5?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,9964.806986
+world,Trump x Modi talk by September 5?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+world,Trump x Modi talk by September 5?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.05,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.08,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.1,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will the next Dutch government be VVD + CDA + JA21 + D66?,Yes,0.05,0.03,0,-1.0,0.97,1,0.0309,993779.777679
+world,Will the next Dutch government be VVD + CDA + JA21 + D66?,Yes,0.08,0.03,0,-1.0,0.97,1,0.0309,993779.777679
+world,Will the next Dutch government be VVD + CDA + JA21 + D66?,Yes,0.1,0.092,0,-1.0,0.908,1,0.1013,993779.777679
+world,Will Iran enrich uranium to 90% before June?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99254.450509
+world,Will Iran enrich uranium to 90% before June?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99254.450509
+world,Will Iran enrich uranium to 90% before June?,Yes,0.1,0.08,0,-1.0,0.92,1,0.087,99254.450509
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.05,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.08,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,998803.055715
+climate,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99623.75
+climate,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,99623.75
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.05,0.033,0,-1.0,0.967,1,0.0341,9597.681869
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.08,0.0735,0,-1.0,0.9265,1,0.0793,9597.681869
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,9597.681869
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.05,0.029,0,-1.0,0.971,1,0.0299,953776.877343
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,953776.877343
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,953776.877343
+climate,Will the October 2024 temperature increase be between 1.35-1.40°C?,Yes,0.1,0.0895,0,-1.0,0.9105,1,0.0983,95316.469028
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.05,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.08,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.1,0.08,0,-1.0,0.92,1,0.087,94831.70403
+climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.08,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.1,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+climate,Category 5 hurricane hits US before election?,Yes,0.05,0.026,0,-1.0,0.974,1,0.0267,94457.306046
+climate,Category 5 hurricane hits US before election?,Yes,0.08,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+climate,Category 5 hurricane hits US before election?,Yes,0.1,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+climate,70°F in NYC in December?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,94404.688008
+climate,70°F in NYC in December?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,94404.688008
+climate,70°F in NYC in December?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,94404.688008
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.05,0.0455,0,-1.0,0.9545,1,0.0477,92670.606283
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.08,0.0455,0,-1.0,0.9545,1,0.0477,92670.606283
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,92670.606283
+natural_disaster,Megaquake by August 31?,Yes,0.1,0.095,1,9.526315789473685,0.905,0,-1.0,92923.317981
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.05,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.08,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.1,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Megaquake by October 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,91745.735641
+natural_disaster,Megaquake by October 31?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,91745.735641
+natural_disaster,Megaquake by October 31?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,91745.735641
+natural_disaster,Megaquake by June 30?,Yes,0.05,0.0315,0,-1.0,0.9685,1,0.0325,88324.36435599986
+natural_disaster,Megaquake by June 30?,Yes,0.08,0.06,0,-1.0,0.94,1,0.0638,88324.36435599986
+natural_disaster,Megaquake by June 30?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,88324.36435599986
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Megaquake by September 30?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,86885.742608
+natural_disaster,Megaquake by September 30?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,86885.742608
+natural_disaster,Megaquake by September 30?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,86885.742608
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,0.0915,0,-1.0,0.9085,1,0.1007,8146.490482999999
+earthquake,Megaquake by August 31?,Yes,0.1,0.095,1,9.526315789473685,0.905,0,-1.0,92923.317981
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.05,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.08,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.1,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Megaquake by October 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,91745.735641
+earthquake,Megaquake by October 31?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,91745.735641
+earthquake,Megaquake by October 31?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,91745.735641
+earthquake,Megaquake in September?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,89555.142884
+earthquake,Megaquake in September?,Yes,0.08,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+earthquake,Megaquake in September?,Yes,0.1,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+earthquake,Megaquake by June 30?,Yes,0.05,0.0315,0,-1.0,0.9685,1,0.0325,88324.36435599986
+earthquake,Megaquake by June 30?,Yes,0.08,0.06,0,-1.0,0.94,1,0.0638,88324.36435599986
+earthquake,Megaquake by June 30?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,88324.36435599986
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Megaquake by September 30?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,86885.742608
+earthquake,Megaquake by September 30?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,86885.742608
+earthquake,Megaquake by September 30?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,86885.742608
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,0.0915,0,-1.0,0.9085,1,0.1007,8146.490482999999
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.08,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,99755.99141
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,80917.712504
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.08,0.05,0,-1.0,0.95,1,0.0526,80917.712504
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.1,0.05,0,-1.0,0.95,1,0.0526,80917.712504
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,162013.207461
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,162013.207461
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.1,0.065,0,-1.0,0.935,1,0.0695,162013.207461
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.05,0.0285,0,-1.0,0.9715,1,0.0293,9998.292364
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.08,0.0285,0,-1.0,0.9715,1,0.0293,9998.292364
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,9998.292364
+economy,Nvidia Data Center Revenue above 70B in Q1?,No,0.1,0.085,0,-1.0,0.915,1,0.0929,9991.160857
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.08,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,99755.99141
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.05,0.028,0,-1.0,0.972,1,0.0288,9958.783087
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.08,0.028,0,-1.0,0.972,1,0.0288,9958.783087
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,9958.783087
+economy,Will Other be the second most valuable company on October 31?,Yes,0.05,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,Will Other be the second most valuable company on October 31?,Yes,0.08,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,Will Other be the second most valuable company on October 31?,Yes,0.1,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.05,0.0395,0,-1.0,0.9605,1,0.0411,99391.08783599995
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99391.08783599995
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,99391.08783599995
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.05,0.04,0,-1.0,0.96,1,0.0417,99377.03119499981
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.08,0.07,0,-1.0,0.93,1,0.0753,99377.03119499981
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.1,0.07,0,-1.0,0.93,1,0.0753,99377.03119499981
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,97301.03
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,97301.03
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,97301.03
+war,Israel x Hamas ceasefire before September?,Yes,0.05,0.034,0,-1.0,0.966,1,0.0352,972382.17
+war,Israel x Hamas ceasefire before September?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,972382.17
+war,Israel x Hamas ceasefire before September?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,972382.17
+war,Crimean bridge hit before September?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,95330.84
+war,Crimean bridge hit before September?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,95330.84
+war,Crimean bridge hit before September?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,95330.84
+war,Israel military action against Iran by end of 2024?,No,0.05,0.045,0,-1.0,0.955,1,0.0471,934236.515399
+war,Israel military action against Iran by end of 2024?,No,0.08,0.075,0,-1.0,0.925,1,0.0811,934236.515399
+war,Israel military action against Iran by end of 2024?,No,0.1,0.095,0,-1.0,0.905,1,0.105,934236.515399
+war,Next Israel x Hamas ceasefire in August?,Yes,0.05,0.035,0,-1.0,0.965,1,0.0363,82951.01
+war,Next Israel x Hamas ceasefire in August?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,82951.01
+war,Next Israel x Hamas ceasefire in August?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,82951.01
+war,Crimean bridge hit before October?,Yes,0.05,0.035,0,-1.0,0.965,1,0.0363,80779.368373
+war,Crimean bridge hit before October?,Yes,0.08,0.065,0,-1.0,0.935,1,0.0695,80779.368373
+war,Crimean bridge hit before October?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,80779.368373
+war,Will US attack Iran in 2023?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,8061.85
+war,Will US attack Iran in 2023?,Yes,0.08,0.055,0,-1.0,0.945,1,0.0582,8061.85
+war,Will US attack Iran in 2023?,Yes,0.1,0.055,0,-1.0,0.945,1,0.0582,8061.85
+war,Ukraine hits Moscow by Sept 30?,No,0.05,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Ukraine hits Moscow by Sept 30?,No,0.08,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Ukraine hits Moscow by Sept 30?,No,0.1,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Will Iran officially join the war before February?,Yes,0.05,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,Will Iran officially join the war before February?,Yes,0.08,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,Will Iran officially join the war before February?,Yes,0.1,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,62496.14
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,62496.14
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.1,0.09,0,-1.0,0.91,1,0.0989,62496.14
+war,US/Iran declare war before March?,Yes,0.05,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,US/Iran declare war before March?,Yes,0.08,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,US/Iran declare war before March?,Yes,0.1,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,No Israel x Hamas ceasefire in 2024?,No,0.05,0.0445,0,-1.0,0.9555,1,0.0466,617817.708213
+war,No Israel x Hamas ceasefire in 2024?,No,0.08,0.065,0,-1.0,0.935,1,0.0695,617817.708213
+war,No Israel x Hamas ceasefire in 2024?,No,0.1,0.085,0,-1.0,0.915,1,0.0929,617817.708213
+war,Iran strike on US military before October?,Yes,0.05,0.0355,0,-1.0,0.9645,1,0.0368,61620.761155
+war,Iran strike on US military before October?,Yes,0.08,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+war,Iran strike on US military before October?,Yes,0.1,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+war,Will Russia recapture Sudzha before December?,Yes,0.05,0.043,0,-1.0,0.957,1,0.0449,609294.772643
+war,Will Russia recapture Sudzha before December?,Yes,0.08,0.07,0,-1.0,0.93,1,0.0753,609294.772643
+war,Will Russia recapture Sudzha before December?,Yes,0.1,0.085,0,-1.0,0.915,1,0.0929,609294.772643
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,99254.450509
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,99254.450509
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.1,0.08,0,-1.0,0.92,1,0.087,99254.450509
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,983202.5010169997
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,983202.5010169997
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.1,0.095,0,-1.0,0.905,1,0.105,983202.5010169997
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.05,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.08,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.1,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will a US ally get a nuke in 2025?,Yes,0.05,0.045,0,-1.0,0.955,1,0.0471,92717.626365
+nuclear,Will a US ally get a nuke in 2025?,Yes,0.08,0.075,0,-1.0,0.925,1,0.0811,92717.626365
+nuclear,Will a US ally get a nuke in 2025?,Yes,0.1,0.075,0,-1.0,0.925,1,0.0811,92717.626365
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.05,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.08,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.1,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.05,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.08,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.1,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.05,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.08,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.1,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.05,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.08,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.1,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.05,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.08,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.1,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.05,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.08,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.1,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.05,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.08,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.1,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.05,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.08,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.1,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.05,0.024,0,-1.0,0.976,1,0.0246,7580.175543
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.08,0.024,0,-1.0,0.976,1,0.0246,7580.175543
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.1,0.024,0,-1.0,0.976,1,0.0246,7580.175543
