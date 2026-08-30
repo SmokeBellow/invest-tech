@@ -1,0 +1,123 @@
+resolution_date,category,question,stake_usd,r_mult,equity
+2024-10-21,climate,September temperature increase by more than 1.40°C?,10.0,0.0695,1000.7
+2024-10-21,climate,September temperature increase by less than 1.17°C?,10.01,0.0811,1001.51
+2025-01-01,war,No Israel x Hamas ceasefire in 2024?,10.02,0.0695,1002.2
+2025-01-10,climate,Will 2024 be the hottest year on record?,10.02,0.0695,1002.9
+2025-02-11,weather,Will global temperature increase by between 1.20-1.24ºC in January 2025?,10.03,0.0127,1003.03
+2025-02-11,climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,10.03,0.0127,1003.15
+2025-02-11,climate,Will global temperature increase by between 1.30-1.34ºC in January 2025?,10.03,0.0267,1003.42
+2025-02-15,earthquake,6.0+ earthquake in Mediterranean by next Friday?,10.03,0.0811,1004.24
+2025-03-01,geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,10.04,0.0811,1005.05
+2025-03-01,world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,10.05,0.0811,1005.87
+2025-03-07,geopolitics,Trump announces cutting all military aid to Ukraine aid before April?,10.06,0.006,1005.93
+2025-03-11,climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,10.06,0.0811,1006.74
+2025-03-11,climate,Will global temperature increase by less than 1.20ºC in February 2025?,10.07,0.0471,1007.22
+2025-03-11,climate,Will global temperature increase by more than 1.39ºC in February 2025?,10.07,0.0747,1007.97
+2025-03-11,climate,Will global temperature increase by between 1.30-1.34ºC in February 2025?,10.08,0.0811,1008.79
+2025-04-01,geopolitics,Israel and Saudi Arabia normalize relations before April?,10.09,0.0811,1009.6
+2025-04-01,world,Israel and Saudi Arabia normalize relations before April?,10.1,0.0811,1010.42
+2025-04-04,geopolitics,Will 9 justices on South Korea's Constitutional Court vote for Yoon's impeachmen,10.1,0.0582,1011.01
+2025-04-10,climate,Will global temperature increase by less than 1.22ºC in March 2025?,10.11,0.0695,1011.71
+2025-04-10,climate,Will global temperature increase by between 1.27-1.31ºC in March 2025?,10.12,0.0799,1012.52
+2025-04-10,climate,2025 March hottest on record?,10.13,0.0695,1013.22
+2025-04-30,recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,10.13,0.0471,1013.7
+2025-04-30,recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,10.14,0.0526,1014.24
+2025-04-30,recession,Will U.S. GDP growth be less than -2% in Q1 2025?,10.14,0.0695,1014.94
+2025-04-30,economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,10.15,0.0471,1015.42
+2025-05-01,earthquake,Earthquake 7.0 or above in April?,10.15,0.0638,1016.07
+2025-05-09,climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,10.16,0.0477,1016.55
+2025-05-09,climate,Will global temperature increase by less than 1.08ºC in April 2025?,10.17,0.0309,1016.86
+2025-05-31,economy,Will another company be the largest in the world by market cap on May 31?,10.17,0.0116,1016.98
+2025-06-01,geopolitics,Will Iran enrich uranium to 90% before June?,10.17,0.0811,1017.81
+2025-06-01,geopolitics,Israel strike on Iranian nuclear facility in May?,10.18,0.0582,1018.4
+2025-06-01,world,Will Iran enrich uranium to 90% before June?,10.18,0.0811,1019.23
+2025-06-01,earthquake,Megaquake in May?,10.19,0.0695,1019.93
+2025-06-01,nuclear,Will Iran enrich uranium to 90% before June?,10.2,0.0811,1020.76
+2025-06-02,world,Will Maciej Maciak be the next President of Poland?,10.21,0.0005,1020.77
+2025-06-02,world,Will Marek Woch be the next President of Poland?,10.21,0.0005,1020.77
+2025-06-04,world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,10.21,0.0106,1020.88
+2025-06-04,world,Will Yoo Seong-min win 2nd place in the South Korean presidential election?,10.21,0.0121,1021.0
+2025-06-10,climate,Will global temperature increase by between 1.05-1.09ºC in May 2025?,10.21,0.0411,1021.42
+2025-07-01,geopolitics,Another US military action against Iran by June 30?,10.21,0.0805,1022.25
+2025-07-01,geopolitics,Israel x Egypt sever diplomatic relations before July?,10.22,0.0695,1022.96
+2025-07-01,world,Another US military action against Iran by June 30?,10.23,0.0805,1023.78
+2025-07-01,world,Israel x Egypt sever diplomatic relations before July?,10.24,0.0695,1024.49
+2025-07-01,natural_disaster,Will a hurricane make landfall in the US in June?,10.24,0.0526,1025.03
+2025-07-01,natural_disaster,Megaquake in June?,10.25,0.0695,1025.74
+2025-07-01,earthquake,Megaquake in June?,10.26,0.0695,1026.45
+2025-07-24,economy,Will the ECB announce an increase at the July meeting?,10.26,0.006,1026.52
+2025-08-01,natural_disaster,Will a hurricane make landfall in the US before August?,10.27,0.0347,1026.87
+2025-08-01,economy,Will Elon Musk's net worth be between $360b and $370b on July 31?,10.27,0.0753,1027.65
+2025-08-01,nuclear,Iran agrees to end enrichment of uranium before August?,10.28,0.0811,1028.48
+2025-08-02,natural_disaster,Megaquake before August?,10.28,-1.0,1018.19
+2025-08-02,natural_disaster,Megaquake before August?,10.18,0.0846,1019.06
+2025-08-02,earthquake,Megaquake before August?,10.19,-1.0,1008.87
+2025-08-02,earthquake,Megaquake before August?,10.09,0.0846,1009.72
+2025-08-20,world,Will Andrónico Rodríguez win the most votes in the first round of the 2025 Boliv,10.1,0.0811,1010.54
+2025-08-23,world,Will Medina win by 3-7%?,10.11,0.0811,1011.36
+2025-09-01,geopolitics,Will Reza Pahlavi enter Iran before September?,10.11,0.0582,1011.95
+2025-09-01,geopolitics,Will Trump meet with Jair Bolsonaro in August?,10.12,0.023,1012.18
+2025-09-01,world,Will Reza Pahlavi enter Iran before September?,10.12,0.0582,1012.77
+2025-09-01,world,Will Xi visit the US before September?,10.13,0.0753,1013.53
+2025-09-01,climate,Will a hurricane make landfall in the US by August 31?,10.14,0.0811,1014.35
+2025-09-01,natural_disaster,Megaquake by August 31?,10.14,0.0811,1015.17
+2025-09-01,earthquake,Megaquake by August 31?,10.15,0.0811,1016.0
+2025-09-06,geopolitics,Trump x Modi talk by September 5?,10.16,0.0811,1016.82
+2025-09-06,world,Trump x Modi talk by September 5?,10.17,0.0811,1017.65
+2025-09-09,geopolitics,Israel military action against Qatar in 2025?,10.18,-1.0,1007.47
+2025-09-09,world,Israel military action against Qatar in 2025?,10.07,-1.0,997.4
+2025-09-11,climate,2025 August second hottest on record?,9.97,0.0638,998.03
+2025-09-11,economy,Will the ECB announce a 50+ bps decrease at the September meeting?,9.98,0.0283,998.31
+2025-09-17,economy,"Will Powell say ""Median"" during September press conference?",9.98,0.0695,999.01
+2025-09-18,economy,Bank of England increases interest rates by 25+ bps after September 2025 meeting,9.99,0.023,999.24
+2025-09-30,economy,Will Google be the largest company in the world by market cap on September 30?,9.99,0.0035,999.27
+2025-10-01,geopolitics,Will Trump meet with Vladimir Putin in September?,9.99,0.0695,999.97
+2025-10-01,climate,Will a hurricane make landfall in the US by September 30?,10.0,0.0549,1000.52
+2025-10-01,natural_disaster,Megaquake by September 30?,10.01,0.0695,1001.21
+2025-10-01,earthquake,Megaquake by September 30?,10.01,0.0695,1001.91
+2025-10-01,economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,10.02,0.0288,1002.2
+2025-10-30,economy,No change in Bank of Japan's interest rates after October 2025 meeting?,10.02,0.0811,1003.01
+2025-10-31,economy,Will Other be the second most valuable company on October 31?,10.03,0.0204,1003.21
+2025-11-01,geopolitics,US strikes Afghanistan by October 31?,10.03,0.0352,1003.57
+2025-11-01,natural_disaster,Megaquake by October 31?,10.04,0.0695,1004.26
+2025-11-01,earthquake,Megaquake by October 31?,10.04,0.0695,1004.96
+2025-11-07,economy,Will the September 2025 unemployment rate be ≥4.5%?,10.05,0.0384,1005.35
+2025-11-14,climate,Will global temperature increase by between 1.00ºC and 1.04ºC in September 2025?,10.05,0.0241,1005.59
+2025-11-14,climate,Will global temperature increase by between 1.10ºC and 1.14ºC in October 2025?,10.06,0.0352,1005.94
+2025-11-14,climate,Will global temperature increase by between 1.15ºC and 1.19ºC in October 2025?,10.06,0.0638,1006.59
+2025-11-14,climate,Will global temperature increase by less than 1.00ºC in September 2025?,10.07,0.0417,1007.01
+2025-11-21,world,Will Israel win Miss Universe 2025?,10.07,0.0471,1007.48
+2025-12-01,climate,Cat 3+ hurricane hits Miami in 2025?,10.07,0.0811,1008.3
+2025-12-01,natural_disaster,Cat 3+ hurricane hits Miami in 2025?,10.08,0.0811,1009.12
+2025-12-01,natural_disaster,Megaquake by November 30?,10.09,0.0695,1009.82
+2025-12-01,natural_disaster,Will a cat 5 hurricane make US landfall during Hurricane Season 2025?,10.1,0.0811,1010.64
+2025-12-01,earthquake,Megaquake by November 30?,10.11,0.0695,1011.34
+2025-12-01,economy,"Will the total number of TSA passengers for November 23-30 be between 24,000,000",10.11,0.0363,1011.7
+2025-12-02,climate,Will between 20 and 23 named storms occur in the 2025 Atlantic hurricane season?,10.12,0.0811,1012.53
+2025-12-02,climate,Will between 12 and 15 named storms occur in the 2025 Atlantic hurricane season?,10.13,0.0753,1013.29
+2025-12-02,climate,Will more than 23 named storms occur in the 2025 Atlantic hurricane season?,10.13,0.0811,1014.11
+2025-12-08,world,Will Baluta win by 6-9%?,10.14,0.0753,1014.87
+2025-12-09,climate,Will global temperature increase by between 1.15ºC and 1.19ºC in November 2025?,10.15,0.0753,1015.64
+2025-12-10,weather,Will the highest temperature in London be 63°F or higher on December 9?,10.16,0.032,1015.96
+2025-12-18,economy,Will a dozen eggs cost between $3.75–4.00 in November?,10.16,0.0235,1016.2
+2025-12-22,world,Will the Australian hero donation campaign raise less than $2.0 million by Decem,10.16,0.0025,1016.23
+2026-01-01,geopolitics,Israel strike on Yemen by December 31?,10.16,0.0811,1017.05
+2026-01-01,geopolitics,Ukraine strike on Moscow municipality by December 31?,10.17,0.0753,1017.82
+2026-01-01,geopolitics,Will Zelenskyy and Putin meet next in US?,10.18,0.0262,1018.08
+2026-01-01,geopolitics,Will Russia recapture territory in Vilne by December 31?,10.18,0.0638,1018.73
+2026-01-01,world,Israel strike on Yemen by December 31?,10.19,0.0811,1019.56
+2026-01-01,world,Morocco snap election called by December 31?,10.2,0.0471,1020.04
+2026-01-01,world,Lee Jun-seok in jail in 2025?,10.2,0.0753,1020.81
+2026-01-01,world,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,10.21,0.0689,1021.51
+2026-01-01,climate,Will 27 named typhoons occur in the Northwest Pacific in 2025?,10.22,0.0417,1021.94
+2026-01-01,natural_disaster,Nothing Ever Happens: Natural Disaster Edition,10.22,0.0582,1022.53
+2026-01-01,natural_disaster,Megaquake by December 31?,10.23,0.0695,1023.24
+2026-01-01,earthquake,Nothing Ever Happens: Natural Disaster Edition,10.23,0.0582,1023.84
+2026-01-01,earthquake,Megaquake by December 31?,10.24,0.0695,1024.55
+2026-01-01,earthquake,Magnitude 6.5+ earthquake in LA before 2026?,10.25,0.0582,1025.15
+2026-01-01,economy,Will Elon Musk's net worth be between $440b and $450b on December 31?,10.25,0.0695,1025.86
+2026-01-01,economy,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,10.26,0.0689,1026.56
+2026-01-01,economy,Will Elon Musk's net worth be at least $670b on December 31?,10.27,0.0695,1027.28
+2026-01-01,nuclear,Nothing Ever Happens: Nuclear Edition,10.27,0.0811,1028.11
+2026-01-13,economy,Will monthly inflation increase by 0.3% in November?,10.28,0.0695,1028.83
+2026-01-13,economy,Will monthly inflation increase by 0.1% or less in November?,10.29,0.0363,1029.2

@@ -45,20 +45,53 @@
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from scipy import stats
 
 from pm_api import CATEGORY_TAGS, fetch_markets_paginated, fetch_price_history
 
-MARKETS_PER_CATEGORY = 15          # top-N по объёму на категорию (контроль числа запросов к CLOB)
+MARKETS_PER_CATEGORY = 15          # top-N по объёму на категорию (контроль числа запросов к CLOB), режим "вся история"
+MARKETS_PER_CATEGORY_YEAR = 40     # то же, но при фильтре по конкретному году (--year) — пул уже сам по себе уже
 PRICE_THRESHOLDS = [0.05, 0.08, 0.10]
 MIN_DAYS_BEFORE_END = 2            # порог должен пробиться не позже, чем за N дней до конца истории токена
 MIN_VOLUME_USD = 2000              # отсеиваем совсем мёртвые/нерепрезентативные рынки
+STAKE_PCT = 0.01                   # та же формула сайзинга, что в pm_live_scan.py
+MAX_STAKE_PCT_OF_EQUITY = 0.05
+MIN_STAKE_USD = 2.0
+START_CAPITAL = 1000.0
 
 RESULTS_DIR = Path(__file__).resolve().parent.parent / "results"
+
+
+def fetch_markets_paginated_in_year(tag_id: int, year: int, max_markets: int) -> list:
+    """Закрытые рынки, чей ПЛАНОВЫЙ endDate попадает в календарный год (Gamma API
+    end_date_min/end_date_max) — прокси для "рынок был активен/должен был
+    разрешиться в этом году", не гарантия фактической даты разрешения (рынок
+    мог разрешиться и раньше endDate — см. resolution_date ниже, который
+    берётся из реальной истории цены, не из endDate)."""
+    out = []
+    offset = 0
+    page_size = 100
+    while len(out) < max_markets:
+        params = {
+            "tag_id": tag_id, "closed": "true", "active": "false",
+            "limit": page_size, "offset": offset, "order": "volume", "ascending": "false",
+            "end_date_min": f"{year}-01-01", "end_date_max": f"{year}-12-31",
+        }
+        from pm_api import _get, GAMMA_BASE
+        page = _get(f"{GAMMA_BASE}/markets", params)
+        if not page:
+            break
+        out.extend(page)
+        offset += page_size
+        if len(page) < page_size:
+            break
+    return out[:max_markets]
 
 
 def find_crossing(history: list, threshold: float, min_days_before_end: int):
@@ -72,10 +105,13 @@ def find_crossing(history: list, threshold: float, min_days_before_end: int):
     return None
 
 
-def collect_trades() -> list:
+def collect_trades(year: int | None = None) -> list:
     trades = []
     for category, tag_id in CATEGORY_TAGS.items():
-        markets = fetch_markets_paginated(tag_id, closed=True, max_markets=MARKETS_PER_CATEGORY)
+        if year is not None:
+            markets = fetch_markets_paginated_in_year(tag_id, year, MARKETS_PER_CATEGORY_YEAR)
+        else:
+            markets = fetch_markets_paginated(tag_id, closed=True, max_markets=MARKETS_PER_CATEGORY)
         print(f"[{category}] closed markets fetched: {len(markets)}")
         for m in markets:
             try:
@@ -105,11 +141,20 @@ def collect_trades() -> list:
                     continue
                 if len(history) < MIN_DAYS_BEFORE_END + 3:
                     continue
+                # Дата фактического разрешения ≈ последняя точка истории цены токена
+                # (последний торговый день перед resolve) — НАДЁЖНЕЕ, чем endDate
+                # рынка (тот часто остаётся плановой датой даже при досрочном разрешении).
+                resolution_date = datetime.fromtimestamp(
+                    history[-1]["t"], tz=timezone.utc
+                ).date().isoformat()
                 for threshold in PRICE_THRESHOLDS:
                     cross = find_crossing(history, threshold, MIN_DAYS_BEFORE_END)
                     if cross is None:
                         continue
                     entry_price = cross["p"]
+                    entry_date = datetime.fromtimestamp(
+                        cross["t"], tz=timezone.utc
+                    ).date().isoformat()
                     loser_won = won
                     loser_r = (1.0 / entry_price - 1.0) if loser_won else -1.0
                     favorite_price = max(1.0 - entry_price, 0.01)
@@ -120,6 +165,8 @@ def collect_trades() -> list:
                         "question": m.get("question", "")[:80],
                         "cheap_side": side_name,
                         "threshold": threshold,
+                        "entry_date": entry_date,
+                        "resolution_date": resolution_date,
                         "loser_entry_price": entry_price,
                         "loser_won": int(loser_won),
                         "loser_r_mult": loser_r,
@@ -129,6 +176,49 @@ def collect_trades() -> list:
                         "volume": volume,
                     })
     return trades
+
+
+def build_equity_curve(trades: list, threshold: float) -> list:
+    """Хронологическая эквити-кривая боевой (favorite) механики на одном
+    пороге — сделки сортируются по РЕАЛЬНОЙ дате разрешения (resolution_date),
+    та же формула сайзинга (1% капитала, потолок 5%), что в pm_live_scan.py.
+    Позиция открывается на entry_date, но капитал в симуляции меняется на
+    resolution_date (упрощение: параллельные по времени сделки не увеличивают
+    факт. занятый капитал — тот же пробел, что и в equity_curve.py A/B, §3.4)."""
+    chosen = [t for t in trades if t["threshold"] == threshold]
+    chosen.sort(key=lambda t: t["resolution_date"])
+    equity = START_CAPITAL
+    curve = []
+    for t in chosen:
+        stake = max(MIN_STAKE_USD, min(equity * STAKE_PCT, equity * MAX_STAKE_PCT_OF_EQUITY))
+        equity += stake * t["favorite_r_mult"]
+        curve.append({
+            "resolution_date": t["resolution_date"], "category": t["category"],
+            "question": t["question"], "stake_usd": round(stake, 2),
+            "r_mult": t["favorite_r_mult"], "equity": round(equity, 2),
+        })
+    return curve
+
+
+def yearly_breakdown(curve: list) -> list:
+    if not curve:
+        return []
+    rows = []
+    by_year = {}
+    for point in curve:
+        by_year.setdefault(point["resolution_date"][:4], []).append(point)
+    prev_equity = START_CAPITAL
+    for year in sorted(by_year):
+        points = by_year[year]
+        start_eq = prev_equity
+        end_eq = points[-1]["equity"]
+        rows.append({
+            "year": year, "n_trades": len(points),
+            "start_equity": round(start_eq, 2), "end_equity": round(end_eq, 2),
+            "return_pct": round((end_eq / start_eq - 1) * 100, 2),
+        })
+        prev_equity = end_eq
+    return rows
 
 
 def _summary_row(category, threshold, items, won_key, r_key):
@@ -167,13 +257,21 @@ def summarize(trades: list, won_key: str, r_key: str) -> list:
 
 
 def main():
-    trades = collect_trades()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--year", type=int, default=None,
+                         help="Ограничить выборку закрытыми рынками с плановым endDate в этом "
+                              "календарном году (Gamma API end_date_min/max) — для оценки "
+                              "доходности за конкретный период, а не 'весь пул без хронологии'.")
+    args = parser.parse_args()
+
+    trades = collect_trades(year=args.year)
     print(f"Total trade-observations collected: {len(trades)}")
 
+    suffix = f"_{args.year}" if args.year else ""
     RESULTS_DIR.mkdir(exist_ok=True)
-    with open(RESULTS_DIR / "polymarket_retro_trades.csv", "w", newline="") as f:
+    with open(RESULTS_DIR / f"polymarket_retro_trades{suffix}.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
-            "category", "question", "cheap_side", "threshold",
+            "category", "question", "cheap_side", "threshold", "entry_date", "resolution_date",
             "loser_entry_price", "loser_won", "loser_r_mult",
             "favorite_entry_price", "favorite_won", "favorite_r_mult", "volume",
         ])
@@ -182,7 +280,7 @@ def main():
 
     loser_summary = summarize(trades, "loser_won", "loser_r_mult")
     favorite_summary = summarize(trades, "favorite_won", "favorite_r_mult")
-    with open(RESULTS_DIR / "polymarket_retro_check.csv", "w", newline="") as f:
+    with open(RESULTS_DIR / f"polymarket_retro_check{suffix}.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
             "mechanic", "category", "threshold", "n", "win_rate", "mean_r", "t_stat", "p_value",
         ])
@@ -191,6 +289,17 @@ def main():
             writer.writerow({"mechanic": "loser (отвергнута)", **row})
         for row in favorite_summary:
             writer.writerow({"mechanic": "favorite (боевая)", **row})
+
+    # Хронологическая эквити-кривая боевой механики на боевом пороге 0.08
+    boevoy_threshold = 0.08
+    curve = build_equity_curve(trades, boevoy_threshold)
+    with open(RESULTS_DIR / f"polymarket_retro_equity{suffix}.csv", "w", newline="") as f:
+        writer = csv.DictWriter(f, fieldnames=[
+            "resolution_date", "category", "question", "stake_usd", "r_mult", "equity",
+        ])
+        writer.writeheader()
+        writer.writerows(curve)
+    yearly = yearly_breakdown(curve)
 
     def _write_table(f, title, summary):
         f.write(f"## {title}\n\n")
@@ -203,10 +312,17 @@ def main():
             )
         f.write("\n")
 
-    with open(RESULTS_DIR / "polymarket_retro_check.md", "w") as f:
+    with open(RESULTS_DIR / f"polymarket_retro_check{suffix}.md", "w") as f:
         f.write("# Polymarket — ретро-проверка калибровки (закрытые рынки)\n\n")
+        if args.year:
+            f.write(
+                f"**Фильтр по году: {args.year}** (плановый endDate рынка в этом году, "
+                "Gamma API end_date_min/max — фактическая дата разрешения может быть раньше, "
+                "см. `resolution_date` в CSV сделок и эквити-кривую ниже).\n\n"
+            )
         f.write(
-            f"Категорий: {len(CATEGORY_TAGS)}, до {MARKETS_PER_CATEGORY} закрытых рынков на "
+            f"Категорий: {len(CATEGORY_TAGS)}, до "
+            f"{MARKETS_PER_CATEGORY_YEAR if args.year else MARKETS_PER_CATEGORY} закрытых рынков на "
             f"категорию по объёму, пороги входа {PRICE_THRESHOLDS}, "
             f"мин. объём рынка ${MIN_VOLUME_USD}. Полные таблицы по всем "
             "категориям и порогам — без выбора \"победителя\" скриптом.\n\n"
@@ -221,8 +337,24 @@ def main():
             "Механика FAVORITE (боевая) — покупка дорогой стороны, когда противоположная дешевле порога",
             favorite_summary,
         )
+        f.write(
+            f"## Хронологическая эквити-кривая (боевой порог {boevoy_threshold}, "
+            f"сортировка по реальной дате разрешения {START_CAPITAL:.0f}$ старт)\n\n"
+        )
+        if yearly:
+            f.write("| Год | Сделок | Капитал на начало | Капитал на конец | Доходность за год |\n")
+            f.write("|---|---|---|---|---|\n")
+            for row in yearly:
+                f.write(
+                    f"| {row['year']} | {row['n_trades']} | ${row['start_equity']} | "
+                    f"${row['end_equity']} | {row['return_pct']:+.2f}% |\n"
+                )
+        else:
+            f.write("Нет сделок на этом пороге в выбранной выборке.\n")
+        f.write("\n")
 
-    print("Written: results/polymarket_retro_check.{csv,md}, results/polymarket_retro_trades.csv")
+    print(f"Written: results/polymarket_retro_check{suffix}.{{csv,md}}, "
+          f"results/polymarket_retro_trades{suffix}.csv, results/polymarket_retro_equity{suffix}.csv")
 
 
 if __name__ == "__main__":

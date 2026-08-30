@@ -1,0 +1,82 @@
+category,question,cheap_side,threshold,entry_date,resolution_date,loser_entry_price,loser_won,loser_r_mult,favorite_entry_price,favorite_won,favorite_r_mult,volume
+geopolitics,Will a nuclear weapon detonate by June 30?,Yes,0.05,2023-02-04,2023-07-01,0.04,0,-1.0,0.96,1,0.0417,427620.44
+geopolitics,Will a nuclear weapon detonate by June 30?,Yes,0.08,2023-01-31,2023-07-01,0.06,0,-1.0,0.94,1,0.0638,427620.44
+geopolitics,Will a nuclear weapon detonate by June 30?,Yes,0.1,2023-01-31,2023-07-01,0.06,0,-1.0,0.94,1,0.0638,427620.44
+geopolitics,Will a nuclear weapon detonate by December 31?,Yes,0.05,2023-09-13,2024-01-01,0.0495,0,-1.0,0.9505,1,0.0521,179950.74
+geopolitics,Will a nuclear weapon detonate by December 31?,Yes,0.08,2023-07-18,2024-01-01,0.0735,0,-1.0,0.9265,1,0.0793,179950.74
+geopolitics,Will a nuclear weapon detonate by December 31?,Yes,0.1,2023-05-27,2024-01-01,0.09,0,-1.0,0.91,1,0.0989,179950.74
+weather,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.08,2023-12-08,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,99623.75
+weather,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.1,2023-12-07,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,99623.75
+weather,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.05,2023-10-15,2023-10-19,0.015,0,-1.0,0.985,1,0.0152,91223.68
+weather,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.08,2023-09-26,2023-10-19,0.07,0,-1.0,0.93,1,0.0753,91223.68
+weather,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.1,2023-09-26,2023-10-19,0.07,0,-1.0,0.93,1,0.0753,91223.68
+weather,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.05,2023-09-13,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,668039.76
+weather,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.08,2023-09-06,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,668039.76
+weather,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.1,2023-09-01,2024-01-12,0.095,0,-1.0,0.905,1,0.105,668039.76
+weather,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.05,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+weather,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.08,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+weather,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.1,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+weather,Will the final global heat increase be 1.13 or greater for 2023?,No,0.05,2023-12-01,2024-01-12,0.035,0,-1.0,0.965,1,0.0363,353862.17
+weather,Will the final global heat increase be 1.13 or greater for 2023?,No,0.08,2023-11-11,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,353862.17
+weather,Will the final global heat increase be 1.13 or greater for 2023?,No,0.1,2023-10-15,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,353862.17
+weather,Will the final global heat increase be 1.11 or greater for 2023?,Yes,0.1,2023-08-27,2024-01-12,0.085,1,10.76470588235294,0.915,0,-1.0,329085.95
+weather,Will the final global heat increase be 1.11 or greater for 2023?,No,0.05,2023-11-11,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,329085.95
+weather,Will the final global heat increase be 1.11 or greater for 2023?,No,0.08,2023-10-14,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,329085.95
+weather,Will the final global heat increase be 1.11 or greater for 2023?,No,0.1,2023-10-14,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,329085.95
+weather,Will the final global heat increase be 1.08 or greater for 2023?,No,0.05,2023-10-16,2024-01-12,0.04,0,-1.0,0.96,1,0.0417,307850.04
+weather,Will the final global heat increase be 1.08 or greater for 2023?,No,0.08,2023-09-23,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,307850.04
+weather,Will the final global heat increase be 1.08 or greater for 2023?,No,0.1,2023-09-20,2024-01-12,0.095,0,-1.0,0.905,1,0.105,307850.04
+weather,Will the final global heat increase be 1.05 or greater for 2023?,No,0.05,2023-09-18,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,307566.54
+weather,Will the final global heat increase be 1.05 or greater for 2023?,No,0.08,2023-09-14,2024-01-12,0.065,0,-1.0,0.935,1,0.0695,307566.54
+weather,Will the final global heat increase be 1.05 or greater for 2023?,No,0.1,2023-09-10,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,307566.54
+weather,Will the final global heat increase be 1.15 or greater for 2023?,No,0.05,2023-12-15,2024-01-12,0.04,0,-1.0,0.96,1,0.0417,138174.79
+weather,Will the final global heat increase be 1.15 or greater for 2023?,No,0.08,2023-12-13,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,138174.79
+weather,Will the final global heat increase be 1.15 or greater for 2023?,No,0.1,2023-12-12,2024-01-12,0.09,0,-1.0,0.91,1,0.0989,138174.79
+climate,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.08,2023-12-08,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,99623.75
+climate,Will the final global heat increase be 1.18 or greater for 2023?,Yes,0.1,2023-12-07,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,99623.75
+climate,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.05,2023-10-15,2023-10-19,0.015,0,-1.0,0.985,1,0.0152,91223.68
+climate,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.08,2023-09-26,2023-10-19,0.07,0,-1.0,0.93,1,0.0753,91223.68
+climate,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,No,0.1,2023-09-26,2023-10-19,0.07,0,-1.0,0.93,1,0.0753,91223.68
+climate,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.05,2023-09-13,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,668039.76
+climate,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.08,2023-09-06,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,668039.76
+climate,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),No,0.1,2023-09-01,2024-01-12,0.095,0,-1.0,0.905,1,0.105,668039.76
+climate,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.05,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+climate,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.08,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+climate,Will there be 21+ named storms during the Atlantic Hurricane Season?,Yes,0.1,2023-11-19,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,38046.35
+climate,Will the final global heat increase be 1.13 or greater for 2023?,No,0.05,2023-12-01,2024-01-12,0.035,0,-1.0,0.965,1,0.0363,353862.17
+climate,Will the final global heat increase be 1.13 or greater for 2023?,No,0.08,2023-11-11,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,353862.17
+climate,Will the final global heat increase be 1.13 or greater for 2023?,No,0.1,2023-10-15,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,353862.17
+climate,Will the final global heat increase be 1.11 or greater for 2023?,Yes,0.1,2023-08-27,2024-01-12,0.085,1,10.76470588235294,0.915,0,-1.0,329085.95
+climate,Will the final global heat increase be 1.11 or greater for 2023?,No,0.05,2023-11-11,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,329085.95
+climate,Will the final global heat increase be 1.11 or greater for 2023?,No,0.08,2023-10-14,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,329085.95
+climate,Will the final global heat increase be 1.11 or greater for 2023?,No,0.1,2023-10-14,2024-01-12,0.075,0,-1.0,0.925,1,0.0811,329085.95
+climate,Will the final global heat increase be 1.08 or greater for 2023?,No,0.05,2023-10-16,2024-01-12,0.04,0,-1.0,0.96,1,0.0417,307850.04
+climate,Will the final global heat increase be 1.08 or greater for 2023?,No,0.08,2023-09-23,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,307850.04
+climate,Will the final global heat increase be 1.08 or greater for 2023?,No,0.1,2023-09-20,2024-01-12,0.095,0,-1.0,0.905,1,0.105,307850.04
+climate,Will the final global heat increase be 1.05 or greater for 2023?,No,0.05,2023-09-18,2024-01-12,0.045,0,-1.0,0.955,1,0.0471,307566.54
+climate,Will the final global heat increase be 1.05 or greater for 2023?,No,0.08,2023-09-14,2024-01-12,0.065,0,-1.0,0.935,1,0.0695,307566.54
+climate,Will the final global heat increase be 1.05 or greater for 2023?,No,0.1,2023-09-10,2024-01-12,0.085,0,-1.0,0.915,1,0.0929,307566.54
+climate,Will the final global heat increase be 1.15 or greater for 2023?,No,0.05,2023-12-15,2024-01-12,0.04,0,-1.0,0.96,1,0.0417,138174.79
+climate,Will the final global heat increase be 1.15 or greater for 2023?,No,0.08,2023-12-13,2024-01-12,0.07,0,-1.0,0.93,1,0.0753,138174.79
+climate,Will the final global heat increase be 1.15 or greater for 2023?,No,0.1,2023-12-12,2024-01-12,0.09,0,-1.0,0.91,1,0.0989,138174.79
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.05,2023-11-25,2024-01-01,0.045,0,-1.0,0.955,1,0.0471,97301.03
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.08,2023-11-17,2024-01-01,0.065,0,-1.0,0.935,1,0.0695,97301.03
+war,Will another nation declare war in the Israel-Hamas conflict?,Yes,0.1,2023-10-17,2024-01-01,0.09,0,-1.0,0.91,1,0.0989,97301.03
+war,Will US attack Iran in 2023?,Yes,0.05,2023-12-08,2024-01-01,0.045,0,-1.0,0.955,1,0.0471,8061.85
+war,Will US attack Iran in 2023?,Yes,0.08,2023-12-05,2024-01-01,0.055,0,-1.0,0.945,1,0.0582,8061.85
+war,Will US attack Iran in 2023?,Yes,0.1,2023-12-05,2024-01-01,0.055,0,-1.0,0.945,1,0.0582,8061.85
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.05,2023-11-12,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,62496.14
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.08,2023-11-06,2023-12-01,0.075,0,-1.0,0.925,1,0.0811,62496.14
+war,Will Hezbollah officially join the war by Nov 30?,Yes,0.1,2023-11-04,2023-12-01,0.09,0,-1.0,0.91,1,0.0989,62496.14
+war,Will Hezbollah officially join the war in 2023?,Yes,0.05,2023-12-31,2024-01-04,0.045,0,-1.0,0.955,1,0.0471,57437.85
+war,Will Hezbollah officially join the war in 2023?,Yes,0.08,2023-11-17,2024-01-04,0.075,0,-1.0,0.925,1,0.0811,57437.85
+war,Will Hezbollah officially join the war in 2023?,Yes,0.1,2023-11-13,2024-01-04,0.095,0,-1.0,0.905,1,0.105,57437.85
+war,Will Iran officially join the war in 2023?,Yes,0.05,2023-11-17,2024-01-01,0.045,0,-1.0,0.955,1,0.0471,28090.17
+war,Will Iran officially join the war in 2023?,Yes,0.08,2023-10-16,2024-01-01,0.065,0,-1.0,0.935,1,0.0695,28090.17
+war,Will Iran officially join the war in 2023?,Yes,0.1,2023-10-16,2024-01-01,0.065,0,-1.0,0.935,1,0.0695,28090.17
+war,Will Azerbaijan invade Armenia by Nov 30?,Yes,0.05,2023-11-04,2023-12-01,0.045,0,-1.0,0.955,1,0.0471,22386.07
+war,Will Azerbaijan invade Armenia by Nov 30?,Yes,0.08,2023-11-01,2023-12-01,0.075,0,-1.0,0.925,1,0.0811,22386.07
+war,Will Azerbaijan invade Armenia by Nov 30?,Yes,0.1,2023-10-26,2023-12-01,0.08,0,-1.0,0.92,1,0.087,22386.07
+war,Will US attack Iran by Nov 30?,Yes,0.05,2023-11-06,2023-12-01,0.04,0,-1.0,0.96,1,0.0417,15237.06
+war,Will US attack Iran by Nov 30?,Yes,0.08,2023-11-02,2023-12-01,0.06,0,-1.0,0.94,1,0.0638,15237.06
+war,Will US attack Iran by Nov 30?,Yes,0.1,2023-11-01,2023-12-01,0.085,0,-1.0,0.915,1,0.0929,15237.06

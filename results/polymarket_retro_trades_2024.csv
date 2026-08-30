@@ -1,0 +1,409 @@
+category,question,cheap_side,threshold,entry_date,resolution_date,loser_entry_price,loser_won,loser_r_mult,favorite_entry_price,favorite_won,favorite_r_mult,volume
+geopolitics,Hezbollah enters Israel in September?,Yes,0.05,2024-09-21,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,98662.960753
+geopolitics,Hezbollah enters Israel in September?,Yes,0.08,2024-09-18,2024-10-01,0.065,0,-1.0,0.935,1,0.0695,98662.960753
+geopolitics,Hezbollah enters Israel in September?,Yes,0.1,2024-09-18,2024-10-01,0.065,0,-1.0,0.935,1,0.0695,98662.960753
+geopolitics,Keir Starmer out as UK PM before October?,Yes,0.05,2024-08-07,2024-10-01,0.033,0,-1.0,0.967,1,0.0341,98051.044217
+geopolitics,Keir Starmer out as UK PM before October?,Yes,0.08,2024-08-06,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,98051.044217
+geopolitics,Keir Starmer out as UK PM before October?,Yes,0.1,2024-08-06,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,98051.044217
+geopolitics,Israel x Hamas ceasefire before September?,Yes,0.05,2024-08-26,2024-09-01,0.034,0,-1.0,0.966,1,0.0352,972382.17
+geopolitics,Israel x Hamas ceasefire before September?,Yes,0.08,2024-08-24,2024-09-01,0.065,0,-1.0,0.935,1,0.0695,972382.17
+geopolitics,Israel x Hamas ceasefire before September?,Yes,0.1,2024-08-01,2024-09-01,0.095,0,-1.0,0.905,1,0.105,972382.17
+geopolitics,U.S. military action against Iran by September 30?,Yes,0.05,2024-08-28,2024-10-01,0.0405,0,-1.0,0.9595,1,0.0422,95473.584599
+geopolitics,U.S. military action against Iran by September 30?,Yes,0.08,2024-08-28,2024-10-01,0.0405,0,-1.0,0.9595,1,0.0422,95473.584599
+geopolitics,U.S. military action against Iran by September 30?,Yes,0.1,2024-08-28,2024-10-01,0.0405,0,-1.0,0.9595,1,0.0422,95473.584599
+geopolitics,Crimean bridge hit before September?,Yes,0.05,2024-08-26,2024-09-01,0.045,0,-1.0,0.955,1,0.0471,95330.84
+geopolitics,Crimean bridge hit before September?,Yes,0.08,2024-08-24,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,95330.84
+geopolitics,Crimean bridge hit before September?,Yes,0.1,2024-08-24,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,95330.84
+geopolitics,Will Israel strike Iran on Thursday Oct 24?,Yes,0.08,2024-10-20,2024-10-25,0.06,0,-1.0,0.94,1,0.0638,95153.230974
+geopolitics,Will Israel strike Iran on Thursday Oct 24?,Yes,0.1,2024-10-20,2024-10-25,0.06,0,-1.0,0.94,1,0.0638,95153.230974
+geopolitics,Israel withdraws from Lebanon before November?,Yes,0.05,2024-10-17,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,93514.949289
+geopolitics,Israel withdraws from Lebanon before November?,Yes,0.08,2024-10-14,2024-11-01,0.065,0,-1.0,0.935,1,0.0695,93514.949289
+geopolitics,Israel withdraws from Lebanon before November?,Yes,0.1,2024-10-12,2024-11-01,0.09,0,-1.0,0.91,1,0.0989,93514.949289
+geopolitics,Musk x Maduro fight scheduled by Aug 9?,Yes,0.05,2024-08-01,2024-08-10,0.0215,0,-1.0,0.9785,1,0.022,91069.72
+geopolitics,Musk x Maduro fight scheduled by Aug 9?,Yes,0.08,2024-08-01,2024-08-10,0.0215,0,-1.0,0.9785,1,0.022,91069.72
+geopolitics,Musk x Maduro fight scheduled by Aug 9?,Yes,0.1,2024-08-01,2024-08-10,0.0215,0,-1.0,0.9785,1,0.022,91069.72
+geopolitics,"Will a nuclear weapon detonate by June 30, 2024?",Yes,0.05,2024-05-09,2024-07-01,0.048,0,-1.0,0.952,1,0.0504,90600.63
+geopolitics,"Will a nuclear weapon detonate by June 30, 2024?",Yes,0.08,2023-12-29,2024-07-01,0.06,0,-1.0,0.94,1,0.0638,90600.63
+geopolitics,"Will a nuclear weapon detonate by June 30, 2024?",Yes,0.1,2023-12-29,2024-07-01,0.06,0,-1.0,0.94,1,0.0638,90600.63
+geopolitics,Iran military response by Friday?,Yes,0.08,2024-08-27,2024-08-31,0.055,0,-1.0,0.945,1,0.0582,87822.68
+geopolitics,Iran military response by Friday?,Yes,0.1,2024-08-27,2024-08-31,0.055,0,-1.0,0.945,1,0.0582,87822.68
+geopolitics,Will Ukraine hold Kursk through Aug 31?,No,0.05,2024-08-18,2024-09-01,0.0405,0,-1.0,0.9595,1,0.0422,861569.13
+geopolitics,Will Ukraine hold Kursk through Aug 31?,No,0.08,2024-08-17,2024-09-01,0.055,0,-1.0,0.945,1,0.0582,861569.13
+geopolitics,Will Ukraine hold Kursk through Aug 31?,No,0.1,2024-08-16,2024-09-01,0.095,0,-1.0,0.905,1,0.105,861569.13
+geopolitics,Next Israel x Hamas ceasefire in August?,Yes,0.05,2024-08-26,2024-09-01,0.035,0,-1.0,0.965,1,0.0363,82951.01
+geopolitics,Next Israel x Hamas ceasefire in August?,Yes,0.08,2024-08-01,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,82951.01
+geopolitics,Next Israel x Hamas ceasefire in August?,Yes,0.1,2024-06-12,2024-09-01,0.09,0,-1.0,0.91,1,0.0989,82951.01
+geopolitics,Will Israel invade Lebanon by Friday?,Yes,0.05,2024-08-07,2024-08-10,0.0425,0,-1.0,0.9575,1,0.0444,81931.27
+geopolitics,Will Israel invade Lebanon by Friday?,Yes,0.08,2024-08-07,2024-08-10,0.0425,0,-1.0,0.9575,1,0.0444,81931.27
+geopolitics,Will Israel invade Lebanon by Friday?,Yes,0.1,2024-08-04,2024-08-10,0.09,0,-1.0,0.91,1,0.0989,81931.27
+geopolitics,Israel strikes Iranian oil in October?,Yes,0.05,2024-10-30,2024-11-01,0.037,0,-1.0,0.963,1,0.0384,817457.266544
+geopolitics,Israel strikes Iranian oil in October?,Yes,0.08,2024-10-28,2024-11-01,0.074,0,-1.0,0.926,1,0.0799,817457.266544
+geopolitics,Israel strikes Iranian oil in October?,Yes,0.1,2024-10-27,2024-11-01,0.086,0,-1.0,0.914,1,0.0941,817457.266544
+geopolitics,Crimean bridge hit before October?,Yes,0.05,2024-09-24,2024-10-01,0.035,0,-1.0,0.965,1,0.0363,80779.368373
+geopolitics,Crimean bridge hit before October?,Yes,0.08,2024-09-20,2024-10-01,0.065,0,-1.0,0.935,1,0.0695,80779.368373
+geopolitics,Crimean bridge hit before October?,Yes,0.1,2024-09-19,2024-10-01,0.085,0,-1.0,0.915,1,0.0929,80779.368373
+geopolitics,Iran strike on Israel by Nov 8?,Yes,0.1,2024-11-07,2024-11-09,0.09,0,-1.0,0.91,1,0.0989,788895.306549
+geopolitics,Nasrallah remains Hezbollah leader through Oct 31?,No,0.1,2024-09-18,2024-09-28,0.095,1,9.526315789473685,0.905,0,-1.0,764900.807723
+geopolitics,Telegram banned by EU country before October?,Yes,0.05,2024-09-06,2024-10-01,0.047,0,-1.0,0.953,1,0.0493,75907.943029
+geopolitics,Telegram banned by EU country before October?,Yes,0.08,2024-08-26,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,75907.943029
+geopolitics,Telegram banned by EU country before October?,Yes,0.1,2024-08-26,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,75907.943029
+geopolitics,Border + Ukraine aid deal by Feb 9?,Yes,0.05,2024-01-31,2024-02-10,0.045,0,-1.0,0.955,1,0.0471,75006.53
+geopolitics,Border + Ukraine aid deal by Feb 9?,Yes,0.08,2024-01-27,2024-02-10,0.06,0,-1.0,0.94,1,0.0638,75006.53
+geopolitics,Border + Ukraine aid deal by Feb 9?,Yes,0.1,2024-01-27,2024-02-10,0.06,0,-1.0,0.94,1,0.0638,75006.53
+geopolitics,Ukraine hits Moscow by Sept 30?,No,0.05,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+geopolitics,Ukraine hits Moscow by Sept 30?,No,0.08,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+geopolitics,Ukraine hits Moscow by Sept 30?,No,0.1,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+geopolitics,US military action against Hezbollah in Lebanon by Monday?,Yes,0.05,2024-08-01,2024-08-06,0.035,0,-1.0,0.965,1,0.0363,67051.67
+geopolitics,US military action against Hezbollah in Lebanon by Monday?,Yes,0.08,2024-08-01,2024-08-06,0.035,0,-1.0,0.965,1,0.0363,67051.67
+geopolitics,US military action against Hezbollah in Lebanon by Monday?,Yes,0.1,2024-08-01,2024-08-06,0.035,0,-1.0,0.965,1,0.0363,67051.67
+geopolitics,Will Israel strike Iran on Saturday?,Yes,0.08,2024-10-09,2024-10-13,0.065,0,-1.0,0.935,1,0.0695,66991.722215
+geopolitics,Will Israel strike Iran on Saturday?,Yes,0.1,2024-10-08,2024-10-13,0.08,0,-1.0,0.92,1,0.087,66991.722215
+geopolitics,Ukraine strike on Moscow before November?,Yes,0.05,2024-10-25,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,66319.439019
+geopolitics,Ukraine strike on Moscow before November?,Yes,0.08,2024-10-22,2024-11-01,0.065,0,-1.0,0.935,1,0.0695,66319.439019
+geopolitics,Ukraine strike on Moscow before November?,Yes,0.1,2024-10-22,2024-11-01,0.065,0,-1.0,0.935,1,0.0695,66319.439019
+geopolitics,Strike on Dimonah nuclear base in October?,Yes,0.05,2024-10-19,2024-11-01,0.047,0,-1.0,0.953,1,0.0493,66003.364576
+geopolitics,Strike on Dimonah nuclear base in October?,Yes,0.08,2024-10-04,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,66003.364576
+geopolitics,Strike on Dimonah nuclear base in October?,Yes,0.1,2024-10-04,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,66003.364576
+geopolitics,Israel election called before July?,Yes,0.05,2024-06-15,2024-07-01,0.045,0,-1.0,0.955,1,0.0471,6448.97
+geopolitics,Israel election called before July?,Yes,0.08,2024-06-12,2024-07-01,0.07,0,-1.0,0.93,1,0.0753,6448.97
+geopolitics,Israel election called before July?,Yes,0.1,2024-06-12,2024-07-01,0.07,0,-1.0,0.93,1,0.0753,6448.97
+geopolitics,Israel military action against Iraq by Friday?,Yes,0.08,2024-10-09,2024-10-12,0.055,0,-1.0,0.945,1,0.0582,63915.282164
+geopolitics,Israel military action against Iraq by Friday?,Yes,0.1,2024-10-08,2024-10-12,0.09,0,-1.0,0.91,1,0.0989,63915.282164
+geopolitics,Iran strike on US military before October?,Yes,0.05,2024-09-03,2024-10-01,0.0355,0,-1.0,0.9645,1,0.0368,61620.761155
+geopolitics,Iran strike on US military before October?,Yes,0.08,2024-08-28,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+geopolitics,Iran strike on US military before October?,Yes,0.1,2024-08-28,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+weather,Will April 2024 show an increase between 1.20°C-1.25°C?,Yes,0.05,2024-05-04,2024-05-10,0.045,0,-1.0,0.955,1,0.0471,98020.36
+weather,Will April 2024 show an increase between 1.20°C-1.25°C?,Yes,0.08,2024-05-04,2024-05-10,0.045,0,-1.0,0.955,1,0.0471,98020.36
+weather,Will April 2024 show an increase between 1.20°C-1.25°C?,Yes,0.1,2024-05-04,2024-05-10,0.045,0,-1.0,0.955,1,0.0471,98020.36
+weather,Will the October 2024 temperature increase be between 1.35-1.40°C?,Yes,0.1,2024-11-05,2024-11-08,0.0895,0,-1.0,0.9105,1,0.0983,95316.469028
+weather,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.05,2024-10-07,2024-10-19,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+weather,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.08,2024-10-07,2024-10-19,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+weather,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.1,2024-10-05,2024-10-19,0.08,0,-1.0,0.92,1,0.087,94831.70403
+weather,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.08,2024-10-26,2024-11-08,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+weather,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.1,2024-10-26,2024-11-08,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+weather,Category 5 hurricane hits US before election?,Yes,0.05,2024-10-11,2024-11-05,0.026,0,-1.0,0.974,1,0.0267,94457.306046
+weather,Category 5 hurricane hits US before election?,Yes,0.08,2024-10-10,2024-11-05,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+weather,Category 5 hurricane hits US before election?,Yes,0.1,2024-10-10,2024-11-05,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+weather,Will May 2024 show an increase greater than 1.30C?,Yes,0.05,2024-05-23,2024-06-11,0.035,0,-1.0,0.965,1,0.0363,89595.82
+weather,Will May 2024 show an increase greater than 1.30C?,Yes,0.08,2024-05-19,2024-06-11,0.065,0,-1.0,0.935,1,0.0695,89595.82
+weather,Will May 2024 show an increase greater than 1.30C?,Yes,0.1,2024-05-15,2024-06-11,0.09,0,-1.0,0.91,1,0.0989,89595.82
+weather,Megaquake in September?,Yes,0.05,2024-09-15,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,89555.142884
+weather,Megaquake in September?,Yes,0.08,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+weather,Megaquake in September?,Yes,0.1,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+weather,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.05,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+weather,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.08,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+weather,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.1,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+weather,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.05,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+weather,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.08,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+weather,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.1,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+weather,Will May 2024 show an increase between 1.24°C-1.30°C,Yes,0.05,2024-06-07,2024-06-11,0.015,0,-1.0,0.985,1,0.0152,77492.63
+weather,Will May 2024 show an increase between 1.24°C-1.30°C,Yes,0.08,2024-06-06,2024-06-11,0.05,0,-1.0,0.95,1,0.0526,77492.63
+weather,Will May 2024 show an increase between 1.24°C-1.30°C,Yes,0.1,2024-06-06,2024-06-11,0.05,0,-1.0,0.95,1,0.0526,77492.63
+weather,Megaquake in October?,Yes,0.05,2024-10-19,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,75023.197106
+weather,Megaquake in October?,Yes,0.08,2024-10-06,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,75023.197106
+weather,Megaquake in October?,Yes,0.1,2024-10-02,2024-11-01,0.095,0,-1.0,0.905,1,0.105,75023.197106
+weather,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.05,2024-06-15,2024-07-10,0.045,0,-1.0,0.955,1,0.0471,72476.78
+weather,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.08,2024-06-14,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,72476.78
+weather,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.1,2024-06-13,2024-07-10,0.085,0,-1.0,0.915,1,0.0929,72476.78
+weather,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.05,2024-07-06,2024-07-10,0.025,0,-1.0,0.975,1,0.0256,67838.33
+weather,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.08,2024-07-03,2024-07-10,0.075,0,-1.0,0.925,1,0.0811,67838.33
+weather,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.1,2024-06-27,2024-07-10,0.09,0,-1.0,0.91,1,0.0989,67838.33
+weather,Will May 2024 show an increase between 1.10°C-1.16°C,Yes,0.08,2024-05-25,2024-06-11,0.065,1,14.384615384615383,0.935,0,-1.0,67420.7
+weather,Will May 2024 show an increase between 1.10°C-1.16°C,Yes,0.1,2024-05-16,2024-06-11,0.095,1,9.526315789473685,0.905,0,-1.0,67420.7
+weather,Will May 2024 show an increase between 1.10°C-1.16°C,No,0.08,2024-06-09,2024-06-11,0.07,0,-1.0,0.93,1,0.0753,67420.7
+weather,Will May 2024 show an increase between 1.10°C-1.16°C,No,0.1,2024-06-09,2024-06-11,0.07,0,-1.0,0.93,1,0.0753,67420.7
+weather,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-09-24,2024-09-30,0.035,0,-1.0,0.965,1,0.0363,67205.838813
+weather,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-09-24,2024-09-30,0.035,0,-1.0,0.965,1,0.0363,67205.838813
+weather,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-09-23,2024-09-30,0.095,0,-1.0,0.905,1,0.105,67205.838813
+weather,Will April 2024 show an increase between 1.14°C-1.19°C?,Yes,0.05,2024-04-15,2024-05-10,0.04,0,-1.0,0.96,1,0.0417,63628.97
+weather,Will April 2024 show an increase between 1.14°C-1.19°C?,Yes,0.08,2024-04-15,2024-05-10,0.04,0,-1.0,0.96,1,0.0417,63628.97
+weather,Will April 2024 show an increase between 1.14°C-1.19°C?,Yes,0.1,2024-04-15,2024-05-10,0.04,0,-1.0,0.96,1,0.0417,63628.97
+weather,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.05,2024-11-11,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,595329.256375
+weather,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.08,2024-11-11,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,595329.256375
+weather,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.1,2024-11-09,2024-12-10,0.09,0,-1.0,0.91,1,0.0989,595329.256375
+weather,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-10-06,2024-10-19,0.0445,0,-1.0,0.9555,1,0.0466,57810.019519
+weather,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-10-05,2024-10-19,0.06,0,-1.0,0.94,1,0.0638,57810.019519
+weather,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-10-05,2024-10-19,0.06,0,-1.0,0.94,1,0.0638,57810.019519
+weather,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.05,2024-11-13,2024-12-10,0.045,0,-1.0,0.955,1,0.0471,555924.62488
+weather,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.08,2024-11-13,2024-12-10,0.045,0,-1.0,0.955,1,0.0471,555924.62488
+weather,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.1,2024-11-09,2024-12-10,0.085,0,-1.0,0.915,1,0.0929,555924.62488
+weather,Will May 2024 show an increase between 1.17°C-1.23°C,Yes,0.08,2024-06-09,2024-06-11,0.065,0,-1.0,0.935,1,0.0695,51230.02
+weather,Will May 2024 show an increase between 1.17°C-1.23°C,Yes,0.1,2024-06-09,2024-06-11,0.065,0,-1.0,0.935,1,0.0695,51230.02
+weather,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.05,2024-11-20,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,464314.952471
+weather,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.08,2024-11-17,2024-12-10,0.07,0,-1.0,0.93,1,0.0753,464314.952471
+weather,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.1,2024-11-17,2024-12-10,0.07,0,-1.0,0.93,1,0.0753,464314.952471
+weather,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.05,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+weather,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.08,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+weather,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.1,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+weather,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.05,2024-11-17,2024-12-10,0.0405,0,-1.0,0.9595,1,0.0422,383209.671594
+weather,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.08,2024-11-17,2024-12-10,0.0405,0,-1.0,0.9595,1,0.0422,383209.671594
+weather,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.1,2024-11-16,2024-12-10,0.095,0,-1.0,0.905,1,0.105,383209.671594
+weather,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.05,2024-06-29,2024-07-10,0.04,0,-1.0,0.96,1,0.0417,34749.04
+weather,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.08,2024-06-13,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,34749.04
+weather,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.1,2024-06-13,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,34749.04
+weather,Will the November 2024 temperature increase be between 1.25-1.29°C?,Yes,0.1,2024-12-08,2024-12-10,0.094,0,-1.0,0.906,1,0.1038,308545.825066
+weather,Will Beryl hit US as a hurricane?,Yes,0.08,2024-07-03,2024-07-09,0.07,1,13.285714285714285,0.93,0,-1.0,27549.46
+weather,Will Beryl hit US as a hurricane?,Yes,0.1,2024-07-03,2024-07-09,0.07,1,13.285714285714285,0.93,0,-1.0,27549.46
+weather,Will April 2024 show an increase of less than 1.14C?,Yes,0.05,2024-04-15,2024-05-10,0.019,0,-1.0,0.981,1,0.0194,26939.34
+weather,Will April 2024 show an increase of less than 1.14C?,Yes,0.08,2024-04-14,2024-05-10,0.075,0,-1.0,0.925,1,0.0811,26939.34
+weather,Will April 2024 show an increase of less than 1.14C?,Yes,0.1,2024-04-13,2024-05-10,0.09,0,-1.0,0.91,1,0.0989,26939.34
+climate,Will the October 2024 temperature increase be between 1.35-1.40°C?,Yes,0.1,2024-11-05,2024-11-08,0.0895,0,-1.0,0.9105,1,0.0983,95316.469028
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.05,2024-10-07,2024-10-19,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.08,2024-10-07,2024-10-19,0.0385,0,-1.0,0.9615,1,0.04,94831.70403
+climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,No,0.1,2024-10-05,2024-10-19,0.08,0,-1.0,0.92,1,0.087,94831.70403
+climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.08,2024-10-26,2024-11-08,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,Yes,0.1,2024-10-26,2024-11-08,0.07,0,-1.0,0.93,1,0.0753,94761.163092
+climate,Category 5 hurricane hits US before election?,Yes,0.05,2024-10-11,2024-11-05,0.026,0,-1.0,0.974,1,0.0267,94457.306046
+climate,Category 5 hurricane hits US before election?,Yes,0.08,2024-10-10,2024-11-05,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+climate,Category 5 hurricane hits US before election?,Yes,0.1,2024-10-10,2024-11-05,0.05,0,-1.0,0.95,1,0.0526,94457.306046
+climate,Megaquake in September?,Yes,0.05,2024-09-15,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,89555.142884
+climate,Megaquake in September?,Yes,0.08,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+climate,Megaquake in September?,Yes,0.1,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+climate,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.05,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+climate,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.08,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+climate,Will the October 2024 temperature increase be less than 1.17°C?,Yes,0.1,2024-10-25,2024-11-08,0.045,0,-1.0,0.955,1,0.0471,84654.982942
+climate,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.05,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+climate,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.08,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+climate,Will the October 2024 temperature increase be between 1.17-1.22°C?,Yes,0.1,2024-10-25,2024-11-08,0.03,0,-1.0,0.97,1,0.0309,80341.886212
+climate,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.05,2024-06-15,2024-07-10,0.045,0,-1.0,0.955,1,0.0471,72476.78
+climate,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.08,2024-06-14,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,72476.78
+climate,Will June 2024 have a temperature increase of less than 1.09°C?,Yes,0.1,2024-06-13,2024-07-10,0.085,0,-1.0,0.915,1,0.0929,72476.78
+climate,Will there be more than 25 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-08-26,2024-12-01,0.035,0,-1.0,0.965,1,0.0363,711044.746626
+climate,Will there be more than 25 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-08-25,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,711044.746626
+climate,Will there be more than 25 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-08-24,2024-12-01,0.09,0,-1.0,0.91,1,0.0989,711044.746626
+climate,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.05,2024-07-06,2024-07-10,0.025,0,-1.0,0.975,1,0.0256,67838.33
+climate,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.08,2024-07-03,2024-07-10,0.075,0,-1.0,0.925,1,0.0811,67838.33
+climate,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,Yes,0.1,2024-06-27,2024-07-10,0.09,0,-1.0,0.91,1,0.0989,67838.33
+climate,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-09-24,2024-09-30,0.035,0,-1.0,0.965,1,0.0363,67205.838813
+climate,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-09-24,2024-09-30,0.035,0,-1.0,0.965,1,0.0363,67205.838813
+climate,Will there be less than 11 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-09-23,2024-09-30,0.095,0,-1.0,0.905,1,0.105,67205.838813
+climate,Will 2024 have the hottest April on record?,No,0.05,2024-04-16,2024-05-10,0.035,0,-1.0,0.965,1,0.0363,65747.04
+climate,Will 2024 have the hottest April on record?,No,0.08,2024-04-14,2024-05-10,0.075,0,-1.0,0.925,1,0.0811,65747.04
+climate,Will 2024 have the hottest April on record?,No,0.1,2024-04-14,2024-05-10,0.075,0,-1.0,0.925,1,0.0811,65747.04
+climate,Megaquake in November?,Yes,0.05,2024-11-15,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,63269.52971
+climate,Megaquake in November?,Yes,0.08,2024-11-07,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,63269.52971
+climate,Megaquake in November?,Yes,0.1,2024-11-07,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,63269.52971
+climate,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.05,2024-11-11,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,595329.256375
+climate,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.08,2024-11-11,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,595329.256375
+climate,Will the November 2024 temperature increase be less than 1.20°C?,Yes,0.1,2024-11-09,2024-12-10,0.09,0,-1.0,0.91,1,0.0989,595329.256375
+climate,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-10-06,2024-10-19,0.0445,0,-1.0,0.9555,1,0.0466,57810.019519
+climate,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-10-05,2024-10-19,0.06,0,-1.0,0.94,1,0.0638,57810.019519
+climate,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-10-05,2024-10-19,0.06,0,-1.0,0.94,1,0.0638,57810.019519
+climate,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.05,2024-11-13,2024-12-10,0.045,0,-1.0,0.955,1,0.0471,555924.62488
+climate,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.08,2024-11-13,2024-12-10,0.045,0,-1.0,0.955,1,0.0471,555924.62488
+climate,Will the November 2024 temperature increase be between 1.20-1.24°C?,Yes,0.1,2024-11-09,2024-12-10,0.085,0,-1.0,0.915,1,0.0929,555924.62488
+climate,Will there be between 21 and 25 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-09-07,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,549051.355334
+climate,Will there be between 21 and 25 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-09-07,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,549051.355334
+climate,Will there be between 21 and 25 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-09-03,2024-12-01,0.095,0,-1.0,0.905,1,0.105,549051.355334
+climate,Will head of FEMA be fired/resign before November?,Yes,0.05,2024-10-09,2024-11-01,0.0365,0,-1.0,0.9635,1,0.0379,49636.611209
+climate,Will head of FEMA be fired/resign before November?,Yes,0.08,2024-10-07,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,49636.611209
+climate,Will head of FEMA be fired/resign before November?,Yes,0.1,2024-10-06,2024-11-01,0.09,0,-1.0,0.91,1,0.0989,49636.611209
+climate,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.05,2024-11-20,2024-12-10,0.0245,0,-1.0,0.9755,1,0.0251,464314.952471
+climate,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.08,2024-11-17,2024-12-10,0.07,0,-1.0,0.93,1,0.0753,464314.952471
+climate,Will the November 2024 temperature increase be greater than 1.39°C?,Yes,0.1,2024-11-17,2024-12-10,0.07,0,-1.0,0.93,1,0.0753,464314.952471
+climate,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.05,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+climate,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.08,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+climate,Will the October 2024 temperature increase be greater than 1.40°C?,Yes,0.1,2024-10-26,2024-11-08,0.019,0,-1.0,0.981,1,0.0194,453420.010389
+climate,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.05,2024-11-17,2024-12-10,0.0405,0,-1.0,0.9595,1,0.0422,383209.671594
+climate,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.08,2024-11-17,2024-12-10,0.0405,0,-1.0,0.9595,1,0.0422,383209.671594
+climate,Will the November 2024 temperature increase be between 1.35-1.39°C?,Yes,0.1,2024-11-16,2024-12-10,0.095,0,-1.0,0.905,1,0.105,383209.671594
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-07-03,2024-12-01,0.04,1,24.0,0.96,0,-1.0,364337.612057
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-07-02,2024-12-01,0.075,1,12.333333333333334,0.925,0,-1.0,364337.612057
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-06-29,2024-12-01,0.095,1,9.526315789473685,0.905,0,-1.0,364337.612057
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,No,0.05,2024-11-08,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,364337.612057
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,No,0.08,2024-11-07,2024-12-01,0.055,0,-1.0,0.945,1,0.0582,364337.612057
+climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,No,0.1,2024-10-28,2024-12-01,0.085,0,-1.0,0.915,1,0.0929,364337.612057
+climate,Will there be less than 16 named storms during Atlantic Hurricane Season?,Yes,0.05,2024-06-30,2024-11-02,0.045,0,-1.0,0.955,1,0.0471,3618939.17235
+climate,Will there be less than 16 named storms during Atlantic Hurricane Season?,Yes,0.08,2024-05-11,2024-11-02,0.075,0,-1.0,0.925,1,0.0811,3618939.17235
+climate,Will there be less than 16 named storms during Atlantic Hurricane Season?,Yes,0.1,2024-05-08,2024-11-02,0.095,0,-1.0,0.905,1,0.105,3618939.17235
+climate,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.05,2024-06-29,2024-07-10,0.04,0,-1.0,0.96,1,0.0417,34749.04
+climate,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.08,2024-06-13,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,34749.04
+climate,Will June 2024 have a temperature increase of greater than 1.29°C?,Yes,0.1,2024-06-13,2024-07-10,0.07,0,-1.0,0.93,1,0.0753,34749.04
+climate,Will the November 2024 temperature increase be between 1.25-1.29°C?,Yes,0.1,2024-12-08,2024-12-10,0.094,0,-1.0,0.906,1,0.1038,308545.825066
+climate,2024 May hottest on record?,No,0.05,2024-05-10,2024-06-11,0.045,0,-1.0,0.955,1,0.0471,190128.48
+climate,2024 May hottest on record?,No,0.08,2024-05-06,2024-06-11,0.07,0,-1.0,0.93,1,0.0753,190128.48
+climate,2024 May hottest on record?,No,0.1,2024-05-06,2024-06-11,0.07,0,-1.0,0.93,1,0.0753,190128.48
+earthquake,Megaquake in September?,Yes,0.05,2024-09-15,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,89555.142884
+earthquake,Megaquake in September?,Yes,0.08,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+earthquake,Megaquake in September?,Yes,0.1,2024-09-05,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,89555.142884
+earthquake,Megaquake in October?,Yes,0.05,2024-10-19,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,75023.197106
+earthquake,Megaquake in October?,Yes,0.08,2024-10-06,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,75023.197106
+earthquake,Megaquake in October?,Yes,0.1,2024-10-02,2024-11-01,0.095,0,-1.0,0.905,1,0.105,75023.197106
+earthquake,Megaquake in November?,Yes,0.05,2024-11-15,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,63269.52971
+earthquake,Megaquake in November?,Yes,0.08,2024-11-07,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,63269.52971
+earthquake,Megaquake in November?,Yes,0.1,2024-11-07,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,63269.52971
+economy,Fed decreases interest rates by 50 bps after December 2024 meeting?,Yes,0.05,2024-11-07,2024-12-18,0.0345,0,-1.0,0.9655,1,0.0357,9192309.53167407
+economy,Fed decreases interest rates by 50 bps after December 2024 meeting?,Yes,0.08,2024-10-27,2024-12-18,0.055,0,-1.0,0.945,1,0.0582,9192309.53167407
+economy,Fed decreases interest rates by 50 bps after December 2024 meeting?,Yes,0.1,2024-08-10,2024-12-18,0.09,0,-1.0,0.91,1,0.0989,9192309.53167407
+economy,Will Fed cut interest rates 3 times in 2024?,Yes,0.05,2024-09-25,2024-12-18,0.034,0,-1.0,0.966,1,0.0352,8337156.91915808
+economy,Will Fed cut interest rates 3 times in 2024?,Yes,0.08,2024-06-12,2024-12-18,0.075,0,-1.0,0.925,1,0.0811,8337156.91915808
+economy,Will Fed cut interest rates 3 times in 2024?,Yes,0.1,2024-04-26,2024-12-18,0.08,0,-1.0,0.92,1,0.087,8337156.91915808
+economy,MSFT shareholders vote for Bitcoin investment? ,Yes,0.1,2024-11-03,2024-12-11,0.095,0,-1.0,0.905,1,0.105,7603059.085456
+economy,Fed decreases interest rates by 25 bps after December 2024 meeting?,No,0.05,2024-12-14,2024-12-18,0.042,0,-1.0,0.958,1,0.0438,7490697.06615098
+economy,Fed decreases interest rates by 25 bps after December 2024 meeting?,No,0.08,2024-12-12,2024-12-18,0.0575,0,-1.0,0.9425,1,0.061,7490697.06615098
+economy,Fed decreases interest rates by 25 bps after December 2024 meeting?,No,0.1,2024-12-12,2024-12-18,0.0575,0,-1.0,0.9425,1,0.061,7490697.06615098
+economy,No change in Fed interest rates after December 2024 meeting?,Yes,0.05,2024-12-12,2024-12-18,0.0475,0,-1.0,0.9525,1,0.0499,7400313.75189
+economy,No change in Fed interest rates after December 2024 meeting?,Yes,0.08,2024-09-25,2024-12-18,0.075,0,-1.0,0.925,1,0.0811,7400313.75189
+economy,No change in Fed interest rates after December 2024 meeting?,Yes,0.1,2024-09-07,2024-12-18,0.095,0,-1.0,0.905,1,0.105,7400313.75189
+economy,Will Fed cut interest rates 4 times in 2024?,Yes,0.05,2024-04-13,2024-12-18,0.045,1,21.22222222222222,0.955,0,-1.0,6812524.970527
+economy,Will Fed cut interest rates 4 times in 2024?,Yes,0.08,2024-04-06,2024-12-18,0.075,1,12.333333333333334,0.925,0,-1.0,6812524.970527
+economy,Will Fed cut interest rates 4 times in 2024?,Yes,0.1,2024-04-03,2024-12-18,0.09,1,10.11111111111111,0.91,0,-1.0,6812524.970527
+economy,Will Fed cut interest rates 4 times in 2024?,No,0.05,2024-12-14,2024-12-18,0.0495,0,-1.0,0.9505,1,0.0521,6812524.970527
+economy,Will Fed cut interest rates 4 times in 2024?,No,0.08,2024-12-12,2024-12-18,0.063,0,-1.0,0.937,1,0.0672,6812524.970527
+economy,Will Fed cut interest rates 4 times in 2024?,No,0.1,2024-12-12,2024-12-18,0.063,0,-1.0,0.937,1,0.0672,6812524.970527
+economy,Will Fed cut interest rates 5 times in 2024?,Yes,0.05,2024-03-24,2024-12-18,0.045,0,-1.0,0.955,1,0.0471,6683117.51304494
+economy,Will Fed cut interest rates 5 times in 2024?,Yes,0.08,2024-03-22,2024-12-18,0.05,0,-1.0,0.95,1,0.0526,6683117.51304494
+economy,Will Fed cut interest rates 5 times in 2024?,Yes,0.1,2024-03-22,2024-12-18,0.05,0,-1.0,0.95,1,0.0526,6683117.51304494
+economy,Fed decreases interest rates by 25 bps after September 2024 meeting?,No,0.1,2024-09-12,2024-09-18,0.095,1,9.526315789473685,0.905,0,-1.0,6660914.249885
+economy,Will inflation increase by 2.5% or less in November?,Yes,0.08,2024-11-17,2024-12-11,0.07,0,-1.0,0.93,1,0.0753,66405.046496
+economy,Will inflation increase by 2.5% or less in November?,Yes,0.1,2024-11-17,2024-12-11,0.07,0,-1.0,0.93,1,0.0753,66405.046496
+economy,"Will the US add more than 250,000 jobs in October?",Yes,0.1,2024-10-17,2024-11-01,0.095,0,-1.0,0.905,1,0.105,55589.569713
+economy,Will NVDA be the largest company by mcap on September 30?,Yes,0.05,2024-09-19,2024-10-01,0.04,0,-1.0,0.96,1,0.0417,54897.383822
+economy,Will NVDA be the largest company by mcap on September 30?,Yes,0.08,2024-09-19,2024-10-01,0.04,0,-1.0,0.96,1,0.0417,54897.383822
+economy,Will NVDA be the largest company by mcap on September 30?,Yes,0.1,2024-09-19,2024-10-01,0.04,0,-1.0,0.96,1,0.0417,54897.383822
+economy,Will another company be the largest company by mcap on September 30?,Yes,0.05,2024-09-19,2024-09-30,0.014,0,-1.0,0.986,1,0.0142,53235.160234
+economy,Will another company be the largest company by mcap on September 30?,Yes,0.08,2024-09-19,2024-09-30,0.014,0,-1.0,0.986,1,0.0142,53235.160234
+economy,Will another company be the largest company by mcap on September 30?,Yes,0.1,2024-09-19,2024-09-30,0.014,0,-1.0,0.986,1,0.0142,53235.160234
+economy,Russian Ruble ₽110 to $1 USD by December 20?,Yes,0.08,2024-12-19,2024-12-21,0.055,0,-1.0,0.945,1,0.0582,51752.347186
+economy,Russian Ruble ₽110 to $1 USD by December 20?,Yes,0.1,2024-12-19,2024-12-21,0.055,0,-1.0,0.945,1,0.0582,51752.347186
+economy,"Will Jerome Powell say ""good afternoon"" during December FOMC Press Conference?",No,0.05,2024-12-13,2024-12-18,0.032,0,-1.0,0.968,1,0.0331,513027.694527001
+economy,"Will Jerome Powell say ""good afternoon"" during December FOMC Press Conference?",No,0.08,2024-12-12,2024-12-18,0.06,0,-1.0,0.94,1,0.0638,513027.694527001
+economy,"Will Jerome Powell say ""good afternoon"" during December FOMC Press Conference?",No,0.1,2024-12-12,2024-12-18,0.06,0,-1.0,0.94,1,0.0638,513027.694527001
+economy,Fed cuts rates by 75 basis points in Sept meeting?,Yes,0.05,2024-08-08,2024-09-18,0.045,0,-1.0,0.955,1,0.0471,493260.757524
+economy,Fed cuts rates by 75 basis points in Sept meeting?,Yes,0.08,2024-08-07,2024-09-18,0.055,0,-1.0,0.945,1,0.0582,493260.757524
+economy,Fed cuts rates by 75 basis points in Sept meeting?,Yes,0.1,2024-08-06,2024-09-18,0.095,0,-1.0,0.905,1,0.105,493260.757524
+economy,Will AAPL be the largest company by mcap on September 30?,No,0.05,2024-09-26,2024-09-30,0.0315,0,-1.0,0.9685,1,0.0325,47710.908489
+economy,Will AAPL be the largest company by mcap on September 30?,No,0.08,2024-09-24,2024-09-30,0.06,0,-1.0,0.94,1,0.0638,47710.908489
+economy,Will AAPL be the largest company by mcap on September 30?,No,0.1,2024-09-24,2024-09-30,0.06,0,-1.0,0.94,1,0.0638,47710.908489
+economy,Fed emergency rate cut in August?,Yes,0.05,2024-08-07,2024-09-01,0.034,0,-1.0,0.966,1,0.0352,432105.44
+economy,Fed emergency rate cut in August?,Yes,0.08,2024-08-07,2024-09-01,0.034,0,-1.0,0.966,1,0.0352,432105.44
+economy,Fed emergency rate cut in August?,Yes,0.1,2024-08-07,2024-09-01,0.034,0,-1.0,0.966,1,0.0352,432105.44
+economy,"Will Gold close under $2,500 at the end of 2024?",Yes,0.05,2024-12-11,2025-01-01,0.035,0,-1.0,0.965,1,0.0363,426999.953275
+economy,"Will Gold close under $2,500 at the end of 2024?",Yes,0.08,2024-12-09,2025-01-01,0.065,0,-1.0,0.935,1,0.0695,426999.953275
+economy,"Will Gold close under $2,500 at the end of 2024?",Yes,0.1,2024-10-26,2025-01-01,0.08,0,-1.0,0.92,1,0.087,426999.953275
+economy,Increase in ECB interest rates after 2024 December meeting?,Yes,0.05,2024-11-01,2024-12-12,0.0255,0,-1.0,0.9745,1,0.0262,399674.021905
+economy,Increase in ECB interest rates after 2024 December meeting?,Yes,0.08,2024-11-01,2024-12-12,0.0255,0,-1.0,0.9745,1,0.0262,399674.021905
+economy,Increase in ECB interest rates after 2024 December meeting?,Yes,0.1,2024-11-01,2024-12-12,0.0255,0,-1.0,0.9745,1,0.0262,399674.021905
+economy,Will Fed cut interest rates 2 times in 2024?,Yes,0.05,2024-09-17,2024-11-08,0.0355,0,-1.0,0.9645,1,0.0368,3982525.829184
+economy,Will Fed cut interest rates 2 times in 2024?,Yes,0.08,2024-09-05,2024-11-08,0.055,0,-1.0,0.945,1,0.0582,3982525.829184
+economy,Will Fed cut interest rates 2 times in 2024?,Yes,0.1,2024-08-06,2024-11-08,0.085,0,-1.0,0.915,1,0.0929,3982525.829184
+economy,"Will the US gain less than 100,000 jobs in November?",Yes,0.08,2024-12-02,2024-12-06,0.075,0,-1.0,0.925,1,0.0811,37558.031042
+economy,"Will the US gain less than 100,000 jobs in November?",Yes,0.1,2024-12-02,2024-12-06,0.075,0,-1.0,0.925,1,0.0811,37558.031042
+economy,30-year mortgage rate below 6% before election?,Yes,0.05,2024-10-19,2024-11-01,0.0265,0,-1.0,0.9735,1,0.0272,35511.035022
+economy,30-year mortgage rate below 6% before election?,Yes,0.08,2024-10-11,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,35511.035022
+economy,30-year mortgage rate below 6% before election?,Yes,0.1,2024-10-11,2024-11-01,0.075,0,-1.0,0.925,1,0.0811,35511.035022
+economy,US GDP declines in Q3 2024?,Yes,0.05,2024-09-04,2024-10-30,0.045,0,-1.0,0.955,1,0.0471,346721.350513
+economy,US GDP declines in Q3 2024?,Yes,0.08,2024-08-24,2024-10-30,0.075,0,-1.0,0.925,1,0.0811,346721.350513
+economy,US GDP declines in Q3 2024?,Yes,0.1,2024-08-16,2024-10-30,0.085,0,-1.0,0.915,1,0.0929,346721.350513
+war,Israel x Hamas ceasefire before September?,Yes,0.05,2024-08-26,2024-09-01,0.034,0,-1.0,0.966,1,0.0352,972382.17
+war,Israel x Hamas ceasefire before September?,Yes,0.08,2024-08-24,2024-09-01,0.065,0,-1.0,0.935,1,0.0695,972382.17
+war,Israel x Hamas ceasefire before September?,Yes,0.1,2024-08-01,2024-09-01,0.095,0,-1.0,0.905,1,0.105,972382.17
+war,Crimean bridge hit before September?,Yes,0.05,2024-08-26,2024-09-01,0.045,0,-1.0,0.955,1,0.0471,95330.84
+war,Crimean bridge hit before September?,Yes,0.08,2024-08-24,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,95330.84
+war,Crimean bridge hit before September?,Yes,0.1,2024-08-24,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,95330.84
+war,Next Israel x Hamas ceasefire in August?,Yes,0.05,2024-08-26,2024-09-01,0.035,0,-1.0,0.965,1,0.0363,82951.01
+war,Next Israel x Hamas ceasefire in August?,Yes,0.08,2024-08-01,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,82951.01
+war,Next Israel x Hamas ceasefire in August?,Yes,0.1,2024-06-12,2024-09-01,0.09,0,-1.0,0.91,1,0.0989,82951.01
+war,Crimean bridge hit before October?,Yes,0.05,2024-09-24,2024-10-01,0.035,0,-1.0,0.965,1,0.0363,80779.368373
+war,Crimean bridge hit before October?,Yes,0.08,2024-09-20,2024-10-01,0.065,0,-1.0,0.935,1,0.0695,80779.368373
+war,Crimean bridge hit before October?,Yes,0.1,2024-09-19,2024-10-01,0.085,0,-1.0,0.915,1,0.0929,80779.368373
+war,Ukraine hits Moscow by Sept 30?,No,0.05,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Ukraine hits Moscow by Sept 30?,No,0.08,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Ukraine hits Moscow by Sept 30?,No,0.1,2024-09-02,2024-09-04,0.002,0,-1.0,0.998,1,0.002,737767.509875
+war,Will Iran officially join the war before February?,Yes,0.05,2023-12-30,2024-02-01,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,Will Iran officially join the war before February?,Yes,0.08,2023-12-30,2024-02-01,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,Will Iran officially join the war before February?,Yes,0.1,2023-12-30,2024-02-01,0.04,0,-1.0,0.96,1,0.0417,63916.61
+war,US/Iran declare war before March?,Yes,0.05,2024-01-31,2024-03-01,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,US/Iran declare war before March?,Yes,0.08,2024-01-31,2024-03-01,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,US/Iran declare war before March?,Yes,0.1,2024-01-31,2024-03-01,0.0345,0,-1.0,0.9655,1,0.0357,61994.34
+war,Iran strike on US military before October?,Yes,0.05,2024-09-03,2024-10-01,0.0355,0,-1.0,0.9645,1,0.0368,61620.761155
+war,Iran strike on US military before October?,Yes,0.08,2024-08-28,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+war,Iran strike on US military before October?,Yes,0.1,2024-08-28,2024-10-01,0.055,0,-1.0,0.945,1,0.0582,61620.761155
+war,Will Russia recapture Sudzha before December?,Yes,0.05,2024-11-21,2024-12-01,0.043,0,-1.0,0.957,1,0.0449,609294.772643
+war,Will Russia recapture Sudzha before December?,Yes,0.08,2024-11-17,2024-12-01,0.07,0,-1.0,0.93,1,0.0753,609294.772643
+war,Will Russia recapture Sudzha before December?,Yes,0.1,2024-11-13,2024-12-01,0.085,0,-1.0,0.915,1,0.0929,609294.772643
+war,Israel withdraws from Gaza before September?,Yes,0.05,2024-08-12,2024-09-01,0.0465,0,-1.0,0.9535,1,0.0488,55824.48
+war,Israel withdraws from Gaza before September?,Yes,0.08,2024-07-20,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,55824.48
+war,Israel withdraws from Gaza before September?,Yes,0.1,2024-07-20,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,55824.48
+war,Belarus x Ukraine military clash by Sep 30?,Yes,0.05,2024-09-17,2024-10-01,0.04,0,-1.0,0.96,1,0.0417,55669.486525
+war,Belarus x Ukraine military clash by Sep 30?,Yes,0.08,2024-09-10,2024-10-01,0.065,0,-1.0,0.935,1,0.0695,55669.486525
+war,Belarus x Ukraine military clash by Sep 30?,Yes,0.1,2024-08-27,2024-10-01,0.095,0,-1.0,0.905,1,0.105,55669.486525
+war,Hezbollah enters Israel in August?,Yes,0.05,2024-08-21,2024-09-01,0.035,0,-1.0,0.965,1,0.0363,55517.71
+war,Hezbollah enters Israel in August?,Yes,0.08,2024-08-20,2024-09-01,0.05,0,-1.0,0.95,1,0.0526,55517.71
+war,Hezbollah enters Israel in August?,Yes,0.1,2024-08-18,2024-09-01,0.095,0,-1.0,0.905,1,0.105,55517.71
+war,Will Belarus invade Ukraine before October?,Yes,0.05,2024-08-30,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,55180.08775
+war,Will Belarus invade Ukraine before October?,Yes,0.08,2024-08-27,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,55180.08775
+war,Will Belarus invade Ukraine before October?,Yes,0.1,2024-08-27,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,55180.08775
+war,Will Israel invade Lebanon before November?,Yes,0.1,2024-09-08,2024-10-06,0.09,1,10.11111111111111,0.91,0,-1.0,5313533.726507
+war,Will Israel invade Lebanon before November?,No,0.08,2024-10-04,2024-10-06,0.0785,0,-1.0,0.9215,1,0.0852,5313533.726507
+war,Will Israel invade Lebanon before November?,No,0.1,2024-10-04,2024-10-06,0.0785,0,-1.0,0.9215,1,0.0852,5313533.726507
+war,Will Russia capture Pokrovsk before November?,Yes,0.05,2024-10-12,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,478989.871447
+war,Will Russia capture Pokrovsk before November?,Yes,0.08,2024-10-07,2024-11-01,0.065,0,-1.0,0.935,1,0.0695,478989.871447
+war,Will Russia capture Pokrovsk before November?,Yes,0.1,2024-10-03,2024-11-01,0.09,0,-1.0,0.91,1,0.0989,478989.871447
+war,Iran military response before October?,Yes,0.05,2024-09-26,2024-10-01,0.0345,0,-1.0,0.9655,1,0.0357,467982.229813
+war,Iran military response before October?,Yes,0.08,2024-09-24,2024-10-01,0.06,0,-1.0,0.94,1,0.0638,467982.229813
+war,Iran military response before October?,Yes,0.1,2024-09-15,2024-10-01,0.085,0,-1.0,0.915,1,0.0929,467982.229813
+war,Crimean bridge hit before November?,Yes,0.05,2024-10-27,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,35929.410237
+war,Crimean bridge hit before November?,Yes,0.08,2024-10-17,2024-11-01,0.07,0,-1.0,0.93,1,0.0753,35929.410237
+war,Crimean bridge hit before November?,Yes,0.1,2024-10-04,2024-11-01,0.095,0,-1.0,0.905,1,0.105,35929.410237
+war,U.S. military action against Iran by August 31?,Yes,0.05,2024-08-18,2024-09-01,0.045,0,-1.0,0.955,1,0.0471,313677.76
+war,U.S. military action against Iran by August 31?,Yes,0.08,2024-08-02,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,313677.76
+war,U.S. military action against Iran by August 31?,Yes,0.1,2024-08-02,2024-09-01,0.075,0,-1.0,0.925,1,0.0811,313677.76
+war,Will Russia capture Toretsk before October?,Yes,0.08,2024-09-21,2024-10-01,0.07,0,-1.0,0.93,1,0.0753,311893.964674
+war,Will Russia capture Toretsk before October?,Yes,0.1,2024-09-21,2024-10-01,0.07,0,-1.0,0.93,1,0.0753,311893.964674
+war,Next Israel x Hamas ceasefire in July?,Yes,0.05,2024-07-27,2024-08-01,0.0295,0,-1.0,0.9705,1,0.0304,27059.76
+war,Next Israel x Hamas ceasefire in July?,Yes,0.08,2024-07-23,2024-08-01,0.076,0,-1.0,0.924,1,0.0823,27059.76
+war,Next Israel x Hamas ceasefire in July?,Yes,0.1,2024-07-19,2024-08-01,0.09,0,-1.0,0.91,1,0.0989,27059.76
+war,Iran strike on US military before November?,Yes,0.05,2024-10-19,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,246822.701761
+war,Iran strike on US military before November?,Yes,0.08,2024-09-24,2024-11-01,0.05,0,-1.0,0.95,1,0.0526,246822.701761
+war,Iran strike on US military before November?,Yes,0.1,2024-09-24,2024-11-01,0.05,0,-1.0,0.95,1,0.0526,246822.701761
+war,Israel x Hamas ceasefire before October?,Yes,0.05,2024-09-16,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,244511.727695
+war,Israel x Hamas ceasefire before October?,Yes,0.08,2024-09-06,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,244511.727695
+war,Israel x Hamas ceasefire before October?,Yes,0.1,2024-09-06,2024-10-01,0.075,0,-1.0,0.925,1,0.0811,244511.727695
+war,Israel military action against Iran in August?,Yes,0.05,2024-08-27,2024-09-01,0.0305,0,-1.0,0.9695,1,0.0315,242109.13
+war,Israel military action against Iran in August?,Yes,0.08,2024-08-23,2024-09-01,0.07,0,-1.0,0.93,1,0.0753,242109.13
+war,Israel military action against Iran in August?,Yes,0.1,2024-08-23,2024-09-01,0.07,0,-1.0,0.93,1,0.0753,242109.13
+war,NATO/EU troops fighting in Ukraine before July?,Yes,0.05,2024-04-25,2024-07-01,0.045,0,-1.0,0.955,1,0.0471,228579.56
+war,NATO/EU troops fighting in Ukraine before July?,Yes,0.08,2024-02-28,2024-07-01,0.06,0,-1.0,0.94,1,0.0638,228579.56
+war,NATO/EU troops fighting in Ukraine before July?,Yes,0.1,2024-02-28,2024-07-01,0.06,0,-1.0,0.94,1,0.0638,228579.56
+war,Will Russia capture Vuhledar before October? ,Yes,0.05,2024-10-02,2024-10-04,0.0335,0,-1.0,0.9665,1,0.0347,225474.919925
+war,Will Russia capture Vuhledar before October? ,Yes,0.08,2024-09-30,2024-10-04,0.06,0,-1.0,0.94,1,0.0638,225474.919925
+war,Will Russia capture Vuhledar before October? ,Yes,0.1,2024-09-29,2024-10-04,0.08,0,-1.0,0.92,1,0.087,225474.919925
+war,Next Israel x Hamas ceasefire in June?,Yes,0.05,2024-06-15,2024-07-01,0.04,0,-1.0,0.96,1,0.0417,22029.88
+war,Next Israel x Hamas ceasefire in June?,Yes,0.08,2024-06-14,2024-07-01,0.065,0,-1.0,0.935,1,0.0695,22029.88
+war,Next Israel x Hamas ceasefire in June?,Yes,0.1,2024-06-11,2024-07-01,0.09,0,-1.0,0.91,1,0.0989,22029.88
+war,Will Russia capture Siversk before December?,Yes,0.05,2024-11-14,2024-12-01,0.045,0,-1.0,0.955,1,0.0471,217337.397144
+war,Will Russia capture Siversk before December?,Yes,0.08,2024-11-10,2024-12-01,0.07,0,-1.0,0.93,1,0.0753,217337.397144
+war,Will Russia capture Siversk before December?,Yes,0.1,2024-11-09,2024-12-01,0.09,0,-1.0,0.91,1,0.0989,217337.397144
+war,Ukraine hits Moscow by August 31?,Yes,0.05,2024-08-26,2024-09-01,0.04,1,24.0,0.96,0,-1.0,214357.74
+war,Ukraine hits Moscow by August 31?,Yes,0.08,2024-08-25,2024-09-01,0.055,1,17.181818181818183,0.945,0,-1.0,214357.74
+war,Ukraine hits Moscow by August 31?,Yes,0.1,2024-08-24,2024-09-01,0.095,1,9.526315789473685,0.905,0,-1.0,214357.74
+war,Crimean bridge hit before July?,Yes,0.05,2024-06-27,2024-07-01,0.035,0,-1.0,0.965,1,0.0363,17543.81
+war,Crimean bridge hit before July?,Yes,0.08,2024-06-20,2024-07-01,0.075,0,-1.0,0.925,1,0.0811,17543.81
+war,Crimean bridge hit before July?,Yes,0.1,2024-06-19,2024-07-01,0.085,0,-1.0,0.915,1,0.0929,17543.81
+war,Will Israel invade Lebanon in September?,Yes,0.08,2024-09-27,2024-10-08,0.065,0,-1.0,0.935,1,0.0695,13817736.165943
+war,Will Israel invade Lebanon in September?,Yes,0.1,2024-09-21,2024-10-08,0.095,0,-1.0,0.905,1,0.105,13817736.165943
+war,Will Russia capture Chasiv Yar before October?,Yes,0.05,2024-09-16,2024-10-01,0.045,0,-1.0,0.955,1,0.0471,137194.990136
+war,Will Russia capture Chasiv Yar before October?,Yes,0.08,2024-09-08,2024-10-01,0.07,0,-1.0,0.93,1,0.0753,137194.990136
+war,Will Russia capture Chasiv Yar before October?,Yes,0.1,2024-09-08,2024-10-01,0.07,0,-1.0,0.93,1,0.0753,137194.990136
+war,Next Israel x Hamas ceasefire in November?,Yes,0.05,2024-06-12,2024-12-01,0.04,0,-1.0,0.96,1,0.0417,136123.344651
+war,Next Israel x Hamas ceasefire in November?,Yes,0.08,2024-06-12,2024-12-01,0.04,0,-1.0,0.96,1,0.0417,136123.344651
+war,Next Israel x Hamas ceasefire in November?,Yes,0.1,2024-06-11,2024-12-01,0.08,0,-1.0,0.92,1,0.087,136123.344651
+war,Will Israel invade Lebanon before September?,Yes,0.05,2024-08-27,2024-09-01,0.0335,0,-1.0,0.9665,1,0.0347,1345780.16
+war,Will Israel invade Lebanon before September?,Yes,0.08,2024-08-21,2024-09-01,0.055,0,-1.0,0.945,1,0.0582,1345780.16
+war,Will Israel invade Lebanon before September?,Yes,0.1,2024-08-17,2024-09-01,0.09,0,-1.0,0.91,1,0.0989,1345780.16
+war,Iran military response by Friday?,Yes,0.05,2024-08-21,2024-08-24,0.0285,0,-1.0,0.9715,1,0.0293,133874.22
+war,Iran military response by Friday?,Yes,0.08,2024-08-20,2024-08-24,0.075,0,-1.0,0.925,1,0.0811,133874.22
+war,Iran military response by Friday?,Yes,0.1,2024-08-20,2024-08-24,0.075,0,-1.0,0.925,1,0.0811,133874.22
+war,Israel and Saudi Arabia normalize relations before U.S. election?,Yes,0.05,2024-08-08,2024-11-05,0.036,0,-1.0,0.964,1,0.0373,133184.532627
+war,Israel and Saudi Arabia normalize relations before U.S. election?,Yes,0.08,2024-08-01,2024-11-05,0.075,0,-1.0,0.925,1,0.0811,133184.532627
+war,Israel and Saudi Arabia normalize relations before U.S. election?,Yes,0.1,2024-08-01,2024-11-05,0.075,0,-1.0,0.925,1,0.0811,133184.532627
+war,Next Israel x Hamas ceasefire in October?,Yes,0.05,2024-06-12,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,122919.972816
+war,Next Israel x Hamas ceasefire in October?,Yes,0.08,2024-06-12,2024-11-01,0.045,0,-1.0,0.955,1,0.0471,122919.972816
+war,Next Israel x Hamas ceasefire in October?,Yes,0.1,2024-06-11,2024-11-01,0.09,0,-1.0,0.91,1,0.0989,122919.972816
+war,Iran strike on US military in August?,Yes,0.05,2024-08-22,2024-09-01,0.045,0,-1.0,0.955,1,0.0471,110561.06
+war,Iran strike on US military in August?,Yes,0.08,2024-08-15,2024-09-01,0.065,0,-1.0,0.935,1,0.0695,110561.06
+war,Iran strike on US military in August?,Yes,0.1,2024-08-08,2024-09-01,0.095,0,-1.0,0.905,1,0.105,110561.06
+war,Will Russia capture Chasiv Yar before December?,Yes,0.05,2024-11-26,2024-12-01,0.046,0,-1.0,0.954,1,0.0482,1103397.302881
+war,Will Russia capture Chasiv Yar before December?,Yes,0.08,2024-11-24,2024-12-01,0.075,0,-1.0,0.925,1,0.0811,1103397.302881
+war,Will Russia capture Chasiv Yar before December?,Yes,0.1,2024-11-13,2024-12-01,0.095,0,-1.0,0.905,1,0.105,1103397.302881

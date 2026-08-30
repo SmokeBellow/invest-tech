@@ -1,0 +1,371 @@
+category,question,cheap_side,threshold,entry_date,resolution_date,loser_entry_price,loser_won,loser_r_mult,favorite_entry_price,favorite_won,favorite_r_mult,volume
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.05,2025-02-14,2025-03-01,0.046,0,-1.0,0.954,1,0.0482,99988.142804
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.08,2025-02-10,2025-03-01,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.1,2025-02-10,2025-03-01,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.05,2025-02-10,2025-04-01,0.023,0,-1.0,0.977,1,0.0235,999034.199606
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.08,2025-01-28,2025-04-01,0.075,0,-1.0,0.925,1,0.0811,999034.199606
+geopolitics,Israel and Saudi Arabia normalize relations before April?,Yes,0.1,2025-01-03,2025-04-01,0.09,0,-1.0,0.91,1,0.0989,999034.199606
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.05,2025-12-22,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,99845.469528
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.08,2025-12-15,2026-01-01,0.075,0,-1.0,0.925,1,0.0811,99845.469528
+geopolitics,Israel strike on Yemen by December 31?,Yes,0.1,2025-11-13,2026-01-01,0.09,0,-1.0,0.91,1,0.0989,99845.469528
+geopolitics,Another US military action against Iran by June 30?,Yes,0.05,2025-06-26,2025-07-01,0.0225,0,-1.0,0.9775,1,0.023,997664.015782
+geopolitics,Another US military action against Iran by June 30?,Yes,0.08,2025-06-24,2025-07-01,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+geopolitics,Another US military action against Iran by June 30?,Yes,0.1,2025-06-24,2025-07-01,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+geopolitics,Trump x Modi talk by September 5?,Yes,0.05,2025-09-02,2025-09-06,0.045,0,-1.0,0.955,1,0.0471,9964.806986
+geopolitics,Trump x Modi talk by September 5?,Yes,0.08,2025-09-01,2025-09-06,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+geopolitics,Trump x Modi talk by September 5?,Yes,0.1,2025-09-01,2025-09-06,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+geopolitics,Will 9 justices on South Korea's Constitutional Court vote for Yoon's impeachmen,Yes,0.05,2025-03-02,2025-04-04,0.0455,0,-1.0,0.9545,1,0.0477,993007.178107
+geopolitics,Will 9 justices on South Korea's Constitutional Court vote for Yoon's impeachmen,Yes,0.08,2025-03-01,2025-04-04,0.055,0,-1.0,0.945,1,0.0582,993007.178107
+geopolitics,Will 9 justices on South Korea's Constitutional Court vote for Yoon's impeachmen,Yes,0.1,2025-03-01,2025-04-04,0.055,0,-1.0,0.945,1,0.0582,993007.178107
+geopolitics,Will Iran enrich uranium to 90% before June?,Yes,0.05,2025-04-22,2025-06-01,0.045,0,-1.0,0.955,1,0.0471,99254.450509
+geopolitics,Will Iran enrich uranium to 90% before June?,Yes,0.08,2025-03-17,2025-06-01,0.075,0,-1.0,0.925,1,0.0811,99254.450509
+geopolitics,Will Iran enrich uranium to 90% before June?,Yes,0.1,2025-03-10,2025-06-01,0.08,0,-1.0,0.92,1,0.087,99254.450509
+geopolitics,Ukraine strike on Moscow municipality by December 31?,Yes,0.05,2025-12-22,2026-01-01,0.0485,0,-1.0,0.9515,1,0.051,99070.241479
+geopolitics,Ukraine strike on Moscow municipality by December 31?,Yes,0.08,2025-12-20,2026-01-01,0.07,0,-1.0,0.93,1,0.0753,99070.241479
+geopolitics,Ukraine strike on Moscow municipality by December 31?,Yes,0.1,2025-12-03,2026-01-01,0.095,0,-1.0,0.905,1,0.105,99070.241479
+geopolitics,Will Trump meet with Vladimir Putin in September?,Yes,0.05,2025-09-04,2025-10-01,0.045,0,-1.0,0.955,1,0.0471,98958.012821
+geopolitics,Will Trump meet with Vladimir Putin in September?,Yes,0.08,2025-09-03,2025-10-01,0.065,0,-1.0,0.935,1,0.0695,98958.012821
+geopolitics,Will Trump meet with Vladimir Putin in September?,Yes,0.1,2025-08-29,2025-10-01,0.09,0,-1.0,0.91,1,0.0989,98958.012821
+geopolitics,Israel x Egypt sever diplomatic relations before July?,Yes,0.05,2025-05-02,2025-07-01,0.045,0,-1.0,0.955,1,0.0471,98661.707179
+geopolitics,Israel x Egypt sever diplomatic relations before July?,Yes,0.08,2025-02-15,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,98661.707179
+geopolitics,Israel x Egypt sever diplomatic relations before July?,Yes,0.1,2025-02-14,2025-07-01,0.08,0,-1.0,0.92,1,0.087,98661.707179
+geopolitics,Israel military action against Qatar in 2025?,Yes,0.08,2025-09-05,2025-09-09,0.07,1,13.285714285714285,0.93,0,-1.0,98592.087462
+geopolitics,Israel military action against Qatar in 2025?,Yes,0.1,2025-09-05,2025-09-09,0.07,1,13.285714285714285,0.93,0,-1.0,98592.087462
+geopolitics,Will Zelenskyy and Putin meet next in US?,Yes,0.05,2025-08-20,2026-01-01,0.0255,0,-1.0,0.9745,1,0.0262,985171.906907
+geopolitics,Will Zelenskyy and Putin meet next in US?,Yes,0.08,2025-08-20,2026-01-01,0.0255,0,-1.0,0.9745,1,0.0262,985171.906907
+geopolitics,Will Zelenskyy and Putin meet next in US?,Yes,0.1,2025-08-20,2026-01-01,0.0255,0,-1.0,0.9745,1,0.0262,985171.906907
+geopolitics,Will Russia recapture territory in Vilne by December 31?,Yes,0.05,2025-12-26,2026-01-01,0.0345,0,-1.0,0.9655,1,0.0357,9782.706529
+geopolitics,Will Russia recapture territory in Vilne by December 31?,Yes,0.08,2025-12-20,2026-01-01,0.06,0,-1.0,0.94,1,0.0638,9782.706529
+geopolitics,Will Russia recapture territory in Vilne by December 31?,Yes,0.1,2025-12-15,2026-01-01,0.095,0,-1.0,0.905,1,0.105,9782.706529
+geopolitics,Will Reza Pahlavi enter Iran before September?,Yes,0.05,2025-06-26,2025-09-01,0.0405,0,-1.0,0.9595,1,0.0422,977802.548836
+geopolitics,Will Reza Pahlavi enter Iran before September?,Yes,0.08,2025-06-25,2025-09-01,0.055,0,-1.0,0.945,1,0.0582,977802.548836
+geopolitics,Will Reza Pahlavi enter Iran before September?,Yes,0.1,2025-06-15,2025-09-01,0.08,0,-1.0,0.92,1,0.087,977802.548836
+geopolitics,Israel strike on Iranian nuclear facility in May?,Yes,0.05,2025-05-23,2025-06-01,0.045,0,-1.0,0.955,1,0.0471,971066.311025
+geopolitics,Israel strike on Iranian nuclear facility in May?,Yes,0.08,2025-05-22,2025-06-01,0.055,0,-1.0,0.945,1,0.0582,971066.311025
+geopolitics,Israel strike on Iranian nuclear facility in May?,Yes,0.1,2025-05-22,2025-06-01,0.055,0,-1.0,0.945,1,0.0582,971066.311025
+geopolitics,Trump announces cutting all military aid to Ukraine aid before April?,No,0.05,2025-03-05,2025-03-07,0.006,0,-1.0,0.994,1,0.006,968146.857798
+geopolitics,Trump announces cutting all military aid to Ukraine aid before April?,No,0.08,2025-03-05,2025-03-07,0.006,0,-1.0,0.994,1,0.006,968146.857798
+geopolitics,Trump announces cutting all military aid to Ukraine aid before April?,No,0.1,2025-03-05,2025-03-07,0.006,0,-1.0,0.994,1,0.006,968146.857798
+geopolitics,Will Trump meet with Jair Bolsonaro in August?,Yes,0.05,2025-08-02,2025-09-01,0.0225,0,-1.0,0.9775,1,0.023,96247.467812
+geopolitics,Will Trump meet with Jair Bolsonaro in August?,Yes,0.08,2025-08-02,2025-09-01,0.0225,0,-1.0,0.9775,1,0.023,96247.467812
+geopolitics,Will Trump meet with Jair Bolsonaro in August?,Yes,0.1,2025-08-02,2025-09-01,0.0225,0,-1.0,0.9775,1,0.023,96247.467812
+geopolitics,US strikes Afghanistan by October 31?,Yes,0.05,2025-10-02,2025-11-01,0.034,0,-1.0,0.966,1,0.0352,96118.537337
+geopolitics,US strikes Afghanistan by October 31?,Yes,0.08,2025-10-02,2025-11-01,0.034,0,-1.0,0.966,1,0.0352,96118.537337
+geopolitics,US strikes Afghanistan by October 31?,Yes,0.1,2025-10-02,2025-11-01,0.034,0,-1.0,0.966,1,0.0352,96118.537337
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.05,2025-02-14,2025-03-01,0.046,0,-1.0,0.954,1,0.0482,99988.142804
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.08,2025-02-10,2025-03-01,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,Yes,0.1,2025-02-10,2025-03-01,0.075,0,-1.0,0.925,1,0.0811,99988.142804
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.05,2025-02-10,2025-04-01,0.023,0,-1.0,0.977,1,0.0235,999034.199606
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.08,2025-01-28,2025-04-01,0.075,0,-1.0,0.925,1,0.0811,999034.199606
+world,Israel and Saudi Arabia normalize relations before April?,Yes,0.1,2025-01-03,2025-04-01,0.09,0,-1.0,0.91,1,0.0989,999034.199606
+world,Israel strike on Yemen by December 31?,Yes,0.05,2025-12-22,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,99845.469528
+world,Israel strike on Yemen by December 31?,Yes,0.08,2025-12-15,2026-01-01,0.075,0,-1.0,0.925,1,0.0811,99845.469528
+world,Israel strike on Yemen by December 31?,Yes,0.1,2025-11-13,2026-01-01,0.09,0,-1.0,0.91,1,0.0989,99845.469528
+world,Another US military action against Iran by June 30?,Yes,0.05,2025-06-26,2025-07-01,0.0225,0,-1.0,0.9775,1,0.023,997664.015782
+world,Another US military action against Iran by June 30?,Yes,0.08,2025-06-24,2025-07-01,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+world,Another US military action against Iran by June 30?,Yes,0.1,2025-06-24,2025-07-01,0.0745,0,-1.0,0.9255,1,0.0805,997664.015782
+world,Morocco snap election called by December 31?,Yes,0.05,2025-11-23,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,9972.452924
+world,Morocco snap election called by December 31?,Yes,0.08,2025-11-23,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,9972.452924
+world,Morocco snap election called by December 31?,Yes,0.1,2025-10-25,2026-01-01,0.09,0,-1.0,0.91,1,0.0989,9972.452924
+world,Trump x Modi talk by September 5?,Yes,0.05,2025-09-02,2025-09-06,0.045,0,-1.0,0.955,1,0.0471,9964.806986
+world,Trump x Modi talk by September 5?,Yes,0.08,2025-09-01,2025-09-06,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+world,Trump x Modi talk by September 5?,Yes,0.1,2025-09-01,2025-09-06,0.075,0,-1.0,0.925,1,0.0811,9964.806986
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.05,2025-05-15,2025-06-04,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.08,2025-05-15,2025-06-04,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,Yes,0.1,2025-05-15,2025-06-04,0.0105,0,-1.0,0.9895,1,0.0106,99619.05964
+world,Will Iran enrich uranium to 90% before June?,Yes,0.05,2025-04-22,2025-06-01,0.045,0,-1.0,0.955,1,0.0471,99254.450509
+world,Will Iran enrich uranium to 90% before June?,Yes,0.08,2025-03-17,2025-06-01,0.075,0,-1.0,0.925,1,0.0811,99254.450509
+world,Will Iran enrich uranium to 90% before June?,Yes,0.1,2025-03-10,2025-06-01,0.08,0,-1.0,0.92,1,0.087,99254.450509
+world,Will Israel win Miss Universe 2025?,Yes,0.05,2025-11-07,2025-11-21,0.045,0,-1.0,0.955,1,0.0471,99127.826748
+world,Will Israel win Miss Universe 2025?,Yes,0.08,2025-11-07,2025-11-21,0.045,0,-1.0,0.955,1,0.0471,99127.826748
+world,Will Israel win Miss Universe 2025?,Yes,0.1,2025-11-07,2025-11-21,0.045,0,-1.0,0.955,1,0.0471,99127.826748
+world,Will Andrónico Rodríguez win the most votes in the first round of the 2025 Boliv,Yes,0.05,2025-08-13,2025-08-20,0.045,0,-1.0,0.955,1,0.0471,990326.123506
+world,Will Andrónico Rodríguez win the most votes in the first round of the 2025 Boliv,Yes,0.08,2025-08-11,2025-08-20,0.075,0,-1.0,0.925,1,0.0811,990326.123506
+world,Will Andrónico Rodríguez win the most votes in the first round of the 2025 Boliv,Yes,0.1,2025-08-08,2025-08-20,0.085,0,-1.0,0.915,1,0.0929,990326.123506
+world,Will Medina win by 3-7%?,Yes,0.05,2025-08-18,2025-08-23,0.0045,0,-1.0,0.9955,1,0.0045,9878.607809
+world,Will Medina win by 3-7%?,Yes,0.08,2025-08-13,2025-08-23,0.075,0,-1.0,0.925,1,0.0811,9878.607809
+world,Will Medina win by 3-7%?,Yes,0.1,2025-08-13,2025-08-23,0.075,0,-1.0,0.925,1,0.0811,9878.607809
+world,Israel x Egypt sever diplomatic relations before July?,Yes,0.05,2025-05-02,2025-07-01,0.045,0,-1.0,0.955,1,0.0471,98661.707179
+world,Israel x Egypt sever diplomatic relations before July?,Yes,0.08,2025-02-15,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,98661.707179
+world,Israel x Egypt sever diplomatic relations before July?,Yes,0.1,2025-02-14,2025-07-01,0.08,0,-1.0,0.92,1,0.087,98661.707179
+world,Israel military action against Qatar in 2025?,Yes,0.08,2025-09-05,2025-09-09,0.07,1,13.285714285714285,0.93,0,-1.0,98592.087462
+world,Israel military action against Qatar in 2025?,Yes,0.1,2025-09-05,2025-09-09,0.07,1,13.285714285714285,0.93,0,-1.0,98592.087462
+world,Will the Australian hero donation campaign raise less than $2.0 million by Decem,Yes,0.05,2025-12-16,2025-12-22,0.0025,0,-1.0,0.9975,1,0.0025,98209.933138
+world,Will the Australian hero donation campaign raise less than $2.0 million by Decem,Yes,0.08,2025-12-16,2025-12-22,0.0025,0,-1.0,0.9975,1,0.0025,98209.933138
+world,Will the Australian hero donation campaign raise less than $2.0 million by Decem,Yes,0.1,2025-12-16,2025-12-22,0.0025,0,-1.0,0.9975,1,0.0025,98209.933138
+world,Will Reza Pahlavi enter Iran before September?,Yes,0.05,2025-06-26,2025-09-01,0.0405,0,-1.0,0.9595,1,0.0422,977802.548836
+world,Will Reza Pahlavi enter Iran before September?,Yes,0.08,2025-06-25,2025-09-01,0.055,0,-1.0,0.945,1,0.0582,977802.548836
+world,Will Reza Pahlavi enter Iran before September?,Yes,0.1,2025-06-15,2025-09-01,0.08,0,-1.0,0.92,1,0.087,977802.548836
+world,Will Maciej Maciak be the next President of Poland?,Yes,0.05,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,97760.0
+world,Will Maciej Maciak be the next President of Poland?,Yes,0.08,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,97760.0
+world,Will Maciej Maciak be the next President of Poland?,Yes,0.1,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,97760.0
+world,Lee Jun-seok in jail in 2025?,Yes,0.05,2025-10-30,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,97683.262949
+world,Lee Jun-seok in jail in 2025?,Yes,0.08,2025-10-14,2026-01-01,0.07,0,-1.0,0.93,1,0.0753,97683.262949
+world,Lee Jun-seok in jail in 2025?,Yes,0.1,2025-09-30,2026-01-01,0.085,0,-1.0,0.915,1,0.0929,97683.262949
+world,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.05,2025-10-30,2026-01-01,0.0385,0,-1.0,0.9615,1,0.04,9746.0601
+world,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.08,2025-10-28,2026-01-01,0.0645,0,-1.0,0.9355,1,0.0689,9746.0601
+world,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.1,2025-10-25,2026-01-01,0.095,0,-1.0,0.905,1,0.105,9746.0601
+world,Will Xi visit the US before September?,Yes,0.05,2025-06-29,2025-09-01,0.0345,0,-1.0,0.9655,1,0.0357,97006.48407
+world,Will Xi visit the US before September?,Yes,0.08,2025-06-17,2025-09-01,0.07,0,-1.0,0.93,1,0.0753,97006.48407
+world,Will Xi visit the US before September?,Yes,0.1,2025-06-09,2025-09-01,0.09,0,-1.0,0.91,1,0.0989,97006.48407
+world,Will Baluta win by 6-9%?,Yes,0.05,2025-11-30,2025-12-08,0.04,0,-1.0,0.96,1,0.0417,9681.229544
+world,Will Baluta win by 6-9%?,Yes,0.08,2025-11-29,2025-12-08,0.07,0,-1.0,0.93,1,0.0753,9681.229544
+world,Will Baluta win by 6-9%?,Yes,0.1,2025-11-29,2025-12-08,0.07,0,-1.0,0.93,1,0.0753,9681.229544
+world,Will Yoo Seong-min win 2nd place in the South Korean presidential election?,Yes,0.05,2025-05-06,2025-06-04,0.012,0,-1.0,0.988,1,0.0121,96810.1935
+world,Will Yoo Seong-min win 2nd place in the South Korean presidential election?,Yes,0.08,2025-05-06,2025-06-04,0.012,0,-1.0,0.988,1,0.0121,96810.1935
+world,Will Yoo Seong-min win 2nd place in the South Korean presidential election?,Yes,0.1,2025-05-06,2025-06-04,0.012,0,-1.0,0.988,1,0.0121,96810.1935
+world,Will Marek Woch be the next President of Poland?,Yes,0.05,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,96750.0
+world,Will Marek Woch be the next President of Poland?,Yes,0.08,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,96750.0
+world,Will Marek Woch be the next President of Poland?,Yes,0.1,2025-05-17,2025-06-02,0.0005,0,-1.0,0.9995,1,0.0005,96750.0
+weather,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.05,2025-01-21,2025-02-11,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+weather,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.08,2025-01-21,2025-02-11,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+weather,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.1,2025-01-20,2025-02-11,0.085,0,-1.0,0.915,1,0.0929,998803.055715
+weather,Will the highest temperature in London be 63°F or higher on December 9?,Yes,0.05,2025-12-07,2025-12-10,0.031,0,-1.0,0.969,1,0.032,99527.923719
+weather,Will the highest temperature in London be 63°F or higher on December 9?,Yes,0.08,2025-12-07,2025-12-10,0.031,0,-1.0,0.969,1,0.032,99527.923719
+weather,Will the highest temperature in London be 63°F or higher on December 9?,Yes,0.1,2025-12-07,2025-12-10,0.031,0,-1.0,0.969,1,0.032,99527.923719
+weather,Another 7.0 or above earthquake by September 30?,Yes,0.1,2025-09-29,2025-10-01,0.09,0,-1.0,0.91,1,0.0989,99266.41129
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.05,2025-01-21,2025-02-11,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.08,2025-01-21,2025-02-11,0.0125,0,-1.0,0.9875,1,0.0127,998803.055715
+climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,Yes,0.1,2025-01-20,2025-02-11,0.085,0,-1.0,0.915,1,0.0929,998803.055715
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.05,2025-02-09,2025-03-11,0.029,0,-1.0,0.971,1,0.0299,953776.877343
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.08,2025-02-06,2025-03-11,0.075,0,-1.0,0.925,1,0.0811,953776.877343
+climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,Yes,0.1,2025-02-05,2025-03-11,0.085,0,-1.0,0.915,1,0.0929,953776.877343
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.05,2025-04-08,2025-05-09,0.0455,0,-1.0,0.9545,1,0.0477,92670.606283
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.08,2025-04-08,2025-05-09,0.0455,0,-1.0,0.9545,1,0.0477,92670.606283
+climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,Yes,0.1,2025-04-06,2025-05-09,0.095,0,-1.0,0.905,1,0.105,92670.606283
+climate,Will global temperature increase by between 1.15ºC and 1.19ºC in November 2025?,Yes,0.08,2025-11-26,2025-12-09,0.07,0,-1.0,0.93,1,0.0753,92549.481792
+climate,Will global temperature increase by between 1.15ºC and 1.19ºC in November 2025?,Yes,0.1,2025-11-26,2025-12-09,0.07,0,-1.0,0.93,1,0.0753,92549.481792
+climate,Will global temperature increase by between 1.25ºC and 1.29ºC in November 2025?,Yes,0.1,2025-12-07,2025-12-09,0.0825,0,-1.0,0.9175,1,0.0899,91495.289992
+climate,Will 27 named typhoons occur in the Northwest Pacific in 2025?,No,0.05,2025-12-22,2026-01-01,0.04,0,-1.0,0.96,1,0.0417,9107.619913
+climate,Will 27 named typhoons occur in the Northwest Pacific in 2025?,No,0.08,2025-12-22,2026-01-01,0.04,0,-1.0,0.96,1,0.0417,9107.619913
+climate,Will 27 named typhoons occur in the Northwest Pacific in 2025?,No,0.1,2025-12-22,2026-01-01,0.04,0,-1.0,0.96,1,0.0417,9107.619913
+climate,Will global temperature increase by between 1.05-1.09ºC in May 2025?,No,0.05,2025-06-07,2025-06-10,0.0395,0,-1.0,0.9605,1,0.0411,89788.182014
+climate,Will global temperature increase by between 1.05-1.09ºC in May 2025?,No,0.08,2025-06-07,2025-06-10,0.0395,0,-1.0,0.9605,1,0.0411,89788.182014
+climate,Will global temperature increase by between 1.05-1.09ºC in May 2025?,No,0.1,2025-06-06,2025-06-10,0.095,0,-1.0,0.905,1,0.105,89788.182014
+climate,Will global temperature increase by less than 1.20ºC in February 2025?,Yes,0.05,2025-02-01,2025-03-11,0.045,0,-1.0,0.955,1,0.0471,886698.062822
+climate,Will global temperature increase by less than 1.20ºC in February 2025?,Yes,0.08,2025-02-01,2025-03-11,0.045,0,-1.0,0.955,1,0.0471,886698.062822
+climate,Will global temperature increase by less than 1.20ºC in February 2025?,Yes,0.1,2025-02-01,2025-03-11,0.045,0,-1.0,0.955,1,0.0471,886698.062822
+climate,Will global temperature increase by less than 1.22ºC in March 2025?,Yes,0.05,2025-03-06,2025-04-10,0.029,0,-1.0,0.971,1,0.0299,804859.132912
+climate,Will global temperature increase by less than 1.22ºC in March 2025?,Yes,0.08,2025-03-02,2025-04-10,0.065,0,-1.0,0.935,1,0.0695,804859.132912
+climate,Will global temperature increase by less than 1.22ºC in March 2025?,Yes,0.1,2025-03-02,2025-04-10,0.065,0,-1.0,0.935,1,0.0695,804859.132912
+climate,Will global temperature increase by between 1.00ºC and 1.04ºC in September 2025?,Yes,0.05,2025-09-14,2025-11-14,0.0235,0,-1.0,0.9765,1,0.0241,793663.940498
+climate,Will global temperature increase by between 1.00ºC and 1.04ºC in September 2025?,Yes,0.08,2025-09-14,2025-11-14,0.0235,0,-1.0,0.9765,1,0.0241,793663.940498
+climate,Will global temperature increase by between 1.00ºC and 1.04ºC in September 2025?,Yes,0.1,2025-09-13,2025-11-14,0.085,0,-1.0,0.915,1,0.0929,793663.940498
+climate,Will a hurricane make landfall in the US by September 30?,Yes,0.05,2025-09-20,2025-10-01,0.0295,0,-1.0,0.9705,1,0.0304,78855.697773
+climate,Will a hurricane make landfall in the US by September 30?,Yes,0.08,2025-09-19,2025-10-01,0.052,0,-1.0,0.948,1,0.0549,78855.697773
+climate,Will a hurricane make landfall in the US by September 30?,Yes,0.1,2025-09-15,2025-10-01,0.095,0,-1.0,0.905,1,0.105,78855.697773
+climate,Will global temperature increase by between 1.30-1.34ºC in January 2025?,Yes,0.05,2025-02-06,2025-02-11,0.026,0,-1.0,0.974,1,0.0267,778592.942011
+climate,Will global temperature increase by between 1.30-1.34ºC in January 2025?,Yes,0.08,2025-02-06,2025-02-11,0.026,0,-1.0,0.974,1,0.0267,778592.942011
+climate,Will global temperature increase by between 1.30-1.34ºC in January 2025?,Yes,0.1,2025-02-05,2025-02-11,0.095,0,-1.0,0.905,1,0.105,778592.942011
+climate,Will global temperature increase by between 1.27-1.31ºC in March 2025?,Yes,0.05,2025-03-13,2025-04-10,0.0325,0,-1.0,0.9675,1,0.0336,765110.782463
+climate,Will global temperature increase by between 1.27-1.31ºC in March 2025?,Yes,0.08,2025-03-09,2025-04-10,0.074,0,-1.0,0.926,1,0.0799,765110.782463
+climate,Will global temperature increase by between 1.27-1.31ºC in March 2025?,Yes,0.1,2025-03-09,2025-04-10,0.074,0,-1.0,0.926,1,0.0799,765110.782463
+climate,Will global temperature increase by between 1.10ºC and 1.14ºC in October 2025?,Yes,0.05,2025-10-12,2025-11-14,0.034,0,-1.0,0.966,1,0.0352,72542.32795
+climate,Will global temperature increase by between 1.10ºC and 1.14ºC in October 2025?,Yes,0.08,2025-10-12,2025-11-14,0.034,0,-1.0,0.966,1,0.0352,72542.32795
+climate,Will global temperature increase by between 1.10ºC and 1.14ºC in October 2025?,Yes,0.1,2025-10-12,2025-11-14,0.034,0,-1.0,0.966,1,0.0352,72542.32795
+climate,Will between 20 and 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.05,2025-09-15,2025-12-02,0.045,0,-1.0,0.955,1,0.0471,71832.774228
+climate,Will between 20 and 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.08,2025-04-25,2025-12-02,0.075,0,-1.0,0.925,1,0.0811,71832.774228
+climate,Will between 20 and 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.1,2025-04-18,2025-12-02,0.09,0,-1.0,0.91,1,0.0989,71832.774228
+climate,2025 March hottest on record?,Yes,0.05,2025-03-20,2025-04-10,0.045,0,-1.0,0.955,1,0.0471,716925.529043
+climate,2025 March hottest on record?,Yes,0.08,2025-03-18,2025-04-10,0.065,0,-1.0,0.935,1,0.0695,716925.529043
+climate,2025 March hottest on record?,Yes,0.1,2025-03-11,2025-04-10,0.085,0,-1.0,0.915,1,0.0929,716925.529043
+climate,Will global temperature increase by between 1.15ºC and 1.19ºC in October 2025?,Yes,0.05,2025-10-21,2025-11-14,0.045,0,-1.0,0.955,1,0.0471,69690.104348
+climate,Will global temperature increase by between 1.15ºC and 1.19ºC in October 2025?,Yes,0.08,2025-10-20,2025-11-14,0.06,0,-1.0,0.94,1,0.0638,69690.104348
+climate,Will global temperature increase by between 1.15ºC and 1.19ºC in October 2025?,Yes,0.1,2025-10-13,2025-11-14,0.09,0,-1.0,0.91,1,0.0989,69690.104348
+climate,Will global temperature increase by less than 1.08ºC in April 2025?,Yes,0.05,2025-04-25,2025-05-09,0.03,0,-1.0,0.97,1,0.0309,6639.000724
+climate,Will global temperature increase by less than 1.08ºC in April 2025?,Yes,0.08,2025-04-25,2025-05-09,0.03,0,-1.0,0.97,1,0.0309,6639.000724
+climate,Will global temperature increase by less than 1.08ºC in April 2025?,Yes,0.1,2025-04-25,2025-05-09,0.03,0,-1.0,0.97,1,0.0309,6639.000724
+climate,Will between 12 and 15 named storms occur in the 2025 Atlantic hurricane season?,No,0.05,2025-10-31,2025-12-02,0.0445,0,-1.0,0.9555,1,0.0466,651272.642756
+climate,Will between 12 and 15 named storms occur in the 2025 Atlantic hurricane season?,No,0.08,2025-10-29,2025-12-02,0.07,0,-1.0,0.93,1,0.0753,651272.642756
+climate,Will between 12 and 15 named storms occur in the 2025 Atlantic hurricane season?,No,0.1,2025-10-27,2025-12-02,0.095,0,-1.0,0.905,1,0.105,651272.642756
+climate,Cat 3+ hurricane hits Miami in 2025?,Yes,0.05,2025-09-25,2025-12-01,0.045,0,-1.0,0.955,1,0.0471,65037.281194
+climate,Cat 3+ hurricane hits Miami in 2025?,Yes,0.08,2025-09-12,2025-12-01,0.075,0,-1.0,0.925,1,0.0811,65037.281194
+climate,Cat 3+ hurricane hits Miami in 2025?,Yes,0.1,2025-08-23,2025-12-01,0.095,0,-1.0,0.905,1,0.105,65037.281194
+climate,Will a hurricane make landfall in the US by August 31?,Yes,0.05,2025-08-24,2025-09-01,0.0305,0,-1.0,0.9695,1,0.0315,6377.762092
+climate,Will a hurricane make landfall in the US by August 31?,Yes,0.08,2025-08-21,2025-09-01,0.075,0,-1.0,0.925,1,0.0811,6377.762092
+climate,Will a hurricane make landfall in the US by August 31?,Yes,0.1,2025-08-21,2025-09-01,0.075,0,-1.0,0.925,1,0.0811,6377.762092
+climate,September temperature increase by more than 1.40°C?,Yes,0.05,2024-09-19,2024-10-21,0.045,0,-1.0,0.955,1,0.0471,610208.244718
+climate,September temperature increase by more than 1.40°C?,Yes,0.08,2024-09-15,2024-10-21,0.065,0,-1.0,0.935,1,0.0695,610208.244718
+climate,September temperature increase by more than 1.40°C?,Yes,0.1,2024-09-15,2024-10-21,0.065,0,-1.0,0.935,1,0.0695,610208.244718
+climate,Will global temperature increase by more than 1.39ºC in February 2025?,Yes,0.05,2025-02-06,2025-03-11,0.0335,0,-1.0,0.9665,1,0.0347,607356.369863
+climate,Will global temperature increase by more than 1.39ºC in February 2025?,Yes,0.08,2025-02-05,2025-03-11,0.0695,0,-1.0,0.9305,1,0.0747,607356.369863
+climate,Will global temperature increase by more than 1.39ºC in February 2025?,Yes,0.1,2025-02-05,2025-03-11,0.0695,0,-1.0,0.9305,1,0.0747,607356.369863
+climate,Will more than 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.05,2025-08-27,2025-12-02,0.0355,0,-1.0,0.9645,1,0.0368,59879.836018
+climate,Will more than 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.08,2025-04-26,2025-12-02,0.075,0,-1.0,0.925,1,0.0811,59879.836018
+climate,Will more than 23 named storms occur in the 2025 Atlantic hurricane season?,Yes,0.1,2025-04-09,2025-12-02,0.095,0,-1.0,0.905,1,0.105,59879.836018
+climate,Will global temperature increase by less than 1.00ºC in September 2025?,Yes,0.05,2025-09-13,2025-11-14,0.04,0,-1.0,0.96,1,0.0417,589172.874196
+climate,Will global temperature increase by less than 1.00ºC in September 2025?,Yes,0.08,2025-09-13,2025-11-14,0.04,0,-1.0,0.96,1,0.0417,589172.874196
+climate,Will global temperature increase by less than 1.00ºC in September 2025?,Yes,0.1,2025-09-13,2025-11-14,0.04,0,-1.0,0.96,1,0.0417,589172.874196
+climate,September temperature increase by less than 1.17°C?,Yes,0.05,2024-09-19,2024-10-21,0.032,0,-1.0,0.968,1,0.0331,582248.059212
+climate,September temperature increase by less than 1.17°C?,Yes,0.08,2024-09-12,2024-10-21,0.075,0,-1.0,0.925,1,0.0811,582248.059212
+climate,September temperature increase by less than 1.17°C?,Yes,0.1,2024-09-11,2024-10-21,0.08,0,-1.0,0.92,1,0.087,582248.059212
+climate,Will 2024 be the hottest year on record?,No,0.05,2024-08-10,2025-01-10,0.045,0,-1.0,0.955,1,0.0471,543678.285412
+climate,Will 2024 be the hottest year on record?,No,0.08,2024-08-06,2025-01-10,0.065,0,-1.0,0.935,1,0.0695,543678.285412
+climate,Will 2024 be the hottest year on record?,No,0.1,2024-07-30,2025-01-10,0.085,0,-1.0,0.915,1,0.0929,543678.285412
+climate,Will global temperature increase by between 1.30-1.34ºC in February 2025?,Yes,0.05,2025-02-17,2025-03-11,0.045,0,-1.0,0.955,1,0.0471,537336.956255
+climate,Will global temperature increase by between 1.30-1.34ºC in February 2025?,Yes,0.08,2025-02-15,2025-03-11,0.075,0,-1.0,0.925,1,0.0811,537336.956255
+climate,Will global temperature increase by between 1.30-1.34ºC in February 2025?,Yes,0.1,2025-02-15,2025-03-11,0.075,0,-1.0,0.925,1,0.0811,537336.956255
+climate,2025 August second hottest on record?,Yes,0.05,2025-08-08,2025-09-11,0.039,0,-1.0,0.961,1,0.0406,49943.553626
+climate,2025 August second hottest on record?,Yes,0.08,2025-08-07,2025-09-11,0.06,0,-1.0,0.94,1,0.0638,49943.553626
+climate,2025 August second hottest on record?,Yes,0.1,2025-08-07,2025-09-11,0.06,0,-1.0,0.94,1,0.0638,49943.553626
+natural_disaster,Megaquake by August 31?,Yes,0.1,2025-07-21,2025-07-30,0.095,1,9.526315789473685,0.905,0,-1.0,92923.317981
+natural_disaster,Megaquake by October 31?,Yes,0.05,2025-10-20,2025-11-01,0.045,0,-1.0,0.955,1,0.0471,91745.735641
+natural_disaster,Megaquake by October 31?,Yes,0.08,2025-10-02,2025-11-01,0.065,0,-1.0,0.935,1,0.0695,91745.735641
+natural_disaster,Megaquake by October 31?,Yes,0.1,2025-10-01,2025-11-01,0.085,0,-1.0,0.915,1,0.0929,91745.735641
+natural_disaster,Megaquake by September 30?,Yes,0.05,2025-09-13,2025-10-01,0.045,0,-1.0,0.955,1,0.0471,86885.742608
+natural_disaster,Megaquake by September 30?,Yes,0.08,2025-09-01,2025-10-01,0.065,0,-1.0,0.935,1,0.0695,86885.742608
+natural_disaster,Megaquake by September 30?,Yes,0.1,2025-08-28,2025-10-01,0.095,0,-1.0,0.905,1,0.105,86885.742608
+natural_disaster,Cat 3+ hurricane hits Miami in 2025?,Yes,0.05,2025-09-25,2025-12-01,0.045,0,-1.0,0.955,1,0.0471,65037.281194
+natural_disaster,Cat 3+ hurricane hits Miami in 2025?,Yes,0.08,2025-09-12,2025-12-01,0.075,0,-1.0,0.925,1,0.0811,65037.281194
+natural_disaster,Cat 3+ hurricane hits Miami in 2025?,Yes,0.1,2025-08-23,2025-12-01,0.095,0,-1.0,0.905,1,0.105,65037.281194
+natural_disaster,Nothing Ever Happens: Natural Disaster Edition,No,0.05,2025-12-20,2026-01-01,0.031,0,-1.0,0.969,1,0.032,49572.039218
+natural_disaster,Nothing Ever Happens: Natural Disaster Edition,No,0.08,2025-12-08,2026-01-01,0.055,0,-1.0,0.945,1,0.0582,49572.039218
+natural_disaster,Nothing Ever Happens: Natural Disaster Edition,No,0.1,2025-11-30,2026-01-01,0.095,0,-1.0,0.905,1,0.105,49572.039218
+natural_disaster,Megaquake by November 30?,Yes,0.05,2025-11-09,2025-12-01,0.045,0,-1.0,0.955,1,0.0471,29366.018721
+natural_disaster,Megaquake by November 30?,Yes,0.08,2025-11-02,2025-12-01,0.065,0,-1.0,0.935,1,0.0695,29366.018721
+natural_disaster,Megaquake by November 30?,Yes,0.1,2025-11-02,2025-12-01,0.065,0,-1.0,0.935,1,0.0695,29366.018721
+natural_disaster,Will a hurricane make landfall in the US before August?,Yes,0.05,2025-07-19,2025-08-01,0.0335,0,-1.0,0.9665,1,0.0347,26332.559854
+natural_disaster,Will a hurricane make landfall in the US before August?,Yes,0.08,2025-07-19,2025-08-01,0.0335,0,-1.0,0.9665,1,0.0347,26332.559854
+natural_disaster,Will a hurricane make landfall in the US before August?,Yes,0.1,2025-07-17,2025-08-01,0.095,0,-1.0,0.905,1,0.105,26332.559854
+natural_disaster,Megaquake by December 31?,Yes,0.05,2025-12-21,2026-01-01,0.0335,0,-1.0,0.9665,1,0.0347,213018.70029
+natural_disaster,Megaquake by December 31?,Yes,0.08,2025-12-02,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,213018.70029
+natural_disaster,Megaquake by December 31?,Yes,0.1,2025-11-21,2026-01-01,0.095,0,-1.0,0.905,1,0.105,213018.70029
+natural_disaster,Another 7.0 or above earthquake by August 31?,Yes,0.1,2025-08-30,2025-09-01,0.08,0,-1.0,0.92,1,0.087,20693.369485
+natural_disaster,Will a cat 5 hurricane make US landfall during Hurricane Season 2025?,Yes,0.05,2025-09-27,2025-12-01,0.045,0,-1.0,0.955,1,0.0471,188259.721681
+natural_disaster,Will a cat 5 hurricane make US landfall during Hurricane Season 2025?,Yes,0.08,2025-08-30,2025-12-01,0.075,0,-1.0,0.925,1,0.0811,188259.721681
+natural_disaster,Will a cat 5 hurricane make US landfall during Hurricane Season 2025?,Yes,0.1,2025-08-22,2025-12-01,0.085,0,-1.0,0.915,1,0.0929,188259.721681
+natural_disaster,Will a hurricane make landfall in the US in June?,Yes,0.05,2025-06-04,2025-07-01,0.04,0,-1.0,0.96,1,0.0417,16248.067423
+natural_disaster,Will a hurricane make landfall in the US in June?,Yes,0.08,2025-06-03,2025-07-01,0.05,0,-1.0,0.95,1,0.0526,16248.067423
+natural_disaster,Will a hurricane make landfall in the US in June?,Yes,0.1,2025-06-01,2025-07-01,0.095,0,-1.0,0.905,1,0.105,16248.067423
+natural_disaster,Earthquake 7.0 or above by September 30?,No,0.1,2025-08-03,2025-08-23,0.09,0,-1.0,0.91,1,0.0989,143287.022574
+natural_disaster,Megaquake in June?,Yes,0.05,2025-06-04,2025-07-01,0.0355,0,-1.0,0.9645,1,0.0368,141456.340638
+natural_disaster,Megaquake in June?,Yes,0.08,2025-06-03,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,141456.340638
+natural_disaster,Megaquake in June?,Yes,0.1,2025-06-03,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,141456.340638
+natural_disaster,Megaquake before August?,Yes,0.05,2025-07-06,2025-08-02,0.045,1,21.22222222222222,0.955,0,-1.0,1373180.535243
+natural_disaster,Megaquake before August?,Yes,0.08,2025-06-30,2025-08-02,0.075,1,12.333333333333334,0.925,0,-1.0,1373180.535243
+natural_disaster,Megaquake before August?,Yes,0.1,2025-06-26,2025-08-02,0.095,1,9.526315789473685,0.905,0,-1.0,1373180.535243
+natural_disaster,Megaquake before August?,No,0.05,2025-07-31,2025-08-02,0.0015,0,-1.0,0.9985,1,0.0015,1373180.535243
+natural_disaster,Megaquake before August?,No,0.08,2025-07-30,2025-08-02,0.078,0,-1.0,0.922,1,0.0846,1373180.535243
+natural_disaster,Megaquake before August?,No,0.1,2025-07-30,2025-08-02,0.078,0,-1.0,0.922,1,0.0846,1373180.535243
+natural_disaster,Megaquake by August 31?,Yes,0.05,2025-08-19,2025-09-01,0.045,0,-1.0,0.955,1,0.0471,110006.185403
+natural_disaster,Megaquake by August 31?,Yes,0.08,2025-08-03,2025-09-01,0.075,0,-1.0,0.925,1,0.0811,110006.185403
+natural_disaster,Megaquake by August 31?,Yes,0.1,2025-08-02,2025-09-01,0.085,0,-1.0,0.915,1,0.0929,110006.185403
+earthquake,Megaquake by August 31?,Yes,0.1,2025-07-21,2025-07-30,0.095,1,9.526315789473685,0.905,0,-1.0,92923.317981
+earthquake,Megaquake by October 31?,Yes,0.05,2025-10-20,2025-11-01,0.045,0,-1.0,0.955,1,0.0471,91745.735641
+earthquake,Megaquake by October 31?,Yes,0.08,2025-10-02,2025-11-01,0.065,0,-1.0,0.935,1,0.0695,91745.735641
+earthquake,Megaquake by October 31?,Yes,0.1,2025-10-01,2025-11-01,0.085,0,-1.0,0.915,1,0.0929,91745.735641
+earthquake,Megaquake by September 30?,Yes,0.05,2025-09-13,2025-10-01,0.045,0,-1.0,0.955,1,0.0471,86885.742608
+earthquake,Megaquake by September 30?,Yes,0.08,2025-09-01,2025-10-01,0.065,0,-1.0,0.935,1,0.0695,86885.742608
+earthquake,Megaquake by September 30?,Yes,0.1,2025-08-28,2025-10-01,0.095,0,-1.0,0.905,1,0.105,86885.742608
+earthquake,Nothing Ever Happens: Natural Disaster Edition,No,0.05,2025-12-20,2026-01-01,0.031,0,-1.0,0.969,1,0.032,49572.039218
+earthquake,Nothing Ever Happens: Natural Disaster Edition,No,0.08,2025-12-08,2026-01-01,0.055,0,-1.0,0.945,1,0.0582,49572.039218
+earthquake,Nothing Ever Happens: Natural Disaster Edition,No,0.1,2025-11-30,2026-01-01,0.095,0,-1.0,0.905,1,0.105,49572.039218
+earthquake,Megaquake in May?,Yes,0.05,2025-05-11,2025-06-01,0.04,0,-1.0,0.96,1,0.0417,43801.460618
+earthquake,Megaquake in May?,Yes,0.08,2025-05-02,2025-06-01,0.065,0,-1.0,0.935,1,0.0695,43801.460618
+earthquake,Megaquake in May?,Yes,0.1,2025-05-02,2025-06-01,0.065,0,-1.0,0.935,1,0.0695,43801.460618
+earthquake,6.0+ earthquake in Mediterranean by next Friday?,Yes,0.05,2025-02-10,2025-02-15,0.0455,0,-1.0,0.9545,1,0.0477,41864.895928
+earthquake,6.0+ earthquake in Mediterranean by next Friday?,Yes,0.08,2025-02-07,2025-02-15,0.075,0,-1.0,0.925,1,0.0811,41864.895928
+earthquake,6.0+ earthquake in Mediterranean by next Friday?,Yes,0.1,2025-02-07,2025-02-15,0.075,0,-1.0,0.925,1,0.0811,41864.895928
+earthquake,Earthquake 7.0 or above in April?,Yes,0.05,2025-04-29,2025-05-01,0.04,0,-1.0,0.96,1,0.0417,34129.433695
+earthquake,Earthquake 7.0 or above in April?,Yes,0.08,2025-04-28,2025-05-01,0.06,0,-1.0,0.94,1,0.0638,34129.433695
+earthquake,Earthquake 7.0 or above in April?,Yes,0.1,2025-04-26,2025-05-01,0.08,0,-1.0,0.92,1,0.087,34129.433695
+earthquake,Megaquake by November 30?,Yes,0.05,2025-11-09,2025-12-01,0.045,0,-1.0,0.955,1,0.0471,29366.018721
+earthquake,Megaquake by November 30?,Yes,0.08,2025-11-02,2025-12-01,0.065,0,-1.0,0.935,1,0.0695,29366.018721
+earthquake,Megaquake by November 30?,Yes,0.1,2025-11-02,2025-12-01,0.065,0,-1.0,0.935,1,0.0695,29366.018721
+earthquake,Megaquake by December 31?,Yes,0.05,2025-12-21,2026-01-01,0.0335,0,-1.0,0.9665,1,0.0347,213018.70029
+earthquake,Megaquake by December 31?,Yes,0.08,2025-12-02,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,213018.70029
+earthquake,Megaquake by December 31?,Yes,0.1,2025-11-21,2026-01-01,0.095,0,-1.0,0.905,1,0.105,213018.70029
+earthquake,Another 7.0 or above earthquake by August 31?,Yes,0.1,2025-08-30,2025-09-01,0.08,0,-1.0,0.92,1,0.087,20693.369485
+earthquake,Magnitude 6.5+ earthquake in LA before 2026?,Yes,0.05,2025-09-28,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,187616.535291
+earthquake,Magnitude 6.5+ earthquake in LA before 2026?,Yes,0.08,2025-06-14,2026-01-01,0.055,0,-1.0,0.945,1,0.0582,187616.535291
+earthquake,Magnitude 6.5+ earthquake in LA before 2026?,Yes,0.1,2025-06-14,2026-01-01,0.055,0,-1.0,0.945,1,0.0582,187616.535291
+earthquake,Earthquake 7.0 or above by September 30?,No,0.1,2025-08-03,2025-08-23,0.09,0,-1.0,0.91,1,0.0989,143287.022574
+earthquake,Megaquake in June?,Yes,0.05,2025-06-04,2025-07-01,0.0355,0,-1.0,0.9645,1,0.0368,141456.340638
+earthquake,Megaquake in June?,Yes,0.08,2025-06-03,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,141456.340638
+earthquake,Megaquake in June?,Yes,0.1,2025-06-03,2025-07-01,0.065,0,-1.0,0.935,1,0.0695,141456.340638
+earthquake,Megaquake before August?,Yes,0.05,2025-07-06,2025-08-02,0.045,1,21.22222222222222,0.955,0,-1.0,1373180.535243
+earthquake,Megaquake before August?,Yes,0.08,2025-06-30,2025-08-02,0.075,1,12.333333333333334,0.925,0,-1.0,1373180.535243
+earthquake,Megaquake before August?,Yes,0.1,2025-06-26,2025-08-02,0.095,1,9.526315789473685,0.905,0,-1.0,1373180.535243
+earthquake,Megaquake before August?,No,0.05,2025-07-31,2025-08-02,0.0015,0,-1.0,0.9985,1,0.0015,1373180.535243
+earthquake,Megaquake before August?,No,0.08,2025-07-30,2025-08-02,0.078,0,-1.0,0.922,1,0.0846,1373180.535243
+earthquake,Megaquake before August?,No,0.1,2025-07-30,2025-08-02,0.078,0,-1.0,0.922,1,0.0846,1373180.535243
+earthquake,Megaquake by August 31?,Yes,0.05,2025-08-19,2025-09-01,0.045,0,-1.0,0.955,1,0.0471,110006.185403
+earthquake,Megaquake by August 31?,Yes,0.08,2025-08-03,2025-09-01,0.075,0,-1.0,0.925,1,0.0811,110006.185403
+earthquake,Megaquake by August 31?,Yes,0.1,2025-08-02,2025-09-01,0.085,0,-1.0,0.915,1,0.0929,110006.185403
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.05,2025-04-03,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.08,2025-04-03,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.1,2025-04-01,2025-04-30,0.09,0,-1.0,0.91,1,0.0989,99755.99141
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.05,2025-03-25,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,80917.712504
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.08,2025-03-09,2025-04-30,0.05,0,-1.0,0.95,1,0.0526,80917.712504
+recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,Yes,0.1,2025-03-09,2025-04-30,0.05,0,-1.0,0.95,1,0.0526,80917.712504
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.05,2025-03-09,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,162013.207461
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.08,2025-03-07,2025-04-30,0.065,0,-1.0,0.935,1,0.0695,162013.207461
+recession,Will U.S. GDP growth be less than -2% in Q1 2025?,Yes,0.1,2025-03-07,2025-04-30,0.065,0,-1.0,0.935,1,0.0695,162013.207461
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.05,2025-04-03,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.08,2025-04-03,2025-04-30,0.045,0,-1.0,0.955,1,0.0471,99755.99141
+economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,Yes,0.1,2025-04-01,2025-04-30,0.09,0,-1.0,0.91,1,0.0989,99755.99141
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.05,2025-09-16,2025-10-01,0.028,0,-1.0,0.972,1,0.0288,9958.783087
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.08,2025-09-16,2025-10-01,0.028,0,-1.0,0.972,1,0.0288,9958.783087
+economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,Yes,0.1,2025-09-06,2025-10-01,0.09,0,-1.0,0.91,1,0.0989,9958.783087
+economy,Will Other be the second most valuable company on October 31?,Yes,0.05,2025-09-30,2025-10-31,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,Will Other be the second most valuable company on October 31?,Yes,0.08,2025-09-30,2025-10-31,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,Will Other be the second most valuable company on October 31?,Yes,0.1,2025-09-30,2025-10-31,0.02,0,-1.0,0.98,1,0.0204,99565.49671
+economy,"Will the total number of TSA passengers for November 23-30 be between 24,000,000",Yes,0.05,2025-11-13,2025-12-01,0.035,0,-1.0,0.965,1,0.0363,99345.278093
+economy,"Will the total number of TSA passengers for November 23-30 be between 24,000,000",Yes,0.08,2025-11-13,2025-12-01,0.035,0,-1.0,0.965,1,0.0363,99345.278093
+economy,"Will the total number of TSA passengers for November 23-30 be between 24,000,000",Yes,0.1,2025-11-13,2025-12-01,0.035,0,-1.0,0.965,1,0.0363,99345.278093
+economy,Will Elon Musk's net worth be between $440b and $450b on December 31?,Yes,0.05,2025-12-15,2026-01-01,0.022,0,-1.0,0.978,1,0.0225,99340.879554
+economy,Will Elon Musk's net worth be between $440b and $450b on December 31?,Yes,0.08,2025-12-13,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,99340.879554
+economy,Will Elon Musk's net worth be between $440b and $450b on December 31?,Yes,0.1,2025-12-13,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,99340.879554
+economy,Will a dozen eggs cost between $3.75–4.00 in November?,Yes,0.05,2025-11-26,2025-12-18,0.023,0,-1.0,0.977,1,0.0235,9902.167122
+economy,Will a dozen eggs cost between $3.75–4.00 in November?,Yes,0.08,2025-11-26,2025-12-18,0.023,0,-1.0,0.977,1,0.0235,9902.167122
+economy,Will a dozen eggs cost between $3.75–4.00 in November?,Yes,0.1,2025-11-26,2025-12-18,0.023,0,-1.0,0.977,1,0.0235,9902.167122
+economy,Will Google be the largest company in the world by market cap on September 30?,Yes,0.05,2025-08-28,2025-09-30,0.0035,0,-1.0,0.9965,1,0.0035,98978.415999
+economy,Will Google be the largest company in the world by market cap on September 30?,Yes,0.08,2025-08-28,2025-09-30,0.0035,0,-1.0,0.9965,1,0.0035,98978.415999
+economy,Will Google be the largest company in the world by market cap on September 30?,Yes,0.1,2025-08-28,2025-09-30,0.0035,0,-1.0,0.9965,1,0.0035,98978.415999
+economy,Will the ECB announce an increase at the July meeting?,Yes,0.05,2025-06-11,2025-07-24,0.006,0,-1.0,0.994,1,0.006,98901.486592
+economy,Will the ECB announce an increase at the July meeting?,Yes,0.08,2025-06-11,2025-07-24,0.006,0,-1.0,0.994,1,0.006,98901.486592
+economy,Will the ECB announce an increase at the July meeting?,Yes,0.1,2025-06-11,2025-07-24,0.006,0,-1.0,0.994,1,0.006,98901.486592
+economy,Will another company be the largest in the world by market cap on May 31?,Yes,0.05,2025-04-30,2025-05-31,0.0115,0,-1.0,0.9885,1,0.0116,97900.134407
+economy,Will another company be the largest in the world by market cap on May 31?,Yes,0.08,2025-04-30,2025-05-31,0.0115,0,-1.0,0.9885,1,0.0116,97900.134407
+economy,Will another company be the largest in the world by market cap on May 31?,Yes,0.1,2025-04-30,2025-05-31,0.0115,0,-1.0,0.9885,1,0.0116,97900.134407
+economy,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.05,2025-10-30,2026-01-01,0.0385,0,-1.0,0.9615,1,0.04,9746.0601
+economy,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.08,2025-10-28,2026-01-01,0.0645,0,-1.0,0.9355,1,0.0689,9746.0601
+economy,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,Yes,0.1,2025-10-25,2026-01-01,0.095,0,-1.0,0.905,1,0.105,9746.0601
+economy,Will the September 2025 unemployment rate be ≥4.5%?,Yes,0.05,2025-10-03,2025-11-07,0.037,0,-1.0,0.963,1,0.0384,96961.121891
+economy,Will the September 2025 unemployment rate be ≥4.5%?,Yes,0.08,2025-10-03,2025-11-07,0.037,0,-1.0,0.963,1,0.0384,96961.121891
+economy,Will the September 2025 unemployment rate be ≥4.5%?,Yes,0.1,2025-09-30,2025-11-07,0.08,0,-1.0,0.92,1,0.087,96961.121891
+economy,Will the ECB announce a 50+ bps decrease at the September meeting?,Yes,0.05,2025-07-25,2025-09-11,0.0275,0,-1.0,0.9725,1,0.0283,969488.262902
+economy,Will the ECB announce a 50+ bps decrease at the September meeting?,Yes,0.08,2025-07-25,2025-09-11,0.0275,0,-1.0,0.9725,1,0.0283,969488.262902
+economy,Will the ECB announce a 50+ bps decrease at the September meeting?,Yes,0.1,2025-07-25,2025-09-11,0.0275,0,-1.0,0.9725,1,0.0283,969488.262902
+economy,Will Elon Musk's net worth be at least $670b on December 31?,Yes,0.08,2025-12-30,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,9670.520699
+economy,Will Elon Musk's net worth be at least $670b on December 31?,Yes,0.1,2025-12-30,2026-01-01,0.065,0,-1.0,0.935,1,0.0695,9670.520699
+economy,Will Elon Musk's net worth be between $360b and $370b on July 31?,Yes,0.08,2025-07-09,2025-08-01,0.07,0,-1.0,0.93,1,0.0753,9658.444984
+economy,Will Elon Musk's net worth be between $360b and $370b on July 31?,Yes,0.1,2025-07-06,2025-08-01,0.095,0,-1.0,0.905,1,0.105,9658.444984
+economy,Will monthly inflation increase by 0.3% in November?,No,0.05,2025-12-19,2026-01-13,0.0335,0,-1.0,0.9665,1,0.0347,96108.861515
+economy,Will monthly inflation increase by 0.3% in November?,No,0.08,2025-12-13,2026-01-13,0.065,0,-1.0,0.935,1,0.0695,96108.861515
+economy,Will monthly inflation increase by 0.3% in November?,No,0.1,2025-12-13,2026-01-13,0.065,0,-1.0,0.935,1,0.0695,96108.861515
+economy,Will Chubb (CB) beat quarterly earnings?,No,0.1,2025-10-11,2025-10-22,0.09,0,-1.0,0.91,1,0.0989,9549.515576
+economy,Bank of England increases interest rates by 25+ bps after September 2025 meeting,Yes,0.05,2025-08-23,2025-09-18,0.0225,0,-1.0,0.9775,1,0.023,9448.40529
+economy,Bank of England increases interest rates by 25+ bps after September 2025 meeting,Yes,0.08,2025-08-23,2025-09-18,0.0225,0,-1.0,0.9775,1,0.023,9448.40529
+economy,Bank of England increases interest rates by 25+ bps after September 2025 meeting,Yes,0.1,2025-08-23,2025-09-18,0.0225,0,-1.0,0.9775,1,0.023,9448.40529
+economy,No change in Bank of Japan's interest rates after October 2025 meeting?,No,0.05,2025-10-26,2025-10-30,0.045,0,-1.0,0.955,1,0.0471,93575.117034
+economy,No change in Bank of Japan's interest rates after October 2025 meeting?,No,0.08,2025-10-08,2025-10-30,0.075,0,-1.0,0.925,1,0.0811,93575.117034
+economy,No change in Bank of Japan's interest rates after October 2025 meeting?,No,0.1,2025-10-08,2025-10-30,0.075,0,-1.0,0.925,1,0.0811,93575.117034
+economy,Will monthly inflation increase by 0.1% or less in November?,Yes,0.05,2025-11-18,2026-01-13,0.035,0,-1.0,0.965,1,0.0363,93555.147834
+economy,Will monthly inflation increase by 0.1% or less in November?,Yes,0.08,2025-11-18,2026-01-13,0.035,0,-1.0,0.965,1,0.0363,93555.147834
+economy,Will monthly inflation increase by 0.1% or less in November?,Yes,0.1,2025-11-16,2026-01-13,0.095,0,-1.0,0.905,1,0.105,93555.147834
+economy,"Will Powell say ""Median"" during September press conference?",No,0.05,2025-09-03,2025-09-17,0.045,0,-1.0,0.955,1,0.0471,93237.632749
+economy,"Will Powell say ""Median"" during September press conference?",No,0.08,2025-08-03,2025-09-17,0.065,0,-1.0,0.935,1,0.0695,93237.632749
+economy,"Will Powell say ""Median"" during September press conference?",No,0.1,2025-08-02,2025-09-17,0.085,0,-1.0,0.915,1,0.0929,93237.632749
+war,No Israel x Hamas ceasefire in 2024?,No,0.05,2024-12-28,2025-01-01,0.0445,0,-1.0,0.9555,1,0.0466,617817.708213
+war,No Israel x Hamas ceasefire in 2024?,No,0.08,2024-12-26,2025-01-01,0.065,0,-1.0,0.935,1,0.0695,617817.708213
+war,No Israel x Hamas ceasefire in 2024?,No,0.1,2024-12-25,2025-01-01,0.085,0,-1.0,0.915,1,0.0929,617817.708213
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.05,2025-04-22,2025-06-01,0.045,0,-1.0,0.955,1,0.0471,99254.450509
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.08,2025-03-17,2025-06-01,0.075,0,-1.0,0.925,1,0.0811,99254.450509
+nuclear,Will Iran enrich uranium to 90% before June?,Yes,0.1,2025-03-10,2025-06-01,0.08,0,-1.0,0.92,1,0.087,99254.450509
+nuclear,Nothing Ever Happens: Nuclear Edition,No,0.05,2025-12-09,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,41199.965583
+nuclear,Nothing Ever Happens: Nuclear Edition,No,0.08,2025-12-03,2026-01-01,0.075,0,-1.0,0.925,1,0.0811,41199.965583
+nuclear,Nothing Ever Happens: Nuclear Edition,No,0.1,2025-11-30,2026-01-01,0.095,0,-1.0,0.905,1,0.105,41199.965583
+nuclear,Iran agrees to end enrichment of uranium before August?,Yes,0.05,2025-07-03,2025-08-01,0.045,0,-1.0,0.955,1,0.0471,242411.38133
+nuclear,Iran agrees to end enrichment of uranium before August?,Yes,0.08,2025-06-26,2025-08-01,0.075,0,-1.0,0.925,1,0.0811,242411.38133
+nuclear,Iran agrees to end enrichment of uranium before August?,Yes,0.1,2025-06-26,2025-08-01,0.075,0,-1.0,0.925,1,0.0811,242411.38133

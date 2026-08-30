@@ -1,0 +1,139 @@
+resolution_date,category,question,stake_usd,r_mult,equity
+2024-02-01,war,Will Iran officially join the war before February?,10.0,0.0417,1000.42
+2024-02-10,geopolitics,Border + Ukraine aid deal by Feb 9?,10.0,0.0638,1001.06
+2024-03-01,war,US/Iran declare war before March?,10.01,0.0357,1001.41
+2024-05-10,weather,Will April 2024 show an increase between 1.20°C-1.25°C?,10.01,0.0471,1001.88
+2024-05-10,weather,Will April 2024 show an increase between 1.14°C-1.19°C?,10.02,0.0417,1002.3
+2024-05-10,weather,Will April 2024 show an increase of less than 1.14C?,10.02,0.0811,1003.11
+2024-05-10,climate,Will 2024 have the hottest April on record?,10.03,0.0811,1003.93
+2024-06-11,weather,Will May 2024 show an increase greater than 1.30C?,10.04,0.0695,1004.63
+2024-06-11,weather,Will May 2024 show an increase between 1.24°C-1.30°C,10.05,0.0526,1005.15
+2024-06-11,weather,Will May 2024 show an increase between 1.10°C-1.16°C,10.05,-1.0,995.1
+2024-06-11,weather,Will May 2024 show an increase between 1.10°C-1.16°C,9.95,0.0753,995.85
+2024-06-11,weather,Will May 2024 show an increase between 1.17°C-1.23°C,9.96,0.0695,996.54
+2024-06-11,climate,2024 May hottest on record?,9.97,0.0753,997.29
+2024-07-01,geopolitics,"Will a nuclear weapon detonate by June 30, 2024?",9.97,0.0638,997.93
+2024-07-01,geopolitics,Israel election called before July?,9.98,0.0753,998.68
+2024-07-01,war,NATO/EU troops fighting in Ukraine before July?,9.99,0.0638,999.32
+2024-07-01,war,Next Israel x Hamas ceasefire in June?,9.99,0.0695,1000.01
+2024-07-01,war,Crimean bridge hit before July?,10.0,0.0811,1000.83
+2024-07-09,weather,Will Beryl hit US as a hurricane?,10.01,-1.0,990.82
+2024-07-10,weather,Will June 2024 have a temperature increase of less than 1.09°C?,9.91,0.0753,991.56
+2024-07-10,weather,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,9.92,0.0811,992.37
+2024-07-10,weather,Will June 2024 have a temperature increase of greater than 1.29°C?,9.92,0.0753,993.11
+2024-07-10,climate,Will June 2024 have a temperature increase of less than 1.09°C?,9.93,0.0753,993.86
+2024-07-10,climate,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,9.94,0.0811,994.67
+2024-07-10,climate,Will June 2024 have a temperature increase of greater than 1.29°C?,9.95,0.0753,995.42
+2024-08-01,war,Next Israel x Hamas ceasefire in July?,9.95,0.0823,996.24
+2024-08-06,geopolitics,US military action against Hezbollah in Lebanon by Monday?,9.96,0.0363,996.6
+2024-08-10,geopolitics,Musk x Maduro fight scheduled by Aug 9?,9.97,0.022,996.82
+2024-08-10,geopolitics,Will Israel invade Lebanon by Friday?,9.97,0.0444,997.26
+2024-08-24,war,Iran military response by Friday?,9.97,0.0811,998.07
+2024-08-31,geopolitics,Iran military response by Friday?,9.98,0.0582,998.65
+2024-09-01,geopolitics,Israel x Hamas ceasefire before September?,9.99,0.0695,999.34
+2024-09-01,geopolitics,Crimean bridge hit before September?,9.99,0.0811,1000.15
+2024-09-01,geopolitics,Will Ukraine hold Kursk through Aug 31?,10.0,0.0582,1000.74
+2024-09-01,geopolitics,Next Israel x Hamas ceasefire in August?,10.01,0.0811,1001.55
+2024-09-01,economy,Fed emergency rate cut in August?,10.02,0.0352,1001.9
+2024-09-01,war,Israel x Hamas ceasefire before September?,10.02,0.0695,1002.6
+2024-09-01,war,Crimean bridge hit before September?,10.03,0.0811,1003.41
+2024-09-01,war,Next Israel x Hamas ceasefire in August?,10.03,0.0811,1004.22
+2024-09-01,war,Israel withdraws from Gaza before September?,10.04,0.0811,1005.04
+2024-09-01,war,Hezbollah enters Israel in August?,10.05,0.0526,1005.57
+2024-09-01,war,U.S. military action against Iran by August 31?,10.06,0.0811,1006.38
+2024-09-01,war,Israel military action against Iran in August?,10.06,0.0753,1007.14
+2024-09-01,war,Ukraine hits Moscow by August 31?,10.07,-1.0,997.07
+2024-09-01,war,Will Israel invade Lebanon before September?,9.97,0.0582,997.65
+2024-09-01,war,Iran strike on US military in August?,9.98,0.0695,998.34
+2024-09-04,geopolitics,Ukraine hits Moscow by Sept 30?,9.98,0.002,998.36
+2024-09-04,war,Ukraine hits Moscow by Sept 30?,9.98,0.002,998.38
+2024-09-18,economy,Fed cuts rates by 75 basis points in Sept meeting?,9.98,0.0582,998.96
+2024-09-30,weather,Will there be less than 11 named storms during Atlantic Hurricane Season?,9.99,0.0363,999.33
+2024-09-30,climate,Will there be less than 11 named storms during Atlantic Hurricane Season?,9.99,0.0363,999.69
+2024-09-30,economy,Will another company be the largest company by mcap on September 30?,10.0,0.0142,999.83
+2024-09-30,economy,Will AAPL be the largest company by mcap on September 30?,10.0,0.0638,1000.47
+2024-10-01,geopolitics,Hezbollah enters Israel in September?,10.0,0.0695,1001.16
+2024-10-01,geopolitics,Keir Starmer out as UK PM before October?,10.01,0.0582,1001.75
+2024-10-01,geopolitics,U.S. military action against Iran by September 30?,10.02,0.0422,1002.17
+2024-10-01,geopolitics,Crimean bridge hit before October?,10.02,0.0695,1002.87
+2024-10-01,geopolitics,Telegram banned by EU country before October?,10.03,0.0811,1003.68
+2024-10-01,geopolitics,Iran strike on US military before October?,10.04,0.0582,1004.26
+2024-10-01,weather,Megaquake in September?,10.04,0.0638,1004.9
+2024-10-01,climate,Megaquake in September?,10.05,0.0638,1005.55
+2024-10-01,earthquake,Megaquake in September?,10.06,0.0638,1006.19
+2024-10-01,economy,Will NVDA be the largest company by mcap on September 30?,10.06,0.0417,1006.61
+2024-10-01,war,Crimean bridge hit before October?,10.07,0.0695,1007.31
+2024-10-01,war,Iran strike on US military before October?,10.07,0.0582,1007.89
+2024-10-01,war,Belarus x Ukraine military clash by Sep 30?,10.08,0.0695,1008.59
+2024-10-01,war,Will Belarus invade Ukraine before October?,10.09,0.0811,1009.41
+2024-10-01,war,Iran military response before October?,10.09,0.0638,1010.05
+2024-10-01,war,Will Russia capture Toretsk before October?,10.1,0.0753,1010.82
+2024-10-01,war,Israel x Hamas ceasefire before October?,10.11,0.0811,1011.63
+2024-10-01,war,Will Russia capture Chasiv Yar before October?,10.12,0.0753,1012.4
+2024-10-04,war,Will Russia capture Vuhledar before October? ,10.12,0.0638,1013.04
+2024-10-06,war,Will Israel invade Lebanon before November?,10.13,0.0852,1013.91
+2024-10-08,war,Will Israel invade Lebanon in September?,10.14,0.0695,1014.61
+2024-10-12,geopolitics,Israel military action against Iraq by Friday?,10.15,0.0582,1015.2
+2024-10-13,geopolitics,Will Israel strike Iran on Saturday?,10.15,0.0695,1015.91
+2024-10-19,weather,Will there be more than 14 named storms during Atlantic Hurricane Season?,10.16,0.04,1016.31
+2024-10-19,weather,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,10.16,0.0638,1016.96
+2024-10-19,climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,10.17,0.04,1017.37
+2024-10-19,climate,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,10.17,0.0638,1018.02
+2024-10-25,geopolitics,Will Israel strike Iran on Thursday Oct 24?,10.18,0.0638,1018.67
+2024-10-30,economy,US GDP declines in Q3 2024?,10.19,0.0811,1019.49
+2024-11-01,geopolitics,Israel withdraws from Lebanon before November?,10.19,0.0695,1020.2
+2024-11-01,geopolitics,Israel strikes Iranian oil in October?,10.2,0.0799,1021.02
+2024-11-01,geopolitics,Ukraine strike on Moscow before November?,10.21,0.0695,1021.73
+2024-11-01,geopolitics,Strike on Dimonah nuclear base in October?,10.22,0.0811,1022.55
+2024-11-01,weather,Megaquake in October?,10.23,0.0811,1023.38
+2024-11-01,climate,Will head of FEMA be fired/resign before November?,10.23,0.0811,1024.21
+2024-11-01,earthquake,Megaquake in October?,10.24,0.0811,1025.04
+2024-11-01,economy,30-year mortgage rate below 6% before election?,10.25,0.0811,1025.88
+2024-11-01,war,Will Russia capture Pokrovsk before November?,10.26,0.0695,1026.59
+2024-11-01,war,Crimean bridge hit before November?,10.27,0.0753,1027.36
+2024-11-01,war,Iran strike on US military before November?,10.27,0.0526,1027.9
+2024-11-01,war,Next Israel x Hamas ceasefire in October?,10.28,0.0471,1028.39
+2024-11-02,climate,Will there be less than 16 named storms during Atlantic Hurricane Season?,10.28,0.0811,1029.22
+2024-11-05,weather,Category 5 hurricane hits US before election?,10.29,0.0526,1029.76
+2024-11-05,climate,Category 5 hurricane hits US before election?,10.3,0.0526,1030.3
+2024-11-05,war,Israel and Saudi Arabia normalize relations before U.S. election?,10.3,0.0811,1031.14
+2024-11-08,weather,Will the October 2024 temperature increase be between 1.23-1.28°C?,10.31,0.0753,1031.92
+2024-11-08,weather,Will the October 2024 temperature increase be less than 1.17°C?,10.32,0.0471,1032.4
+2024-11-08,weather,Will the October 2024 temperature increase be between 1.17-1.22°C?,10.32,0.0309,1032.72
+2024-11-08,weather,Will the October 2024 temperature increase be greater than 1.40°C?,10.33,0.0194,1032.92
+2024-11-08,climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,10.33,0.0753,1033.7
+2024-11-08,climate,Will the October 2024 temperature increase be less than 1.17°C?,10.34,0.0471,1034.19
+2024-11-08,climate,Will the October 2024 temperature increase be between 1.17-1.22°C?,10.34,0.0309,1034.51
+2024-11-08,climate,Will the October 2024 temperature increase be greater than 1.40°C?,10.35,0.0194,1034.71
+2024-11-08,economy,Will Fed cut interest rates 2 times in 2024?,10.35,0.0582,1035.31
+2024-12-01,climate,Will there be more than 25 named storms during Atlantic Hurricane Season?,10.35,0.0811,1036.15
+2024-12-01,climate,Megaquake in November?,10.36,0.0811,1036.99
+2024-12-01,climate,Will there be between 21 and 25 named storms during Atlantic Hurricane Season?,10.37,0.0471,1037.48
+2024-12-01,climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,10.37,-1.0,1027.1
+2024-12-01,climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,10.27,0.0582,1027.7
+2024-12-01,earthquake,Megaquake in November?,10.28,0.0811,1028.53
+2024-12-01,war,Will Russia recapture Sudzha before December?,10.29,0.0753,1029.31
+2024-12-01,war,Will Russia capture Siversk before December?,10.29,0.0753,1030.08
+2024-12-01,war,Next Israel x Hamas ceasefire in November?,10.3,0.0417,1030.51
+2024-12-01,war,Will Russia capture Chasiv Yar before December?,10.31,0.0811,1031.35
+2024-12-06,economy,"Will the US gain less than 100,000 jobs in November?",10.31,0.0811,1032.18
+2024-12-10,weather,Will the November 2024 temperature increase be less than 1.20°C?,10.32,0.0251,1032.44
+2024-12-10,weather,Will the November 2024 temperature increase be between 1.20-1.24°C?,10.32,0.0471,1032.93
+2024-12-10,weather,Will the November 2024 temperature increase be greater than 1.39°C?,10.33,0.0753,1033.71
+2024-12-10,weather,Will the November 2024 temperature increase be between 1.35-1.39°C?,10.34,0.0422,1034.14
+2024-12-10,climate,Will the November 2024 temperature increase be less than 1.20°C?,10.34,0.0251,1034.4
+2024-12-10,climate,Will the November 2024 temperature increase be between 1.20-1.24°C?,10.34,0.0471,1034.89
+2024-12-10,climate,Will the November 2024 temperature increase be greater than 1.39°C?,10.35,0.0753,1035.67
+2024-12-10,climate,Will the November 2024 temperature increase be between 1.35-1.39°C?,10.36,0.0422,1036.11
+2024-12-11,economy,Will inflation increase by 2.5% or less in November?,10.36,0.0753,1036.89
+2024-12-12,economy,Increase in ECB interest rates after 2024 December meeting?,10.37,0.0262,1037.16
+2024-12-18,economy,Fed decreases interest rates by 50 bps after December 2024 meeting?,10.37,0.0582,1037.76
+2024-12-18,economy,Will Fed cut interest rates 3 times in 2024?,10.38,0.0811,1038.6
+2024-12-18,economy,Fed decreases interest rates by 25 bps after December 2024 meeting?,10.39,0.061,1039.24
+2024-12-18,economy,No change in Fed interest rates after December 2024 meeting?,10.39,0.0811,1040.08
+2024-12-18,economy,Will Fed cut interest rates 4 times in 2024?,10.4,-1.0,1029.68
+2024-12-18,economy,Will Fed cut interest rates 4 times in 2024?,10.3,0.0672,1030.37
+2024-12-18,economy,Will Fed cut interest rates 5 times in 2024?,10.3,0.0526,1030.91
+2024-12-18,economy,"Will Jerome Powell say ""good afternoon"" during December FOMC Press Conference?",10.31,0.0638,1031.57
+2024-12-21,economy,Russian Ruble ₽110 to $1 USD by December 20?,10.32,0.0582,1032.17
+2025-01-01,economy,"Will Gold close under $2,500 at the end of 2024?",10.32,0.0695,1032.89

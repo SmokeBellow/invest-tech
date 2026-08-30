@@ -1,0 +1,454 @@
+category,question,cheap_side,threshold,entry_date,resolution_date,loser_entry_price,loser_won,loser_r_mult,favorite_entry_price,favorite_won,favorite_r_mult,volume
+geopolitics,Will the US strike Colombia next?,Yes,0.05,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,Will the US strike Colombia next?,Yes,0.08,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,Will the US strike Colombia next?,Yes,0.1,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.05,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.08,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.1,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.05,2026-08-05,2026-08-07,0.0005,0,-1.0,0.9995,1,0.0005,9981.983807999997
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.08,2026-08-05,2026-08-07,0.0005,0,-1.0,0.9995,1,0.0005,9981.983807999997
+geopolitics,"Will Iran target a Arab country on August 3, 2026?",Yes,0.1,2026-08-03,2026-08-07,0.085,0,-1.0,0.915,1,0.0929,9981.983807999997
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.05,2026-02-25,2026-03-03,0.0495,0,-1.0,0.9505,1,0.0521,99794.132151
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.08,2026-02-15,2026-03-03,0.055,0,-1.0,0.945,1,0.0582,99794.132151
+geopolitics,"US strikes Yemen by February 28, 2026?",Yes,0.1,2026-02-12,2026-03-03,0.09,0,-1.0,0.91,1,0.0989,99794.132151
+geopolitics,"Labour leadership election scheduled by December 31, 2026?",No,0.05,2026-06-23,2026-06-29,0.0115,0,-1.0,0.9885,1,0.0116,9957.485951
+geopolitics,"Labour leadership election scheduled by December 31, 2026?",No,0.08,2026-06-23,2026-06-29,0.0115,0,-1.0,0.9885,1,0.0116,9957.485951
+geopolitics,"Labour leadership election scheduled by December 31, 2026?",No,0.1,2026-06-23,2026-06-29,0.0115,0,-1.0,0.9885,1,0.0116,9957.485951
+geopolitics,Will Jara win by at least 5%?,Yes,0.05,2025-11-20,2025-12-15,0.019,0,-1.0,0.981,1,0.0194,99378.812185
+geopolitics,Will Jara win by at least 5%?,Yes,0.08,2025-11-19,2025-12-15,0.06,0,-1.0,0.94,1,0.0638,99378.812185
+geopolitics,Will Jara win by at least 5%?,Yes,0.1,2025-11-19,2025-12-15,0.06,0,-1.0,0.94,1,0.0638,99378.812185
+geopolitics,Ukraine hits Moscow by January 15?,Yes,0.05,2026-01-02,2026-01-16,0.043,0,-1.0,0.957,1,0.0449,99155.807639
+geopolitics,Ukraine hits Moscow by January 15?,Yes,0.08,2026-01-02,2026-01-16,0.043,0,-1.0,0.957,1,0.0449,99155.807639
+geopolitics,Ukraine hits Moscow by January 15?,Yes,0.1,2026-01-01,2026-01-16,0.095,0,-1.0,0.905,1,0.105,99155.807639
+geopolitics,Will the US strike Venezuela next?,Yes,0.05,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+geopolitics,Will the US strike Venezuela next?,Yes,0.08,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+geopolitics,Will the US strike Venezuela next?,Yes,0.1,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+geopolitics,"Will Russia capture all of Prymorske by May 31, 2026?",Yes,0.05,2026-04-29,2026-06-01,0.0345,0,-1.0,0.9655,1,0.0357,99046.6686560001
+geopolitics,"Will Russia capture all of Prymorske by May 31, 2026?",Yes,0.08,2026-04-24,2026-06-01,0.065,0,-1.0,0.935,1,0.0695,99046.6686560001
+geopolitics,"Will Russia capture all of Prymorske by May 31, 2026?",Yes,0.1,2026-04-23,2026-06-01,0.085,0,-1.0,0.915,1,0.0929,99046.6686560001
+geopolitics,"Will Iran close its airspace by February 28, 2026?",Yes,0.08,2026-02-27,2026-03-01,0.065,1,14.384615384615383,0.935,0,-1.0,98910.158513
+geopolitics,"Will Iran close its airspace by February 28, 2026?",Yes,0.1,2026-02-27,2026-03-01,0.065,1,14.384615384615383,0.935,0,-1.0,98910.158513
+geopolitics,Will Turkey sign the US x Iran memorandum of understanding?,Yes,0.05,2026-06-19,2026-07-01,0.0265,0,-1.0,0.9735,1,0.0272,9888.138299999997
+geopolitics,Will Turkey sign the US x Iran memorandum of understanding?,Yes,0.08,2026-06-18,2026-07-01,0.075,0,-1.0,0.925,1,0.0811,9888.138299999997
+geopolitics,Will Turkey sign the US x Iran memorandum of understanding?,Yes,0.1,2026-06-18,2026-07-01,0.075,0,-1.0,0.925,1,0.0811,9888.138299999997
+geopolitics,"Ukraine hits Moscow by April 15, 2026?",Yes,0.1,2026-03-29,2026-04-18,0.085,0,-1.0,0.915,1,0.0929,9870.514713000002
+geopolitics,Will Trump meet with Giorgia Meloni in May 2026?,Yes,0.05,2026-05-22,2026-06-01,0.04,0,-1.0,0.96,1,0.0417,9858.117653
+geopolitics,Will Trump meet with Giorgia Meloni in May 2026?,Yes,0.08,2026-05-04,2026-06-01,0.075,0,-1.0,0.925,1,0.0811,9858.117653
+geopolitics,Will Trump meet with Giorgia Meloni in May 2026?,Yes,0.1,2026-05-03,2026-06-01,0.085,0,-1.0,0.915,1,0.0929,9858.117653
+geopolitics, Iran agrees to end enrichment of uranium by July 31?,Yes,0.05,2026-07-01,2026-08-01,0.045,0,-1.0,0.955,1,0.0471,983202.5010169997
+geopolitics, Iran agrees to end enrichment of uranium by July 31?,Yes,0.08,2026-06-26,2026-08-01,0.075,0,-1.0,0.925,1,0.0811,983202.5010169997
+geopolitics, Iran agrees to end enrichment of uranium by July 31?,Yes,0.1,2026-06-22,2026-08-01,0.095,0,-1.0,0.905,1,0.105,983202.5010169997
+geopolitics,Ukraine election called in 2025?,Yes,0.05,2025-10-11,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,982716.694339
+geopolitics,Ukraine election called in 2025?,Yes,0.08,2025-10-05,2026-01-01,0.075,0,-1.0,0.925,1,0.0811,982716.694339
+geopolitics,Ukraine election called in 2025?,Yes,0.1,2025-10-02,2026-01-01,0.085,0,-1.0,0.915,1,0.0929,982716.694339
+geopolitics,Will the flotilla reach Gaza by May 31?,Yes,0.05,2026-04-22,2026-06-01,0.045,0,-1.0,0.955,1,0.0471,9816.659679000004
+geopolitics,Will the flotilla reach Gaza by May 31?,Yes,0.08,2026-04-22,2026-06-01,0.045,0,-1.0,0.955,1,0.0471,9816.659679000004
+geopolitics,Will the flotilla reach Gaza by May 31?,Yes,0.1,2026-04-22,2026-06-01,0.045,0,-1.0,0.955,1,0.0471,9816.659679000004
+geopolitics,Odds of Khamenei out by February over 50% in January?,Yes,0.05,2026-01-27,2026-02-01,0.0375,0,-1.0,0.9625,1,0.039,97817.121159
+geopolitics,Odds of Khamenei out by February over 50% in January?,Yes,0.08,2026-01-22,2026-02-01,0.075,0,-1.0,0.925,1,0.0811,97817.121159
+geopolitics,Odds of Khamenei out by February over 50% in January?,Yes,0.1,2026-01-21,2026-02-01,0.08,0,-1.0,0.92,1,0.087,97817.121159
+geopolitics,Will Russia enter Shevchenko by March 31?,Yes,0.05,2026-03-25,2026-03-29,0.0305,0,-1.0,0.9695,1,0.0315,9767.795497000003
+geopolitics,Will Russia enter Shevchenko by March 31?,Yes,0.08,2026-03-22,2026-03-29,0.06,0,-1.0,0.94,1,0.0638,9767.795497000003
+geopolitics,Will Russia enter Shevchenko by March 31?,Yes,0.1,2026-03-22,2026-03-29,0.06,0,-1.0,0.94,1,0.0638,9767.795497000003
+geopolitics,"Will Trump and Netanyahu only be photographed together by July 31, 2026?",Yes,0.05,2026-07-30,2026-08-04,0.028,0,-1.0,0.972,1,0.0288,9759.515808999999
+geopolitics,"Will Trump and Netanyahu only be photographed together by July 31, 2026?",Yes,0.08,2026-07-30,2026-08-04,0.028,0,-1.0,0.972,1,0.0288,9759.515808999999
+geopolitics,"Will Trump and Netanyahu only be photographed together by July 31, 2026?",Yes,0.1,2026-07-28,2026-08-04,0.09,0,-1.0,0.91,1,0.0989,9759.515808999999
+geopolitics,"Will Israel and Lebanon hold a diplomatic meeting by June 15, 2026?",Yes,0.05,2026-06-12,2026-06-17,0.037,0,-1.0,0.963,1,0.0384,9756.267856000006
+geopolitics,"Will Israel and Lebanon hold a diplomatic meeting by June 15, 2026?",Yes,0.08,2026-06-11,2026-06-17,0.0535,0,-1.0,0.9465,1,0.0565,9756.267856000006
+geopolitics,"Will Israel and Lebanon hold a diplomatic meeting by June 15, 2026?",Yes,0.1,2026-06-11,2026-06-17,0.0535,0,-1.0,0.9465,1,0.0565,9756.267856000006
+geopolitics,Will the next US x Iran diplomatic meeting be on May 10?,Yes,0.05,2026-04-23,2026-05-10,0.0155,0,-1.0,0.9845,1,0.0157,97536.264101
+geopolitics,Will the next US x Iran diplomatic meeting be on May 10?,Yes,0.08,2026-04-23,2026-05-10,0.0155,0,-1.0,0.9845,1,0.0157,97536.264101
+geopolitics,Will the next US x Iran diplomatic meeting be on May 10?,Yes,0.1,2026-04-23,2026-05-10,0.0155,0,-1.0,0.9845,1,0.0157,97536.264101
+geopolitics,"Military action against Iran ends by April 26, 2026?",No,0.05,2026-04-10,2026-04-13,0.01,0,-1.0,0.99,1,0.0101,97518.78840899994
+geopolitics,"Military action against Iran ends by April 26, 2026?",No,0.08,2026-04-10,2026-04-13,0.01,0,-1.0,0.99,1,0.0101,97518.78840899994
+geopolitics,"Military action against Iran ends by April 26, 2026?",No,0.1,2026-04-10,2026-04-13,0.01,0,-1.0,0.99,1,0.0101,97518.78840899994
+geopolitics,"US strikes Iran by February 6, 2026?",Yes,0.05,2026-02-03,2026-02-07,0.0265,0,-1.0,0.9735,1,0.0272,9750255.569183
+geopolitics,"US strikes Iran by February 6, 2026?",Yes,0.08,2026-02-03,2026-02-07,0.0265,0,-1.0,0.9735,1,0.0272,9750255.569183
+geopolitics,"US strikes Iran by February 6, 2026?",Yes,0.1,2026-02-02,2026-02-07,0.085,0,-1.0,0.915,1,0.0929,9750255.569183
+geopolitics,Will Russia capture Stavky by July 31?,Yes,0.05,2026-07-03,2026-08-01,0.045,0,-1.0,0.955,1,0.0471,97460.64821400002
+geopolitics,Will Russia capture Stavky by July 31?,Yes,0.08,2026-07-03,2026-08-01,0.045,0,-1.0,0.955,1,0.0471,97460.64821400002
+geopolitics,Will Russia capture Stavky by July 31?,Yes,0.1,2026-07-03,2026-08-01,0.045,0,-1.0,0.955,1,0.0471,97460.64821400002
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.05,2026-01-22,2026-05-31,0.0315,0,-1.0,0.9685,1,0.0325,999766.320086001
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.08,2026-01-22,2026-05-31,0.0315,0,-1.0,0.9685,1,0.0325,999766.320086001
+world,Will Anže Logar be the next Prime Minister of Slovenia?,Yes,0.1,2026-01-21,2026-05-31,0.09,0,-1.0,0.91,1,0.0989,999766.320086001
+world,Will the US strike Colombia next?,Yes,0.05,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,Will the US strike Colombia next?,Yes,0.08,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,Will the US strike Colombia next?,Yes,0.1,2026-02-25,2026-03-02,0.01,0,-1.0,0.99,1,0.0101,99940.576632
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.05,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.08,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,"Will the US next strike Iran on February 4, 2026 (ET)?",Yes,0.1,2026-01-28,2026-02-07,0.0205,0,-1.0,0.9795,1,0.0209,999004.597025
+world,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.05,2026-02-05,2026-02-11,0.016,0,-1.0,0.984,1,0.0163,9916.703283
+world,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.08,2026-02-04,2026-02-11,0.075,0,-1.0,0.925,1,0.0811,9916.703283
+world,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.1,2026-02-04,2026-02-11,0.075,0,-1.0,0.925,1,0.0811,9916.703283
+world,Will the US strike Venezuela next?,Yes,0.05,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+world,Will the US strike Venezuela next?,Yes,0.08,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+world,Will the US strike Venezuela next?,Yes,0.1,2026-01-31,2026-02-05,0.0075,0,-1.0,0.9925,1,0.0076,99106.485658
+world,Ukraine election called in 2025?,Yes,0.05,2025-10-11,2026-01-01,0.045,0,-1.0,0.955,1,0.0471,982716.694339
+world,Ukraine election called in 2025?,Yes,0.08,2025-10-05,2026-01-01,0.075,0,-1.0,0.925,1,0.0811,982716.694339
+world,Ukraine election called in 2025?,Yes,0.1,2025-10-02,2026-01-01,0.085,0,-1.0,0.915,1,0.0929,982716.694339
+world,Will Pedro Passos Coelho win the 1st round of the 2026 Portugal presidential ele,Yes,0.05,2026-01-08,2026-01-19,0.004,0,-1.0,0.996,1,0.004,9798.784999
+world,Will Pedro Passos Coelho win the 1st round of the 2026 Portugal presidential ele,Yes,0.08,2026-01-08,2026-01-19,0.004,0,-1.0,0.996,1,0.004,9798.784999
+world,Will Pedro Passos Coelho win the 1st round of the 2026 Portugal presidential ele,Yes,0.1,2026-01-08,2026-01-19,0.004,0,-1.0,0.996,1,0.004,9798.784999
+world,Will the Bhumjaithai Party (BJT) win fewer than 90 seats in the 2026 Thai legisl,Yes,0.05,2026-02-03,2026-02-09,0.0235,0,-1.0,0.9765,1,0.0241,9790.968577
+world,Will the Bhumjaithai Party (BJT) win fewer than 90 seats in the 2026 Thai legisl,Yes,0.08,2026-02-02,2026-02-09,0.057,0,-1.0,0.943,1,0.0604,9790.968577
+world,Will the Bhumjaithai Party (BJT) win fewer than 90 seats in the 2026 Thai legisl,Yes,0.1,2026-01-30,2026-02-09,0.09,0,-1.0,0.91,1,0.0989,9790.968577
+world,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.05,2026-06-27,2026-06-30,0.049,0,-1.0,0.951,1,0.0515,9774.250844999997
+world,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.08,2026-06-10,2026-06-30,0.07,0,-1.0,0.93,1,0.0753,9774.250844999997
+world,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.1,2026-06-10,2026-06-30,0.07,0,-1.0,0.93,1,0.0753,9774.250844999997
+world,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.05,2026-02-06,2026-02-09,0.0055,0,-1.0,0.9945,1,0.0055,9753.243454
+world,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.08,2026-02-06,2026-02-09,0.0055,0,-1.0,0.9945,1,0.0055,9753.243454
+world,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.1,2026-02-03,2026-02-09,0.09,0,-1.0,0.91,1,0.0989,9753.243454
+world,"US strikes Iran by February 6, 2026?",Yes,0.05,2026-02-03,2026-02-07,0.0265,0,-1.0,0.9735,1,0.0272,9750255.569183
+world,"US strikes Iran by February 6, 2026?",Yes,0.08,2026-02-03,2026-02-07,0.0265,0,-1.0,0.9735,1,0.0272,9750255.569183
+world,"US strikes Iran by February 6, 2026?",Yes,0.1,2026-02-02,2026-02-07,0.085,0,-1.0,0.915,1,0.0929,9750255.569183
+world,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.05,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+world,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.08,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+world,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.1,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+world,Will André Ventura win 4th place in the 1st round of the 2026 Portugal president,Yes,0.05,2026-01-15,2026-01-19,0.04,0,-1.0,0.96,1,0.0417,9729.141615
+world,Will André Ventura win 4th place in the 1st round of the 2026 Portugal president,Yes,0.08,2026-01-15,2026-01-19,0.04,0,-1.0,0.96,1,0.0417,9729.141615
+world,Will André Ventura win 4th place in the 1st round of the 2026 Portugal president,Yes,0.1,2026-01-15,2026-01-19,0.04,0,-1.0,0.96,1,0.0417,9729.141615
+world,Will the US strike Colombia next?,Yes,0.05,2026-01-31,2026-02-05,0.0055,0,-1.0,0.9945,1,0.0055,97290.723732
+world,Will the US strike Colombia next?,Yes,0.08,2026-01-31,2026-02-05,0.0055,0,-1.0,0.9945,1,0.0055,97290.723732
+world,Will the US strike Colombia next?,Yes,0.1,2026-01-31,2026-02-05,0.0055,0,-1.0,0.9945,1,0.0055,97290.723732
+world,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.05,2025-12-20,2026-01-23,0.0425,0,-1.0,0.9575,1,0.0444,968369.089827
+world,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.08,2025-12-19,2026-01-23,0.075,0,-1.0,0.925,1,0.0811,968369.089827
+world,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.1,2025-12-14,2026-01-23,0.095,0,-1.0,0.905,1,0.105,968369.089827
+world,Will Angela Rayner be the next Prime Minister of the United Kingdom in 2026?,Yes,0.05,2026-06-09,2026-07-20,0.045,0,-1.0,0.955,1,0.0471,968145.2928070024
+world,Will Angela Rayner be the next Prime Minister of the United Kingdom in 2026?,Yes,0.08,2026-05-31,2026-07-20,0.075,0,-1.0,0.925,1,0.0811,968145.2928070024
+world,Will Angela Rayner be the next Prime Minister of the United Kingdom in 2026?,Yes,0.1,2026-05-15,2026-07-20,0.095,0,-1.0,0.905,1,0.105,968145.2928070024
+world,Will João Cotrim de Figueiredo win between 16% and 18% of votes in the first rou,No,0.05,2026-01-20,2026-01-23,0.04,0,-1.0,0.96,1,0.0417,96762.937508
+world,Will João Cotrim de Figueiredo win between 16% and 18% of votes in the first rou,No,0.08,2026-01-20,2026-01-23,0.04,0,-1.0,0.96,1,0.0417,96762.937508
+world,Will João Cotrim de Figueiredo win between 16% and 18% of votes in the first rou,No,0.1,2026-01-20,2026-01-23,0.04,0,-1.0,0.96,1,0.0417,96762.937508
+world,Will Russia capture Kostyantynivka by March 31?,Yes,0.05,2026-03-17,2026-03-28,0.045,0,-1.0,0.955,1,0.0471,965800.9519230045
+world,Will Russia capture Kostyantynivka by March 31?,Yes,0.08,2026-03-11,2026-03-28,0.065,0,-1.0,0.935,1,0.0695,965800.9519230045
+world,Will Russia capture Kostyantynivka by March 31?,Yes,0.1,2026-03-10,2026-03-28,0.095,0,-1.0,0.905,1,0.105,965800.9519230045
+world,Will People’s Party (PPLE) finish in third place by number of seats in the 2026 ,Yes,0.05,2026-01-29,2026-02-09,0.0345,0,-1.0,0.9655,1,0.0357,96569.774244
+world,Will People’s Party (PPLE) finish in third place by number of seats in the 2026 ,Yes,0.08,2026-01-28,2026-02-09,0.06,0,-1.0,0.94,1,0.0638,96569.774244
+world,Will People’s Party (PPLE) finish in third place by number of seats in the 2026 ,Yes,0.1,2026-01-28,2026-02-09,0.06,0,-1.0,0.94,1,0.0638,96569.774244
+world,"Will the total number of TSA passengers for January 28 be between 2,000,000 and ",Yes,0.08,2026-01-26,2026-01-29,0.065,0,-1.0,0.935,1,0.0695,9613.507944
+world,"Will the total number of TSA passengers for January 28 be between 2,000,000 and ",Yes,0.1,2026-01-26,2026-01-29,0.065,0,-1.0,0.935,1,0.0695,9613.507944
+world,Bank of Japan decreases interest rates after the June 2026 meeting?,Yes,0.05,2026-04-05,2026-06-16,0.0385,0,-1.0,0.9615,1,0.04,96122.15691199998
+world,Bank of Japan decreases interest rates after the June 2026 meeting?,Yes,0.08,2026-03-21,2026-06-16,0.055,0,-1.0,0.945,1,0.0582,96122.15691199998
+world,Bank of Japan decreases interest rates after the June 2026 meeting?,Yes,0.1,2026-03-21,2026-06-16,0.055,0,-1.0,0.945,1,0.0582,96122.15691199998
+world,Netanyahu out by April 30?,Yes,0.05,2026-03-21,2026-05-01,0.045,0,-1.0,0.955,1,0.0471,9575896.405742953
+world,Netanyahu out by April 30?,Yes,0.08,2026-03-20,2026-05-01,0.07,0,-1.0,0.93,1,0.0753,9575896.405742953
+world,Netanyahu out by April 30?,Yes,0.1,2026-03-20,2026-05-01,0.07,0,-1.0,0.93,1,0.0753,9575896.405742953
+world,"Will the total number of TSA passengers for February 12 be less than 1,600,000?",Yes,0.05,2026-02-07,2026-02-13,0.0065,0,-1.0,0.9935,1,0.0065,9560.897199
+world,"Will the total number of TSA passengers for February 12 be less than 1,600,000?",Yes,0.08,2026-02-06,2026-02-13,0.05,0,-1.0,0.95,1,0.0526,9560.897199
+world,"Will the total number of TSA passengers for February 12 be less than 1,600,000?",Yes,0.1,2026-02-06,2026-02-13,0.05,0,-1.0,0.95,1,0.0526,9560.897199
+world,Will Israel strike Iraq by February 28?,Yes,0.05,2026-02-04,2026-03-01,0.0245,0,-1.0,0.9755,1,0.0251,95588.664558
+world,Will Israel strike Iraq by February 28?,Yes,0.08,2026-02-02,2026-03-01,0.06,0,-1.0,0.94,1,0.0638,95588.664558
+world,Will Israel strike Iraq by February 28?,Yes,0.1,2026-02-01,2026-03-01,0.09,0,-1.0,0.91,1,0.0989,95588.664558
+world,"Russia x Ukraine ceasefire by April 30, 2026?",Yes,0.05,2026-03-21,2026-05-01,0.045,0,-1.0,0.955,1,0.0471,9527883.414922891
+world,"Russia x Ukraine ceasefire by April 30, 2026?",Yes,0.08,2026-02-28,2026-05-01,0.055,0,-1.0,0.945,1,0.0582,9527883.414922891
+world,"Russia x Ukraine ceasefire by April 30, 2026?",Yes,0.1,2026-02-27,2026-05-01,0.085,0,-1.0,0.915,1,0.0929,9527883.414922891
+world,Will Kim Kyo-heung win the 2026 Incheon mayoral election?,Yes,0.05,2025-11-19,2026-06-04,0.04,0,-1.0,0.96,1,0.0417,95205.55227499997
+world,Will Kim Kyo-heung win the 2026 Incheon mayoral election?,Yes,0.08,2025-11-19,2026-06-04,0.04,0,-1.0,0.96,1,0.0417,95205.55227499997
+world,Will Kim Kyo-heung win the 2026 Incheon mayoral election?,Yes,0.1,2025-11-19,2026-06-04,0.04,0,-1.0,0.96,1,0.0417,95205.55227499997
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.05,2026-03-20,2026-03-29,0.033,0,-1.0,0.967,1,0.0341,9597.681869
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.08,2026-03-18,2026-03-29,0.0735,0,-1.0,0.9265,1,0.0793,9597.681869
+climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,Yes,0.1,2026-01-03,2026-03-29,0.09,0,-1.0,0.91,1,0.0989,9597.681869
+climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+climate,Will 60 to 89 tornadoes occur in the United States in December?,Yes,0.05,2025-12-10,2026-01-13,0.04,0,-1.0,0.96,1,0.0417,8341.793998
+climate,Will 60 to 89 tornadoes occur in the United States in December?,Yes,0.08,2025-12-05,2026-01-13,0.065,0,-1.0,0.935,1,0.0695,8341.793998
+climate,Will 60 to 89 tornadoes occur in the United States in December?,Yes,0.1,2025-12-05,2026-01-13,0.065,0,-1.0,0.935,1,0.0695,8341.793998
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-11,2026-08-17,0.0915,0,-1.0,0.9085,1,0.1007,8146.490482999999
+climate,Will the maximum Arctic sea ice extent this winter be at least 15m square kilome,Yes,0.05,2025-11-24,2026-03-27,0.0315,0,-1.0,0.9685,1,0.0325,7446.222189
+climate,Will the maximum Arctic sea ice extent this winter be at least 15m square kilome,Yes,0.08,2025-11-23,2026-03-27,0.06,0,-1.0,0.94,1,0.0638,7446.222189
+climate,Will the maximum Arctic sea ice extent this winter be at least 15m square kilome,Yes,0.1,2025-11-23,2026-03-27,0.06,0,-1.0,0.94,1,0.0638,7446.222189
+climate,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+climate,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-20,2026-08-24,0.015,0,-1.0,0.985,1,0.0152,7035.504552
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+climate,NYC Air Quality Index below 100 by July 20?,No,0.05,2026-07-20,2026-07-23,0.0115,0,-1.0,0.9885,1,0.0116,5831.311253000001
+climate,NYC Air Quality Index below 100 by July 20?,No,0.08,2026-07-20,2026-07-23,0.0115,0,-1.0,0.9885,1,0.0116,5831.311253000001
+climate,NYC Air Quality Index below 100 by July 20?,No,0.1,2026-07-19,2026-07-23,0.08,0,-1.0,0.92,1,0.087,5831.311253000001
+climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-16,2026-08-24,0.08,0,-1.0,0.92,1,0.087,5367.972979
+climate,Will the highest recorded wind on Mt. Washington in July be at least 105 mph?,Yes,0.08,2026-07-13,2026-08-02,0.065,0,-1.0,0.935,1,0.0695,5313.63824
+climate,Will the highest recorded wind on Mt. Washington in July be at least 105 mph?,Yes,0.1,2026-07-13,2026-08-02,0.065,0,-1.0,0.935,1,0.0695,5313.63824
+climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-13,2026-08-17,0.039,0,-1.0,0.961,1,0.0406,5249.8607569999995
+climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-08,2026-08-17,0.05,0,-1.0,0.95,1,0.0526,5249.8607569999995
+climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-08,2026-08-17,0.05,0,-1.0,0.95,1,0.0526,5249.8607569999995
+climate,Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from,Yes,0.05,2026-08-07,2026-08-10,0.045,0,-1.0,0.955,1,0.0471,4642.801066999999
+climate,Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from,Yes,0.08,2026-08-05,2026-08-10,0.065,0,-1.0,0.935,1,0.0695,4642.801066999999
+climate,Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from,Yes,0.1,2026-08-04,2026-08-10,0.095,0,-1.0,0.905,1,0.105,4642.801066999999
+climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-13,2026-08-17,0.045,0,-1.0,0.955,1,0.0471,4402.954972
+climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-09,2026-08-17,0.06,0,-1.0,0.94,1,0.0638,4402.954972
+climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-08,2026-08-17,0.09,0,-1.0,0.91,1,0.0989,4402.954972
+climate,Will a hurricane make landfall in the US by May 31?,Yes,0.05,2026-02-13,2026-06-01,0.045,0,-1.0,0.955,1,0.0471,41549.05160199997
+climate,Will a hurricane make landfall in the US by May 31?,Yes,0.08,2025-12-08,2026-06-01,0.07,0,-1.0,0.93,1,0.0753,41549.05160199997
+climate,Will a hurricane make landfall in the US by May 31?,Yes,0.1,2025-12-06,2026-06-01,0.08,0,-1.0,0.92,1,0.087,41549.05160199997
+climate,Will 90 to 119 tornadoes occur in the United States in December?,Yes,0.05,2025-12-05,2026-01-13,0.0305,0,-1.0,0.9695,1,0.0315,3880.995023
+climate,Will 90 to 119 tornadoes occur in the United States in December?,Yes,0.08,2025-12-05,2026-01-13,0.0305,0,-1.0,0.9695,1,0.0315,3880.995023
+climate,Will 90 to 119 tornadoes occur in the United States in December?,Yes,0.1,2025-12-05,2026-01-13,0.0305,0,-1.0,0.9695,1,0.0315,3880.995023
+climate,Will the highest recorded wind on Mt. Washington in July be at least 110 mph?,Yes,0.05,2026-07-14,2026-08-02,0.045,0,-1.0,0.955,1,0.0471,3767.6953890000004
+climate,Will the highest recorded wind on Mt. Washington in July be at least 110 mph?,Yes,0.08,2026-07-03,2026-08-02,0.065,0,-1.0,0.935,1,0.0695,3767.6953890000004
+climate,Will the highest recorded wind on Mt. Washington in July be at least 110 mph?,Yes,0.1,2026-06-29,2026-08-02,0.095,0,-1.0,0.905,1,0.105,3767.6953890000004
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.05,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.08,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.1,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+natural_disaster,Megaquake by June 30?,Yes,0.05,2026-06-18,2026-07-01,0.0315,0,-1.0,0.9685,1,0.0325,88324.36435599986
+natural_disaster,Megaquake by June 30?,Yes,0.08,2026-06-05,2026-07-01,0.06,0,-1.0,0.94,1,0.0638,88324.36435599986
+natural_disaster,Megaquake by June 30?,Yes,0.1,2026-05-15,2026-07-01,0.095,0,-1.0,0.905,1,0.105,88324.36435599986
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-11,2026-08-17,0.0915,0,-1.0,0.9085,1,0.1007,8146.490482999999
+natural_disaster,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.05,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+natural_disaster,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.08,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+natural_disaster,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.1,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+natural_disaster,Megaquake by January 31?,Yes,0.05,2026-01-13,2026-02-02,0.045,0,-1.0,0.955,1,0.0471,77600.116081
+natural_disaster,Megaquake by January 31?,Yes,0.08,2025-12-31,2026-02-02,0.075,0,-1.0,0.925,1,0.0811,77600.116081
+natural_disaster,Megaquake by January 31?,Yes,0.1,2025-12-31,2026-02-02,0.075,0,-1.0,0.925,1,0.0811,77600.116081
+natural_disaster,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.08,2026-06-24,2026-06-29,0.07,1,13.285714285714285,0.93,0,-1.0,7427.228475
+natural_disaster,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.1,2026-06-24,2026-06-29,0.07,1,13.285714285714285,0.93,0,-1.0,7427.228475
+natural_disaster,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+natural_disaster,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+natural_disaster,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+natural_disaster,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+natural_disaster,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.05,2026-06-24,2026-06-29,0.045,0,-1.0,0.955,1,0.0471,7071.459094000003
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.08,2026-06-23,2026-06-29,0.055,0,-1.0,0.945,1,0.0582,7071.459094000003
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.1,2026-06-23,2026-06-29,0.055,0,-1.0,0.945,1,0.0582,7071.459094000003
+natural_disaster,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+natural_disaster,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+natural_disaster,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-20,2026-08-24,0.015,0,-1.0,0.985,1,0.0152,7035.504552
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+natural_disaster,"Will Typhoon Dolphin be a ""Violent Typhoon"" at Japan landfall?",Yes,0.05,2026-08-06,2026-08-13,0.04,0,-1.0,0.96,1,0.0417,6816.7336589999995
+natural_disaster,"Will Typhoon Dolphin be a ""Violent Typhoon"" at Japan landfall?",Yes,0.08,2026-08-06,2026-08-13,0.04,0,-1.0,0.96,1,0.0417,6816.7336589999995
+natural_disaster,"Will Typhoon Dolphin be a ""Violent Typhoon"" at Japan landfall?",Yes,0.1,2026-08-06,2026-08-13,0.04,0,-1.0,0.96,1,0.0417,6816.7336589999995
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.05,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.08,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.1,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,2026-08-09,2026-08-17,0.045,1,21.22222222222222,0.955,0,-1.0,6762.40044
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,2026-08-08,2026-08-17,0.07,1,13.285714285714285,0.93,0,-1.0,6762.40044
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,2026-08-08,2026-08-17,0.07,1,13.285714285714285,0.93,0,-1.0,6762.40044
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.05,2026-06-15,2026-06-22,0.036,1,26.77777777777778,0.964,0,-1.0,6487.599163000001
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.08,2026-06-14,2026-06-22,0.05,1,19.0,0.95,0,-1.0,6487.599163000001
+natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.1,2026-06-14,2026-06-22,0.05,1,19.0,0.95,0,-1.0,6487.599163000001
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.05,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.08,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,Yes,0.1,2026-06-18,2026-06-22,0.004,0,-1.0,0.996,1,0.004,9221.054163
+earthquake,Megaquake by June 30?,Yes,0.05,2026-06-18,2026-07-01,0.0315,0,-1.0,0.9685,1,0.0325,88324.36435599986
+earthquake,Megaquake by June 30?,Yes,0.08,2026-06-05,2026-07-01,0.06,0,-1.0,0.94,1,0.0638,88324.36435599986
+earthquake,Megaquake by June 30?,Yes,0.1,2026-05-15,2026-07-01,0.095,0,-1.0,0.905,1,0.105,88324.36435599986
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,2026-08-01,2026-08-10,0.025,0,-1.0,0.975,1,0.0256,8723.122
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-07-17,2026-07-20,0.0395,0,-1.0,0.9605,1,0.0411,8473.968890000004
+earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-16,2026-08-25,0.07,0,-1.0,0.93,1,0.0753,8384.814035999998
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-15,2026-08-17,0.006,0,-1.0,0.994,1,0.006,8146.490482999999
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-11,2026-08-17,0.0915,0,-1.0,0.9085,1,0.1007,8146.490482999999
+earthquake,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.05,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+earthquake,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.08,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+earthquake,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.1,2026-07-04,2026-07-06,0.0055,0,-1.0,0.9945,1,0.0055,8039.869689000003
+earthquake,Megaquake by January 31?,Yes,0.05,2026-01-13,2026-02-02,0.045,0,-1.0,0.955,1,0.0471,77600.116081
+earthquake,Megaquake by January 31?,Yes,0.08,2025-12-31,2026-02-02,0.075,0,-1.0,0.925,1,0.0811,77600.116081
+earthquake,Megaquake by January 31?,Yes,0.1,2025-12-31,2026-02-02,0.075,0,-1.0,0.925,1,0.0811,77600.116081
+earthquake,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.08,2026-06-24,2026-06-29,0.07,1,13.285714285714285,0.93,0,-1.0,7427.228475
+earthquake,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,Yes,0.1,2026-06-24,2026-06-29,0.07,1,13.285714285714285,0.93,0,-1.0,7427.228475
+earthquake,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+earthquake,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-21,2026-08-24,0.075,0,-1.0,0.925,1,0.0811,7289.384365999999
+earthquake,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+earthquake,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+earthquake,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-07-18,2026-07-20,0.0305,0,-1.0,0.9695,1,0.0315,7214.496987000001
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.05,2026-06-24,2026-06-29,0.045,0,-1.0,0.955,1,0.0471,7071.459094000003
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.08,2026-06-23,2026-06-29,0.055,0,-1.0,0.945,1,0.0582,7071.459094000003
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.1,2026-06-23,2026-06-29,0.055,0,-1.0,0.945,1,0.0582,7071.459094000003
+earthquake,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.05,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+earthquake,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.08,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+earthquake,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,Yes,0.1,2026-06-27,2026-06-29,0.036,0,-1.0,0.964,1,0.0373,7062.065621999999
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.05,2026-08-20,2026-08-24,0.015,0,-1.0,0.985,1,0.0152,7035.504552
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.08,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,Yes,0.1,2026-08-19,2026-08-24,0.065,0,-1.0,0.935,1,0.0695,7035.504552
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.05,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.08,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,Yes,0.1,2026-08-15,2026-08-17,0.004,0,-1.0,0.996,1,0.004,6814.074743
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.05,2026-08-09,2026-08-17,0.045,1,21.22222222222222,0.955,0,-1.0,6762.40044
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.08,2026-08-08,2026-08-17,0.07,1,13.285714285714285,0.93,0,-1.0,6762.40044
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,Yes,0.1,2026-08-08,2026-08-17,0.07,1,13.285714285714285,0.93,0,-1.0,6762.40044
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.05,2026-06-15,2026-06-22,0.036,1,26.77777777777778,0.964,0,-1.0,6487.599163000001
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.08,2026-06-14,2026-06-22,0.05,1,19.0,0.95,0,-1.0,6487.599163000001
+earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,Yes,0.1,2026-06-14,2026-06-22,0.05,1,19.0,0.95,0,-1.0,6487.599163000001
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.05,2026-04-09,2026-05-04,0.0285,0,-1.0,0.9715,1,0.0293,9998.292364
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.08,2026-04-09,2026-05-04,0.0285,0,-1.0,0.9715,1,0.0293,9998.292364
+economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",Yes,0.1,2026-03-24,2026-05-04,0.085,0,-1.0,0.915,1,0.0929,9998.292364
+economy,Nvidia Data Center Revenue above 70B in Q1?,No,0.1,2026-05-18,2026-05-20,0.085,0,-1.0,0.915,1,0.0929,9991.160857
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.05,2026-04-12,2026-04-30,0.0395,0,-1.0,0.9605,1,0.0411,99391.08783599995
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.08,2026-04-09,2026-04-30,0.075,0,-1.0,0.925,1,0.0811,99391.08783599995
+economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,Yes,0.1,2026-04-09,2026-04-30,0.075,0,-1.0,0.925,1,0.0811,99391.08783599995
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.05,2026-02-22,2026-04-24,0.04,0,-1.0,0.96,1,0.0417,99377.03119499981
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.08,2026-02-16,2026-04-24,0.07,0,-1.0,0.93,1,0.0753,99377.03119499981
+economy,Will the Bank of Russia increase the key rate after the April Meeting?,Yes,0.1,2026-02-16,2026-04-24,0.07,0,-1.0,0.93,1,0.0753,99377.03119499981
+economy,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.05,2026-02-05,2026-02-11,0.016,0,-1.0,0.984,1,0.0163,9916.703283
+economy,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.08,2026-02-04,2026-02-11,0.075,0,-1.0,0.925,1,0.0811,9916.703283
+economy,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",Yes,0.1,2026-02-04,2026-02-11,0.075,0,-1.0,0.925,1,0.0811,9916.703283
+economy,Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the ,No,0.05,2026-07-31,2026-08-06,0.043,0,-1.0,0.957,1,0.0449,98531.47739400002
+economy,Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the ,No,0.08,2026-07-31,2026-08-06,0.043,0,-1.0,0.957,1,0.0449,98531.47739400002
+economy,Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the ,No,0.1,2026-07-30,2026-08-06,0.08,0,-1.0,0.92,1,0.087,98531.47739400002
+economy,Will Mexico’s February unemployment rate be 2.6%?,Yes,0.05,2026-03-21,2026-03-27,0.0295,1,32.898305084745765,0.9705,0,-1.0,9806.372619
+economy,Will Mexico’s February unemployment rate be 2.6%?,Yes,0.08,2026-03-21,2026-03-27,0.0295,1,32.898305084745765,0.9705,0,-1.0,9806.372619
+economy,Will Mexico’s February unemployment rate be 2.6%?,Yes,0.1,2026-03-21,2026-03-27,0.0295,1,32.898305084745765,0.9705,0,-1.0,9806.372619
+economy,Will Elon Musk’s net worth be between $650b and $660b on February 28?,Yes,0.05,2026-02-01,2026-03-01,0.045,0,-1.0,0.955,1,0.0471,9795.735533
+economy,Will Elon Musk’s net worth be between $650b and $660b on February 28?,Yes,0.08,2026-02-01,2026-03-01,0.045,0,-1.0,0.955,1,0.0471,9795.735533
+economy,Will Elon Musk’s net worth be between $650b and $660b on February 28?,Yes,0.1,2026-02-01,2026-03-01,0.045,0,-1.0,0.955,1,0.0471,9795.735533
+economy,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.05,2026-06-27,2026-06-30,0.049,0,-1.0,0.951,1,0.0515,9774.250844999997
+economy,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.08,2026-06-10,2026-06-30,0.07,0,-1.0,0.93,1,0.0753,9774.250844999997
+economy,Will the Central Bank of Colombia announce no change at the June meeting?,Yes,0.1,2026-06-10,2026-06-30,0.07,0,-1.0,0.93,1,0.0753,9774.250844999997
+economy,"Will the median home value in the San Francisco Metro area be between $1,080,000",Yes,0.05,2026-01-12,2026-02-01,0.0055,0,-1.0,0.9945,1,0.0055,9762.212372
+economy,"Will the median home value in the San Francisco Metro area be between $1,080,000",Yes,0.08,2026-01-12,2026-02-01,0.0055,0,-1.0,0.9945,1,0.0055,9762.212372
+economy,"Will the median home value in the San Francisco Metro area be between $1,080,000",Yes,0.1,2026-01-11,2026-02-01,0.09,0,-1.0,0.91,1,0.0989,9762.212372
+economy,Will Elon Musk’s net worth be between $690b and $700b on February 28?,Yes,0.05,2026-02-21,2026-03-01,0.041,0,-1.0,0.959,1,0.0428,9757.5127
+economy,Will Elon Musk’s net worth be between $690b and $700b on February 28?,Yes,0.08,2026-02-04,2026-03-01,0.079,0,-1.0,0.921,1,0.0858,9757.5127
+economy,Will Elon Musk’s net worth be between $690b and $700b on February 28?,Yes,0.1,2026-02-02,2026-03-01,0.085,0,-1.0,0.915,1,0.0929,9757.5127
+economy,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.05,2026-02-06,2026-02-09,0.0055,0,-1.0,0.9945,1,0.0055,9753.243454
+economy,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.08,2026-02-06,2026-02-09,0.0055,0,-1.0,0.9945,1,0.0055,9753.243454
+economy,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",Yes,0.1,2026-02-03,2026-02-09,0.09,0,-1.0,0.91,1,0.0989,9753.243454
+economy,Will monthly inflation increase by 0.3% in May?,Yes,0.05,2026-05-15,2026-06-10,0.031,0,-1.0,0.969,1,0.032,9744.420731999999
+economy,Will monthly inflation increase by 0.3% in May?,Yes,0.08,2026-05-14,2026-06-10,0.05,0,-1.0,0.95,1,0.0526,9744.420731999999
+economy,Will monthly inflation increase by 0.3% in May?,Yes,0.1,2026-05-14,2026-06-10,0.05,0,-1.0,0.95,1,0.0526,9744.420731999999
+economy,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.05,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+economy,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.08,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+economy,Will annual inflation in Argentina increase by less than 24% in January 2026?,Yes,0.1,2026-01-15,2026-02-11,0.0425,0,-1.0,0.9575,1,0.0444,9729.167789
+economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,Yes,0.05,2026-01-09,2026-01-30,0.036,0,-1.0,0.964,1,0.0373,97043.752918
+economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,Yes,0.08,2026-01-05,2026-01-30,0.065,0,-1.0,0.935,1,0.0695,97043.752918
+economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,Yes,0.1,2026-01-05,2026-01-30,0.065,0,-1.0,0.935,1,0.0695,97043.752918
+economy,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.05,2025-12-20,2026-01-23,0.0425,0,-1.0,0.9575,1,0.0444,968369.089827
+economy,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.08,2025-12-19,2026-01-23,0.075,0,-1.0,0.925,1,0.0811,968369.089827
+economy,No change in Bank of Japan's interest rates after January 2026 meeting?,No,0.1,2025-12-14,2026-01-23,0.095,0,-1.0,0.905,1,0.105,968369.089827
+economy,"Will the median home value in the San Francisco Metro area be less than $1,060,0",No,0.08,2026-01-30,2026-02-01,0.075,0,-1.0,0.925,1,0.0811,9680.152729
+economy,"Will the median home value in the San Francisco Metro area be less than $1,060,0",No,0.1,2026-01-29,2026-02-01,0.095,0,-1.0,0.905,1,0.105,9680.152729
+economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,Yes,0.08,2026-01-06,2026-01-09,0.0665,0,-1.0,0.9335,1,0.0712,9659.365601
+economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,Yes,0.1,2026-01-06,2026-01-09,0.0665,0,-1.0,0.9335,1,0.0712,9659.365601
+economy,Will Durable Goods Orders MoM be between 4% and 6% in May?,Yes,0.05,2026-06-17,2026-06-25,0.0385,0,-1.0,0.9615,1,0.04,9649.023705000001
+economy,Will Durable Goods Orders MoM be between 4% and 6% in May?,Yes,0.08,2026-06-09,2026-06-25,0.0685,0,-1.0,0.9315,1,0.0735,9649.023705000001
+economy,Will Durable Goods Orders MoM be between 4% and 6% in May?,Yes,0.1,2026-06-08,2026-06-25,0.0955,0,-1.0,0.9045,1,0.1056,9649.023705000001
+war,Joe Kent charged by April 30?,Yes,0.05,2026-04-18,2026-05-01,0.0115,0,-1.0,0.9885,1,0.0116,21885.987527000012
+war,Joe Kent charged by April 30?,Yes,0.08,2026-03-22,2026-05-01,0.06,0,-1.0,0.94,1,0.0638,21885.987527000012
+war,Joe Kent charged by April 30?,Yes,0.1,2026-03-22,2026-05-01,0.06,0,-1.0,0.94,1,0.0638,21885.987527000012
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.05,2026-07-01,2026-08-01,0.045,0,-1.0,0.955,1,0.0471,983202.5010169997
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.08,2026-06-26,2026-08-01,0.075,0,-1.0,0.925,1,0.0811,983202.5010169997
+nuclear, Iran agrees to end enrichment of uranium by July 31?,Yes,0.1,2026-06-22,2026-08-01,0.095,0,-1.0,0.905,1,0.105,983202.5010169997
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.05,2026-03-26,2026-04-09,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.08,2026-03-26,2026-04-09,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.1,2026-03-26,2026-04-09,0.0315,0,-1.0,0.9685,1,0.0325,93889.62416799992
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.05,2026-04-18,2026-06-21,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.08,2026-04-18,2026-06-21,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.1,2026-04-18,2026-06-21,0.0025,0,-1.0,0.9975,1,0.0025,910904.5646420013
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.05,2026-04-19,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.08,2026-04-19,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.1,2026-04-19,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,853361.0713500009
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.05,2026-03-26,2026-04-09,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.08,2026-03-26,2026-04-09,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.1,2026-03-26,2026-04-09,0.04,0,-1.0,0.96,1,0.0417,84082.75221699996
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.05,2026-04-15,2026-06-21,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.08,2026-04-15,2026-06-21,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Oman?,Yes,0.1,2026-04-15,2026-06-21,0.0065,0,-1.0,0.9935,1,0.0065,837794.4785649994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.05,2026-03-26,2026-04-09,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.08,2026-03-26,2026-04-09,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,Yes,0.1,2026-03-26,2026-04-09,0.0155,0,-1.0,0.9845,1,0.0157,83727.93559799994
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.05,2026-03-26,2026-04-09,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.08,2026-03-26,2026-04-09,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.1,2026-03-26,2026-04-09,0.0035,0,-1.0,0.9965,1,0.0035,81203.999308
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.05,2026-03-26,2026-04-09,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.08,2026-03-26,2026-04-09,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in another European country?,Yes,0.1,2026-03-26,2026-04-09,0.011,0,-1.0,0.989,1,0.0111,76617.96617799996
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.05,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.08,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,Yes,0.1,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,75922.47520599994
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.05,2026-02-20,2026-02-26,0.024,0,-1.0,0.976,1,0.0246,7580.175543
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.08,2026-02-20,2026-02-26,0.024,0,-1.0,0.976,1,0.0246,7580.175543
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.1,2026-02-20,2026-02-26,0.024,0,-1.0,0.976,1,0.0246,7580.175543
+nuclear,Will the next diplomatic US-Iran meeting be in Kazakhstan?,Yes,0.05,2026-03-26,2026-04-11,0.0035,0,-1.0,0.9965,1,0.0035,75241.82295399994
+nuclear,Will the next diplomatic US-Iran meeting be in Kazakhstan?,Yes,0.08,2026-03-26,2026-04-11,0.0035,0,-1.0,0.9965,1,0.0035,75241.82295399994
+nuclear,Will the next diplomatic US-Iran meeting be in Kazakhstan?,Yes,0.1,2026-03-26,2026-04-11,0.0035,0,-1.0,0.9965,1,0.0035,75241.82295399994
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.05,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,674608.3160870019
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.08,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,674608.3160870019
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.1,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,674608.3160870019
+nuclear,US/Israel strike on Fordow nuclear facility by March 31?,Yes,0.08,2026-03-28,2026-03-31,0.075,0,-1.0,0.925,1,0.0811,625282.5868629998
+nuclear,US/Israel strike on Fordow nuclear facility by March 31?,Yes,0.1,2026-03-25,2026-03-31,0.095,0,-1.0,0.905,1,0.105,625282.5868629998
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.05,2026-03-26,2026-04-09,0.0175,0,-1.0,0.9825,1,0.0178,62429.98058299997
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.08,2026-03-26,2026-04-09,0.0175,0,-1.0,0.9825,1,0.0178,62429.98058299997
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.1,2026-03-26,2026-04-09,0.0175,0,-1.0,0.9825,1,0.0178,62429.98058299997
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.05,2026-02-22,2026-02-26,0.045,0,-1.0,0.955,1,0.0471,6158.944737
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.08,2026-02-19,2026-02-26,0.055,0,-1.0,0.945,1,0.0582,6158.944737
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.1,2026-02-19,2026-02-26,0.055,0,-1.0,0.945,1,0.0582,6158.944737
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.05,2026-03-26,2026-04-11,0.0075,0,-1.0,0.9925,1,0.0076,61210.14711600004
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.08,2026-03-26,2026-04-11,0.0075,0,-1.0,0.9925,1,0.0076,61210.14711600004
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.1,2026-03-26,2026-04-11,0.0075,0,-1.0,0.9925,1,0.0076,61210.14711600004
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.05,2026-04-15,2026-06-21,0.003,0,-1.0,0.997,1,0.003,595622.4256550015
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.08,2026-04-15,2026-06-21,0.003,0,-1.0,0.997,1,0.003,595622.4256550015
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.1,2026-04-15,2026-06-21,0.003,0,-1.0,0.997,1,0.003,595622.4256550015
+nuclear,Will the next diplomatic US-Iran meeting be in Turkey?,Yes,0.05,2026-04-18,2026-06-21,0.0135,0,-1.0,0.9865,1,0.0137,564566.2451000017
+nuclear,Will the next diplomatic US-Iran meeting be in Turkey?,Yes,0.08,2026-04-18,2026-06-21,0.0135,0,-1.0,0.9865,1,0.0137,564566.2451000017
+nuclear,Will the next diplomatic US-Iran meeting be in Turkey?,Yes,0.1,2026-04-18,2026-06-21,0.0135,0,-1.0,0.9865,1,0.0137,564566.2451000017
+nuclear,"Iran agrees to surrender enriched uranium stockpile by June 30, 2026?",Yes,0.05,2026-06-15,2026-07-01,0.045,0,-1.0,0.955,1,0.0471,5504902.70058001
+nuclear,"Iran agrees to surrender enriched uranium stockpile by June 30, 2026?",Yes,0.08,2026-06-11,2026-07-01,0.06,0,-1.0,0.94,1,0.0638,5504902.70058001
+nuclear,"Iran agrees to surrender enriched uranium stockpile by June 30, 2026?",Yes,0.1,2026-06-02,2026-07-01,0.085,0,-1.0,0.915,1,0.0929,5504902.70058001
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.05,2026-02-23,2026-02-26,0.0005,0,-1.0,0.9995,1,0.0005,5032.631265
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.08,2026-02-19,2026-02-26,0.05,0,-1.0,0.95,1,0.0526,5032.631265
+nuclear,Will the next diplomatic US-Iran meeting be in another country?,Yes,0.1,2026-02-19,2026-02-26,0.05,0,-1.0,0.95,1,0.0526,5032.631265
+nuclear,"Iran agrees to surrender enriched uranium stockpile by May 31, 2026?",Yes,0.05,2026-05-17,2026-06-01,0.045,0,-1.0,0.955,1,0.0471,5030217.856878972
+nuclear,"Iran agrees to surrender enriched uranium stockpile by May 31, 2026?",Yes,0.08,2026-05-02,2026-06-01,0.075,0,-1.0,0.925,1,0.0811,5030217.856878972
+nuclear,"Iran agrees to surrender enriched uranium stockpile by May 31, 2026?",Yes,0.1,2026-05-02,2026-06-01,0.075,0,-1.0,0.925,1,0.0811,5030217.856878972
+nuclear,Will the next diplomatic US-Iran meeting be in the United States?,Yes,0.05,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,501550.6015450018
+nuclear,Will the next diplomatic US-Iran meeting be in the United States?,Yes,0.08,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,501550.6015450018
+nuclear,Will the next diplomatic US-Iran meeting be in the United States?,Yes,0.1,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,501550.6015450018
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.05,2026-03-26,2026-04-09,0.0055,0,-1.0,0.9945,1,0.0055,49927.480668
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.08,2026-03-26,2026-04-09,0.0055,0,-1.0,0.9945,1,0.0055,49927.480668
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.1,2026-03-26,2026-04-09,0.0055,0,-1.0,0.9945,1,0.0055,49927.480668
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.05,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,49317.590544000006
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.08,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,49317.590544000006
+nuclear,Will the next diplomatic US-Iran meeting be in Austria?,Yes,0.1,2026-03-26,2026-04-09,0.0025,0,-1.0,0.9975,1,0.0025,49317.590544000006
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.05,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,483366.80111700034
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.08,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,483366.80111700034
+nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,Yes,0.1,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,483366.80111700034
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.05,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,425593.39641800034
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.08,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,425593.39641800034
+nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,Yes,0.1,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,425593.39641800034
+nuclear,"Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",Yes,0.05,2026-04-03,2026-05-01,0.034,0,-1.0,0.966,1,0.0352,3747157.236928999
+nuclear,"Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",Yes,0.08,2026-04-02,2026-05-01,0.065,0,-1.0,0.935,1,0.0695,3747157.236928999
+nuclear,"Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",Yes,0.1,2026-03-28,2026-05-01,0.085,0,-1.0,0.915,1,0.0929,3747157.236928999
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.05,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,370771.1500689996
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.08,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,370771.1500689996
+nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,Yes,0.1,2026-04-15,2026-06-21,0.0015,0,-1.0,0.9985,1,0.0015,370771.1500689996
+nuclear,"Will no qualifying diplomatic US-Iran meeting occur by April 30, 2026?",Yes,0.08,2026-02-24,2026-02-26,0.055,0,-1.0,0.945,1,0.0582,36567.655989
+nuclear,"Will no qualifying diplomatic US-Iran meeting occur by April 30, 2026?",Yes,0.1,2026-02-24,2026-02-26,0.055,0,-1.0,0.945,1,0.0582,36567.655989
+nuclear,Will the next diplomatic US-Iran meeting be in Iran?,Yes,0.05,2026-03-26,2026-04-09,0.0045,0,-1.0,0.9955,1,0.0045,33698.62282900001
+nuclear,Will the next diplomatic US-Iran meeting be in Iran?,Yes,0.08,2026-03-26,2026-04-09,0.0045,0,-1.0,0.9955,1,0.0045,33698.62282900001
+nuclear,Will the next diplomatic US-Iran meeting be in Iran?,Yes,0.1,2026-03-26,2026-04-09,0.0045,0,-1.0,0.9955,1,0.0045,33698.62282900001
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.05,2026-04-15,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,316352.7431780001
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.08,2026-04-15,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,316352.7431780001
+nuclear,Will the next diplomatic US-Iran meeting be in Russia?,Yes,0.1,2026-04-15,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,316352.7431780001
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.05,2026-04-22,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,297700.19541700033
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.08,2026-04-22,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,297700.19541700033
+nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,Yes,0.1,2026-04-22,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,297700.19541700033
+nuclear,Will the next diplomatic US-Iran meeting be in Italy?,Yes,0.05,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,287263.1323500004
+nuclear,Will the next diplomatic US-Iran meeting be in Italy?,Yes,0.08,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,287263.1323500004
+nuclear,Will the next diplomatic US-Iran meeting be in Italy?,Yes,0.1,2026-04-18,2026-06-21,0.0005,0,-1.0,0.9995,1,0.0005,287263.1323500004
+nuclear,Israel military action against Fordow nuclear facility by April 30?,Yes,0.05,2026-04-25,2026-05-01,0.0365,0,-1.0,0.9635,1,0.0379,279842.93012800027
+nuclear,Israel military action against Fordow nuclear facility by April 30?,Yes,0.08,2026-04-09,2026-05-01,0.072,0,-1.0,0.928,1,0.0776,279842.93012800027
+nuclear,Israel military action against Fordow nuclear facility by April 30?,Yes,0.1,2026-04-09,2026-05-01,0.072,0,-1.0,0.928,1,0.0776,279842.93012800027
+nuclear,Will the next diplomatic US-Iran meeting be in Switzerland?,Yes,0.05,2026-03-26,2026-04-11,0.009,0,-1.0,0.991,1,0.0091,278547.8747999999
+nuclear,Will the next diplomatic US-Iran meeting be in Switzerland?,Yes,0.08,2026-03-26,2026-04-11,0.009,0,-1.0,0.991,1,0.0091,278547.8747999999
+nuclear,Will the next diplomatic US-Iran meeting be in Switzerland?,Yes,0.1,2026-03-26,2026-04-11,0.009,0,-1.0,0.991,1,0.0091,278547.8747999999
+nuclear,"Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",Yes,0.05,2026-04-22,2026-06-21,0.0325,0,-1.0,0.9675,1,0.0336,2647549.5168590196
+nuclear,"Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",Yes,0.08,2026-04-22,2026-06-21,0.0325,0,-1.0,0.9675,1,0.0336,2647549.5168590196
+nuclear,"Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",Yes,0.1,2026-04-22,2026-06-21,0.0325,0,-1.0,0.9675,1,0.0336,2647549.5168590196

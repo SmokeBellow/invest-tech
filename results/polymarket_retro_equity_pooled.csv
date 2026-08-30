@@ -1,0 +1,443 @@
+resolution_date,category,question,stake_usd,r_mult,equity
+2023-07-01,geopolitics,Will a nuclear weapon detonate by June 30?,10.0,0.0638,1000.64
+2023-10-19,weather,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,10.01,0.0753,1001.39
+2023-10-19,climate,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,10.01,0.0753,1002.15
+2023-12-01,weather,Will there be 21+ named storms during the Atlantic Hurricane Season?,10.02,0.0471,1002.62
+2023-12-01,climate,Will there be 21+ named storms during the Atlantic Hurricane Season?,10.03,0.0471,1003.09
+2023-12-01,war,Will Hezbollah officially join the war by Nov 30?,10.03,0.0811,1003.9
+2023-12-01,war,Will Azerbaijan invade Armenia by Nov 30?,10.04,0.0811,1004.72
+2023-12-01,war,Will US attack Iran by Nov 30?,10.05,0.0638,1005.36
+2024-01-01,geopolitics,Will a nuclear weapon detonate by December 31?,10.05,0.0793,1006.16
+2024-01-01,war,Will another nation declare war in the Israel-Hamas conflict?,10.06,0.0695,1006.85
+2024-01-01,war,Will US attack Iran in 2023?,10.07,0.0582,1007.44
+2024-01-01,war,Will Iran officially join the war in 2023?,10.07,0.0695,1008.14
+2024-01-04,war,Will Hezbollah officially join the war in 2023?,10.08,0.0811,1008.96
+2024-01-12,weather,Will the final global heat increase be 1.18 or greater for 2023?,10.09,0.0811,1009.78
+2024-01-12,weather,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),10.1,0.0753,1010.54
+2024-01-12,weather,Will the final global heat increase be 1.13 or greater for 2023?,10.11,0.0811,1011.36
+2024-01-12,weather,Will the final global heat increase be 1.11 or greater for 2023?,10.11,0.0811,1012.18
+2024-01-12,weather,Will the final global heat increase be 1.08 or greater for 2023?,10.12,0.0753,1012.94
+2024-01-12,weather,Will the final global heat increase be 1.05 or greater for 2023?,10.13,0.0695,1013.64
+2024-01-12,weather,Will the final global heat increase be 1.15 or greater for 2023?,10.14,0.0753,1014.41
+2024-01-12,climate,Will the final global heat increase be 1.18 or greater for 2023?,10.14,0.0811,1015.23
+2024-01-12,climate,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),10.15,0.0753,1015.99
+2024-01-12,climate,Will the final global heat increase be 1.13 or greater for 2023?,10.16,0.0811,1016.82
+2024-01-12,climate,Will the final global heat increase be 1.11 or greater for 2023?,10.17,0.0811,1017.64
+2024-01-12,climate,Will the final global heat increase be 1.08 or greater for 2023?,10.18,0.0753,1018.41
+2024-01-12,climate,Will the final global heat increase be 1.05 or greater for 2023?,10.18,0.0695,1019.12
+2024-01-12,climate,Will the final global heat increase be 1.15 or greater for 2023?,10.19,0.0753,1019.88
+2024-02-01,war,Will Iran officially join the war before February?,10.2,0.0417,1020.31
+2024-02-10,geopolitics,Border + Ukraine aid deal by Feb 9?,10.2,0.0638,1020.96
+2024-03-01,war,US/Iran declare war before March?,10.21,0.0357,1021.32
+2024-05-10,weather,Will April 2024 show an increase between 1.20°C-1.25°C?,10.21,0.0471,1021.81
+2024-05-10,weather,Will April 2024 show an increase between 1.14°C-1.19°C?,10.22,0.0417,1022.23
+2024-05-10,weather,Will April 2024 show an increase of less than 1.14C?,10.22,0.0811,1023.06
+2024-05-10,climate,Will 2024 have the hottest April on record?,10.23,0.0811,1023.89
+2024-06-11,weather,Will May 2024 show an increase greater than 1.30C?,10.24,0.0695,1024.6
+2024-06-11,weather,Will May 2024 show an increase between 1.24°C-1.30°C,10.25,0.0526,1025.14
+2024-06-11,weather,Will May 2024 show an increase between 1.10°C-1.16°C,10.25,-1.0,1014.89
+2024-06-11,weather,Will May 2024 show an increase between 1.10°C-1.16°C,10.15,0.0753,1015.65
+2024-06-11,weather,Will May 2024 show an increase between 1.17°C-1.23°C,10.16,0.0695,1016.36
+2024-06-11,climate,2024 May hottest on record?,10.16,0.0753,1017.12
+2024-07-01,geopolitics,"Will a nuclear weapon detonate by June 30, 2024?",10.17,0.0638,1017.77
+2024-07-01,geopolitics,Israel election called before July?,10.18,0.0753,1018.54
+2024-07-01,war,NATO/EU troops fighting in Ukraine before July?,10.19,0.0638,1019.19
+2024-07-01,war,Next Israel x Hamas ceasefire in June?,10.19,0.0695,1019.9
+2024-07-01,war,Crimean bridge hit before July?,10.2,0.0811,1020.73
+2024-07-09,weather,Will Beryl hit US as a hurricane?,10.21,-1.0,1010.52
+2024-07-10,weather,Will June 2024 have a temperature increase of less than 1.09°C?,10.11,0.0753,1011.28
+2024-07-10,weather,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,10.11,0.0811,1012.1
+2024-07-10,weather,Will June 2024 have a temperature increase of greater than 1.29°C?,10.12,0.0753,1012.86
+2024-07-10,climate,Will June 2024 have a temperature increase of less than 1.09°C?,10.13,0.0753,1013.62
+2024-07-10,climate,Will June 2024 have a temperature increase of between 1.09°C and 1.15°C?,10.14,0.0811,1014.45
+2024-07-10,climate,Will June 2024 have a temperature increase of greater than 1.29°C?,10.14,0.0753,1015.21
+2024-08-01,war,Next Israel x Hamas ceasefire in July?,10.15,0.0823,1016.05
+2024-08-06,geopolitics,US military action against Hezbollah in Lebanon by Monday?,10.16,0.0363,1016.41
+2024-08-10,geopolitics,Musk x Maduro fight scheduled by Aug 9?,10.16,0.022,1016.64
+2024-08-10,geopolitics,Will Israel invade Lebanon by Friday?,10.17,0.0444,1017.09
+2024-08-24,war,Iran military response by Friday?,10.17,0.0811,1017.91
+2024-08-31,geopolitics,Iran military response by Friday?,10.18,0.0582,1018.51
+2024-09-01,geopolitics,Israel x Hamas ceasefire before September?,10.19,0.0695,1019.21
+2024-09-01,geopolitics,Crimean bridge hit before September?,10.19,0.0811,1020.04
+2024-09-01,geopolitics,Will Ukraine hold Kursk through Aug 31?,10.2,0.0582,1020.63
+2024-09-01,geopolitics,Next Israel x Hamas ceasefire in August?,10.21,0.0811,1021.46
+2024-09-01,economy,Fed emergency rate cut in August?,10.21,0.0352,1021.82
+2024-09-01,war,Israel x Hamas ceasefire before September?,10.22,0.0695,1022.53
+2024-09-01,war,Crimean bridge hit before September?,10.23,0.0811,1023.36
+2024-09-01,war,Next Israel x Hamas ceasefire in August?,10.23,0.0811,1024.19
+2024-09-01,war,Israel withdraws from Gaza before September?,10.24,0.0811,1025.02
+2024-09-01,war,Hezbollah enters Israel in August?,10.25,0.0526,1025.56
+2024-09-01,war,U.S. military action against Iran by August 31?,10.26,0.0811,1026.39
+2024-09-01,war,Israel military action against Iran in August?,10.26,0.0753,1027.17
+2024-09-01,war,Ukraine hits Moscow by August 31?,10.27,-1.0,1016.89
+2024-09-01,war,Will Israel invade Lebanon before September?,10.17,0.0582,1017.49
+2024-09-01,war,Iran strike on US military in August?,10.17,0.0695,1018.19
+2024-09-04,geopolitics,Ukraine hits Moscow by Sept 30?,10.18,0.002,1018.21
+2024-09-04,war,Ukraine hits Moscow by Sept 30?,10.18,0.002,1018.23
+2024-09-18,economy,Fed cuts rates by 75 basis points in Sept meeting?,10.18,0.0582,1018.83
+2024-09-30,weather,Will there be less than 11 named storms during Atlantic Hurricane Season?,10.19,0.0363,1019.2
+2024-09-30,climate,Will there be less than 11 named storms during Atlantic Hurricane Season?,10.19,0.0363,1019.57
+2024-09-30,economy,Will another company be the largest company by mcap on September 30?,10.2,0.0142,1019.71
+2024-09-30,economy,Will AAPL be the largest company by mcap on September 30?,10.2,0.0638,1020.36
+2024-10-01,geopolitics,Hezbollah enters Israel in September?,10.2,0.0695,1021.07
+2024-10-01,geopolitics,Keir Starmer out as UK PM before October?,10.21,0.0582,1021.67
+2024-10-01,geopolitics,U.S. military action against Iran by September 30?,10.22,0.0422,1022.1
+2024-10-01,geopolitics,Crimean bridge hit before October?,10.22,0.0695,1022.81
+2024-10-01,geopolitics,Telegram banned by EU country before October?,10.23,0.0811,1023.64
+2024-10-01,geopolitics,Iran strike on US military before October?,10.24,0.0582,1024.23
+2024-10-01,weather,Megaquake in September?,10.24,0.0638,1024.89
+2024-10-01,climate,Megaquake in September?,10.25,0.0638,1025.54
+2024-10-01,earthquake,Megaquake in September?,10.26,0.0638,1026.19
+2024-10-01,economy,Will NVDA be the largest company by mcap on September 30?,10.26,0.0417,1026.62
+2024-10-01,war,Crimean bridge hit before October?,10.27,0.0695,1027.33
+2024-10-01,war,Iran strike on US military before October?,10.27,0.0582,1027.93
+2024-10-01,war,Belarus x Ukraine military clash by Sep 30?,10.28,0.0695,1028.65
+2024-10-01,war,Will Belarus invade Ukraine before October?,10.29,0.0811,1029.48
+2024-10-01,war,Iran military response before October?,10.29,0.0638,1030.14
+2024-10-01,war,Will Russia capture Toretsk before October?,10.3,0.0753,1030.91
+2024-10-01,war,Israel x Hamas ceasefire before October?,10.31,0.0811,1031.75
+2024-10-01,war,Will Russia capture Chasiv Yar before October?,10.32,0.0753,1032.53
+2024-10-04,war,Will Russia capture Vuhledar before October? ,10.33,0.0638,1033.19
+2024-10-06,war,Will Israel invade Lebanon before November?,10.33,0.0852,1034.07
+2024-10-08,war,Will Israel invade Lebanon in September?,10.34,0.0695,1034.78
+2024-10-12,geopolitics,Israel military action against Iraq by Friday?,10.35,0.0582,1035.39
+2024-10-13,geopolitics,Will Israel strike Iran on Saturday?,10.35,0.0695,1036.11
+2024-10-19,weather,Will there be more than 14 named storms during Atlantic Hurricane Season?,10.36,0.04,1036.52
+2024-10-19,weather,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,10.37,0.0638,1037.18
+2024-10-19,climate,Will there be more than 14 named storms during Atlantic Hurricane Season?,10.37,0.04,1037.6
+2024-10-19,climate,Will there be between 11 and 14 named storms during Atlantic Hurricane Season?,10.38,0.0638,1038.26
+2024-10-21,climate,September temperature increase by more than 1.40°C?,10.38,0.0695,1038.98
+2024-10-21,climate,September temperature increase by less than 1.17°C?,10.39,0.0811,1039.82
+2024-10-25,geopolitics,Will Israel strike Iran on Thursday Oct 24?,10.4,0.0638,1040.49
+2024-10-30,economy,US GDP declines in Q3 2024?,10.4,0.0811,1041.33
+2024-11-01,geopolitics,Israel withdraws from Lebanon before November?,10.41,0.0695,1042.05
+2024-11-01,geopolitics,Israel strikes Iranian oil in October?,10.42,0.0799,1042.89
+2024-11-01,geopolitics,Ukraine strike on Moscow before November?,10.43,0.0695,1043.61
+2024-11-01,geopolitics,Strike on Dimonah nuclear base in October?,10.44,0.0811,1044.46
+2024-11-01,weather,Megaquake in October?,10.44,0.0811,1045.31
+2024-11-01,climate,Will head of FEMA be fired/resign before November?,10.45,0.0811,1046.15
+2024-11-01,earthquake,Megaquake in October?,10.46,0.0811,1047.0
+2024-11-01,economy,30-year mortgage rate below 6% before election?,10.47,0.0811,1047.85
+2024-11-01,war,Will Russia capture Pokrovsk before November?,10.48,0.0695,1048.58
+2024-11-01,war,Crimean bridge hit before November?,10.49,0.0753,1049.37
+2024-11-01,war,Iran strike on US military before November?,10.49,0.0526,1049.92
+2024-11-01,war,Next Israel x Hamas ceasefire in October?,10.5,0.0471,1050.41
+2024-11-02,climate,Will there be less than 16 named storms during Atlantic Hurricane Season?,10.5,0.0811,1051.27
+2024-11-05,weather,Category 5 hurricane hits US before election?,10.51,0.0526,1051.82
+2024-11-05,climate,Category 5 hurricane hits US before election?,10.52,0.0526,1052.37
+2024-11-05,war,Israel and Saudi Arabia normalize relations before U.S. election?,10.52,0.0811,1053.23
+2024-11-08,weather,Will the October 2024 temperature increase be between 1.23-1.28°C?,10.53,0.0753,1054.02
+2024-11-08,weather,Will the October 2024 temperature increase be less than 1.17°C?,10.54,0.0471,1054.52
+2024-11-08,weather,Will the October 2024 temperature increase be between 1.17-1.22°C?,10.55,0.0309,1054.84
+2024-11-08,weather,Will the October 2024 temperature increase be greater than 1.40°C?,10.55,0.0194,1055.05
+2024-11-08,climate,Will the October 2024 temperature increase be between 1.23-1.28°C?,10.55,0.0753,1055.84
+2024-11-08,climate,Will the October 2024 temperature increase be less than 1.17°C?,10.56,0.0471,1056.34
+2024-11-08,climate,Will the October 2024 temperature increase be between 1.17-1.22°C?,10.56,0.0309,1056.66
+2024-11-08,climate,Will the October 2024 temperature increase be greater than 1.40°C?,10.57,0.0194,1056.87
+2024-11-08,economy,Will Fed cut interest rates 2 times in 2024?,10.57,0.0582,1057.48
+2024-12-01,climate,Will there be more than 25 named storms during Atlantic Hurricane Season?,10.57,0.0811,1058.34
+2024-12-01,climate,Megaquake in November?,10.58,0.0811,1059.2
+2024-12-01,climate,Will there be between 21 and 25 named storms during Atlantic Hurricane Season?,10.59,0.0471,1059.7
+2024-12-01,climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,10.6,-1.0,1049.1
+2024-12-01,climate,Will there be between 16 and 20 named storms during Atlantic Hurricane Season?,10.49,0.0582,1049.71
+2024-12-01,earthquake,Megaquake in November?,10.5,0.0811,1050.56
+2024-12-01,war,Will Russia recapture Sudzha before December?,10.51,0.0753,1051.36
+2024-12-01,war,Will Russia capture Siversk before December?,10.51,0.0753,1052.15
+2024-12-01,war,Next Israel x Hamas ceasefire in November?,10.52,0.0417,1052.59
+2024-12-01,war,Will Russia capture Chasiv Yar before December?,10.53,0.0811,1053.44
+2024-12-06,economy,"Will the US gain less than 100,000 jobs in November?",10.53,0.0811,1054.29
+2024-12-10,weather,Will the November 2024 temperature increase be less than 1.20°C?,10.54,0.0251,1054.56
+2024-12-10,weather,Will the November 2024 temperature increase be between 1.20-1.24°C?,10.55,0.0471,1055.06
+2024-12-10,weather,Will the November 2024 temperature increase be greater than 1.39°C?,10.55,0.0753,1055.85
+2024-12-10,weather,Will the November 2024 temperature increase be between 1.35-1.39°C?,10.56,0.0422,1056.3
+2024-12-10,climate,Will the November 2024 temperature increase be less than 1.20°C?,10.56,0.0251,1056.56
+2024-12-10,climate,Will the November 2024 temperature increase be between 1.20-1.24°C?,10.57,0.0471,1057.06
+2024-12-10,climate,Will the November 2024 temperature increase be greater than 1.39°C?,10.57,0.0753,1057.85
+2024-12-10,climate,Will the November 2024 temperature increase be between 1.35-1.39°C?,10.58,0.0422,1058.3
+2024-12-11,economy,Will inflation increase by 2.5% or less in November?,10.58,0.0753,1059.1
+2024-12-12,economy,Increase in ECB interest rates after 2024 December meeting?,10.59,0.0262,1059.37
+2024-12-18,economy,Fed decreases interest rates by 50 bps after December 2024 meeting?,10.59,0.0582,1059.99
+2024-12-18,economy,Will Fed cut interest rates 3 times in 2024?,10.6,0.0811,1060.85
+2024-12-18,economy,Fed decreases interest rates by 25 bps after December 2024 meeting?,10.61,0.061,1061.5
+2024-12-18,economy,No change in Fed interest rates after December 2024 meeting?,10.61,0.0811,1062.36
+2024-12-18,economy,Will Fed cut interest rates 4 times in 2024?,10.62,-1.0,1051.74
+2024-12-18,economy,Will Fed cut interest rates 4 times in 2024?,10.52,0.0672,1052.44
+2024-12-18,economy,Will Fed cut interest rates 5 times in 2024?,10.52,0.0526,1053.0
+2024-12-18,economy,"Will Jerome Powell say ""good afternoon"" during December FOMC Press Conference?",10.53,0.0638,1053.67
+2024-12-21,economy,Russian Ruble ₽110 to $1 USD by December 20?,10.54,0.0582,1054.28
+2025-01-01,economy,"Will Gold close under $2,500 at the end of 2024?",10.54,0.0695,1055.01
+2025-01-01,war,No Israel x Hamas ceasefire in 2024?,10.55,0.0695,1055.75
+2025-01-10,climate,Will 2024 be the hottest year on record?,10.56,0.0695,1056.48
+2025-02-11,weather,Will global temperature increase by between 1.20-1.24ºC in January 2025?,10.56,0.0127,1056.61
+2025-02-11,climate,Will global temperature increase by between 1.20-1.24ºC in January 2025?,10.57,0.0127,1056.75
+2025-02-11,climate,Will global temperature increase by between 1.30-1.34ºC in January 2025?,10.57,0.0267,1057.03
+2025-02-15,earthquake,6.0+ earthquake in Mediterranean by next Friday?,10.57,0.0811,1057.89
+2025-03-01,geopolitics,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,10.58,0.0811,1058.75
+2025-03-01,world,Will Russia capture territory in Dnipropetrovsk Oblast by February 28?,10.59,0.0811,1059.6
+2025-03-07,geopolitics,Trump announces cutting all military aid to Ukraine aid before April?,10.6,0.006,1059.67
+2025-03-11,climate,Will global temperature increase by between 1.35-1.39ºC in February 2025?,10.6,0.0811,1060.53
+2025-03-11,climate,Will global temperature increase by less than 1.20ºC in February 2025?,10.61,0.0471,1061.03
+2025-03-11,climate,Will global temperature increase by more than 1.39ºC in February 2025?,10.61,0.0747,1061.82
+2025-03-11,climate,Will global temperature increase by between 1.30-1.34ºC in February 2025?,10.62,0.0811,1062.68
+2025-04-01,geopolitics,Israel and Saudi Arabia normalize relations before April?,10.63,0.0811,1063.54
+2025-04-01,world,Israel and Saudi Arabia normalize relations before April?,10.64,0.0811,1064.41
+2025-04-04,geopolitics,Will 9 justices on South Korea's Constitutional Court vote for Yoon's impeachmen,10.64,0.0582,1065.02
+2025-04-10,climate,Will global temperature increase by less than 1.22ºC in March 2025?,10.65,0.0695,1065.76
+2025-04-10,climate,Will global temperature increase by between 1.27-1.31ºC in March 2025?,10.66,0.0799,1066.62
+2025-04-10,climate,2025 March hottest on record?,10.67,0.0695,1067.36
+2025-04-30,recession,Will U.S. GDP growth be greater than 2% in Q1 2025?,10.67,0.0471,1067.86
+2025-04-30,recession,Will U.S. GDP growth be between -1% and -2% in Q1 2025?,10.68,0.0526,1068.42
+2025-04-30,recession,Will U.S. GDP growth be less than -2% in Q1 2025?,10.68,0.0695,1069.16
+2025-04-30,economy,Will U.S. GDP growth be greater than 2% in Q1 2025?,10.69,0.0471,1069.67
+2025-05-01,earthquake,Earthquake 7.0 or above in April?,10.7,0.0638,1070.35
+2025-05-09,climate,Will global temperature increase by between 1.32-1.36ºC in April 2025?,10.7,0.0477,1070.86
+2025-05-09,climate,Will global temperature increase by less than 1.08ºC in April 2025?,10.71,0.0309,1071.19
+2025-05-31,economy,Will another company be the largest in the world by market cap on May 31?,10.71,0.0116,1071.32
+2025-06-01,geopolitics,Will Iran enrich uranium to 90% before June?,10.71,0.0811,1072.19
+2025-06-01,geopolitics,Israel strike on Iranian nuclear facility in May?,10.72,0.0582,1072.81
+2025-06-01,world,Will Iran enrich uranium to 90% before June?,10.73,0.0811,1073.68
+2025-06-01,earthquake,Megaquake in May?,10.74,0.0695,1074.43
+2025-06-01,nuclear,Will Iran enrich uranium to 90% before June?,10.74,0.0811,1075.3
+2025-06-02,world,Will Maciej Maciak be the next President of Poland?,10.75,0.0005,1075.3
+2025-06-02,world,Will Marek Woch be the next President of Poland?,10.75,0.0005,1075.31
+2025-06-04,world,Will Kim Moon-soo win less than 20% of the vote in the South Korea election?,10.75,0.0106,1075.42
+2025-06-04,world,Will Yoo Seong-min win 2nd place in the South Korean presidential election?,10.75,0.0121,1075.55
+2025-06-10,climate,Will global temperature increase by between 1.05-1.09ºC in May 2025?,10.76,0.0411,1075.99
+2025-07-01,geopolitics,Another US military action against Iran by June 30?,10.76,0.0805,1076.86
+2025-07-01,geopolitics,Israel x Egypt sever diplomatic relations before July?,10.77,0.0695,1077.61
+2025-07-01,world,Another US military action against Iran by June 30?,10.78,0.0805,1078.48
+2025-07-01,world,Israel x Egypt sever diplomatic relations before July?,10.78,0.0695,1079.23
+2025-07-01,natural_disaster,Will a hurricane make landfall in the US in June?,10.79,0.0526,1079.79
+2025-07-01,natural_disaster,Megaquake in June?,10.8,0.0695,1080.54
+2025-07-01,earthquake,Megaquake in June?,10.81,0.0695,1081.29
+2025-07-24,economy,Will the ECB announce an increase at the July meeting?,10.81,0.006,1081.36
+2025-08-01,natural_disaster,Will a hurricane make landfall in the US before August?,10.81,0.0347,1081.73
+2025-08-01,economy,Will Elon Musk's net worth be between $360b and $370b on July 31?,10.82,0.0753,1082.55
+2025-08-01,nuclear,Iran agrees to end enrichment of uranium before August?,10.83,0.0811,1083.43
+2025-08-02,natural_disaster,Megaquake before August?,10.83,-1.0,1072.59
+2025-08-02,natural_disaster,Megaquake before August?,10.73,0.0846,1073.5
+2025-08-02,earthquake,Megaquake before August?,10.74,-1.0,1062.77
+2025-08-02,earthquake,Megaquake before August?,10.63,0.0846,1063.66
+2025-08-20,world,Will Andrónico Rodríguez win the most votes in the first round of the 2025 Boliv,10.64,0.0811,1064.53
+2025-08-23,world,Will Medina win by 3-7%?,10.65,0.0811,1065.39
+2025-09-01,geopolitics,Will Reza Pahlavi enter Iran before September?,10.65,0.0582,1066.01
+2025-09-01,geopolitics,Will Trump meet with Jair Bolsonaro in August?,10.66,0.023,1066.26
+2025-09-01,world,Will Reza Pahlavi enter Iran before September?,10.66,0.0582,1066.88
+2025-09-01,world,Will Xi visit the US before September?,10.67,0.0753,1067.68
+2025-09-01,climate,Will a hurricane make landfall in the US by August 31?,10.68,0.0811,1068.55
+2025-09-01,natural_disaster,Megaquake by August 31?,10.69,0.0811,1069.41
+2025-09-01,earthquake,Megaquake by August 31?,10.69,0.0811,1070.28
+2025-09-06,geopolitics,Trump x Modi talk by September 5?,10.7,0.0811,1071.15
+2025-09-06,world,Trump x Modi talk by September 5?,10.71,0.0811,1072.02
+2025-09-09,geopolitics,Israel military action against Qatar in 2025?,10.72,-1.0,1061.3
+2025-09-09,world,Israel military action against Qatar in 2025?,10.61,-1.0,1050.68
+2025-09-11,climate,2025 August second hottest on record?,10.51,0.0638,1051.35
+2025-09-11,economy,Will the ECB announce a 50+ bps decrease at the September meeting?,10.51,0.0283,1051.65
+2025-09-17,economy,"Will Powell say ""Median"" during September press conference?",10.52,0.0695,1052.38
+2025-09-18,economy,Bank of England increases interest rates by 25+ bps after September 2025 meeting,10.52,0.023,1052.62
+2025-09-30,economy,Will Google be the largest company in the world by market cap on September 30?,10.53,0.0035,1052.66
+2025-10-01,geopolitics,Will Trump meet with Vladimir Putin in September?,10.53,0.0695,1053.39
+2025-10-01,climate,Will a hurricane make landfall in the US by September 30?,10.53,0.0549,1053.97
+2025-10-01,natural_disaster,Megaquake by September 30?,10.54,0.0695,1054.7
+2025-10-01,earthquake,Megaquake by September 30?,10.55,0.0695,1055.44
+2025-10-01,economy,Will Elon Musk's net worth be between $390b and $400b on August 31?,10.55,0.0288,1055.74
+2025-10-30,economy,No change in Bank of Japan's interest rates after October 2025 meeting?,10.56,0.0811,1056.6
+2025-10-31,economy,Will Other be the second most valuable company on October 31?,10.57,0.0204,1056.81
+2025-11-01,geopolitics,US strikes Afghanistan by October 31?,10.57,0.0352,1057.18
+2025-11-01,natural_disaster,Megaquake by October 31?,10.57,0.0695,1057.92
+2025-11-01,earthquake,Megaquake by October 31?,10.58,0.0695,1058.65
+2025-11-07,economy,Will the September 2025 unemployment rate be ≥4.5%?,10.59,0.0384,1059.06
+2025-11-14,climate,Will global temperature increase by between 1.00ºC and 1.04ºC in September 2025?,10.59,0.0241,1059.32
+2025-11-14,climate,Will global temperature increase by between 1.10ºC and 1.14ºC in October 2025?,10.59,0.0352,1059.69
+2025-11-14,climate,Will global temperature increase by between 1.15ºC and 1.19ºC in October 2025?,10.6,0.0638,1060.36
+2025-11-14,climate,Will global temperature increase by less than 1.00ºC in September 2025?,10.6,0.0417,1060.81
+2025-11-21,world,Will Israel win Miss Universe 2025?,10.61,0.0471,1061.31
+2025-12-01,climate,Cat 3+ hurricane hits Miami in 2025?,10.61,0.0811,1062.17
+2025-12-01,natural_disaster,Cat 3+ hurricane hits Miami in 2025?,10.62,0.0811,1063.03
+2025-12-01,natural_disaster,Megaquake by November 30?,10.63,0.0695,1063.77
+2025-12-01,natural_disaster,Will a cat 5 hurricane make US landfall during Hurricane Season 2025?,10.64,0.0811,1064.63
+2025-12-01,earthquake,Megaquake by November 30?,10.65,0.0695,1065.37
+2025-12-01,economy,"Will the total number of TSA passengers for November 23-30 be between 24,000,000",10.65,0.0363,1065.76
+2025-12-02,climate,Will between 20 and 23 named storms occur in the 2025 Atlantic hurricane season?,10.66,0.0811,1066.62
+2025-12-02,climate,Will between 12 and 15 named storms occur in the 2025 Atlantic hurricane season?,10.67,0.0753,1067.42
+2025-12-02,climate,Will more than 23 named storms occur in the 2025 Atlantic hurricane season?,10.67,0.0811,1068.29
+2025-12-08,world,Will Baluta win by 6-9%?,10.68,0.0753,1069.09
+2025-12-09,climate,Will global temperature increase by between 1.15ºC and 1.19ºC in November 2025?,10.69,0.0753,1069.9
+2025-12-10,weather,Will the highest temperature in London be 63°F or higher on December 9?,10.7,0.032,1070.24
+2025-12-15,geopolitics,Will Jara win by at least 5%?,10.7,0.0638,1070.92
+2025-12-18,economy,Will a dozen eggs cost between $3.75–4.00 in November?,10.71,0.0235,1071.18
+2025-12-22,world,Will the Australian hero donation campaign raise less than $2.0 million by Decem,10.71,0.0025,1071.2
+2026-01-01,geopolitics,Israel strike on Yemen by December 31?,10.71,0.0811,1072.07
+2026-01-01,geopolitics,Ukraine strike on Moscow municipality by December 31?,10.72,0.0753,1072.88
+2026-01-01,geopolitics,Will Zelenskyy and Putin meet next in US?,10.73,0.0262,1073.16
+2026-01-01,geopolitics,Will Russia recapture territory in Vilne by December 31?,10.73,0.0638,1073.84
+2026-01-01,world,Israel strike on Yemen by December 31?,10.74,0.0811,1074.72
+2026-01-01,world,Morocco snap election called by December 31?,10.75,0.0471,1075.22
+2026-01-01,world,Lee Jun-seok in jail in 2025?,10.75,0.0753,1076.03
+2026-01-01,world,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,10.76,0.0689,1076.77
+2026-01-01,climate,Will 27 named typhoons occur in the Northwest Pacific in 2025?,10.77,0.0417,1077.22
+2026-01-01,natural_disaster,Nothing Ever Happens: Natural Disaster Edition,10.77,0.0582,1077.85
+2026-01-01,natural_disaster,Megaquake by December 31?,10.78,0.0695,1078.6
+2026-01-01,earthquake,Nothing Ever Happens: Natural Disaster Edition,10.79,0.0582,1079.23
+2026-01-01,earthquake,Megaquake by December 31?,10.79,0.0695,1079.98
+2026-01-01,earthquake,Magnitude 6.5+ earthquake in LA before 2026?,10.8,0.0582,1080.6
+2026-01-01,economy,Will Elon Musk's net worth be between $440b and $450b on December 31?,10.81,0.0695,1081.36
+2026-01-01,economy,Will the official USD to ARS exchange rate be between 1375.00 and 1399.99 on Dec,10.81,0.0689,1082.1
+2026-01-01,economy,Will Elon Musk's net worth be at least $670b on December 31?,10.82,0.0695,1082.85
+2026-01-01,nuclear,Nothing Ever Happens: Nuclear Edition,10.83,0.0811,1083.73
+2026-01-01,geopolitics,Ukraine election called in 2025?,10.84,0.0811,1084.61
+2026-01-01,world,Ukraine election called in 2025?,10.85,0.0811,1085.49
+2026-01-09,economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,10.85,0.0712,1086.26
+2026-01-13,economy,Will monthly inflation increase by 0.3% in November?,10.86,0.0695,1087.02
+2026-01-13,economy,Will monthly inflation increase by 0.1% or less in November?,10.87,0.0363,1087.41
+2026-01-13,climate,Will 60 to 89 tornadoes occur in the United States in December?,10.87,0.0695,1088.17
+2026-01-13,climate,Will 90 to 119 tornadoes occur in the United States in December?,10.88,0.0315,1088.51
+2026-01-16,geopolitics,Ukraine hits Moscow by January 15?,10.89,0.0449,1089.0
+2026-01-19,world,Will Pedro Passos Coelho win the 1st round of the 2026 Portugal presidential ele,10.89,0.004,1089.04
+2026-01-19,world,Will André Ventura win 4th place in the 1st round of the 2026 Portugal president,10.89,0.0417,1089.5
+2026-01-23,world,No change in Bank of Japan's interest rates after January 2026 meeting?,10.89,0.0811,1090.38
+2026-01-23,world,Will João Cotrim de Figueiredo win between 16% and 18% of votes in the first rou,10.9,0.0417,1090.83
+2026-01-23,economy,No change in Bank of Japan's interest rates after January 2026 meeting?,10.91,0.0811,1091.72
+2026-01-29,world,"Will the total number of TSA passengers for January 28 be between 2,000,000 and ",10.92,0.0695,1092.48
+2026-01-30,economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,10.92,0.0695,1093.24
+2026-02-01,geopolitics,Odds of Khamenei out by February over 50% in January?,10.93,0.0811,1094.12
+2026-02-01,economy,"Will the median home value in the San Francisco Metro area be between $1,080,000",10.94,0.0055,1094.18
+2026-02-01,economy,"Will the median home value in the San Francisco Metro area be less than $1,060,0",10.94,0.0811,1095.07
+2026-02-02,natural_disaster,Megaquake by January 31?,10.95,0.0811,1095.96
+2026-02-02,earthquake,Megaquake by January 31?,10.96,0.0811,1096.85
+2026-02-05,geopolitics,Will the US strike Venezuela next?,10.97,0.0076,1096.93
+2026-02-05,world,Will the US strike Venezuela next?,10.97,0.0076,1097.02
+2026-02-05,world,Will the US strike Colombia next?,10.97,0.0055,1097.08
+2026-02-07,geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",10.97,0.0209,1097.3
+2026-02-07,geopolitics,"US strikes Iran by February 6, 2026?",10.97,0.0272,1097.6
+2026-02-07,world,"Will the US next strike Iran on February 4, 2026 (ET)?",10.98,0.0209,1097.83
+2026-02-07,world,"US strikes Iran by February 6, 2026?",10.98,0.0272,1098.13
+2026-02-09,world,Will the Bhumjaithai Party (BJT) win fewer than 90 seats in the 2026 Thai legisl,10.98,0.0604,1098.79
+2026-02-09,world,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",10.99,0.0055,1098.85
+2026-02-09,world,Will People’s Party (PPLE) finish in third place by number of seats in the 2026 ,10.99,0.0638,1099.56
+2026-02-09,economy,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",11.0,0.0055,1099.62
+2026-02-11,world,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",11.0,0.0811,1100.51
+2026-02-11,world,Will annual inflation in Argentina increase by less than 24% in January 2026?,11.01,0.0444,1101.0
+2026-02-11,economy,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",11.01,0.0811,1101.89
+2026-02-11,economy,Will annual inflation in Argentina increase by less than 24% in January 2026?,11.02,0.0444,1102.38
+2026-02-13,world,"Will the total number of TSA passengers for February 12 be less than 1,600,000?",11.02,0.0526,1102.96
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,11.03,0.0246,1103.23
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,11.03,0.0582,1103.87
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in another country?,11.04,0.0526,1104.45
+2026-02-26,nuclear,"Will no qualifying diplomatic US-Iran meeting occur by April 30, 2026?",11.04,0.0582,1105.1
+2026-03-01,geopolitics,"Will Iran close its airspace by February 28, 2026?",11.05,-1.0,1094.04
+2026-03-01,world,Will Israel strike Iraq by February 28?,10.94,0.0638,1094.74
+2026-03-01,economy,Will Elon Musk’s net worth be between $650b and $660b on February 28?,10.95,0.0471,1095.26
+2026-03-01,economy,Will Elon Musk’s net worth be between $690b and $700b on February 28?,10.95,0.0858,1096.2
+2026-03-02,geopolitics,Will the US strike Colombia next?,10.96,0.0101,1096.31
+2026-03-02,world,Will the US strike Colombia next?,10.96,0.0101,1096.42
+2026-03-03,geopolitics,"US strikes Yemen by February 28, 2026?",10.96,0.0582,1097.06
+2026-03-27,climate,Will the maximum Arctic sea ice extent this winter be at least 15m square kilome,10.97,0.0638,1097.76
+2026-03-27,economy,Will Mexico’s February unemployment rate be 2.6%?,10.98,-1.0,1086.78
+2026-03-28,world,Will Russia capture Kostyantynivka by March 31?,10.87,0.0695,1087.54
+2026-03-29,geopolitics,Will Russia enter Shevchenko by March 31?,10.88,0.0638,1088.23
+2026-03-29,climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,10.88,0.0793,1089.09
+2026-03-31,nuclear,US/Israel strike on Fordow nuclear facility by March 31?,10.89,0.0811,1089.98
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in another country?,10.9,0.0325,1090.33
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,10.9,0.0417,1090.78
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,10.91,0.0157,1090.96
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,10.91,0.0035,1090.99
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in another European country?,10.91,0.0111,1091.11
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,10.91,0.0025,1091.14
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,10.91,0.0178,1091.34
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Russia?,10.91,0.0055,1091.4
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Austria?,10.91,0.0025,1091.42
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Iran?,10.91,0.0045,1091.47
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in Kazakhstan?,10.91,0.0035,1091.51
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,10.92,0.0076,1091.59
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in Switzerland?,10.92,0.0091,1091.69
+2026-04-13,geopolitics,"Military action against Iran ends by April 26, 2026?",10.92,0.0101,1091.8
+2026-04-24,economy,Will the Bank of Russia increase the key rate after the April Meeting?,10.92,0.0753,1092.63
+2026-04-30,economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,10.93,0.0811,1093.51
+2026-05-01,world,Netanyahu out by April 30?,10.94,0.0753,1094.34
+2026-05-01,world,"Russia x Ukraine ceasefire by April 30, 2026?",10.94,0.0582,1094.97
+2026-05-01,war,Joe Kent charged by April 30?,10.95,0.0638,1095.67
+2026-05-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",10.96,0.0695,1096.43
+2026-05-01,nuclear,Israel military action against Fordow nuclear facility by April 30?,10.96,0.0776,1097.28
+2026-05-04,economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",10.97,0.0293,1097.6
+2026-05-10,geopolitics,Will the next US x Iran diplomatic meeting be on May 10?,10.98,0.0157,1097.78
+2026-05-31,world,Will Anže Logar be the next Prime Minister of Slovenia?,10.98,0.0325,1098.13
+2026-06-01,geopolitics,"Will Russia capture all of Prymorske by May 31, 2026?",10.98,0.0695,1098.9
+2026-06-01,geopolitics,Will Trump meet with Giorgia Meloni in May 2026?,10.99,0.0811,1099.79
+2026-06-01,geopolitics,Will the flotilla reach Gaza by May 31?,11.0,0.0471,1100.31
+2026-06-01,climate,Will a hurricane make landfall in the US by May 31?,11.0,0.0753,1101.13
+2026-06-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by May 31, 2026?",11.01,0.0811,1102.03
+2026-06-04,world,Will Kim Kyo-heung win the 2026 Incheon mayoral election?,11.02,0.0417,1102.49
+2026-06-10,economy,Will monthly inflation increase by 0.3% in May?,11.02,0.0526,1103.07
+2026-06-16,world,Bank of Japan decreases interest rates after the June 2026 meeting?,11.03,0.0582,1103.71
+2026-06-17,geopolitics,"Will Israel and Lebanon hold a diplomatic meeting by June 15, 2026?",11.04,0.0565,1104.33
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another European country?,11.04,0.0025,1104.36
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,11.04,0.0005,1104.37
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Oman?,11.04,0.0065,1104.44
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Austria?,11.04,0.0005,1104.44
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another country?,11.04,0.003,1104.48
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Turkey?,11.04,0.0137,1104.63
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in the United States?,11.05,0.0005,1104.63
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,11.05,0.0005,1104.64
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,11.05,0.0015,1104.66
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,11.05,0.0015,1104.67
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Russia?,11.05,0.0005,1104.68
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,11.05,0.0005,1104.68
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Italy?,11.05,0.0005,1104.69
+2026-06-21,nuclear,"Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",11.05,0.0336,1105.06
+2026-06-22,natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,11.05,0.004,1105.1
+2026-06-22,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,11.05,-1.0,1094.05
+2026-06-22,earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,10.94,0.004,1094.1
+2026-06-22,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,10.94,-1.0,1083.16
+2026-06-25,economy,Will Durable Goods Orders MoM be between 4% and 6% in May?,10.83,0.0735,1083.95
+2026-06-29,geopolitics,"Labour leadership election scheduled by December 31, 2026?",10.84,0.0116,1084.08
+2026-06-29,natural_disaster,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,10.84,-1.0,1073.24
+2026-06-29,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,10.73,0.0582,1073.86
+2026-06-29,natural_disaster,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.74,0.0373,1074.26
+2026-06-29,earthquake,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,10.74,-1.0,1063.52
+2026-06-29,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,10.64,0.0582,1064.14
+2026-06-29,earthquake,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.64,0.0373,1064.53
+2026-06-30,world,Will the Central Bank of Colombia announce no change at the June meeting?,10.65,0.0753,1065.34
+2026-06-30,economy,Will the Central Bank of Colombia announce no change at the June meeting?,10.65,0.0753,1066.14
+2026-07-01,geopolitics,Will Turkey sign the US x Iran memorandum of understanding?,10.66,0.0811,1067.0
+2026-07-01,natural_disaster,Megaquake by June 30?,10.67,0.0638,1067.68
+2026-07-01,earthquake,Megaquake by June 30?,10.68,0.0638,1068.37
+2026-07-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by June 30, 2026?",10.68,0.0638,1069.05
+2026-07-06,natural_disaster,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,10.69,0.0055,1069.11
+2026-07-06,earthquake,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,10.69,0.0055,1069.16
+2026-07-20,world,Will Angela Rayner be the next Prime Minister of the United Kingdom in 2026?,10.69,0.0811,1070.03
+2026-07-20,natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.7,0.0411,1070.47
+2026-07-20,natural_disaster,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.7,0.0315,1070.81
+2026-07-20,earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.71,0.0411,1071.25
+2026-07-20,earthquake,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,10.71,0.0315,1071.59
+2026-07-23,climate,NYC Air Quality Index below 100 by July 20?,10.72,0.0116,1071.71
+2026-08-01,geopolitics, Iran agrees to end enrichment of uranium by July 31?,10.72,0.0811,1072.58
+2026-08-01,geopolitics,Will Russia capture Stavky by July 31?,10.73,0.0471,1073.08
+2026-08-01,nuclear, Iran agrees to end enrichment of uranium by July 31?,10.73,0.0811,1073.96
+2026-08-02,climate,Will the highest recorded wind on Mt. Washington in July be at least 105 mph?,10.74,0.0695,1074.7
+2026-08-02,climate,Will the highest recorded wind on Mt. Washington in July be at least 110 mph?,10.75,0.0695,1075.45
+2026-08-04,geopolitics,"Will Trump and Netanyahu only be photographed together by July 31, 2026?",10.75,0.0288,1075.76
+2026-08-06,economy,Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the ,10.76,0.0449,1076.24
+2026-08-07,geopolitics,"Will Iran target a Arab country on August 3, 2026?",10.76,0.0005,1076.25
+2026-08-10,climate,Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from,10.76,0.0695,1076.99
+2026-08-10,natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,10.77,0.0256,1077.27
+2026-08-10,earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,10.77,0.0256,1077.55
+2026-08-13,natural_disaster,"Will Typhoon Dolphin be a ""Violent Typhoon"" at Japan landfall?",10.78,0.0417,1078.0
+2026-08-17,climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.78,0.006,1078.06
+2026-08-17,climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,10.78,0.0526,1078.63
+2026-08-17,climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,10.79,0.0638,1079.32
+2026-08-17,natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.79,0.006,1079.38
+2026-08-17,natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,10.79,0.004,1079.42
+2026-08-17,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,10.79,-1.0,1068.63
+2026-08-17,earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.69,0.006,1068.69
+2026-08-17,earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,10.69,0.004,1068.74
+2026-08-17,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,10.69,-1.0,1058.05
+2026-08-24,climate,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,10.58,0.0811,1058.91
+2026-08-24,climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.59,0.0695,1059.64
+2026-08-24,natural_disaster,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,10.6,0.0811,1060.5
+2026-08-24,natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.61,0.0695,1061.24
+2026-08-24,earthquake,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,10.61,0.0811,1062.1
+2026-08-24,earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,10.62,0.0695,1062.84
+2026-08-25,climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,10.63,0.0753,1063.64
+2026-08-25,natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,10.64,0.0753,1064.44
+2026-08-25,earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,10.64,0.0753,1065.24

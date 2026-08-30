@@ -1,0 +1,156 @@
+resolution_date,category,question,stake_usd,r_mult,equity
+2025-12-15,geopolitics,Will Jara win by at least 5%?,10.0,0.0638,1000.64
+2026-01-01,geopolitics,Ukraine election called in 2025?,10.01,0.0811,1001.45
+2026-01-01,world,Ukraine election called in 2025?,10.01,0.0811,1002.26
+2026-01-09,economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,10.02,0.0712,1002.98
+2026-01-13,climate,Will 60 to 89 tornadoes occur in the United States in December?,10.03,0.0695,1003.67
+2026-01-13,climate,Will 90 to 119 tornadoes occur in the United States in December?,10.04,0.0315,1003.99
+2026-01-16,geopolitics,Ukraine hits Moscow by January 15?,10.04,0.0449,1004.44
+2026-01-19,world,Will Pedro Passos Coelho win the 1st round of the 2026 Portugal presidential ele,10.04,0.004,1004.48
+2026-01-19,world,Will André Ventura win 4th place in the 1st round of the 2026 Portugal president,10.04,0.0417,1004.9
+2026-01-23,world,No change in Bank of Japan's interest rates after January 2026 meeting?,10.05,0.0811,1005.71
+2026-01-23,world,Will João Cotrim de Figueiredo win between 16% and 18% of votes in the first rou,10.06,0.0417,1006.13
+2026-01-23,economy,No change in Bank of Japan's interest rates after January 2026 meeting?,10.06,0.0811,1006.95
+2026-01-29,world,"Will the total number of TSA passengers for January 28 be between 2,000,000 and ",10.07,0.0695,1007.65
+2026-01-30,economy,Will Donald Trump announce a new nominee for Chair of the Federal Reserve on Jan,10.08,0.0695,1008.35
+2026-02-01,geopolitics,Odds of Khamenei out by February over 50% in January?,10.08,0.0811,1009.17
+2026-02-01,economy,"Will the median home value in the San Francisco Metro area be between $1,080,000",10.09,0.0055,1009.22
+2026-02-01,economy,"Will the median home value in the San Francisco Metro area be less than $1,060,0",10.09,0.0811,1010.04
+2026-02-02,natural_disaster,Megaquake by January 31?,10.1,0.0811,1010.86
+2026-02-02,earthquake,Megaquake by January 31?,10.11,0.0811,1011.68
+2026-02-05,geopolitics,Will the US strike Venezuela next?,10.12,0.0076,1011.76
+2026-02-05,world,Will the US strike Venezuela next?,10.12,0.0076,1011.83
+2026-02-05,world,Will the US strike Colombia next?,10.12,0.0055,1011.89
+2026-02-07,geopolitics,"Will the US next strike Iran on February 4, 2026 (ET)?",10.12,0.0209,1012.1
+2026-02-07,geopolitics,"US strikes Iran by February 6, 2026?",10.12,0.0272,1012.38
+2026-02-07,world,"Will the US next strike Iran on February 4, 2026 (ET)?",10.12,0.0209,1012.59
+2026-02-07,world,"US strikes Iran by February 6, 2026?",10.13,0.0272,1012.86
+2026-02-09,world,Will the Bhumjaithai Party (BJT) win fewer than 90 seats in the 2026 Thai legisl,10.13,0.0604,1013.47
+2026-02-09,world,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",10.13,0.0055,1013.53
+2026-02-09,world,Will People’s Party (PPLE) finish in third place by number of seats in the 2026 ,10.14,0.0638,1014.18
+2026-02-09,economy,"Will the total number of TSA passengers for February 6 be between 1,900,000 and ",10.14,0.0055,1014.23
+2026-02-11,world,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",10.14,0.0811,1015.06
+2026-02-11,world,Will annual inflation in Argentina increase by less than 24% in January 2026?,10.15,0.0444,1015.51
+2026-02-11,economy,"Will the total number of TSA passengers for February 10 be greater than 2,400,00",10.16,0.0811,1016.33
+2026-02-11,economy,Will annual inflation in Argentina increase by less than 24% in January 2026?,10.16,0.0444,1016.78
+2026-02-13,world,"Will the total number of TSA passengers for February 12 be less than 1,600,000?",10.17,0.0526,1017.32
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,10.17,0.0246,1017.57
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,10.18,0.0582,1018.16
+2026-02-26,nuclear,Will the next diplomatic US-Iran meeting be in another country?,10.18,0.0526,1018.69
+2026-02-26,nuclear,"Will no qualifying diplomatic US-Iran meeting occur by April 30, 2026?",10.19,0.0582,1019.29
+2026-03-01,geopolitics,"Will Iran close its airspace by February 28, 2026?",10.19,-1.0,1009.09
+2026-03-01,world,Will Israel strike Iraq by February 28?,10.09,0.0638,1009.74
+2026-03-01,economy,Will Elon Musk’s net worth be between $650b and $660b on February 28?,10.1,0.0471,1010.21
+2026-03-01,economy,Will Elon Musk’s net worth be between $690b and $700b on February 28?,10.1,0.0858,1011.08
+2026-03-02,geopolitics,Will the US strike Colombia next?,10.11,0.0101,1011.18
+2026-03-02,world,Will the US strike Colombia next?,10.11,0.0101,1011.28
+2026-03-03,geopolitics,"US strikes Yemen by February 28, 2026?",10.11,0.0582,1011.87
+2026-03-27,climate,Will the maximum Arctic sea ice extent this winter be at least 15m square kilome,10.12,0.0638,1012.52
+2026-03-27,economy,Will Mexico’s February unemployment rate be 2.6%?,10.13,-1.0,1002.39
+2026-03-28,world,Will Russia capture Kostyantynivka by March 31?,10.02,0.0695,1003.09
+2026-03-29,geopolitics,Will Russia enter Shevchenko by March 31?,10.03,0.0638,1003.73
+2026-03-29,climate,Will the maximum Arctic sea ice extent this winter be between 14.4m & 14.6m squa,10.04,0.0793,1004.53
+2026-03-31,nuclear,US/Israel strike on Fordow nuclear facility by March 31?,10.05,0.0811,1005.34
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in another country?,10.05,0.0325,1005.67
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,10.06,0.0417,1006.09
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Qatar?,10.06,0.0157,1006.24
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,10.06,0.0035,1006.28
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in another European country?,10.06,0.0111,1006.39
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,10.06,0.0025,1006.42
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,10.06,0.0178,1006.6
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Russia?,10.07,0.0055,1006.65
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Austria?,10.07,0.0025,1006.68
+2026-04-09,nuclear,Will the next diplomatic US-Iran meeting be in Iran?,10.07,0.0045,1006.72
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in Kazakhstan?,10.07,0.0035,1006.76
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,10.07,0.0076,1006.83
+2026-04-11,nuclear,Will the next diplomatic US-Iran meeting be in Switzerland?,10.07,0.0091,1006.92
+2026-04-13,geopolitics,"Military action against Iran ends by April 26, 2026?",10.07,0.0101,1007.03
+2026-04-24,economy,Will the Bank of Russia increase the key rate after the April Meeting?,10.07,0.0753,1007.78
+2026-04-30,economy,Will US GDP growth in Q1 2026 be greater than 3.5%?,10.08,0.0811,1008.6
+2026-05-01,world,Netanyahu out by April 30?,10.09,0.0753,1009.36
+2026-05-01,world,"Russia x Ukraine ceasefire by April 30, 2026?",10.09,0.0582,1009.95
+2026-05-01,war,Joe Kent charged by April 30?,10.1,0.0638,1010.59
+2026-05-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by April 30, 2026?",10.11,0.0695,1011.3
+2026-05-01,nuclear,Israel military action against Fordow nuclear facility by April 30?,10.11,0.0776,1012.08
+2026-05-04,economy,"Will the Audemars Piguet Index hit $42,500 (HIGH) by April 30?",10.12,0.0293,1012.38
+2026-05-10,geopolitics,Will the next US x Iran diplomatic meeting be on May 10?,10.12,0.0157,1012.54
+2026-05-31,world,Will Anže Logar be the next Prime Minister of Slovenia?,10.13,0.0325,1012.86
+2026-06-01,geopolitics,"Will Russia capture all of Prymorske by May 31, 2026?",10.13,0.0695,1013.57
+2026-06-01,geopolitics,Will Trump meet with Giorgia Meloni in May 2026?,10.14,0.0811,1014.39
+2026-06-01,geopolitics,Will the flotilla reach Gaza by May 31?,10.14,0.0471,1014.87
+2026-06-01,climate,Will a hurricane make landfall in the US by May 31?,10.15,0.0753,1015.63
+2026-06-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by May 31, 2026?",10.16,0.0811,1016.46
+2026-06-04,world,Will Kim Kyo-heung win the 2026 Incheon mayoral election?,10.16,0.0417,1016.88
+2026-06-10,economy,Will monthly inflation increase by 0.3% in May?,10.17,0.0526,1017.42
+2026-06-16,world,Bank of Japan decreases interest rates after the June 2026 meeting?,10.17,0.0582,1018.01
+2026-06-17,geopolitics,"Will Israel and Lebanon hold a diplomatic meeting by June 15, 2026?",10.18,0.0565,1018.58
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another European country?,10.19,0.0025,1018.61
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Iraq?,10.19,0.0005,1018.61
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Oman?,10.19,0.0065,1018.68
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Austria?,10.19,0.0005,1018.68
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another country?,10.19,0.003,1018.72
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Turkey?,10.19,0.0137,1018.85
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in the United States?,10.19,0.0005,1018.86
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Egypt?,10.19,0.0005,1018.86
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in another Middle East/North Africa ,10.19,0.0015,1018.88
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Saudi Arabia?,10.19,0.0015,1018.9
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Russia?,10.19,0.0005,1018.9
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in the UAE?,10.19,0.0005,1018.91
+2026-06-21,nuclear,Will the next diplomatic US-Iran meeting be in Italy?,10.19,0.0005,1018.91
+2026-06-21,nuclear,"Will no qualifying diplomatic US-Iran meeting occur by June 30, 2026?",10.19,0.0336,1019.25
+2026-06-22,natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,10.19,0.004,1019.29
+2026-06-22,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,10.19,-1.0,1009.1
+2026-06-22,earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Jun,10.09,0.004,1009.14
+2026-06-22,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,10.09,-1.0,999.05
+2026-06-25,economy,Will Durable Goods Orders MoM be between 4% and 6% in May?,9.99,0.0735,999.78
+2026-06-29,geopolitics,"Labour leadership election scheduled by December 31, 2026?",10.0,0.0116,999.9
+2026-06-29,natural_disaster,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,10.0,-1.0,989.9
+2026-06-29,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,9.9,0.0582,990.48
+2026-06-29,natural_disaster,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.9,0.0373,990.85
+2026-06-29,earthquake,Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from J,9.91,-1.0,980.94
+2026-06-29,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Ju,9.81,0.0582,981.51
+2026-06-29,earthquake,Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.82,0.0373,981.88
+2026-06-30,world,Will the Central Bank of Colombia announce no change at the June meeting?,9.82,0.0753,982.61
+2026-06-30,economy,Will the Central Bank of Colombia announce no change at the June meeting?,9.83,0.0753,983.35
+2026-07-01,geopolitics,Will Turkey sign the US x Iran memorandum of understanding?,9.83,0.0811,984.15
+2026-07-01,natural_disaster,Megaquake by June 30?,9.84,0.0638,984.78
+2026-07-01,earthquake,Megaquake by June 30?,9.85,0.0638,985.41
+2026-07-01,nuclear,"Iran agrees to surrender enriched uranium stockpile by June 30, 2026?",9.85,0.0638,986.04
+2026-07-06,natural_disaster,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,9.86,0.0055,986.09
+2026-07-06,earthquake,Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from J,9.86,0.0055,986.15
+2026-07-20,world,Will Angela Rayner be the next Prime Minister of the United Kingdom in 2026?,9.86,0.0811,986.95
+2026-07-20,natural_disaster,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.87,0.0411,987.35
+2026-07-20,natural_disaster,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.87,0.0315,987.66
+2026-07-20,earthquake,Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.88,0.0411,988.07
+2026-07-20,earthquake,Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from Ju,9.88,0.0315,988.38
+2026-07-23,climate,NYC Air Quality Index below 100 by July 20?,9.88,0.0116,988.49
+2026-08-01,geopolitics, Iran agrees to end enrichment of uranium by July 31?,9.88,0.0811,989.3
+2026-08-01,geopolitics,Will Russia capture Stavky by July 31?,9.89,0.0471,989.76
+2026-08-01,nuclear, Iran agrees to end enrichment of uranium by July 31?,9.9,0.0811,990.56
+2026-08-02,climate,Will the highest recorded wind on Mt. Washington in July be at least 105 mph?,9.91,0.0695,991.25
+2026-08-02,climate,Will the highest recorded wind on Mt. Washington in July be at least 110 mph?,9.91,0.0695,991.94
+2026-08-04,geopolitics,"Will Trump and Netanyahu only be photographed together by July 31, 2026?",9.92,0.0288,992.23
+2026-08-06,economy,Will the Bank of Brazil decrease the target for the Selic rate by 25 bps at the ,9.92,0.0449,992.67
+2026-08-07,geopolitics,"Will Iran target a Arab country on August 3, 2026?",9.93,0.0005,992.68
+2026-08-10,climate,Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from,9.93,0.0695,993.37
+2026-08-10,natural_disaster,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,9.93,0.0256,993.62
+2026-08-10,earthquake,Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from Au,9.94,0.0256,993.88
+2026-08-13,natural_disaster,"Will Typhoon Dolphin be a ""Violent Typhoon"" at Japan landfall?",9.94,0.0417,994.29
+2026-08-17,climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.94,0.006,994.35
+2026-08-17,climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,9.94,0.0526,994.87
+2026-08-17,climate,Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from A,9.95,0.0638,995.51
+2026-08-17,natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.96,0.006,995.57
+2026-08-17,natural_disaster,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,9.96,0.004,995.61
+2026-08-17,natural_disaster,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,9.96,-1.0,985.65
+2026-08-17,earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.86,0.006,985.71
+2026-08-17,earthquake,Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from Aug,9.86,0.004,985.75
+2026-08-17,earthquake,Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from Au,9.86,-1.0,975.89
+2026-08-24,climate,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,9.76,0.0811,976.68
+2026-08-24,climate,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.77,0.0695,977.36
+2026-08-24,natural_disaster,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,9.77,0.0811,978.16
+2026-08-24,natural_disaster,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.78,0.0695,978.84
+2026-08-24,earthquake,Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from A,9.79,0.0811,979.63
+2026-08-24,earthquake,Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from A,9.8,0.0695,980.31
+2026-08-25,climate,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,9.8,0.0753,981.05
+2026-08-25,natural_disaster,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,9.81,0.0753,981.79
+2026-08-25,earthquake,Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from A,9.82,0.0753,982.53

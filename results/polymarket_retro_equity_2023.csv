@@ -1,0 +1,28 @@
+resolution_date,category,question,stake_usd,r_mult,equity
+2023-07-01,geopolitics,Will a nuclear weapon detonate by June 30?,10.0,0.0638,1000.64
+2023-10-19,weather,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,10.01,0.0753,1001.39
+2023-10-19,climate,Will there be 19 or more named storms during the 2023 Atlantic Hurricane Season?,10.01,0.0753,1002.15
+2023-12-01,weather,Will there be 21+ named storms during the Atlantic Hurricane Season?,10.02,0.0471,1002.62
+2023-12-01,climate,Will there be 21+ named storms during the Atlantic Hurricane Season?,10.03,0.0471,1003.09
+2023-12-01,war,Will Hezbollah officially join the war by Nov 30?,10.03,0.0811,1003.9
+2023-12-01,war,Will Azerbaijan invade Armenia by Nov 30?,10.04,0.0811,1004.72
+2023-12-01,war,Will US attack Iran by Nov 30?,10.05,0.0638,1005.36
+2024-01-01,geopolitics,Will a nuclear weapon detonate by December 31?,10.05,0.0793,1006.16
+2024-01-01,war,Will another nation declare war in the Israel-Hamas conflict?,10.06,0.0695,1006.85
+2024-01-01,war,Will US attack Iran in 2023?,10.07,0.0582,1007.44
+2024-01-01,war,Will Iran officially join the war in 2023?,10.07,0.0695,1008.14
+2024-01-04,war,Will Hezbollah officially join the war in 2023?,10.08,0.0811,1008.96
+2024-01-12,weather,Will the final global heat increase be 1.18 or greater for 2023?,10.09,0.0811,1009.78
+2024-01-12,weather,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),10.1,0.0753,1010.54
+2024-01-12,weather,Will the final global heat increase be 1.13 or greater for 2023?,10.11,0.0811,1011.36
+2024-01-12,weather,Will the final global heat increase be 1.11 or greater for 2023?,10.11,0.0811,1012.18
+2024-01-12,weather,Will the final global heat increase be 1.08 or greater for 2023?,10.12,0.0753,1012.94
+2024-01-12,weather,Will the final global heat increase be 1.05 or greater for 2023?,10.13,0.0695,1013.64
+2024-01-12,weather,Will the final global heat increase be 1.15 or greater for 2023?,10.14,0.0753,1014.41
+2024-01-12,climate,Will the final global heat increase be 1.18 or greater for 2023?,10.14,0.0811,1015.23
+2024-01-12,climate,Will NASA record 2023 as the hottest year on record? (1.03°C or higher),10.15,0.0753,1015.99
+2024-01-12,climate,Will the final global heat increase be 1.13 or greater for 2023?,10.16,0.0811,1016.82
+2024-01-12,climate,Will the final global heat increase be 1.11 or greater for 2023?,10.17,0.0811,1017.64
+2024-01-12,climate,Will the final global heat increase be 1.08 or greater for 2023?,10.18,0.0753,1018.41
+2024-01-12,climate,Will the final global heat increase be 1.05 or greater for 2023?,10.18,0.0695,1019.12
+2024-01-12,climate,Will the final global heat increase be 1.15 or greater for 2023?,10.19,0.0753,1019.88
