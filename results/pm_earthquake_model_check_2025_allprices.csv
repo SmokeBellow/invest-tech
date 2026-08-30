@@ -1,0 +1,39 @@
+question,side,magnitude,kind,n,window_days,entry_price,model_prob,gap,won,r_mult,volume
+Megaquake by August 31?,Yes,8.0,at_least,1,46.38,0.125,0.1304,0.0054,1,7.0,92923.317981
+Megaquake by August 31?,No,8.0,at_least,1,46.38,0.875,0.8696,-0.0054,0,-1.0,92923.317981
+Megaquake by October 31?,Yes,8.0,at_least,1,30.33,0.085,0.0873,0.0023,0,-1.0,91745.735641
+Megaquake by October 31?,No,8.0,at_least,1,30.33,0.915,0.9127,-0.0023,1,0.0929,91745.735641
+Megaquake by September 30?,Yes,8.0,at_least,1,56.3,0.17,0.156,-0.014,0,-1.0,86885.742608
+Megaquake by September 30?,No,8.0,at_least,1,56.3,0.83,0.844,0.014,1,0.2048,86885.742608
+Earthquake 7.0 or above by August 31?,Yes,7.0,at_least,1,40.2,0.755,0.8049,0.0499,1,0.3245,46210.974413
+Earthquake 7.0 or above by August 31?,No,7.0,at_least,1,40.2,0.245,0.1951,-0.0499,0,-1.0,46210.974413
+Megaquake in May?,Yes,8.0,at_least,1,29.83,0.065,0.0859,0.0209,0,-1.0,43801.460618
+Megaquake in May?,No,8.0,at_least,1,29.83,0.935,0.9141,-0.0209,1,0.0695,43801.460618
+Earthquake 7.0 or above by August 31?,Yes,7.0,at_least,1,44.53,0.77,0.8364,0.0664,1,0.2987,39656.61496
+Earthquake 7.0 or above by August 31?,No,7.0,at_least,1,44.53,0.23,0.1636,-0.0664,0,-1.0,39656.61496
+Earthquake 7.0 or above in April?,Yes,7.0,at_least,1,29.51,0.55,0.6988,0.1488,0,-1.0,34129.433695
+Earthquake 7.0 or above in April?,No,7.0,at_least,1,29.51,0.45,0.3012,-0.1488,1,1.2222,34129.433695
+Earthquake 7.0 or above by August 31?,Yes,7.0,at_least,1,30.25,0.735,0.7077,-0.0273,1,0.3605,309781.34041
+Earthquake 7.0 or above by August 31?,No,7.0,at_least,1,30.25,0.265,0.2923,0.0273,0,-1.0,309781.34041
+Megaquake by November 30?,Yes,8.0,at_least,1,29.99,0.1,0.0864,-0.0136,0,-1.0,29366.018721
+Megaquake by November 30?,No,8.0,at_least,1,29.99,0.9,0.9136,0.0136,1,0.1111,29366.018721
+Earthquake 7.0 or above in June?,Yes,7.0,at_least,1,28.3,0.635,0.6836,0.0486,0,-1.0,214765.965552
+Earthquake 7.0 or above in June?,No,7.0,at_least,1,28.3,0.365,0.3164,-0.0486,1,1.7397,214765.965552
+Megaquake by December 31?,Yes,8.0,at_least,1,91.32,0.23,0.2404,0.0104,0,-1.0,213018.70029
+Megaquake by December 31?,No,8.0,at_least,1,91.32,0.77,0.7596,-0.0104,1,0.2987,213018.70029
+Earthquake 7.0 or above before May?,Yes,7.0,at_least,1,65.67,0.6,0.9308,0.3308,1,0.6667,19521.906155
+Earthquake 7.0 or above before May?,No,7.0,at_least,1,65.67,0.4,0.0692,-0.3308,0,-1.0,19521.906155
+Earthquake 7.0 or above by July 31?,Yes,7.0,at_least,1,9.2,0.315,0.312,-0.003,1,2.1746,180848.470712
+Earthquake 7.0 or above by July 31?,No,7.0,at_least,1,9.2,0.685,0.688,0.003,0,-1.0,180848.470712
+Earthquake 7.0 or above before August?,Yes,7.0,at_least,1,35.59,0.705,0.7648,0.0598,1,0.4184,162354.65366
+Earthquake 7.0 or above before August?,No,7.0,at_least,1,35.59,0.295,0.2352,-0.0598,0,-1.0,162354.65366
+Earthquake 7.0 or above by September 30?,Yes,7.0,at_least,1,60.25,0.885,0.9137,0.0287,1,0.1299,143287.022574
+Earthquake 7.0 or above by September 30?,No,7.0,at_least,1,60.25,0.115,0.0863,-0.0287,0,-1.0,143287.022574
+Megaquake in June?,Yes,8.0,at_least,1,28.23,0.065,0.0815,0.0165,0,-1.0,141456.340638
+Megaquake in June?,No,8.0,at_least,1,28.23,0.935,0.9185,-0.0165,1,0.0695,141456.340638
+Megaquake before August?,Yes,8.0,at_least,1,35.59,0.095,0.1017,0.0067,1,9.5263,1373180.535243
+Megaquake before August?,No,8.0,at_least,1,35.59,0.905,0.8983,-0.0067,0,-1.0,1373180.535243
+Earthquake 7.0 or above in May?,Yes,7.0,at_least,1,30.49,0.64,0.7105,0.0705,1,0.5625,124542.420516
+Earthquake 7.0 or above in May?,No,7.0,at_least,1,30.49,0.36,0.2895,-0.0705,0,-1.0,124542.420516
+Megaquake by August 31?,Yes,8.0,at_least,1,29.47,0.085,0.0849,-0.0001,0,-1.0,110006.185403
+Megaquake by August 31?,No,8.0,at_least,1,29.47,0.915,0.9151,0.0001,1,0.0929,110006.185403

@@ -180,7 +180,15 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", type=int, default=2026)
     ap.add_argument("--max-per-tag", type=int, default=300)
+    ap.add_argument("--min-price", type=float, default=MIN_PRICE,
+                     help="Нижняя граница цены входа (по умолчанию боевая 0.03)")
+    ap.add_argument("--max-price", type=float, default=MAX_PRICE,
+                     help="Верхняя граница цены входа (по умолчанию боевая 0.25; "
+                          "--max-price 1.0 --min-price 0.0 = взять ВСЕ рынки-бакеты "
+                          "с нужными параметрами, не только те, что попали в 3-25¢)")
     args = ap.parse_args()
+    min_price, max_price = args.min_price, args.max_price
+    suffix_price = "" if (min_price, max_price) == (MIN_PRICE, MAX_PRICE) else "_allprices"
 
     markets = fetch_closed_earthquake_markets(args.year, args.max_per_tag)
     print(f"Total unique closed earthquake/natural_disaster markets ({args.year}): {len(markets)}")
@@ -219,7 +227,7 @@ def main():
             if not history:
                 continue
             entry_price = history[0]["p"]  # первая доступная котировка — рынок живёт считаные дни
-            if not (MIN_PRICE <= entry_price <= MAX_PRICE):
+            if not (min_price <= entry_price <= max_price):
                 continue
             gap = p_model[side_name] - entry_price
             r_mult = (1.0 / entry_price - 1.0) if won[side_name] else -1.0
@@ -233,10 +241,10 @@ def main():
             })
 
     print(f"Markets parsed by regex: {n_parsed}, skipped (unknown format): {n_skipped}")
-    print(f"Price observations in [{MIN_PRICE},{MAX_PRICE}] range: {len(rows)}")
+    print(f"Price observations in [{min_price},{max_price}] range: {len(rows)}")
 
     RESULTS_DIR.mkdir(exist_ok=True)
-    with open(RESULTS_DIR / f"pm_earthquake_model_check_{args.year}.csv", "w", newline="") as f:
+    with open(RESULTS_DIR / f"pm_earthquake_model_check_{args.year}{suffix_price}.csv", "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=[
             "question", "side", "magnitude", "kind", "n", "window_days",
             "entry_price", "model_prob", "gap", "won", "r_mult", "volume",
@@ -245,11 +253,11 @@ def main():
         writer.writerows(rows)
 
     # Отчёт по сетке порогов gap — сколько сделок прошло бы фильтр "модель существенно выше рынка"
-    with open(RESULTS_DIR / f"pm_earthquake_model_check_{args.year}.md", "w") as f:
-        f.write(f"# Earthquake model vs market — {args.year}\n\n")
+    with open(RESULTS_DIR / f"pm_earthquake_model_check_{args.year}{suffix_price}.md", "w") as f:
+        f.write(f"# Earthquake model vs market — {args.year}{' (все цены, без 3-25¢ фильтра)' if suffix_price else ''}\n\n")
         f.write(
             f"Разобрано по регулярным выражениям: {n_parsed} рынков, пропущено (не подошёл формат "
-            f"вопроса): {n_skipped}. Всего цен в диапазоне [{MIN_PRICE},{MAX_PRICE}]: {len(rows)}.\n\n"
+            f"вопроса): {n_skipped}. Всего цен в диапазоне [{min_price},{max_price}]: {len(rows)}.\n\n"
         )
         f.write("## Без фильтра по gap (все наблюдения, обе стороны любого рынка)\n\n")
         n = len(rows)
@@ -271,7 +279,7 @@ def main():
             total = sum(r["r_mult"] for r in sub)
             f.write(f"| {gap_thr} | {ns} | {wr:.4f} | {mr:+.4f} | \\${total:+.2f} |\n")
 
-    print(f"Written: results/pm_earthquake_model_check_{args.year}.{{csv,md}}")
+    print(f"Written: results/pm_earthquake_model_check_{args.year}{suffix_price}.{{csv,md}}")
 
 
 if __name__ == "__main__":
