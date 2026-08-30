@@ -1,0 +1,98 @@
+question,side,magnitude,kind,n,window_days,entry_price,model_prob,gap,won,r_mult,volume
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,11,7,0.1,0.1055,0.0055,0,-1.0,883.942129
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,7,6,0.165,0.138,-0.027,0,-1.0,8473.968890000004
+Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,exactly,4,7,0.07,0.0104,-0.0596,0,-1.0,815.4864
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from July 20 - July 26?,Yes,6.5,exactly,3,7,0.04,0.0473,0.0073,0,-1.0,807.4330820000001
+Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from July 6 - July 12?,Yes,6.5,exactly,1,7,0.245,0.3651,0.1201,0,-1.0,7942.829715
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,exactly,2,7,0.14,0.1609,0.0209,0,-1.0,790.595616
+Megaquake by January 31?,Yes,8.0,at_least,1,32.25,0.13,0.0926,-0.0374,0,-1.0,77600.116081
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,12,7,0.065,0.083,0.018,0,-1.0,758.337815
+Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,13,7,0.05,0.0602,0.0102,0,-1.0,752.18115
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,11,7,0.1,0.1055,0.0055,1,9.0,7427.228475
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from July 20 - July 26?,Yes,6.5,exactly,2,7,0.13,0.1609,0.0309,0,-1.0,740.3863349999999
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from August 3 - August 9?,Yes,6.5,exactly,2,7,0.175,0.1609,-0.0141,0,-1.0,730.289354
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23,Yes,5.5,exactly,10,7,0.13,0.123,-0.007,0,-1.0,7289.384365999999
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,9,6,0.12,0.1254,0.0054,0,-1.0,7214.496987000001
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from June 22 - 28?,Yes,6.5,exactly,3,7,0.055,0.0473,-0.0077,0,-1.0,7071.459094000003
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,8,7,0.13,0.1244,-0.0056,0,-1.0,7062.065621999999
+Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23,Yes,5.5,at_most,6,7,0.125,0.1701,0.0451,0,-1.0,7035.504552
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from August 10 - August 16?,Yes,6.5,exactly,2,7,0.155,0.1609,0.0059,0,-1.0,6885.327738
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from August 10 - August 16?,Yes,6.5,exactly,3,7,0.07,0.0473,-0.0227,1,13.2857,6762.40044
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,7,7,0.125,0.1055,-0.0195,1,7.0,6629.729844999999
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,12,6,0.065,0.0502,-0.0148,0,-1.0,6226.292719000001
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from June 15 - 21?,Yes,5.5,exactly,9,7,0.225,0.1304,-0.0946,0,-1.0,5921.872424000001
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from July 27 - August 2?,Yes,6.5,exactly,2,7,0.0905,0.1609,0.0704,0,-1.0,5779.066628000001
+Will there be more than 5 earthquakes of magnitude 6.5 or higher worldwide from June 15 - 21?,Yes,6.5,more_than,5,7,0.105,0.0003,-0.1047,0,-1.0,5362.040544999999
+Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16,Yes,5.5,exactly,13,7,0.05,0.0602,0.0102,0,-1.0,5249.8607569999995
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from June 22 - 28?,Yes,6.5,exactly,2,7,0.105,0.1609,0.0559,0,-1.0,5179.277915
+Will there be exactly 6 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,6,7,0.12,0.0783,-0.0417,0,-1.0,5171.885919999995
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,9,7,0.12,0.1304,0.0104,1,7.3333,5168.270593000001
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,7,7,0.115,0.1055,-0.0095,0,-1.0,5116.478597
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide by March 29?,Yes,6.5,exactly,2,7,0.11,0.1609,0.0509,1,8.0909,50325.829556000055
+Will there be exactly 0 earthquakes of magnitude 6.5 or higher worldwide from August 17 - August 23?,Yes,6.5,exactly,0,7,0.245,0.4141,0.1691,0,-1.0,4872.920532000001
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from June 15 - 21?,Yes,5.5,exactly,7,7,0.16,0.1055,-0.0545,0,-1.0,4812.139596999999
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from July 6 - July 12?,Yes,6.5,exactly,3,7,0.09,0.0473,-0.0427,0,-1.0,471.3898659999999
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,10,6,0.11,0.1014,-0.0086,0,-1.0,4699.699529000002
+Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,13,7,0.06,0.0602,0.0002,0,-1.0,4668.892963
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,11,7,0.08,0.1055,0.0255,0,-1.0,4649.639904
+Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9,Yes,5.5,more_than,13,7,0.12,0.0978,-0.0222,0,-1.0,4642.801066999999
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16,Yes,5.5,exactly,12,7,0.09,0.083,-0.007,0,-1.0,4402.954972
+Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,13,7,0.135,0.0602,-0.0748,0,-1.0,426.043827
+Will there be exactly 6 earthquakes of magnitude 5.5 or higher worldwide from June 15 - 21?,Yes,5.5,exactly,6,7,0.15,0.0783,-0.0717,0,-1.0,4174.640086000001
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,11,6,0.065,0.0745,0.0095,0,-1.0,4105.579596
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,9,7,0.12,0.1304,0.0104,0,-1.0,409.500587
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from August 3 - August 9?,Yes,6.5,exactly,3,7,0.06,0.0473,-0.0127,0,-1.0,40545.358252
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,11,7,0.07,0.1055,0.0355,0,-1.0,403.292266
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23?,Yes,5.5,exactly,9,7,0.12,0.1304,0.0104,0,-1.0,3755.923916
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,7,7,0.11,0.1055,-0.0045,0,-1.0,3533.0591029999955
+Will there be exactly 5 earthquakes of magnitude 6.5 or higher worldwide from June 15 - 21?,Yes,6.5,exactly,5,7,0.12,0.0018,-0.1182,0,-1.0,3471.302533
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from July 14 - July 19?,Yes,6.5,exactly,2,6,0.12,0.1341,0.0141,0,-1.0,3444.206196
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,10,7,0.125,0.123,-0.002,0,-1.0,3389.2512770000008
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,10,7,0.17,0.123,-0.047,0,-1.0,333.81
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,9,7,0.12,0.1304,0.0104,0,-1.0,3286.5971879999997
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,10,7,0.11,0.123,0.013,0,-1.0,3157.817401000001
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide by March 29?,Yes,6.5,exactly,3,7,0.0435,0.0473,0.0038,0,-1.0,29539.792152000005
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16,Yes,5.5,exactly,11,7,0.075,0.1055,0.0305,0,-1.0,2918.481904
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,12,7,0.055,0.083,0.028,0,-1.0,2762.4183509999993
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from June 15 - 21?,Yes,5.5,exactly,8,7,0.21,0.1244,-0.0856,0,-1.0,2688.991502
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23?,Yes,5.5,exactly,8,7,0.145,0.1244,-0.0206,0,-1.0,2682.405384
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23,Yes,5.5,exactly,11,7,0.1,0.1055,0.0055,0,-1.0,2672.837901
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,8,7,0.13,0.1244,-0.0056,0,-1.0,2626.1427550000003
+Will there be exactly 4 earthquakes of magnitude 6.5 or higher worldwide by March 29?,Yes,6.5,exactly,4,7,0.0345,0.0104,-0.0241,0,-1.0,25656.995708000006
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,exactly,8,6,0.135,0.1395,0.0045,0,-1.0,2454.0137139999997
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,9,7,0.11,0.1304,0.0204,0,-1.0,2394.2439560000003
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,12,7,0.06,0.083,0.023,0,-1.0,239.22772700000002
+Will there be exactly 14 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,exactly,14,7,0.075,0.0406,-0.0344,0,-1.0,235.194838
+Will there be 6 or fewer earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,at_most,6,6,0.215,0.303,0.088,0,-1.0,22788.806725000002
+Will there be exactly 12 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,12,7,0.1,0.083,-0.017,0,-1.0,2085.6416950000003
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from August 3 - August 9?,Yes,5.5,exactly,10,7,0.105,0.123,0.018,0,-1.0,2056.2202500000003
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,10,7,0.11,0.123,0.013,0,-1.0,2046.3878699999998
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from July 14 - July 19?,Yes,6.5,exactly,3,6,0.0415,0.0338,-0.0077,0,-1.0,1781.7991550000004
+Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August ,Yes,5.5,more_than,13,7,0.13,0.0978,-0.0322,1,6.6923,17620.268523
+Will there be exactly 11 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,11,7,0.13,0.1055,-0.0245,0,-1.0,1689.0959919999998
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16?,Yes,5.5,exactly,9,7,0.105,0.1304,0.0254,0,-1.0,1684.4349699999998
+Will there be more than 14 earthquakes of magnitude 5.5 or higher worldwide from July 6 - July 12?,Yes,5.5,more_than,14,7,0.09,0.0573,-0.0327,0,-1.0,1636.9909160000002
+Will there be more than 14 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,more_than,14,7,0.21,0.0573,-0.1527,0,-1.0,1634.406125
+Will there be more than 11 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,more_than,11,7,0.175,0.241,0.066,0,-1.0,15974.861070000004
+Will there be 8 or fewer earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,at_most,8,7,0.175,0.4,0.225,0,-1.0,15933.546661000006
+Will there be more than 12 earthquakes of magnitude 5.5 or higher worldwide from July 14 - July 19?,Yes,5.5,more_than,12,6,0.16,0.068,-0.092,1,5.25,15235.836111999997
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,exactly,8,7,0.12,0.1244,0.0044,0,-1.0,1500.171094
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from August 17 - August 23?,Yes,5.5,exactly,7,7,0.13,0.1055,-0.0245,0,-1.0,1462.001117
+Will there be exactly 7 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16?,Yes,5.5,exactly,7,7,0.115,0.1055,-0.0095,0,-1.0,1403.3331959999998
+Will there be exactly 10 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16,Yes,5.5,exactly,10,7,0.115,0.123,0.008,0,-1.0,1365.53627
+Will there be more than 5 earthquakes of magnitude 6.5 or higher worldwide from July 27 - August 2?,Yes,6.5,more_than,5,7,0.155,0.0003,-0.1547,0,-1.0,1306.06794
+Will there be exactly 9 earthquakes of magnitude 5.5 or higher worldwide from June 22 - 28?,Yes,5.5,exactly,9,7,0.11,0.1304,0.0204,0,-1.0,12903.325408
+Will there be exactly 13 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,13,7,0.07,0.0602,-0.0098,0,-1.0,1280.360009
+Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,exactly,1,7,0.235,0.3651,0.1301,0,-1.0,1247.5675079999999
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,exactly,3,7,0.08,0.0473,-0.0327,0,-1.0,1206.391221
+Will there be exactly 1 earthquake of magnitude 6.5 or higher worldwide from July 27 - August 2?,Yes,6.5,exactly,1,7,0.17,0.3651,0.1951,1,4.8824,12046.737938000002
+Will there be more than 5 earthquakes of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,more_than,5,7,0.22,0.0003,-0.2197,0,-1.0,1202.2754
+Will there be exactly 14 earthquakes of magnitude 5.5 or higher worldwide from July 20 - July 26?,Yes,5.5,exactly,14,7,0.07,0.0406,-0.0294,0,-1.0,1122.5583089999996
+Will there be exactly 5 earthquakes of magnitude 6.5 or higher worldwide from June 29 - July 5?,Yes,6.5,exactly,5,7,0.07,0.0018,-0.0682,0,-1.0,1121.278899
+Will there be exactly 8 earthquakes of magnitude 5.5 or higher worldwide from August 10 - August 16?,Yes,5.5,exactly,8,7,0.115,0.1244,0.0094,0,-1.0,1087.011043
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide from July 6 - July 12?,Yes,6.5,exactly,2,7,0.225,0.1609,-0.0641,0,-1.0,1041.955206
+Will there be more than 13 earthquakes of magnitude 5.5 or higher worldwide from July 27 - August 2?,Yes,5.5,more_than,13,7,0.13,0.0978,-0.0322,1,6.6923,10098.550882000003
+Will there be exactly 3 earthquakes of magnitude 6.5 or higher worldwide by March 22?,Yes,6.5,exactly,3,7,0.12,0.0473,-0.0727,0,-1.0,0.0
+Will there be exactly 5 earthquakes of magnitude 6.5 or higher worldwide by March 22?,Yes,6.5,exactly,5,7,0.225,0.0018,-0.2232,0,-1.0,0.0
+Will there be more than 5 earthquakes of magnitude 6.5 or higher worldwide by March 22?,Yes,6.5,more_than,5,7,0.065,0.0003,-0.0647,0,-1.0,0.0
+Will there be exactly 2 earthquakes of magnitude 6.5 or higher worldwide by March 22?,Yes,6.5,exactly,2,7,0.135,0.1609,0.0259,1,6.4074,0.0
