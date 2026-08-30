@@ -64,12 +64,22 @@ QUESTION_PATTERNS = [
     (re.compile(r'Will there be (?:≤|at most )(\d+) earthquakes? ' + MAG_PHRASE, re.I), "at_most"),
     (re.compile(r'Will there be (?:exactly\s+)?(\d+) earthquakes? ' + MAG_PHRASE, re.I), "exactly"),
 ]
-MEGAQUAKE_PATTERN = re.compile(r'^Megaquake by (.+)\??$', re.I)
 # ", 11:59 PM ET, and June 21, ..." — запятая перед "and" опциональна (формат менялся в течение года)
 DESC_WINDOW_PATTERN = re.compile(
     r'between ([A-Za-z]+ \d{1,2}, \d{4}),\s*[\d:]+\s*(?:AM|PM)?\s*ET,?\s*and\s*([A-Za-z]+ \d{1,2}, \d{4})'
 )
-MEGAQUAKE_DESC_PATTERN = re.compile(r'between market creation and ([A-Za-z]+ \d{1,2}, \d{4})')
+
+# Более старый (2023-2025) формат вопросов — "хотя бы 1 землетрясение M+ по/в/до ДАТА",
+# без диапазона в тексте — окно берём из полей самого рынка (startDate/createdAt -> endDate),
+# не из description (там формат дат ещё менее единообразен). Глобальные версии ТОЛЬКО —
+# если после "in"/"by"/"before" не название месяца (а, например, регион вроде "Mediterranean"/
+# "LA"), считаем рынок региональным и ПРОПУСКАЕМ (модель считает только глобальную ставку).
+_MONTHS = ("January|February|March|April|May|June|July|August|September|"
+           "October|November|December")
+GLOBAL_AT_LEAST_PATTERNS = [
+    (re.compile(rf'^Megaquake (?:by|in|before) ({_MONTHS})', re.I), None),  # magnitude фиксирована = 8.0
+    (re.compile(rf'^(?:Another )?[Ee]arthquake ([\d.]+)\+? or (?:above|higher) (?:by|in|before) ({_MONTHS})', re.I), "group1"),
+]
 
 _rate_cache: dict = {}
 
@@ -106,18 +116,19 @@ def parse_market(m: dict):
             window_days = (end - start).days + 1
             return {"kind": kind, "n": n, "magnitude": mag, "window_days": window_days}
 
-    mm = MEGAQUAKE_PATTERN.match(q)
-    if mm:
-        dm = MEGAQUAKE_DESC_PATTERN.search(desc)
-        if not dm:
-            return None
+    for pat, mag_group in GLOBAL_AT_LEAST_PATTERNS:
+        mm = pat.search(q)
+        if not mm:
+            continue
+        magnitude = 8.0 if mag_group is None else float(mm.group(1))
         try:
-            end = datetime.strptime(dm.group(1), "%B %d, %Y")
-            start = datetime.fromisoformat(m["createdAt"].replace("Z", "+00:00")).replace(tzinfo=None)
-        except (ValueError, KeyError):
+            start_raw = m.get("startDate") or m.get("createdAt")
+            start = datetime.fromisoformat(start_raw.replace("Z", "+00:00")).replace(tzinfo=None)
+            end = datetime.fromisoformat(m["endDate"].replace("Z", "+00:00")).replace(tzinfo=None)
+        except (ValueError, KeyError, AttributeError):
             return None
         window_days = max((end - start).total_seconds() / 86400, 0.1)
-        return {"kind": "at_least", "n": 1, "magnitude": 8.0, "window_days": window_days}
+        return {"kind": "at_least", "n": 1, "magnitude": magnitude, "window_days": window_days}
 
     return None
 

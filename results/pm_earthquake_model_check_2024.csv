@@ -1,0 +1,4 @@
+question,side,magnitude,kind,n,window_days,entry_price,model_prob,gap,won,r_mult,volume
+Megaquake in September?,Yes,8.0,at_least,1,26.51,0.235,0.0767,-0.1583,0,-1.0,89555.142884
+Megaquake in October?,Yes,8.0,at_least,1,29.74,0.095,0.0857,-0.0093,0,-1.0,75023.197106
+Megaquake in November?,Yes,8.0,at_least,1,23.81,0.075,0.0692,-0.0058,0,-1.0,63269.52971
