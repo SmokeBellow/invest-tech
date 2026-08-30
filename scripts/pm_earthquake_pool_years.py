@@ -8,6 +8,7 @@
 """
 from __future__ import annotations
 
+import argparse
 import csv
 from pathlib import Path
 
@@ -16,10 +17,10 @@ YEARS = [2023, 2024, 2025, 2026]
 GAP_THRESHOLDS = [0.03, 0.05, 0.08]
 
 
-def load_pooled_rows() -> list:
+def load_pooled_rows(suffix: str) -> list:
     rows = []
     for year in YEARS:
-        path = RESULTS_DIR / f"pm_earthquake_model_check_{year}.csv"
+        path = RESULTS_DIR / f"pm_earthquake_model_check_{year}{suffix}.csv"
         if not path.exists():
             print(f"skip {year}: {path} not found")
             continue
@@ -33,12 +34,18 @@ def load_pooled_rows() -> list:
 
 
 def main():
-    rows = load_pooled_rows()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--suffix", default="", help='Например "_allprices" — объединить вариант без ценового фильтра')
+    args = ap.parse_args()
+
+    rows = load_pooled_rows(args.suffix)
     print(f"Pooled observations across {YEARS}: {len(rows)}")
 
-    with open(RESULTS_DIR / "pm_earthquake_model_check_pooled.md", "w") as f:
-        f.write(f"# Earthquake model vs market — пул {YEARS[0]}-{YEARS[-1]}\n\n")
-        f.write(f"Всего наблюдений (все года, диапазон цены 3-25¢): {len(rows)}\n\n")
+    price_note = "все цены (без фильтра 3-25¢)" if args.suffix else "диапазон цены 3-25¢"
+    out_name = f"pm_earthquake_model_check_pooled{args.suffix}.md"
+    with open(RESULTS_DIR / out_name, "w") as f:
+        f.write(f"# Earthquake model vs market — пул {YEARS[0]}-{YEARS[-1]} ({price_note})\n\n")
+        f.write(f"Всего наблюдений (все года, {price_note}): {len(rows)}\n\n")
 
         f.write("## По годам, без фильтра по gap\n\n")
         f.write("| Год | n | win_rate | mean_r |\n|---|---|---|---|\n")
@@ -81,7 +88,7 @@ def main():
         except ImportError:
             pass
 
-    print("Written: results/pm_earthquake_model_check_pooled.md")
+    print(f"Written: results/{out_name}")
 
 
 if __name__ == "__main__":
