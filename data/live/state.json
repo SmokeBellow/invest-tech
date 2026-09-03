@@ -9,11 +9,14 @@
     "RSI2|XLE|2026-08-26|entry",
     "RSI2|XLE|2026-08-26|exit",
     "TOM|BTCUSD|2026-08-25|entry",
+    "TOM|BTCUSD|2026-08-27|entry",
     "TOM|EURUSD|2026-08-25|entry",
+    "TOM|EURUSD|2026-08-26|entry",
     "TOM|SPY|2026-08-25|entry",
-    "TOM|USDJPY|2026-08-25|entry"
+    "TOM|USDJPY|2026-08-25|entry",
+    "TOM|USDJPY|2026-08-27|entry"
   ],
-  "capital": 994.3082991507434,
+  "capital": 998.4755278336904,
   "peak_equity": 1010.7675194795681,
   "morning_check_date": "2026-09-02"
 }

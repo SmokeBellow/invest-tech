@@ -10,3 +10,6 @@ date,system,symbol,action,price,size_usd,stop,risk_usd,risk_pct,reason
 2026-08-28,RSI2,XLE,exit,62.68,,59.0901,4.0,1.0,sma5_cross
 2026-08-30,RSI2,EURUSD,entry,1.1658,,,,,"rsi2<10+ema200 (provisional, подтвердит ночной прогон)"
 2026-09-01,RSI2,SPY,entry,762.01,,,,,"rsi2<10+ema200 (provisional, подтвердит ночной прогон)"
+2026-08-27,TOM,BTCUSD,entry,79026.75,80.22,75086.4884,4.0,1.0,turn_of_month_offset5
+2026-08-26,TOM,EURUSD,entry,1.1677,598.13,1.1599,4.0,1.0,turn_of_month_offset5
+2026-08-27,TOM,USDJPY,entry,159.25,382.54,157.5848,4.0,1.0,turn_of_month_offset5
