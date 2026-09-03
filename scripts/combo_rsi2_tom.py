@@ -241,7 +241,26 @@ def tom_open_position(d, symbol):
     дней (то есть gen_tom_trades ещё физически не может вычислить exit_idx
     для позиции из прошлого месяца), ищем день входа в ПРЕДЫДУЩЕМ месяце —
     ровно то окно, в котором такая позиция может быть ещё не резолвлена
-    штатно."""
+    штатно.
+
+    ИСПРАВЛЕНО 03.09.2026: для ПРЕДЫДУЩЕГО (уже завершившегося) месяца день
+    входа ищем ТЕМ ЖЕ способом, что и gen_tom_trades (последняя строка
+    месяца минус TOM_OFFSET-1, по факту имеющихся в данных строк), а НЕ
+    через tom_entry_calendar_day (bdate_range, только будние дни). Для
+    инструментов, торгующих по выходным (BTCUSD — каждый день; EURUSD/
+    USDJPY — с воскресного вечера), число строк за месяц в данных БОЛЬШЕ,
+    чем число будних дней, поэтому "5-я с конца строка данных" и "5-й с
+    конца будний день" — РАЗНЫЕ даты (на практике расхождение доходило до
+    2 дней). Обнаружено по симптому: BTCUSD/USDJPY/EURUSD пропадали из
+    open_positions.csv на 2-3 дня в начале месяца (calendar-приближение
+    находило "входа нет", хотя gen_tom_trades уже был готов посчитать
+    вход на другую дату), а в journal.csv по ним закреплялись ДВЕ строки
+    входа с разными датами — provisional (по calendar-приближению, из
+    live_pending_entries.py) и обычная (по gen_tom_trades, из ночного
+    прогона). Точный расчёт возможен именно для завершённого месяца — все
+    его строки уже есть в данных, в отличие от текущего месяца (там
+    calendar-приближение остаётся единственным вариантом — не знаем, сколько
+    ещё строк будет до конца месяца)."""
     d = d.reset_index(drop=True)
     n = len(d)
     last_date = d.iloc[-1]["date"]
@@ -255,10 +274,8 @@ def tom_open_position(d, symbol):
     if entry_idx is None and len(month_idx) < 3:
         prev_period = last_period - 1
         prev_month_idx = d.index[d["date"].dt.to_period("M") == prev_period]
-        for i in prev_month_idx:
-            if tom_entry_calendar_day(d.iloc[i]["date"]):
-                entry_idx = i
-                break
+        if len(prev_month_idx) >= TOM_OFFSET:
+            entry_idx = prev_month_idx[-1] - (TOM_OFFSET - 1)
     if entry_idx is None or entry_idx < 1 or entry_idx >= n:
         return None
     entry_row = d.iloc[entry_idx]
