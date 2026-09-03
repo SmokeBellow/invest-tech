@@ -223,17 +223,42 @@ def tom_open_position(d, symbol):
     tom_entry_calendar_day). Если стоп уже задет внутри данных, но
     exit_idx ещё не вычислим (мало данных следующего месяца) — возвращает
     None: такая сделка технически уже закрыта, но безопаснее подождать,
-    пока gen_tom_trades сможет обработать её штатно."""
+    пока gen_tom_trades сможет обработать её штатно.
+
+    ИСПРАВЛЕНО 02.09.2026 (см. CLAUDE.md — баг обнаружен при живом
+    ежедневном пересмотре: все открытые TOM-позиции, вход в которые
+    состоялся в ПРЕДЫДУЩЕМ месяце, разом пропадали из open_positions.csv в
+    первый же день нового месяца, хотя выход по ним ещё не наступил и не
+    залогирован в journal.csv). Причина — поиск дня входа ограничивался
+    ТОЛЬКО месяцем `last_date` (месяц последнего доступного бара). Пока
+    last_date оставался в исходном месяце — это работало. Как только
+    начинался новый календарный месяц, функция искала календарный день
+    входа TOM внутри НОВОГО месяца (он наступит только ближе к его концу,
+    ещё не наступил) — не находила ничего и возвращала None, хотя позиция,
+    открытая в конце ПРЕДЫДУЩЕГО месяца, физически ещё держится (exit —
+    только на 3-й торговый день нового месяца, см. gen_tom_trades). Теперь,
+    если в текущем месяце входа ещё не было И в нём накопилось <3 торговых
+    дней (то есть gen_tom_trades ещё физически не может вычислить exit_idx
+    для позиции из прошлого месяца), ищем день входа в ПРЕДЫДУЩЕМ месяце —
+    ровно то окно, в котором такая позиция может быть ещё не резолвлена
+    штатно."""
     d = d.reset_index(drop=True)
     n = len(d)
     last_date = d.iloc[-1]["date"]
-    month_mask = d["date"].dt.to_period("M") == last_date.to_period("M")
-    month_idx = d.index[month_mask]
+    last_period = last_date.to_period("M")
+    month_idx = d.index[d["date"].dt.to_period("M") == last_period]
     entry_idx = None
     for i in month_idx:
         if tom_entry_calendar_day(d.iloc[i]["date"]):
             entry_idx = i
             break
+    if entry_idx is None and len(month_idx) < 3:
+        prev_period = last_period - 1
+        prev_month_idx = d.index[d["date"].dt.to_period("M") == prev_period]
+        for i in prev_month_idx:
+            if tom_entry_calendar_day(d.iloc[i]["date"]):
+                entry_idx = i
+                break
     if entry_idx is None or entry_idx < 1 or entry_idx >= n:
         return None
     entry_row = d.iloc[entry_idx]
