@@ -1,12 +1,9 @@
 name: Live paper-trading morning entry check
 
 on:
-  schedule:
-    # 15:12 UTC — с запасом после открытия NYSE в обоих режимах (13:30 UTC
-    # летом/DST, 14:30 UTC зимой), см. CLAUDE.md раздел 9. Минута сдвинута с
-    # :00 на :12 29.08.2026 — та же причина, что и в live_review.yml (GitHub
-    # Actions cron чаще задерживается ровно в начале часа), см. CLAUDE.md §13.
-    - cron: "12 15 * * *"
+  # schedule ОТКЛЮЧЁН 08.09.2026 по запросу пользователя ("останавливаем
+  # проект и завершаем пересмотры") — см. live_review.yml. Была: cron
+  # "12 15 * * *" (15:12 UTC, запас после открытия NYSE).
   workflow_dispatch: {}
 
 jobs:
